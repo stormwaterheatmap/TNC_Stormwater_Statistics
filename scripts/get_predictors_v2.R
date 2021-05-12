@@ -9,7 +9,7 @@
 ## Email: cnilsen@geosyntec.com
 ##
 ## Date Created: 2021-01-24, Christian Nilsen
-## Date Modified: 2021-01-31, Eva Dusek Jennings
+## Date Modified: 2021-05-12, Eva Dusek Jennings
 ##
 ## Copyright (c) Geosyntec Consultants, 2021
 ##
@@ -47,20 +47,19 @@ ee_check() # Check non-R dependencies
 rgee::ee_install_upgrade()
 
 
-
 # Libraries ---------------------------------------------------------------
 library(rgee)
 library(mapview)
 library(purrr)
 library(tidyverse)
 library(data.table)
+library(here)
 
 
 ee$Authenticate()  #the dollar sign on this function tells Python to do this.  ee is a wrapper around python commands
 
 # initialize earth engine api:
 ee$Initialize()
-
 
 
 # Data  -------------------------------------------------------------------
@@ -109,22 +108,76 @@ age_pre_1975 <- ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$
 elevation = ee$Image("USGS/NED")
 slope = ee$Terrain$slope(elevation)
 
+# percent landuse
+landuse <- ee$Image("users/cnilsen/cnilsenLandUse")
+percent.residential <- landuse$eq(1)$rename("RES")
+percent.industrial<-   landuse$eq(2)$rename("IND")
+percent.transportation <-  landuse$eq(3)$rename( "TRANS")
+percent.commercial <-  landuse$eq(4)$rename( "COM")
+percent.ag_or_timber <-  landuse$eq(5)$rename("AG")
+percent.water <-landuse$eq(7)$rename("WATER")
+percent.open_space <-  landuse$eq(8)$rename("OPEN")
 
-## Other available data:
-# landuse <- ee$Image("users/stormwaterheatmap/gen_landuse")
+# roofs by landuse 
+landuse <- ee$Image("users/stormwaterheatmap/public/land_use_5m")
 
-# Make Map of One Landscape Predictor ------------------------------------------
-map_image <- pm25  #can change this to other variables to see other things (this predictor is used in map)
-map_viz <- list(min = 4.5, max = 6.8, palette = list("blue", "green", "yellow", "orange", "red"), opacity = 0.5) #0 to 100 for trees; 0 to 1 for proportions; 4.5 to 6.8 for pm25
+#make a binary image of roofs 1 = roof, 0 = not roof
+roofs <-  tnc_landcover$eq(7)
+
+#intersect roofs and landuse values 
+roofs_landuse <- landuse$multiply(roofs)$selfMask()
+
+#palette for displaying land uses
+landuse_pallete = c(
+  "#eb3121",
+  "#6203ae",
+  "#845609",
+  "#ae39f3",
+  "#efcb09",
+  "#a0c29b",
+  "#476b9d",
+  "#4c6c0a"
+)
+
+#display the results for roofs by landuse
+Map$centerObject(roofs_landuse = roofs, zoom = 7)
+Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_pallete))
+
+#gives an image of roofs
+# "Residential": 1,
+# "Industrial": 2,
+# "Transportation ": 3,
+# "Commercial": 4,
+# "Agricultural": 5,
+# "Timber and Resource Extraction": 6,
+# "Water": 7,
+# "open space": 8
+# }
+
+
+
+# Make Map for One Predictor -----------------------------------------------
+map_image <- landuse
+map_viz <- list(min = 1, max = 6, palette = list("white", "green"), opacity = 0.5)
 Map$centerObject(eeObject = watersheds, zoom = 7)
 Map$addLayer(map_image, visParams = map_viz) +
   Map$addLayer(watersheds)
 
+# map_image <- pm25  #can change this to other variables to see other things (this predictor is used in map)
+# map_viz <- list(min = 4.5, max = 6.8, palette = list("blue", "green", "yellow", "orange", "red"), opacity = 0.5) #0 to 100 for trees; 0 to 1 for proportions; 4.5 to 6.8 for pm25
+# Map$centerObject(eeObject = watersheds, zoom = 7)
+# Map$addLayer(map_image, visParams = map_viz) +
+#   Map$addLayer(watersheds)
+
+
+
 # Reduce Predictors -------------------------------------------------------
 ## combine predictors in one dataset (one band each) - this is an image
 predictors <- ee$Image(0)$blend(
-  ee$Image$cat(impervious, imp_ground, imp_roofs, grass_low_veg, tree_cover, traffic, population, pm25, slope,
-               no_dev, age_2000_2014, age_1990_2000, age_1975_1990, age_pre_1975)
+  ee$Image$cat(percent.residential, percent.industrial, percent.transportation,
+               percent.commercial,percent.ag_or_timber, percent.water, percent.open_space, 
+               impervious, imp_ground, imp_roofs, roofs_landuse, grass_low_veg, tree_cover, traffic, population, 
+               pm25, slope, no_dev, age_2000_2014, age_1990_2000, age_1975_1990, age_pre_1975)
 )
 
 ## calculate mean stats from earth engine
@@ -143,6 +196,7 @@ df_predictors <- ee_df$features %>%  #band names diff't than image names; consta
   rbindlist()
 #built refers to buildup index.  Those are categorical data - maybe shouldn't be averaged?
 
+
 # Results -----------------------------------------------------------------
 View(df_predictors)
 
@@ -155,9 +209,8 @@ ggplot(df_long) +
   geom_col(aes(x = Location_N, y = value), fill = "cadetBlue", position = "dodge") +
   facet_wrap(~name, scales = "free")
 
-
 # save csv file of predictors
-write.csv(df_predictors, "../data/spatial_predictors_raw.csv", row.names=FALSE)
+write.csv(df_predictors, here("data", "spatial_predictors_raw.csv"), row.names=FALSE)
 
 
 #---------------------------------------------
