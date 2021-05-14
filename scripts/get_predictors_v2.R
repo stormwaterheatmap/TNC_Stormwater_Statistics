@@ -56,7 +56,9 @@ library(data.table)
 library(here)
 
 
+#NOTE: this line must be run and authentication provided BEFORE continuing!
 ee$Authenticate()  #the dollar sign on this function tells Python to do this.  ee is a wrapper around python commands
+
 
 # initialize earth engine api:
 ee$Initialize()
@@ -114,18 +116,26 @@ percent.residential <- landuse$eq(1)$rename("RES")
 percent.industrial<-   landuse$eq(2)$rename("IND")
 percent.transportation <-  landuse$eq(3)$rename( "TRANS")
 percent.commercial <-  landuse$eq(4)$rename( "COM")
-percent.ag_or_timber <-  landuse$eq(5)$rename("AG")
+percent.ag_or_timber <-  landuse$eq(5)$Or(landuse$eq(6))$rename("AG")
 percent.water <-landuse$eq(7)$rename("WATER")
 percent.open_space <-  landuse$eq(8)$rename("OPEN")
 
 # roofs by landuse 
 landuse <- ee$Image("users/stormwaterheatmap/public/land_use_5m")
 
+
 #make a binary image of roofs 1 = roof, 0 = not roof
 roofs <-  tnc_landcover$eq(7)
 
 #intersect roofs and landuse values 
 roofs_landuse <- landuse$multiply(roofs)$selfMask()
+percent.roofs.RES <- roofs_landuse$eq(1)$rename("roof_RES")
+percent.roofs.IND <- roofs_landuse$eq(2)$rename("roof_IND")
+percent.roofs.TRANS <- roofs_landuse$eq(3)$rename("roof_TRANS")
+percent.roofs.COM <- roofs_landuse$eq(4)$rename("roof_COM")
+percent.roofs.AG_TIMBER <- roofs_landuse$eq(5)$Or(roofs_landuse$eq(6))$rename("roof_AG")
+percent.roofs.WATER <- roofs_landuse$eq(7)$rename("roof_WATER")
+percent.roofs.OPEN <- roofs_landuse$eq(8)$rename("roof_OPEN")
 
 #palette for displaying land uses
 landuse_pallete = c(
@@ -134,13 +144,13 @@ landuse_pallete = c(
   "#845609",
   "#ae39f3",
   "#efcb09",
-  "#a0c29b",
+#  "#a0c29b",
   "#476b9d",
   "#4c6c0a"
 )
 
 #display the results for roofs by landuse
-Map$centerObject(roofs_landuse = roofs, zoom = 7)
+Map$centerObject(eeObject = roofs, zoom = 7)
 Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_pallete))
 
 #gives an image of roofs
@@ -153,7 +163,6 @@ Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_
 # "Water": 7,
 # "open space": 8
 # }
-
 
 
 # Make Map for One Predictor -----------------------------------------------
@@ -170,14 +179,15 @@ Map$addLayer(map_image, visParams = map_viz) +
 #   Map$addLayer(watersheds)
 
 
-
 # Reduce Predictors -------------------------------------------------------
 ## combine predictors in one dataset (one band each) - this is an image
 predictors <- ee$Image(0)$blend(
   ee$Image$cat(percent.residential, percent.industrial, percent.transportation,
                percent.commercial,percent.ag_or_timber, percent.water, percent.open_space, 
-               impervious, imp_ground, imp_roofs, roofs_landuse, grass_low_veg, tree_cover, traffic, population, 
-               pm25, slope, no_dev, age_2000_2014, age_1990_2000, age_1975_1990, age_pre_1975)
+               impervious, imp_ground, imp_roofs, grass_low_veg, tree_cover, traffic, population, 
+               pm25, slope, no_dev, age_2000_2014, age_1990_2000, age_1975_1990, age_pre_1975,
+               percent.roofs.AG_TIMBER, percent.roofs.COM, percent.roofs.IND, percent.roofs.RES, 
+               percent.roofs.TRANS, percent.roofs.OPEN, percent.roofs.WATER)
 )
 
 ## calculate mean stats from earth engine
