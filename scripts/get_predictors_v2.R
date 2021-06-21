@@ -65,7 +65,9 @@ ee$Initialize()
 
 
 # Data  -------------------------------------------------------------------
-watersheds <- ee$FeatureCollection("users/cnilsen/s8_watersheds")$select(c("Location_N"), c("Location")) # $filter(ee$Filter$neq('Location_N', 'POSOUTFALL_60')
+watersheds <- ee$FeatureCollection("users/stormwaterheatmap/revised_s8_watersheds_v4")$select(c("Location_N"), c("Location")) # $filter(ee$Filter$neq('Location_N', 'POSOUTFALL_60')
+# old watershed data with approximate(?) locations for Tacoma watershed
+#watersheds <- ee$FeatureCollection("users/cnilsen/s8_watersheds")$select(c("Location_N"), c("Location")) # $filter(ee$Filter$neq('Location_N', 'POSOUTFALL_60')
 
 ## Get Predictor images from earth engine
 ## trees
@@ -97,6 +99,8 @@ grass_low_veg <- tnc_landcover$eq(1)$rename("grass_low_veg")
 #           'Impervious – Except Roofs',
 #           'Impervious - Roofs'
 # ]
+
+no2 <- ee$Image("users/stormwaterheatmap/SURFACE_NO2_010x010_2010")$rename("NO_2")
 
 # age of development
 #age_of_development <- ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$rename("mean_dev_age") #mean value; this one is confusing b/c value of 2=no development
@@ -166,8 +170,8 @@ Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_
 
 
 # Make Map for One Predictor -----------------------------------------------
-map_image <- landuse
-map_viz <- list(min = 1, max = 6, palette = list("white", "green"), opacity = 0.5)
+map_image <- no2 #landuse
+map_viz <- list(min = 2, max = 5, palette = list("white", "green"), opacity = 0.5)
 Map$centerObject(eeObject = watersheds, zoom = 7)
 Map$addLayer(map_image, visParams = map_viz) +
   Map$addLayer(watersheds)
@@ -184,7 +188,7 @@ Map$addLayer(map_image, visParams = map_viz) +
 predictors <- ee$Image(0)$blend(
   ee$Image$cat(percent.residential, percent.industrial, percent.transportation,
                percent.commercial,percent.ag_or_timber, percent.water, percent.open_space, 
-               impervious, imp_ground, imp_roofs, grass_low_veg, tree_cover, traffic, population, 
+               impervious, imp_ground, imp_roofs, no2, grass_low_veg, tree_cover, traffic, population, 
                pm25, slope, no_dev, age_2000_2014, age_1990_2000, age_1975_1990, age_pre_1975,
                percent.roofs.AG_TIMBER, percent.roofs.COM, percent.roofs.IND, percent.roofs.RES, 
                percent.roofs.TRANS, percent.roofs.OPEN, percent.roofs.WATER)
@@ -203,7 +207,7 @@ ee_df <- ee_stats$getInfo()
 # wrangle the data
 df_predictors <- ee_df$features %>%  #band names diff't than image names; constant is traffic
   map("properties") %>%
-  rbindlist()
+  rbindlist(fill=TRUE)
 #built refers to buildup index.  Those are categorical data - maybe shouldn't be averaged?
 
 
