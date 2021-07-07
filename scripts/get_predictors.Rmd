@@ -528,7 +528,7 @@ map("properties") %>% rbindlist(fill = TRUE) %>% select(Location_N, everything()
 
 
 # Results 
-```{r}
+```{r results = 'asis'}
 # Results -----------------------------------------------------------------
 
 #View(df_predictors)
