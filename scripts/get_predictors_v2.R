@@ -42,9 +42,9 @@
 # # The use of rgee::ee_install() is not mandatory, you can count on with your own custom installation.
 # #
 # # After install rgee, you might use the function below for checking the status of rgee.
-ee_check() # Check non-R dependencies
+#ee_check() # Check non-R dependencies
 
-rgee::ee_install_upgrade()
+#rgee::ee_install_upgrade()
 
 
 # Libraries ---------------------------------------------------------------
@@ -114,16 +114,44 @@ age_pre_1975 <- ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$
 elevation = ee$Image("USGS/NED")
 slope = ee$Terrain$slope(elevation)
 
-# percent landuse
-landuse <- ee$Image("users/cnilsen/cnilsenLandUse")
-percent.residential <- landuse$eq(1)$rename("RES")
-percent.industrial<-   landuse$eq(2)$rename("IND")
-percent.transportation <-  landuse$eq(3)$rename( "TRANS")
-percent.commercial <-  landuse$eq(4)$rename( "COM")
-percent.ag_or_timber <-  landuse$eq(5)$Or(landuse$eq(6))$rename("AG")
-percent.water <-landuse$eq(7)$rename("WATER")
-percent.open_space <-  landuse$eq(8)$rename("OPEN")
 
+# Commerce landuse data  --------------------------------------------------
+# source: //https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/
+
+
+
+landuse_table = ee$FeatureCollection("users/stormwaterheatmap/psrc_landuse") 
+#MASTER_CAT Master_num
+##                         Undesignated          0
+##                    Agricultural Area          1
+##                               Tribal          2
+##                         Forest Lands          3
+##                      Intensive Urban          4
+##          Rural Character Residential          5
+##                                Water          6
+##                                 PROW          7
+##                                  ROW          8
+##     Active Open Space and Recreation          9
+##          Urban Character Residential         10
+##                           Industrial         11
+##                               Public         12
+##Natural Preservation and Conservation         13
+##                             Military         14
+##                Mineral Resource Area         15
+
+
+
+landuse = landuse_table$reduceToImage(list('Master_num'),ee$Reducer$first())$rename("landuseCode")
+# percent landuse
+percent.residential <- landuse$eq(10)$rename("RES")
+percent.industrial<-   landuse$eq(11)$rename("IND")
+#percent.transportation <-  landuse$eq(3)$rename( "TRANS")
+percent.commercial <-  landuse$eq(4)$rename( "COM")
+percent.ag_or_timber <-  landuse$eq(1)$Or(landuse$eq(3))$rename("AG")
+percent.water <-landuse$eq(6)$rename("WATER")
+percent.open_space <-  landuse$eq(13)$rename("OPEN")
+percent.rural_res <- landuse$eq(5)$rename("RURES")
+percent.public <- landuse$eq(12)$rename("PUBLIC")
 # roofs by landuse 
 landuse <- ee$Image("users/stormwaterheatmap/public/land_use_5m")
 
@@ -133,13 +161,13 @@ roofs <-  tnc_landcover$eq(7)
 
 #intersect roofs and landuse values 
 roofs_landuse <- landuse$multiply(roofs)$selfMask()
-percent.roofs.RES <- roofs_landuse$eq(1)$rename("roof_RES")
-percent.roofs.IND <- roofs_landuse$eq(2)$rename("roof_IND")
-percent.roofs.TRANS <- roofs_landuse$eq(3)$rename("roof_TRANS")
+percent.roofs.RES <- roofs_landuse$eq(10)$rename("roof_RES")
+percent.roofs.IND <- roofs_landuse$eq(11)$rename("roof_IND")
+#percent.roofs.TRANS <- roofs_landuse$eq(3)$rename("roof_TRANS")
 percent.roofs.COM <- roofs_landuse$eq(4)$rename("roof_COM")
-percent.roofs.AG_TIMBER <- roofs_landuse$eq(5)$Or(roofs_landuse$eq(6))$rename("roof_AG")
-percent.roofs.WATER <- roofs_landuse$eq(7)$rename("roof_WATER")
-percent.roofs.OPEN <- roofs_landuse$eq(8)$rename("roof_OPEN")
+percent.roofs.AG_TIMBER <- roofs_landuse$eq(1)$Or(roofs_landuse$eq(3))$rename("roof_AG")
+#percent.roofs.WATER <- roofs_landuse$eq(7)$rename("roof_WATER")
+#percent.roofs.OPEN <- roofs_landuse$eq(8)$rename("roof_OPEN")
 
 #palette for displaying land uses
 landuse_pallete = c(
@@ -153,9 +181,10 @@ landuse_pallete = c(
   "#4c6c0a"
 )
 
+
 #display the results for roofs by landuse
-Map$centerObject(eeObject = roofs, zoom = 7)
-Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_pallete))
+#Map$centerObject(eeObject = roofs, zoom = 7)
+#Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_pallete))
 
 #gives an image of roofs
 # "Residential": 1,
@@ -169,9 +198,54 @@ Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_
 # }
 
 
+
+# CO Emissions ------------------------------------------------------------
+
+
+
+
+# CO Emissions ------------------------------------------------------------
+#From Gurney, K.R., J. Liang, R. Patarasuk, Y. Song, J. Huang, and G. Roest. 2019. Vulcan: High-Resolution Annual Fossil Fuel 
+#CO2 Emissions in USA, 2010-2015, Version 3. ORNL DAAC, Oak Ridge, Tennessee, USA. https://doi.org/10.3334/ORNLDAAC/1741
+
+#############
+##Sector Code	Description
+# airport	Airport sector (taxi/takeoff to 3000’)
+# cement	Cement production sector
+# cmv	Commercial Marine Vessel sector
+# commercial	Commercial sector
+# elec_prod 	Electricity production sector
+# industrial	Industrial sector
+# nonroad	Nonroad sector (e.g. snowmobiles, ATVs)
+# onroad	Onroad sector
+# railroad	Railroad sector
+# residential	Residential sector
+# total	Total emissions
+
+Vulcan_total = ee$Image("users/stormwaterheatmap/Vulcan_total")$reduce('mean')$rename("CO_emissions_total")
+Vulcan_cement = ee$Image("users/stormwaterheatmap/Vulcan_cement")$reduce('mean')$rename("CO_emissions_cement")
+Vulcan_elec_prod = ee$Image("users/stormwaterheatmap/Vulcan_elec_prod")$reduce('mean')$rename("CO_emissions__elec_prod")
+Vulcan_airport = ee$Image("users/stormwaterheatmap/Vulcan_airport")$reduce('mean')$rename("CO_emissions_airport")
+Vulcan_cmv = ee$Image("users/stormwaterheatmap/Vulcan_cmv")$reduce('mean')$rename("CO_emissions_cmv")
+Vulcan_commercial = ee$Image("users/stormwaterheatmap/Vulcan_commercial")$reduce('mean')$rename("CO_emissions_commercial")
+Vulcan_residential = ee$Image("users/stormwaterheatmap/Vulcan_residential")$reduce('mean')$rename("CO_emissions_residential")
+Vulcan_industrial = ee$Image("users/stormwaterheatmap/Vulcan_industrial")$reduce('mean')$rename("CO_emissions_industrial")
+Vulcan_nonroad = ee$Image("users/stormwaterheatmap/Vulcan_nonroad")$reduce('mean')$rename("CO_emissions_nonroad")
+Vulcan_onroad = ee$Image("users/stormwaterheatmap/Vulcan_onroad")$reduce('mean')$rename("CO_emissions_onroad")
+Vulcan_rail= ee$Image("users/stormwaterheatmap/Vulcan_rail")$reduce('mean')$rename("CO_emissions_rail")
+
+
+
+# Troposhphreic Air Quality  ----------------------------------------------
+
+
+v4_pm25 = ee$Image("users/stormwaterheatmap/V4NA03_PM25_NA_201001_201012-RH35-NoNegs")$rename("PM25_NA")
+sa = ee$Image("users/stormwaterheatmap/surface_area")$rename("particulate_surface_area")
+
+
 # Make Map for One Predictor -----------------------------------------------
-map_image <- no2 #landuse
-map_viz <- list(min = 2, max = 5, palette = list("white", "green"), opacity = 0.5)
+map_image <- v4_pm25 #landuse
+map_viz <- list(min = 2, max = 7, palette = list("black", "yellow","red"), opacity = 0.5)
 Map$centerObject(eeObject = watersheds, zoom = 7)
 Map$addLayer(map_image, visParams = map_viz) +
   Map$addLayer(watersheds)
@@ -186,12 +260,18 @@ Map$addLayer(map_image, visParams = map_viz) +
 # Reduce Predictors -------------------------------------------------------
 ## combine predictors in one dataset (one band each) - this is an image
 predictors <- ee$Image(0)$blend(
-  ee$Image$cat(percent.residential, percent.industrial, percent.transportation,
+  ee$Image$cat(percent.residential, percent.industrial, 
+               #percent.transportation,
                percent.commercial,percent.ag_or_timber, percent.water, percent.open_space, 
                impervious, imp_ground, imp_roofs, no2, grass_low_veg, tree_cover, traffic, population, 
                pm25, slope, no_dev, age_2000_2014, age_1990_2000, age_1975_1990, age_pre_1975,
                percent.roofs.AG_TIMBER, percent.roofs.COM, percent.roofs.IND, percent.roofs.RES, 
-               percent.roofs.TRANS, percent.roofs.OPEN, percent.roofs.WATER)
+               #percent.roofs.TRANS, 
+               #percent.roofs.OPEN, percent.roofs.WATER, 
+               Vulcan_total,Vulcan_commercial,Vulcan_residential, 
+               Vulcan_nonroad, Vulcan_onroad,
+               percent.public, percent.rural_res, 
+               v4_pm25, sa)
 )
 
 ## calculate mean stats from earth engine
