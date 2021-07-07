@@ -100,7 +100,8 @@ library(kableExtra)
 ee$Initialize()
 ```
 
-## New - watershed buffers  
+## Watershed Polygons 
+New - watershed buffers  
 Use the following links to switch between watershed polygons and buffered polygons. 
 These may be useful for including data (especially air quality) outside of watershed bounds. 
 
@@ -114,7 +115,7 @@ buffered_sheds_3k <- "users/stormwaterheatmap/buffered_sheds_3k"
 
 shed_url <- buffered_sheds_3k # change this to update watershed feature layer
 
-watersheds <- ee$FeatureCollection(shed_url)$select(c("Location_N"), c("Location")) # 
+watersheds <- ee$FeatureCollection(sheds_no_buffer)$select(c("Location_N"), c("Location")) # 
 ```
 
 # Get Predictor images from earth engine
@@ -181,28 +182,56 @@ pm25 <-ee$Image("users/cnilsen/pm25clipped")$rename("pm25")
 
 ## Age of development
 **Updated Layer** 
-See: 
-# age_of_development \<- ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$rename("mean_dev_age") \#mean value; this one is confusing b/c value of 2=no development
+See: https://ghsl.jrc.ec.europa.eu/download.php?ds=bu
+
 ```{r}
-no_dev <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(2)$rename("no_dev")
+devAge_image = ee$Image("users/stormwaterheatmap/GHS_BUILT_LDSMT_GLOBE_R2018A_3857_30_V2_0_4_7")$rename("built") 
+
+age_of_development <- devAge_image$select("built")$rename("mean_dev_age") #mean value; this one is confusing b/c value of 2=no development
+no_dev <-devAge_image$select("built")$eq(2)$rename("no_dev")
 # proportion that has no development 
-age_2000_2014 <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(3)$rename("dev_2000_2014")
+age_2000_2014 <-devAge_image$select("built")$eq(3)$rename("dev_2000_2014")
 # proportion that was built in 2000-2014 
-age_1990_2000 <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(4)$rename("dev_1990_2000")
+age_1990_2000 <-devAge_image$select("built")$eq(4)$rename("dev_1990_2000")
 # proportion that was built in 1990-2000 
-age_1975_1990 <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(5)$rename("dev_1975_1990")
+age_1975_1990 <-devAge_image$select("built")$eq(5)$rename("dev_1975_1990")
 # proportion that was built in 1975-1990 
-age_pre_1975 <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(6)$rename("dev_pre_1975")
+age_pre_1975 <-devAge_image$select("built")$eq(6)$rename("dev_pre_1975")
 # proportion that was built pre-1975
 
 ```
 
 
-# Commerce landuse data --------------------------------------------------
+# Commerce landuse data 
 
-# source: //<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/>
+source: //<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/>
 
-actual landuses in our sampling data set: 
+MASTER_CAT| Master_num
+-- | --
+Undesignated|0
+AgriculturalArea|1
+Tribal|2
+ForestLands|3
+IntensiveUrban|4
+RuralCharacterResidential|5
+Water|6
+PROW|7
+ROW|8
+ActiveOpenSpaceandRecreation|9
+UrbanCharacterResidential|10
+Industrial|11
+Public|12
+NaturalPreservationandConservation|13
+Military|14
+MineralResourceArea|15|
+
+
+
+<details>
+  <summary>actual landuses in our sampling data set: </summary>
+  
+
+```
 {
   "list": [
     [
@@ -345,45 +374,13 @@ actual landuses in our sampling data set:
     ]
   ]
 }
-
+```
+</details>
 
 
 ```{r}
 landuse_table <-ee$FeatureCollection("users/stormwaterheatmap/psrc_landuse")
 
-# MASTER_CAT Master_num
-
-## Undesignated 0
-
-## Agricultural Area 1
-
-## Tribal 2
-
-## Forest Lands 3
-
-## Intensive Urban 4**
-
-## Rural Character Residential 5**
-
-## Water 6**
-
-## PROW 7**
-
-## ROW 8**
-
-## Active Open Space and Recreation 9
-
-# Urban Character Residential 10**
-
-## Industrial 11**
-
-## Public 12
-
-## Natural Preservation and Conservation 13
-
-## Military 14
-
-## Mineral Resource Area 15
 
 landuse <- landuse_table$reduceToImage(list("Master_num"),ee$Reducer$first())$rename("landuseCode")
 
@@ -414,74 +411,29 @@ percent.roofs.COM <- roofs_landuse$eq(4)$rename("roof_COM")
 percent.roofs.AG_TIMBER <-
 roofs_landuse$eq(1)$Or(roofs_landuse$eq(3))$rename("roof_AG")
 
-# percent.roofs.WATER <- roofs_landuse$eq(7)$rename("roof_WATER")
 
-# percent.roofs.OPEN <- roofs_landuse$eq(8)$rename("roof_OPEN")
+```
 
-# palette for displaying land uses
+## Carbon Emissions 
+**From Gurney, K.R., J. Liang, R. Patarasuk, Y. Song, J. Huang, and G. Roest. 2019. Vulcan: High-Resolution Annual Fossil Fuel CO2 Emissions in USA, 2010-2015, Version 3. ORNL DAAC, Oak Ridge, Tennessee, USA.** <https://doi.org/10.3334/ORNLDAAC/1741>
 
+Sector Code | Description
+-- | --
+airport | Airport sector (taxi/takeoff to 3000’)
+cement | Cement production sector
+cmv | Commercial Marine Vessel sector
+commercial | Commercial sector
+elec_prod | Electricity production sector
+industrial | Industrial sector
+nonroad | Nonroad sector (e.g. snowmobiles, ATVs)
+onroad | Onroad sector
+railroad | Railroad sector
+residential | Residential sector
+total | Total emissions
 
-# display the results for roofs by landuse
-
-# Map$centerObject(eeObject = roofs, zoom = 7)
-
-# Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_pallete))
-
-# gives an image of roofs
-
-# "Residential": 1,
-
-# "Industrial": 2,
-
-# "Transportation ": 3,
-
-# "Commercial": 4,
-
-# "Agricultural": 5,
-
-# "Timber and Resource Extraction": 6,
-
-# "Water": 7,
-
-# "open space": 8
-
-# }
+```{r}
 
 # CO Emissions ------------------------------------------------------------
-
-# CO Emissions ------------------------------------------------------------
-
-# From Gurney, K.R., J. Liang, R. Patarasuk, Y. Song, J. Huang, and G. Roest. 2019. Vulcan: High-Resolution Annual Fossil Fuel
-
-# CO2 Emissions in USA, 2010-2015, Version 3. ORNL DAAC, Oak Ridge, Tennessee, USA. <https://doi.org/10.3334/ORNLDAAC/1741>
-
-############# 
-
-## Sector Code Description
-
-# airport Airport sector (taxi/takeoff to 3000')
-
-# cement Cement production sector
-
-# cmv Commercial Marine Vessel sector
-
-# commercial Commercial sector
-
-# elec_prod Electricity production sector
-
-# industrial Industrial sector
-
-# nonroad Nonroad sector (e.g. snowmobiles, ATVs)
-
-# onroad Onroad sector
-
-# railroad Railroad sector
-
-# residential Residential sector
-
-# total Total emissions
-
-
 Vulcan_total <-ee$Image("users/stormwaterheatmap/Vulcan_total")$reduce("mean")$rename("CO_emissions_total")
 Vulcan_airport <-ee$Image("users/stormwaterheatmap/Vulcan_airport")$reduce("mean")$rename("CO_emissions_airport")
 Vulcan_cmv <-ee$Image("users/stormwaterheatmap/Vulcan_cmv")$reduce("mean")$rename("CO_emissions_cmv")
@@ -494,8 +446,10 @@ Vulcan_rail <-ee$Image("users/stormwaterheatmap/Vulcan_rail")$reduce("mean")$ren
 ```
 
 
-# Surface Air Quality ----------------------------------------------
+
+
 ```{r}
+# Surface Air Quality ----------------------------------------------
 v4_pm25 <-ee$Image("users/stormwaterheatmap/V4NA03_PM25_NA_201001_201012-RH35-NoNegs")$rename("PM25_NA")
 sa <-ee$Image("users/stormwaterheatmap/surface_area")$rename("particulate_surface_area")
 ```
@@ -506,7 +460,7 @@ Make Map for One Predictor
 
 map_image <- v4_pm25 #  
 map_viz <- list(min = 2, max = 7,palette = list("black", "yellow", "red"), opacity = 0.5)
-Map$centerObject(eeObject = watersheds, zoom = 7)
+Map$centerObject(eeObject = watersheds, zoom = 8)
 Map$addLayer(map_image, visParams = map_viz) + Map$addLayer(watersheds)
 
 ```
