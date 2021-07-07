@@ -1,4 +1,5 @@
 library(tidyverse)
+library(kableExtra)
 s8data <- read.csv("~/repos/TNC_Stormwater_Statistics/data/s8data.csv")
 df_predictors <- read.csv(here::here("data","spatial_predictors_raw.csv"))
 # join data ---------------------------------------------------------------
@@ -22,9 +23,9 @@ cortable <- function(i){
 p = params[i]
 df.coc <- joined %>%
   filter(parameter == p) %>%
-  mutate(log_concentration = log(result)) %>%
+  mutate(log_concentration = log(result)) 
   #select(log_concentration,everything()) %>%
-  mutate_at(vars(starts_with('CO_emissions')), log) 
+ # mutate_at(vars(starts_with('CO_emissions')), log) 
 #replace nan with 0 
 #df.coc[is.nan(df.coc)] = 0
 #df.coc[is.na(df.coc)]=0
@@ -36,11 +37,18 @@ M = df.coc %>% select_if(is.numeric) %>% dplyr::select(-access_id,-result)%>%
   
 #cols = c(1,3,11:21)
 cols = c(1:43)
+
 M[,cols] %>% 
   cor(.) %>% 
   as.data.frame() %>% 
   arrange(desc(log_concentration)) %>% 
   kbl(digits = 2, caption = paste("Correlation table",p)) %>%
   kable_classic(full_width = F,html_font = "serif")
+
+
 }
-cortable(1)
+for(i in 1:length(params)){
+  
+print(cortable(i))
+}
+

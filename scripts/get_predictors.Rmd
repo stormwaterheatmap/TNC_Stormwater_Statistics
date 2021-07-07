@@ -1,0 +1,618 @@
+---
+title: "Get Predictors"
+output: github_document
+always_allow_html: true
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+<!-- ## Header --------------------------- -->
+
+<!-- ## -->
+
+<!-- ## Script name:get_predictors.R -->
+
+<!-- ## -->
+
+<!-- ## Abstract: This script is used to get landscape predictors from Google Earth Engine -->
+
+<!-- ## for use in stormwaterheatmap regressions. -->
+
+<!-- ## -->
+
+<!-- ## Author: Christian Nilsen, Geosyntec Consultants -->
+
+<!-- ## Email: cnilsen@geosyntec.com -->
+
+<!-- ## -->
+
+<!-- ## Date Created: 2021-01-24, Christian Nilsen -->
+
+<!-- ## Date Modified: 2021-05-12, Eva Dusek Jennings -->
+
+<!-- ## -->
+
+<!-- ## Copyright (c) Geosyntec Consultants, 2021 -->
+
+<!-- ## -->
+
+<!-- ## -->
+
+<!-- ## This program is free software: you can redistribute it and/or modify -->
+
+<!-- ## it under the terms of the GNU General Public License as published by -->
+
+<!-- ## the Free Software Foundation, version 3.0 -->
+
+<!-- ## -->
+
+<!-- ## This program is distributed in the hope that it will be useful, -->
+
+<!-- ## but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+
+<!-- ## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+
+<!-- ## GNU General Public License for more details. -->
+
+<!-- ## For a copy of the GNU General Public License -->
+
+<!-- ##  see <https://www.gnu.org/licenses/>. -->
+
+<!-- ## -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Installation ------------------------------------------------------------
+
+# # Uncomment to install the first time (only need to do this once)
+# #
+# # Install the rgee package from GitHub
+# install.packages("devtools")
+# devtools::install_github("r-spatial/rgee")
+#
+# #
+# # rgee depends on reticulate because it has some Python dependencies (i.e. numpy and ee), run as follows to install them:
+# rgee::ee_install()
+# # If you are a Windows user reticulate requires miniconda/anaconda.
+# # The use of rgee::ee_install() is not mandatory, you can count on with your own custom installation.
+# #
+# # After install rgee, you might use the function below for checking the status of rgee.
+# ee_check() # Check non-R dependencies
+
+# rgee::ee_install_upgrade()
+
+
+# Libraries ---------------------------------------------------------------
+library(rgee)
+library(mapview)
+library(purrr)
+library(tidyverse)
+library(data.table)
+library(here)
+library(kableExtra)
+
+# NOTE: this line must be run and authentication provided BEFORE continuing!
+#ee$Authenticate() # the dollar sign on this function tells Python to do this.  ee is a wrapper around python commands
+
+
+# initialize earth engine api:
+ee$Initialize()
+```
+
+## New - watershed buffers  
+Use the following links to switch between watershed polygons and buffered polygons. 
+These may be useful for including data (especially air quality) outside of watershed bounds. 
+
+```{r}
+#links to feature collections. 
+sheds_no_buffer <- "users/stormwaterheatmap/revised_s8_watersheds_v4"
+buffered_sheds_500m <- "users/stormwaterheatmap/buffered_sheds_500m"
+buffered_sheds_1k <- "users/stormwaterheatmap/buffered_sheds_1k"
+buffered_sheds_2k <- "users/stormwaterheatmap/buffered_sheds_2k"
+buffered_sheds_3k <- "users/stormwaterheatmap/buffered_sheds_3k"
+
+shed_url <- buffered_sheds_3k # change this to update watershed feature layer
+
+watersheds <- ee$FeatureCollection(shed_url)$select(c("Location_N"), c("Location")) # 
+```
+
+# Get Predictor images from earth engine
+
+## Tree cover, traffic, population, slope
+
+```{r}
+## 
+## trees
+tree_cover <- ee$Image("USGS/NLCD/NLCD2016")$select("percent_tree_cover")
+
+## traffic
+traffic <- ee$Image(0)$blend(ee$Image("users/cnilsen/traffic_raw"))$rename("traffic")
+
+## population density
+population <- ee$Image("users/stormwaterheatmap/population_per_ha")
+# slope
+
+elevation <- ee$Image("USGS/NED") 
+slope <- ee$Terrain$slope(elevation)
+
+```
+
+## Land Cover
+
+The tnc_landcover image can also be used for the following values:
+`[0, 1, 2, 3, 4,5, 6, 7]`
+
+`labels: [ 'No data', 'Grass/Low Vegetation', 'Shrub/Medium Vegetation', 'Trees/Forest', 'Bare soil', 'Water', 'Impervious – Except Roofs', 'Impervious - Roofs']`
+
+```{r}
+
+## imperviousness:
+
+tnc_landcover <-ee$Image("users/jrobertson2000/psLandCover_1m_finPS_roofs") 
+impervious <-tnc_landcover$eq(6)$Or(tnc_landcover$eq(7))$rename("impervious") #
+ #(excl roofs) is coded as 6; roofs are coded as 7; this
+#imperviousness is both combined imp_ground 
+impervious<-tnc_landcover$eq(6)$rename("imperv_ground") # roads & parking areas &sidewalks; 
+
+roofs <- tnc_landcover$eq(7)
+# Christian wouldn't do roads separately-- too correlated with
+# impervious & traffic 
+imp_roofs <-tnc_landcover$eq(7)$rename("imperv_roofs") 
+grass_low_veg <-tnc_landcover$eq(1)$rename("grass_low_veg")
+```
+
+## Coarse Air Quality
+
+### PM2.5 
+PM2.5: Global Annual PM2.5 Grids from MODIS, MISR and SeaWiFS Aerosol
+Optical Depth (AOD) with GWR, v1 (1998 – 2016)
+
+See: <https://sedac.ciesin.columbia.edu/data/set/sdei-global-annual-gwr-pm2-5-modis-misr-seawifs-aod>
+
+### NO2
+Global 3-Year Running Mean Ground-Level NO2 Grids from GOME, SCIAMACHY and GOME-2, v1 (1996 – 2012)
+See https://sedac.ciesin.columbia.edu/data/set/sdei-global-3-year-running-mean-no2-gome-sciamachy-gome2
+
+```{r}
+no2 <-ee$Image("users/stormwaterheatmap/SURFACE_NO2_010x010_2010")$rename("NO_2")
+pm25 <-ee$Image("users/cnilsen/pm25clipped")$rename("pm25")
+```
+
+## Age of development
+**Updated Layer** 
+See: 
+# age_of_development \<- ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$rename("mean_dev_age") \#mean value; this one is confusing b/c value of 2=no development
+```{r}
+no_dev <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(2)$rename("no_dev")
+# proportion that has no development 
+age_2000_2014 <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(3)$rename("dev_2000_2014")
+# proportion that was built in 2000-2014 
+age_1990_2000 <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(4)$rename("dev_1990_2000")
+# proportion that was built in 1990-2000 
+age_1975_1990 <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(5)$rename("dev_1975_1990")
+# proportion that was built in 1975-1990 
+age_pre_1975 <-ee$Image("JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1")$select("built")$eq(6)$rename("dev_pre_1975")
+# proportion that was built pre-1975
+
+```
+
+
+# Commerce landuse data --------------------------------------------------
+
+# source: //<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/>
+
+actual landuses in our sampling data set: 
+{
+  "list": [
+    [
+      "KICLDRS8D_OUT",
+      {
+        "5": 2.3058823529411767
+      }
+    ],
+    [
+      "KICHDRS8D_OUT",
+      {
+        "0": 4.254901960784314,
+        "7": 0.3803921568627451
+      }
+    ],
+    [
+      "SEAI1S8D_OUT",
+      {
+        "0": 8.737254901960785,
+        "4": 30.10980392156863,
+        "7": 9.952941176470588,
+        "8": 25.392156862745093,
+        "10": 18.462745098039214,
+        "11": 4.305882352941176
+      }
+    ],
+    [
+      "PIEHIRES_OUT",
+      {
+        "4": 1.6392156862745098,
+        "7": 7.313725490196079,
+        "8": 38.48235294117647,
+        "9": 6.580392156862745,
+        "10": 131.32941176470592
+      }
+    ],
+    [
+      "PIELORES_OUT",
+      {
+        "5": 61.08627450980394
+      }
+    ],
+    [
+      "SNO_COM",
+      {
+        "4": 59.47450980392157
+      }
+    ],
+    [
+      "SNO_LDR",
+      {
+        "1": 14.36078431372549,
+        "5": 14.972549019607843,
+        "7": 1.2431372549019608,
+        "8": 12.329411764705883
+      }
+    ],
+    [
+      "SEAC1S8D_OUT",
+      {
+        "4": 105.52549019607841,
+        "8": 3.423529411764706
+      }
+    ],
+    [
+      "POSOUTFALL_60",
+      {
+        "4": 11.647058823529411,
+        "6": 0.49411764705882355
+      }
+    ],
+    [
+      "SEAR1S8D_OUT",
+      {
+        "4": 15.231372549019605,
+        "7": 0.25098039215686274,
+        "8": 34.53725490196078,
+        "10": 1.4627450980392156
+      }
+    ],
+    [
+      "POT564S8D_OUT",
+      {
+        "6": 29.54509803921568,
+        "7": 2.250980392156863,
+        "8": 0.2,
+        "11": 37.20392156862745
+      }
+    ],
+    [
+      "PIECOMM_OUT",
+      {
+        "4": 7.1960784313725465
+      }
+    ],
+    [
+      "SNO_HDR",
+      {
+        "0": 0.7490196078431373,
+        "8": 11.423529411764704
+      }
+    ],
+    [
+      "KICCOMS8D_OUT",
+      {
+        "0": 3.3019607843137253,
+        "7": 0.11764705882352941
+      }
+    ],
+    [
+      "TAC001S8D_OF235",
+      {
+        "4": 97.25882352941176,
+        "5": 1.3607843137254902,
+        "6": 0.09803921568627451,
+        "7": 0.050980392156862744
+      }
+    ],
+    [
+      "TAC003S8D_OF245",
+      {
+        "4": 4.423529411764706,
+        "6": 0.10196078431372549,
+        "7": 0.10588235294117647,
+        "8": 16.91764705882353,
+        "11": 1.615686274509804
+      }
+    ],
+    [
+      "TFWFD1",
+      {
+        "0": 8.796078431372548,
+        "4": 255.20000000000005,
+        "5": 5.870588235294116,
+        "7": 85.6,
+        "8": 722.2431372549016,
+        "10": 104.77254901960785,
+        "11": 3
+      }
+    ]
+  ]
+}
+
+
+
+```{r}
+landuse_table <-ee$FeatureCollection("users/stormwaterheatmap/psrc_landuse")
+
+# MASTER_CAT Master_num
+
+## Undesignated 0
+
+## Agricultural Area 1
+
+## Tribal 2
+
+## Forest Lands 3
+
+## Intensive Urban 4**
+
+## Rural Character Residential 5**
+
+## Water 6**
+
+## PROW 7**
+
+## ROW 8**
+
+## Active Open Space and Recreation 9
+
+# Urban Character Residential 10**
+
+## Industrial 11**
+
+## Public 12
+
+## Natural Preservation and Conservation 13
+
+## Military 14
+
+## Mineral Resource Area 15
+
+landuse <- landuse_table$reduceToImage(list("Master_num"),ee$Reducer$first())$rename("landuseCode")
+
+# percent landuse
+
+percent.residential <- landuse$eq(10)$rename("RES") 
+percent.industrial<- landuse$eq(11)$rename("IND")
+percent.commercial <- landuse$eq(4)$rename("COM") 
+percent.rural_res <-landuse$eq(5)$rename("RURES") 
+percent.row <-landuse$eq(7)$Or(landuse$eq(8))$rename("ROW")
+
+
+```
+
+## Roofs by land use 
+```{r}
+# make a binary image of roofs 1 = roof, 0 = not roof
+
+# intersect roofs and landuse values
+
+roofs_landuse <- landuse$multiply(roofs)$selfMask() 
+percent.roofs.RES<- roofs_landuse$eq(10)$rename("roof_RES") 
+percent.roofs.IND <-roofs_landuse$eq(11)$rename("roof_IND")
+
+# percent.roofs.TRANS <- roofs_landuse$eq(3)$rename("roof_TRANS")
+
+percent.roofs.COM <- roofs_landuse$eq(4)$rename("roof_COM")
+percent.roofs.AG_TIMBER <-
+roofs_landuse$eq(1)$Or(roofs_landuse$eq(3))$rename("roof_AG")
+
+# percent.roofs.WATER <- roofs_landuse$eq(7)$rename("roof_WATER")
+
+# percent.roofs.OPEN <- roofs_landuse$eq(8)$rename("roof_OPEN")
+
+# palette for displaying land uses
+
+
+# display the results for roofs by landuse
+
+# Map$centerObject(eeObject = roofs, zoom = 7)
+
+# Map$addLayer(roofs_landuse,visParams = list(min = 1, max = 8, palette = landuse_pallete))
+
+# gives an image of roofs
+
+# "Residential": 1,
+
+# "Industrial": 2,
+
+# "Transportation ": 3,
+
+# "Commercial": 4,
+
+# "Agricultural": 5,
+
+# "Timber and Resource Extraction": 6,
+
+# "Water": 7,
+
+# "open space": 8
+
+# }
+
+# CO Emissions ------------------------------------------------------------
+
+# CO Emissions ------------------------------------------------------------
+
+# From Gurney, K.R., J. Liang, R. Patarasuk, Y. Song, J. Huang, and G. Roest. 2019. Vulcan: High-Resolution Annual Fossil Fuel
+
+# CO2 Emissions in USA, 2010-2015, Version 3. ORNL DAAC, Oak Ridge, Tennessee, USA. <https://doi.org/10.3334/ORNLDAAC/1741>
+
+############# 
+
+## Sector Code Description
+
+# airport Airport sector (taxi/takeoff to 3000')
+
+# cement Cement production sector
+
+# cmv Commercial Marine Vessel sector
+
+# commercial Commercial sector
+
+# elec_prod Electricity production sector
+
+# industrial Industrial sector
+
+# nonroad Nonroad sector (e.g. snowmobiles, ATVs)
+
+# onroad Onroad sector
+
+# railroad Railroad sector
+
+# residential Residential sector
+
+# total Total emissions
+
+
+Vulcan_total <-ee$Image("users/stormwaterheatmap/Vulcan_total")$reduce("mean")$rename("CO_emissions_total")
+Vulcan_airport <-ee$Image("users/stormwaterheatmap/Vulcan_airport")$reduce("mean")$rename("CO_emissions_airport")
+Vulcan_cmv <-ee$Image("users/stormwaterheatmap/Vulcan_cmv")$reduce("mean")$rename("CO_emissions_cmv")
+Vulcan_commercial <-ee$Image("users/stormwaterheatmap/Vulcan_commercial")$reduce("mean")$rename("CO_emissions_commercial")
+Vulcan_residential <-ee$Image("users/stormwaterheatmap/Vulcan_residential")$reduce("mean")$rename("CO_emissions_residential")
+Vulcan_industrial <-ee$Image("users/stormwaterheatmap/Vulcan_industrial")$reduce("mean")$rename("CO_emissions_industrial")
+Vulcan_nonroad <-ee$Image("users/stormwaterheatmap/Vulcan_nonroad")$reduce("mean")$rename("CO_emissions_nonroad")
+Vulcan_onroad <-ee$Image("users/stormwaterheatmap/Vulcan_onroad")$reduce("mean")$rename("CO_emissions_onroad")
+Vulcan_rail <-ee$Image("users/stormwaterheatmap/Vulcan_rail")$reduce("mean")$rename("CO_emissions_rail")
+```
+
+
+# Surface Air Quality ----------------------------------------------
+```{r}
+v4_pm25 <-ee$Image("users/stormwaterheatmap/V4NA03_PM25_NA_201001_201012-RH35-NoNegs")$rename("PM25_NA")
+sa <-ee$Image("users/stormwaterheatmap/surface_area")$rename("particulate_surface_area")
+```
+
+Make Map for One Predictor
+```{r}
+# Make Map for One Predictor -----------------------------------------------
+
+map_image <- v4_pm25 #  
+map_viz <- list(min = 2, max = 7,palette = list("black", "yellow", "red"), opacity = 0.5)
+Map$centerObject(eeObject = watersheds, zoom = 7)
+Map$addLayer(map_image, visParams = map_viz) + Map$addLayer(watersheds)
+
+```
+
+# Reduce Predictors
+```{r}
+# Reduce Predictors -------------------------------------------------------
+
+## combine predictors in one dataset (one band each) - this is an image
+
+predictors <- ee$Image(0)$blend(
+  ee$Image$cat
+  (
+  age_1975_1990, 
+  age_1990_2000,
+  age_2000_2014, 
+  age_pre_1975, 
+  grass_low_veg, 
+  imp_roofs, 
+  impervious,
+  no_dev, 
+  no2, 
+  percent.commercial,
+  percent.industrial,
+  percent.residential,
+  percent.roofs.COM,
+  percent.roofs.IND, 
+  percent.roofs.RES, # percent.roofs.TRANS, #
+  percent.row,
+  percent.rural_res,
+  pm25, 
+  population, 
+  sa,
+  slope, 
+  traffic,
+  tree_cover, 
+  v4_pm25, 
+  Vulcan_commercial, 
+  Vulcan_nonroad, 
+  Vulcan_onroad,
+  Vulcan_residential, 
+  Vulcan_total
+)
+)
+
+## calculate mean stats from earth engine
+
+ee_stats <- predictors$reduceRegions( collection = watersheds, # this
+#is what we gave it for 16 watersheds; Christian has one for Puget
+#Lowlands; will try in Sandbox to see if it works 
+scale = 30, # 30m per pixel
+reducer = ee$Reducer$mean() )
+
+# evaluate ee object - pulls data from server to client
+
+ee_df <- ee_stats$getInfo()
+
+# wrangle the data
+
+df_predictors <- ee_df$features %>% # band names diff't than image#names; constant is traffic 
+map("properties") %>% rbindlist(fill = TRUE) %>% select(Location_N, everything())
+
+# built refers to buildup index. Those are categorical data - maybe shouldn't be averaged?
+```
+
+
+# Results 
+```{r}
+# Results -----------------------------------------------------------------
+
+#View(df_predictors)
+
+# pivot for charting
+
+df_long <- df_predictors %>% pivot_longer(cols = -c(Location_N),names_to = "predictor")
+df_transposed <- df_predictors %>%
+  # tibble::rownames_to_column() %>%  
+   pivot_longer(-Location_N,names_to = "predictor") %>% 
+   pivot_wider(names_from=Location_N, values_from=value) 
+# plot value of each predictor for the 16 watersheds
+
+# ggplot(df_long) + geom_col(aes(x = Location_N, y = value), fill =
+# "cadetBlue", position = "dodge") + facet_wrap(~predictor, scales = "free")
+
+predictors_list <- split(df_long$value, df_long$predictor)
+
+df_transposed %>% add_column('boxplot' = "",.before=2) %>% 
+  add_column('histogram' = "",.before=2) %>% 
+  kable(digits = 2) %>%
+  kable_paper(full_width = TRUE,html_font = "serif") %>%
+  column_spec(2, image = spec_hist(predictors_list,same_lim = FALSE)) %>% 
+  column_spec(3, image = spec_boxplot(predictors_list,same_lim = FALSE))
+
+
+# save csv file of predictors
+
+write.csv(df_predictors, here("data", "spatial_predictors_raw.csv"),
+row.names = FALSE)
+
+#---------------------------------------------
+
+# To extract what was in other watersheds?
+
+# whole model domain: we want to predict what is goign on in urbanized areas. Constrain just to puget lowlands?
+
+# probably 2000 watersheds. EE might crash? Or do at a larger scale?
+```
+
+
