@@ -157,7 +157,6 @@ percent.public <- landuse$eq(12)$rename("PUBLIC")  #there is no "public" in our 
 
 
 # roofs by landuse 
-landuse <- ee$Image("users/stormwaterheatmap/public/land_use_5m")
 
 #make a binary image of roofs 1 = roof, 0 = not roof
 roofs <-  tnc_landcover$eq(7)
