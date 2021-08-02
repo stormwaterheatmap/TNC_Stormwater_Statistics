@@ -156,8 +156,7 @@ percent.rural_res <- landuse$eq(5)$rename("ruRES")
 percent.public <- landuse$eq(12)$rename("PUBLIC")  #there is no "public" in our watersheds...
 
 
-# roofs by landuse 
-landuse <- ee$Image("users/stormwaterheatmap/public/land_use_5m")
+# roofs by landuse-------------------------------------------------------
 
 #make a binary image of roofs 1 = roof, 0 = not roof
 roofs <-  tnc_landcover$eq(7)
@@ -201,12 +200,6 @@ landuse_pallete <- c(
 # "Water": 7,
 # "open space": 8
 # }
-
-
-
-# CO Emissions ------------------------------------------------------------
-
-
 
 
 # CO Emissions ------------------------------------------------------------
@@ -275,11 +268,11 @@ predictors <- ee$Image(0)$blend(
                #percent.roofs.TRANS, 
                #percent.roofs.OPEN, percent.roofs.WATER, 
                Vulcan_total, 
-               #Vulcan_commercial, 
+               Vulcan_commercial, 
                Vulcan_residential, 
-               #Vulcan_nonroad, 
-               #Vulcan_onroad, 
-               #Vulcan_industrial,
+               Vulcan_nonroad, 
+               Vulcan_onroad, 
+               Vulcan_industrial,
                v4_pm25, sa)
 )
 
