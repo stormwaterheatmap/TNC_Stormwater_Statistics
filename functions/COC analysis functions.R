@@ -1,5 +1,6 @@
 # Functions for Generalized COC Analysis and COC analysis scripts
 
+
 #-----------------------------------#
 #  Functions for Exploratory Plots  #
 #-----------------------------------#
@@ -22,125 +23,120 @@ my.ggplot <- function(pred_num) {
 #  Functions for Plotting Model Fits  #
 #-------------------------------------#
 
-#this function plots residuals from models, to examine for heterogeneity
-plot.resids <- function(myModel, myE, myForm) {
-  op <- par(mfrow=c(4,4), mar=c(4,4,1,1))
-  if (myForm=="A") {
-    mydf <- data.frame(roofs=coc2$roofs, grass=coc2$grass, trees=coc2$trees)
-  } else if (myForm=="B") {
-    mydf <- data.frame(paved=coc2$paved, roofs=coc2$roofs, grass=coc2$grass)
-  } else if (myForm=="C") {
-    mydf <- data.frame(impervious=coc2$impervious, grass=coc2$grass)
-  } else if (myForm=="X") {
-    mydf <- data.frame(paved=coc2$paved, roofs=coc2$roofs, grass=coc2$grass, trees=coc2$trees)
-  }
-  plot(fitted(myModel), myE, xlab="Fitted Values", ylab="Residuals", col=colors_agency[c(1,1,1,2,2,2,3,4,4,4,5,5,5,6,6,6)])
-  plot(coc2$location, myE, xlab="location", ylab="Residuals", col=colors_agency[c(1,1,1,2,2,2,3,4,4,4,5,5,5,6,6,6)])
-  plot(coc2$agency, myE, xlab="agency", ylab="Residuals", col=colors_agency)
-  plot(coc2$month, myE, xlab="month", ylab="Residuals", col=c(rep("light blue", 3), rep("light green", 3), rep("yellow", 3), rep("orange", 3)))
-  plot(coc2$season, myE, xlab="season", ylab="Residuals", col=c("light blue", "light green", "yellow", "orange"))
-  plot(coc2$landuse, myE, xlab="land use", ylab="Residuals", col=c("light blue", "light green", "yellow", "orange"))
-  plot(mydf[,1], myE, xlab=names(mydf)[1], ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  plot(mydf[,2], myE, xlab=names(mydf)[2], ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  if (ncol(mydf)==3) {
-    plot(mydf[,3], myE, xlab=names(mydf)[3], ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  }
-  if (ncol(mydf)==4) {
-    plot(mydf[,4], myE, xlab=names(mydf)[4], ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  }
-  plot(coc2$nodev, myE, xlab="nodev", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  plot(coc2$pm25, myE, xlab="pm25", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  plot(coc2$traffic, myE, xlab="traffic", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  plot(coc2$slope, myE, xlab="slope", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  plot(coc2$rain, myE, xlab="rain", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  plot(coc2$mPrecip, myE, xlab="monthly precip", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  plot(coc2$dry, myE, xlab="ant. dry days", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-}
+# myModel <- M.gls1X
+# myE <- E.1X
+# myForm <- "X"
 
-#this function generates a figure of boxplots showing model fit to all possible parameters
-boxplots.resids <- function(myModel, myE, myForm) {
-  aa <- coc2[, c("agency", "impervious", "paved", "roofs", "grass", "trees", "nodev", "pm25", "traffic", "slope")]
-  bb <- unique(aa)
-  op <- par(mfrow=c(4,5), mar=c(4,4,2,1))
-  plot(fitted(myModel), myE, xlab="Fitted Values", ylab="Residuals", col=colors_agency[c(1,1,1,2,2,2,3,4,4,4,5,5,5,6,6,6)])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$location, col=colors_agency[c(1,1,1,2,2,2,3,4,4,4,5,5,5,6,6,6)], xlab="locations", ylab="Residuals")
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$landuse, col=colors_agency, xlab="land use", ylab="Residuals")
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$agency, col=colors_agency, xlab="agency", ylab="Residuals")
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$year, xlab="year", ylab="Residuals")
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$month, xlab="month", ylab="Residuals", col=c(rep("light blue", 3), rep("light green", 3), rep("yellow", 3), rep("orange", 3)))
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$season, xlab="season", ylab="Residuals", col=c("light blue", "light green", "yellow", "orange"))
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$impervious, xlab="impervious", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"impervious"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$paved, xlab="paved", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"paved"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$roofs, xlab="roofs", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"roofs"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$grass, xlab="grass", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"grass"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$trees, xlab="trees", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"trees"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$nodev, xlab="nodev", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"nodev"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$pm25, xlab="pm25", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"pm25"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$traffic, xlab="traffic", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"traffic"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$slope, xlab="slope", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"slope"]), "agency"])])
-  abline(0,0, col="gray")
-  plot(coc2$rain, myE, xlab="rain", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-  abline(0,0, col="gray")
-  #  plot(coc2$dry, myE, xlab="ant. dry days", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
-}
+# #this function plots residuals from models, to examine for heterogeneity
+# plot.resids <- function(myModel, myE, myForm) {
+#   op <- par(mfrow=c(4,4), mar=c(4,4,1,1))
+#   if (myForm=="A") {
+#     mydf <- data.frame(roofs=coc2$roofs, grass=coc2$grass, trees=coc2$trees)
+#   } else if (myForm=="B") {
+#     mydf <- data.frame(paved=coc2$paved, roofs=coc2$roofs, grass=coc2$grass)
+#   } else if (myForm=="C") {
+#     mydf <- data.frame(impervious=coc2$impervious, grass=coc2$grass)
+#   } else if (myForm=="X") {
+#     mydf <- data.frame(paved=coc2$paved, roofs=coc2$roofs, grass=coc2$grass, trees=coc2$trees)
+#   }
+#   plot(fitted(myModel), myE, xlab="Fitted Values", ylab="Residuals", col="gray", pch=16)
+#   plot(coc2$location, myE, xlab="location", ylab="Residuals", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+#   plot(coc2$agency, myE, xlab="agency", ylab="Residuals", col=colors_agency)
+#   plot(coc2$month, myE, xlab="month", ylab="Residuals", col=c(rep("light blue", 3), rep("light green", 3), rep("yellow", 3), rep("orange", 3)))
+#   plot(coc2$season, myE, xlab="season", ylab="Residuals", col=c("light blue", "light green", "yellow", "orange"))
+#   plot(coc2$landuse, myE, xlab="land use", ylab="Residuals", col=c("light blue", "light green", "yellow", "orange"))
+#   plot(mydf[,1], myE, xlab=names(mydf)[1], ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   plot(mydf[,2], myE, xlab=names(mydf)[2], ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   if (ncol(mydf)==3) {
+#     plot(mydf[,3], myE, xlab=names(mydf)[3], ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   }
+#   if (ncol(mydf)==4) {
+#     plot(mydf[,4], myE, xlab=names(mydf)[4], ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   }
+#   plot(coc2$nodev, myE, xlab="nodev", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   plot(coc2$pm25, myE, xlab="pm25", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   plot(coc2$traffic, myE, xlab="traffic", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   plot(coc2$slope, myE, xlab="slope", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   plot(coc2$rain, myE, xlab="rain", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   plot(coc2$mPrecip, myE, xlab="monthly precip", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   plot(coc2$dry, myE, xlab="ant. dry days", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+# }
 
+# #this function generates a figure of boxplots showing model fit to all possible parameters
+# boxplots.resids <- function(myModel, myE, myForm) {
+#   aa <- coc2[, c("agency", "impervious", "paved", "roofs", "grass", "trees", "nodev", "pm25", "traffic", "slope")]
+#   bb <- unique(aa)
+#   op <- par(mfrow=c(4,5), mar=c(4,4,2,1))
+#   plot(fitted(myModel), myE, xlab="Fitted Values", ylab="Residuals", col="gray", pch=16)
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$location, col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)], xlab="locations", ylab="Residuals")
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$landuse, col=colors_agency, xlab="land use", ylab="Residuals")
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$agency, col=colors_agency, xlab="agency", ylab="Residuals")
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$year, xlab="year", ylab="Residuals")
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$month, xlab="month", ylab="Residuals", col=c(rep("light blue", 3), rep("light green", 3), rep("yellow", 3), rep("orange", 3)))
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$season, xlab="season", ylab="Residuals", col=c("light blue", "light green", "yellow", "orange"))
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$impervious, xlab="impervious", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"impervious"]), "agency"])])
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$paved, xlab="paved", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"paved"]), "agency"])])
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$roofs, xlab="roofs", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"roofs"]), "agency"])])
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$grass, xlab="grass", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"grass"]), "agency"])])
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$trees, xlab="trees", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"trees"]), "agency"])])
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$nodev, xlab="nodev", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"nodev"]), "agency"])])
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$pm25, xlab="pm25", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"pm25"]), "agency"])])
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$traffic, xlab="traffic", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"traffic"]), "agency"])])
+#   abline(0,0, col="gray")
+#   boxplot(myE~coc2$slope, xlab="slope", ylab="Residuals", col=colors_agency[as.numeric(bb[order(bb[,"slope"]), "agency"])])
+#   abline(0,0, col="gray")
+#   plot(coc2$rain, myE, xlab="rain", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+#   abline(0,0, col="gray")
+#   #  plot(coc2$dry, myE, xlab="ant. dry days", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
+# }
+# 
 
 
 #a more presentable version of the plotting function above
 boxplots.resids2 <- function(myModel, myE, myForm) {
-  aa <- coc2[, c("agency", "impervious", "paved", "roofs", "grass", "trees", "nodev", "pm25", "traffic", "slope")]
+  aa <- coc2[, c("agency", all_of(best_predictors))]
   bb <- unique(aa)
-  op <- par(mfrow=c(4,4), mar=c(0.5,1,2.5,1))
+  op <- par(mfrow=c(4,5), mar=c(0.5,1,2.5,1))
   # plot(fitted(myModel), myE, xlab="Fitted Values", ylab="Residuals", col=colors_agency[c(1,1,1,2,2,2,3,4,4,4,5,5,5,6,6,6)])
   # abline(0,0, col="gray")
-  boxplot(myE~coc2$location, col=colors_agency[c(1,1,1,2,2,2,3,4,4,4,5,5,5,6,6,6)], main="locations", ylab="", xaxt="n", yaxt="n")
+  plot(fitted(myModel), myE, main="residuals", xlab="", ylab="", xaxt="n", yaxt="n", col="gray", pch=16)
+  boxplot(myE~coc2$location, col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)], main="locations", ylab="", xaxt="n", yaxt="n")
   abline(0,0, col="gray")
-  boxplot(myE~coc2$landuse, col=colors_agency, main="land use", ylab="", xaxt="n", yaxt="n")
+  boxplot(myE~coc2$landuse, col=c("green", "dark green", "pink", "gray"), main="land use", ylab="", xaxt="n", yaxt="n")
   abline(0,0, col="gray")
   boxplot(myE~coc2$agency, col=colors_agency, main="agency", ylab="", xaxt="n", yaxt="n")
   abline(0,0, col="gray")
-  boxplot(myE~coc2$year, main="year", ylab="", xaxt="n", yaxt="n")
-  abline(0,0, col="gray")
+  # boxplot(myE~coc2$year, main="year", ylab="", xaxt="n", yaxt="n")
+  # abline(0,0, col="gray")
   boxplot(myE~coc2$month, main="month", ylab="", xaxt="n", yaxt="n", col=c(rep("light blue", 3), rep("light green", 3), rep("yellow", 3), rep("orange", 3)))
   abline(0,0, col="gray")
   boxplot(myE~coc2$season, main="season", ylab="", xaxt="n", yaxt="n", col=c("light blue", "light green", "yellow", "orange"))
   abline(0,0, col="gray")
-  boxplot(myE~coc2$impervious, main="impervious", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"impervious"]), "agency"])])
+  
+  for (i in 1:length(best_predictors)) {
+    boxplot(myE ~ dplyr::pull(coc2, best_predictors[i]), main=best_predictors[i], ylab="", xaxt="n", yaxt="n",
+            col=colors_agency[as.numeric(bb[order(pull(bb, best_predictors[i])), "agency"])]) 
+    abline(0,0, col="gray")
+  }
+
+  plot(coc2$rain, myE, main="rain", xlab="", ylab="", xaxt="n", yaxt="n", col="gray", pch=16)
   abline(0,0, col="gray")
-  boxplot(myE~coc2$paved, main="paved", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"paved"]), "agency"])])
+  plot(coc2$dry, myE, main="ant. dry days", xlab="", ylab="", xaxt="n", yaxt="n", col="gray", pch=16)
   abline(0,0, col="gray")
-  boxplot(myE~coc2$roofs, main="roofs", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"roofs"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$grass, main="grass", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"grass"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$trees, main="trees", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"trees"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$nodev, main="nodev", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"nodev"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$pm25, main="pm25", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"pm25"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$traffic, main="traffic", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"traffic"]), "agency"])])
-  abline(0,0, col="gray")
-  boxplot(myE~coc2$slope, main="slope", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(bb[order(bb[,"slope"]), "agency"])])
-  abline(0,0, col="gray")
-  plot(coc2$rain, myE, main="rain", ylab="", xaxt="n", yaxt="n", col=colors_agency[as.numeric(coc2$agency)])
-  abline(0,0, col="gray")
-  #  plot(coc2$dry, myE, xlab="ant. dry days", ylab="Residuals", col=colors_agency[as.numeric(coc2$agency)])
 }
 
 
@@ -184,6 +180,7 @@ plot.preds.vs.results <- function(model.pred) {
 }
 
 
+
 #function to generate interaction plots by inter.quantile (IQ), levels of X, and grouping
 Plot.Quantile <- function(aa, bb, myModel, xEqn=0.15, yEqn=max(coc$result)*0.9) {
 
@@ -216,16 +213,106 @@ Plot.Quantile <- function(aa, bb, myModel, xEqn=0.15, yEqn=max(coc$result)*0.9) 
 }
 
 
-# #function to generate interaction plots by inter.quantile (IQ), levels of X, and grouping
-# Plot.Quantile2 <- function(IQ, aesX, aesGroup, eqnText, yEqn=max(coc$result)*0.9) {
-#   ggplot() +
-#     geom_line(data=IQ, size=1.5, aes(x=aesX, y=fit, group=aesGroup, color=aesGroup))+
-#     ylab("COC")+ xlab(names(IQ)[1])+
-#     ggtitle(paste("Interaction between", names(IQ)[1], "and", names(IQ)[2]))+
-#     scale_color_manual(values=c("blue", "purple", "yellow", "orange", "red"))+  #colors for lines (color)
-#     geom_point(data=coc2, aes(x=coc2[,aesX], y=result, fill=coc2[,aesGroup]), size=3, shape=21, stroke=0) +
-#     scale_fill_gradient2(low = "blue", mid="yellow", high = "red")+  #colors for points (fill)
-#     geom_text(aes(x=0.15, y=yEqn, label=eqnText), cex=4.5, color="black")+
-#     labs(color=names(IQ)[2], fill=names(IQ)[2])
-# }
+
+#Function to plot result vs one predictor, with second predictor shown in color (no interaction)
+Plot.Two.Predictors <- function(aa, bb, myModel, xEqn=0.15, yEqn=max(coc2$result)*0.9) {
+
+  #linear equation for the primary predictor, to be printed in the plot
+  eqnText <- paste("ln(", this_param_short, ") = ", 
+                   round(myModel$coefficients[[1]]["(Intercept)"], 2), " + ",
+                   round(myModel$coefficients[[1]][aa], 2), "*", aa)
+  #plot the primary predictor on x-axis, with secondary predictor shown in color
+  ggplot() + 
+    geom_point(data=coc2, aes(x=coc2[,aa], y=result, fill=coc2[,bb]), size=3, shape=21, stroke=0) + 
+    ylab("COC")+ xlab(aa) +
+    scale_fill_gradient2(low = "blue", mid="yellow", high = "red")+  #colors for points (fill)
+    geom_text(aes(x=xEqn, y=yEqn, label=eqnText), cex=4.5, color="black")+
+    labs(color=bb, fill=bb) +
+    geom_abline(intercept=myModel$coefficients[[1]]["(Intercept)"], slope=myModel$coefficients[[1]][aa], col="black", lwd=1.5)   #, aes(x = aa, y = y.hat), col="darkred", lwd = 1.5)
+}    
+
+
+#Function to plot result vs one predictor, with second predictor shown in color (no interaction)
+Plot.Two.Predictors.Landuse <- function(aa, bb, myModel, xEqn=0.15, yEqn=max(coc2$result)*0.9) {
+  
+  #linear equation for the primary predictor, to be printed in the plot
+  eqnText <- paste("ln(", this_param_short, ") = ", 
+                   round(myModel$coefficients[[1]]["(Intercept)"], 2), " + ",
+                   round(myModel$coefficients[[1]][aa], 2), "*", aa)
+  #plot the primary predictor on x-axis, with secondary predictor shown in color
+  ggplot() + 
+    geom_point(data=coc2, aes(x=coc2[,aa], y=result, fill=coc2[,bb]), size=3, shape=21, stroke=0) + 
+    ylab("COC")+ xlab(aa) +
+    scale_fill_manual(values = c("blue", "purple", "yellow", "orange"))+
+    geom_text(aes(x=xEqn, y=yEqn, label=eqnText), cex=4.5, color="black")+
+    labs(color=bb, fill=bb) +
+    geom_abline(intercept=myModel$coefficients[[1]]["(Intercept)"], slope=myModel$coefficients[[1]][aa], col="black", lwd=1.5)   #, aes(x = aa, y = y.hat), col="darkred", lwd = 1.5)
+}
+
+#Function to plot result vs one predictor, with location shown in color
+Plot.One.Predictor.wAgency <- function(aa, bb, myModel, xEqn=0.15, yEqn=max(coc2$result)*0.9) {
+  
+  if(class(myModel)=="gls") {
+    coef.int <- myModel$coefficients["(Intercept)"]
+    coef.slope <- myModel$coefficients[aa]
+  } else {
+    coef.int <- myModel$coefficients[[1]]["(Intercept)"]
+    coef.slope <- myModel$coefficients[[1]][aa]
+  }
+  #linear equation for the primary predictor, to be printed in the plot
+  eqnText <- paste("ln(", this_param_short, ") = ", 
+                   round(coef.int, 2), " + ",
+                   round(coef.slope, 2), "*", aa )
+  #plot the primary predictor on x-axis, with secondary predictor shown in color
+  ggplot() + 
+    geom_point(data=coc2, aes(x=coc2[,aa], y=result, fill=coc2[,bb]), size=3, shape=21, stroke=0) + 
+    ylab("COC")+ xlab(aa) +
+    scale_fill_manual(values = c("red", "orange", "yellow", "green", "blue", "purple"))+
+    geom_text(aes(x=xEqn, y=yEqn, label=eqnText), cex=4.5, color="black")+
+    labs(color=bb, fill=bb) +
+    geom_abline(intercept=coef.int, slope=coef.slope, col="black", lwd=1.5)   #, aes(x = aa, y = y.hat), col="darkred", lwd = 1.5)
+}    
+
+
+#------------------------------------------------------#
+#  Functions to make choosing a best fit model easier  #
+#------------------------------------------------------#
+
+#function to check correlations for a model's predictors
+check.cor <- function(theModel) {
+  aa <- summary(theModel)$coefficients$fixed
+  aa <- aa[names(aa) %in% preds.1]
+  pairs(select(coc2, names(aa)),
+        lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist) 
+}
+
+#function to plot best fit GLS or LME model line to a single predictor
+plot.single.preds <- function(theModel) {
+  if(class(theModel)=="gls")  aa <- summary(theModel)$coefficients
+  if(class(theModel)=="lme")  aa <- summary(theModel)$coefficients$fixed
+  aa <- names(aa[names(aa) %in% preds.1])
+  ppp1 <- Plot.One.Predictor.wAgency(aa[1], "agency", theModel, yEqn=max(coc2$result)*1.02, xEqn=0)
+  if(length(aa) > 1)  ppp2 <- Plot.One.Predictor.wAgency(aa[2], "agency", theModel, yEqn=max(coc2$result)*1.02, xEqn=0)
+  if(length(aa) > 2)  ppp3 <- Plot.One.Predictor.wAgency(aa[3], "agency", theModel, yEqn=max(coc2$result)*1.02, xEqn=0)
+  if(length(aa) > 3)  ppp4 <- Plot.One.Predictor.wAgency(aa[4], "agency", theModel, yEqn=max(coc2$result)*1.02, xEqn=0)
+  
+  if(length(aa)==1)  grid.arrange(ppp1, nrow=2, ncol=2)
+  if(length(aa)==2)  grid.arrange(ppp1, ppp2, nrow=2, ncol=2)
+  if(length(aa)==3)  grid.arrange(ppp1, ppp2, ppp3, nrow=2, ncol=2)
+  if(length(aa)==4)  grid.arrange(ppp1, ppp2, ppp3, ppp4, nrow=2, ncol=2)
+}
+
+
+#function to check if coefficients are in the direction they should be
+
+my.aics <- rep(0, length(ee))
+for (i in 1:length(ee)) {
+  bb <- lme(data=coc2, ee[[i]], random = r1X, method="ML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
+  my.aics[i] <- AIC(bb)
+}
+
+aa <- summary(bb)$coefficients$fixed
+aa <- aa[names(aa) %in% preds.1]
+sign(aa)
+
 
