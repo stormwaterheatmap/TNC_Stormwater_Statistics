@@ -1,7 +1,6 @@
 ---
+title: "Untitled"
 output: github_document
-editor_options: 
-  chunk_output_type: inline
 ---
 Chapter 4
 
