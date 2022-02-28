@@ -13,7 +13,7 @@
 
 
 # Eva Dusek Jennings
-# July 18, 2021
+# Feb 18, 2022  -- with sqrt_traffic
 #----------------------------------------------
 
 rm(list = ls(all = T))
@@ -45,14 +45,14 @@ library(knitr)
 library(texreg)
 library(huxtable)
 #run script with functions specific to COC analysis
-source(here("functions", "COC analysis functions.R"))
-source(here("functions", "HighstatLibV10.R")) #Zuur library, incl panel.smooth2, VIF
+source(here("..", "functions", "COC analysis functions.R"))
+source(here("..", "functions", "HighstatLibV10.R")) #Zuur library, incl panel.smooth2, VIF
 
 #toggle for whether all exploratory parts of code should be run (TRUE) or just essential parts (FALSE) 
 run_exploratory_code <- FALSE
 
 #read in stormwater data with spatial predictors-------------------------------
-s8 <- read.csv(here("processed_data", "s8data_with_spatial_predictors.csv"))
+s8 <- read.csv(here("..", "processed_data", "s8data_with_spatial_predictors.csv"))
 s8$start_date <- as.Date(s8$start_date)
 s8$conc <- s8$result
 s8$month <- as.factor(s8$month)
@@ -63,7 +63,10 @@ s8$season <- as.factor(s8$season)
 s8$land_use <- as.factor(s8$land_use)
 
 #list of landscape predictors-------------------------------
-predictors <- names(s8)[34:61]
+aa <- which(str_detect(names(s8), "daymet"))  #after the last predictor column is a series of "daymet" columns
+bb <- aa[which(aa > 34)][1] - 1  #identify the last predictor column
+predictors <- names(s8)[34:bb]  #first predictor is always column 34; get all predictors
+n.preds <- length(predictors)
 
 #select the chemical of interest
 this_param <- 'Total Phosphorus - Water - Total'
@@ -128,6 +131,7 @@ coc$result <- log(coc$conc)
 #-------------------------------------------------------------------------------------------#
 
 colors_agency <- c("red", "orange", "yellow", "green", "blue", "purple")
+colors_location <- colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)]
 
 if(run_exploratory_code==TRUE) {
   #Cleveland Dotplot - use to detect violations of homogeneity: We are looking for whether the spread of data values
@@ -139,11 +143,11 @@ if(run_exploratory_code==TRUE) {
   
   #pairs plots allow visualization of interactions between possible predictors.  Look for relationships between "result"
   #   and all of the predictor variables
-  pairs(coc %>% select(result, predictors[1:12]), 
+  pairs(coc %>% select(result, predictors[1:ceiling(n.preds/3)]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
-  pairs(coc %>% select(result, predictors[13:24]), 
+  pairs(coc %>% select(result, predictors[ (ceiling(n.preds/3)+1) : (ceiling(n.preds/3)*2) ]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
-  pairs(coc %>% select(result, predictors[25:35]), 
+  pairs(coc %>% select(result, predictors[ (ceiling(n.preds/3)*2+1) : n.preds]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
   
   
@@ -161,80 +165,14 @@ if(run_exploratory_code==TRUE) {
 #  Plot COC vs various predictors: look for potential predictors to model & sources of heterogeneity  #
 #-----------------------------------------------------------------------------------------------------#
 
-#look for relationships between coc and landscape predictors
-lp1 <- my.ggplot(1)
-lp2 <- my.ggplot(2)
-lp3 <- my.ggplot(3)
-lp4 <- my.ggplot(4)
-lp5 <- my.ggplot(5)
-lp6 <- my.ggplot(6)
-lp7 <- my.ggplot(7)
-lp8 <- my.ggplot(8)
-lp9 <- my.ggplot(9)
-lp10 <- my.ggplot(10)
-lp11 <- my.ggplot(11)
-lp12 <- my.ggplot(12)
-lp13 <- my.ggplot(13)
-lp14 <- my.ggplot(14)
-lp15 <- my.ggplot(15)
-lp16 <- my.ggplot(16)
-lp17 <- my.ggplot(17)
-lp18 <- my.ggplot(18)
-lp19 <- my.ggplot(19)
-lp20 <- my.ggplot(20)
-lp21 <- my.ggplot(21)
-lp22 <- my.ggplot(22)
-lp23 <- my.ggplot(23)
-lp24 <- my.ggplot(24)
-lp25 <- my.ggplot(25)
-lp26 <- my.ggplot(26)
-lp27 <- my.ggplot(27)
-lp28 <- my.ggplot(28)
+lp_plots()
+pr_plots()
+tlp_plots()
+mp_plots()
 
-#relationship between COC and precipitation
-pr1 <- ggplot(coc, aes(agency, result)) + geom_boxplot()
-pr2 <- ggplot(coc, aes(daymet_precip_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_precip_std))
-pr3 <- ggplot(coc, aes(daymet_3day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_3day_std))
-pr4 <- ggplot(coc, aes(daymet_7day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_7day_std))
-pr5 <- ggplot(coc, aes(daymet_14day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_14day_std))
-pr6 <- ggplot(coc, aes(daymet_21day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_21day_std))
-pr7 <- ggplot(coc, aes(daymet_28daySR_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_28daySR_std))
-pr8 <- ggplot(coc, aes(antecedant_dry_days_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$antecedant_dry_days_std))
-# NOTE: I have left out precip & inches_rain_per_hour b/c they are missing ~68 data points
-
-#relationship between COC and temporal/ location predictors
-tlp1 <- ggplot(coc, aes(as.factor(year), result)) + geom_boxplot()  #starts in Feb, 2009, ends in April, 2013; trends could be due to months with data?
-tlp2 <- ggplot(coc, aes(month, result)) + geom_boxplot(position=position_dodge(width=0.9))
-a <- coc %>% count(month)
-tlp2 <- tlp2 + annotate(geom="text", x=c(1:12), y=rep(-1.4,12), label=paste("n=", a[,2], sep=""),
-                        color="red", size=3.5, angle=90)  #note the small sample size in June-Sept
-tlp3 <- ggplot(coc, aes(as.factor(season), result)) + geom_boxplot()
-tlp4 <- ggplot(coc, aes(land_use, result)) + geom_boxplot()
-tlp5 <- ggplot(coc, aes(location_id, result)) + geom_boxplot()
-
-if(run_exploratory_code==TRUE) {
-  #Look at various transformations for monthly precip by location; which is most evenly spread out?
-  par(mfrow=c(2,2), mar=c(4,4,4,2))
-  plot(coc$mPrecip, coc$result)
-  plot(coc$mPrecipSR, coc$result)
-  plot(coc$mPrecipCR, coc$result)
-  plot(coc$mPrecipLog, coc$result)
-  #for Phosphorus, mPrecip is better than the rest!
-  
-  #look for relationships between coc's and some predictors; 
-  # look especially for sources of heterogeneity
-  grid.arrange(pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, nrow=3)  #14-day & 21-day look the best -- most evenly spaced data...
-  grid.arrange(pr1, tlp5, tlp1, tlp2, tlp3, tlp4, nrow=2)
-  #for phosphorus, 14, 21 and 28-day precip don't show evidence of heteroskedasticity; 21-day is most evenly spread out
-  #   location, agency, landuse, and month show heteroskedasticity
-  
-  grid.arrange(lp1, lp2, lp3, lp4, lp5, lp6, lp7, lp8, lp9, lp10, lp11, lp12, nrow=3, ncol=4)
-  grid.arrange(lp13, lp14, lp15, lp16, lp17, lp18, lp19, lp20, lp21, lp22, lp23, lp24, nrow=3, ncol=4)
-  grid.arrange(lp26, lp27, lp28, nrow=3, ncol=4)
-}
 
 #best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
-best_predictors <- c("traffic", "sqrt_popn", "sqrt_slope", "sqrt_CO2_res", "sqrt_CO2_tot", 
+best_predictors <- c("urbRES", "roofs", "sqrt_traffic", "sqrt_popn", "pm25_na", "sqrt_slope", "sqrt_CO2_res", "sqrt_CO2_tot", 
                      "sqrt_CO2_road", "devAge2", "grass", "paved")
 #NOTE: grass & paved are only added b/c they were part of the best fit model for old version of predictors!
 
@@ -245,6 +183,15 @@ pred_i <- which(predictors %in% best_predictors)
 #   },
 #   nrow=4, ncol=4)
 
+lp6 <- my.ggplot(6)
+lp8 <- my.ggplot(8)
+lp13 <- my.ggplot(13)
+lp14 <- my.ggplot(14)
+lp18 <- my.ggplot(18)
+lp19 <- my.ggplot(19)
+lp20 <- my.ggplot(20)
+lp22 <- my.ggplot(22)
+lp24 <- my.ggplot(24)
 grid.arrange(lp6, lp8, lp13, lp14, lp18, lp19, lp20, lp22, lp24, nrow=4, ncol=4)
 
 bp_coefs <- bp_signs <- rep(NA, length(best_predictors))
@@ -259,7 +206,7 @@ bp_signs <- sign(bp_coefs)
 #  this second vector will be used to generate FormX
 pairs(coc[best_predictors], lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
 
-elements_to_remove <- c("sqrt_CO2_res", "sqrt_CO2_road")  #these predictors are highly correlated with others
+elements_to_remove <- c("sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_road")  #these predictors are highly correlated with others
 best_predictors2 <- best_predictors[!(best_predictors %in% elements_to_remove)]
 
 
@@ -623,39 +570,64 @@ if(run_exploratory_code==TRUE) {
   
   ee <- ee.1  #c(ee.1, ee.2, ee.3, ee.4) 
   
+  ###NOTE: Phosphorus is tricky - the linear relationship between individual predictors and phosphorus
+  #        is fairly flat for many predictors, so comparing the slight positive or negative relationship
+  #        with what the model predicts could be incorrect.
+  
+#  MyEqns <- list(formulas=ee, aics=rep(0, length(ee)), do_signs_match=rep(FALSE, length(ee)))
   
   #run the lme for each formula, saving the AIC values; takes about 7 minutes to run
   ptm <- proc.time()  #time the code!
   my.aics <- rep(0, length(ee))
   for (i in 1:length(ee)) {
-#    bb <- gls(data=coc2, ee[[i]], method="ML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
     bb <- lme(data=coc2, ee[[i]], random = r1X, method="ML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
     my.aics[i] <- AIC(bb)
+    # MyEqns$aics[i] <- AIC(bb)
+    # #extract landscape predictor coefficients 
+    # aa <- summary(bb)$coefficients$fixed
+    # aa <- aa[names(aa) %in% preds.1]
+    # aa <- sign(aa)
+    # aa <- aa[sort(names(aa))]
+    # #extract coefficient signs for linear models of result~landscape predictors
+    # cc <- bp_signs[names(bp_coefs) %in% names(aa)]
+    # cc <- cc[sort(names(cc))]
+    # #compare coefficient signs from this model, to those of single-predictor linear models
+    # MyEqns$do_signs_match[i] <- identical(aa, cc)  #if coefficient signs match, TRUE; (default=FALSE)
+    
   }
   proc.time() - ptm  #stop the clock;  9 minutes for 386 models
   
-  par(mfrow=c(3,4), mar=c(1,2,2,0), oma=c(1,1,1,1))
-  gg <- rep("black", length(ee))
-  gg[c(which(is.na(dd$Var3)), which(is.na(dd$Var3))+nrow(dd), which(is.na(dd$Var3))+2*nrow(dd), which(is.na(dd$Var3))+3*nrow(dd))] <- "turquoise"   #make formulas with only 2 landscape predictors red
-  gg[c(which(is.na(dd$Var2)), which(is.na(dd$Var2))+nrow(dd), which(is.na(dd$Var2))+2*nrow(dd), which(is.na(dd$Var2))+3*nrow(dd) )] <- "pink"  #make formulas with only 1 landscape predictor yellow
-  plot(my.aics, col=gg, pch=16, main="1 pred=pink, 2 preds=turquoise", xaxt="n", ylab="AIC")
+  # xx <- which(MyEqns$do_signs_match==TRUE)
+  # 
+  # ee.all <- ee
+  # ee <- ee[xx]
+  # my.aics.all <- my.aics
+  # my.aics <- my.aics[xx]
+  
+  landuseAIC <- AIC(lme(data=coc2, as.formula(paste("result~landuse+", paste(weather, collapse="+"))), random = r1X, 
+                        method="ML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8)))
+  
+  par(mfrow=c(4,4), mar=c(1,2,2,0), oma=c(1,1,1,1))
+  # gg <- rep("black", length(ee))
+  # gg[c(which(is.na(dd$Var3)), which(is.na(dd$Var3))+nrow(dd), which(is.na(dd$Var3))+2*nrow(dd), which(is.na(dd$Var3))+3*nrow(dd))] <- "turquoise"   #make formulas with only 2 landscape predictors red
+  # gg[c(which(is.na(dd$Var2)), which(is.na(dd$Var2))+nrow(dd), which(is.na(dd$Var2))+2*nrow(dd), which(is.na(dd$Var2))+3*nrow(dd) )] <- "pink"  #make formulas with only 1 landscape predictor yellow
+  # plot(my.aics, col=gg, pch=16, main="1 pred=pink, 2 preds=turquoise", xaxt="n", ylab="AIC")
   gg <- rep("black", length(ee))
   gg[which(str_detect(as.character(ee), "rain"))] <- "light blue"   #make formulas with "rain" light blue
   gg[which(str_detect(as.character(ee), "dry"))] <- "goldenrod"   #make formulas with "dry" goldenrod
   gg[which(str_detect(as.character(ee), "dry") & str_detect(as.character(ee), "rain"))] <- "green"   #make formulas with "dry" goldenrod
-  plot(my.aics, col=gg, xaxt="n", yaxt="n", pch=16, main="rain=blue, dry=gold, both=green")
+  plot(my.aics, col=gg, xaxt="n", pch=16, main="rain=blue, dry=gold, both=green")
+  abline(h=landuseAIC, col="gray")
   #  plot(my.aics, col=ifelse(str_detect(as.character(ee), "rain"), "light blue", "black"), xaxt="n", yaxt="n", pch=16, main="rain=light blue")
   
-  colAIC <- c("red", "orange", "yellow", "light green", "green3", "cadet blue", "purple1", "tan3", "salmon", "maroon1")
+  colAIC <- c("red", "orange", "yellow", "light green", "green3", "cadet blue", "purple1", "tan3", "salmon", "maroon1", "goldenrod", "dark green")
   for (i in 1:length(best_predictors)) {
     plot(my.aics, col=ifelse(str_detect(as.character(ee), best_predictors[i]), colAIC[i], "black"), xaxt="n", yaxt="n", pch=16, main=paste(best_predictors[i], "=", colAIC[i]) )
+    abline(h=landuseAIC, col="gray")
   }
   
   plot.new()
-  text(x=0.5, y=0.5, labels=paste("Landuse AIC", 
-                                  round(AIC(lme(data=coc2, as.formula(paste("result~landuse+", paste(weather, collapse="+"))), random = r1X, 
-                                  #round(AIC(gls(data=coc2, as.formula(paste("result~landuse+", paste(weather, collapse="+"))),  
-                                                 method="ML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))), 1)), cex=2)
+  text(x=0.5, y=0.5, labels=paste("Landuse AIC", round(landuseAIC, 1)), cex=2)
   
   #arrange formulae and AICs according to order of AIC value, from smallest to largest
   my.formulas.m4 <- ee[order(my.aics)]
@@ -746,8 +718,8 @@ boxplots.resids2(Model3, E3, "X")
 
 #run through the top formulas when only best predictors are on the table;
 #  keep only formulas that make sense
-myForm <- my.formulas.m4[[3]]
-myForm <- Form4a
+myForm <- my.formulas.m4[[2]]
+#myForm <- Form4a
 
 #these lines of code assess fit of this particular model in terms of COC vs. individual predictors, and predictor correlation
 myModel <- lme(data=coc2, myForm, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
@@ -758,10 +730,15 @@ plot.single.preds(myModel)
 check.cor(myModel)
 boxplots.resids2(myModel, residuals(myModel, type="normalized"), "X")
 
+# #compare mixed effects model to linear model for CO2_road
+# myLM <- gls(data=coc2, myForm, method="ML", weights=vf1X)
+# boxplots.resids2(myLM, residuals(myLM, type="normalized"), "X")
+# AIC(myModel, myLM)
+
 #formulas that are worth considering (single plots of predictors make sense)
 Form4a <- formula(result ~ rain + summer + grass + paved + sqrt_CO2_road) #my.formulas.m4[[1]]  #AIC=830.3; lme with grass + paved + sqrt_CO2_road
 Form4b <- formula(result ~ rain + summer + grass + paved) #my.formulas.m4[[3]]  #AIC=839.8; lme with grass + paved
-
+Form4c <- formula(result ~ rain + summer + sqrt_CO2_road)
 # #for GLS model:
 # Form4a <- my.formulas.m4[[1]]  #AIC=962.8; gls with grass + paved + sqrt_CO2_road
 # Form4b <- my.formulas.m4[[2]]  #AIC=964.9; gls with grass + devAge + sqrt_CO2_road

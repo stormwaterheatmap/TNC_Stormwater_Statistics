@@ -15,8 +15,87 @@ slope_grob <- function(predictor) {
 
 my.ggplot <- function(pred_num) {
   ggplot(coc, aes(coc[,predictors[pred_num]], result)) + geom_point() + xlab(predictors[pred_num]) + 
-    geom_smooth(method = "lm") + annotation_custom(slope_grob(coc[, predictors[pred_num]]))  #add a smooth slope and p-value for the slope line
+    geom_smooth(method = "lm") + annotation_custom(slope_grob(coc[, predictors[pred_num]])) + #add a smooth slope and p-value for the slope line
+    theme_gray()
 }
+
+
+#relationships between coc and landscape predictors
+lp_plots <- function() {
+  lp1 <- my.ggplot(1)
+  lp2 <- my.ggplot(2)
+  lp3 <- my.ggplot(3)
+  lp4 <- my.ggplot(4)
+  lp5 <- my.ggplot(5)
+  lp6 <- my.ggplot(6)
+  lp7 <- my.ggplot(7)
+  lp8 <- my.ggplot(8)
+  lp9 <- my.ggplot(9)
+  lp10 <- my.ggplot(10)
+  lp11 <- my.ggplot(11)
+  lp12 <- my.ggplot(12)
+  lp13 <- my.ggplot(13)
+  lp14 <- my.ggplot(14)
+  lp15 <- my.ggplot(15)
+  lp16 <- my.ggplot(16)
+  lp17 <- my.ggplot(17)
+  lp18 <- my.ggplot(18)
+  lp19 <- my.ggplot(19)
+  lp20 <- my.ggplot(20)
+  lp21 <- my.ggplot(21)
+  lp22 <- my.ggplot(22)
+  lp23 <- my.ggplot(23)
+  lp24 <- my.ggplot(24)
+  lp25 <- my.ggplot(25)
+  lp26 <- my.ggplot(26)
+  lp27 <- my.ggplot(27)
+  lp28 <- my.ggplot(28)
+  grid.arrange(lp1, lp2, lp3, lp4, lp5, lp6, lp7, lp8, lp9, lp10, lp11, lp12, nrow=3, ncol=4)
+  grid.arrange(lp13, lp14, lp15, lp16, lp17, lp18, lp19, lp20, lp21, lp22, lp23, lp24, nrow=3, ncol=4)
+  grid.arrange(lp25, lp26, lp27, lp28, nrow=3, ncol=4)
+}
+
+#relationship between COC and precipitation
+pr_plots <- function() {
+  pr1 <- ggplot(coc, aes(agency, result)) + geom_boxplot()
+  pr2 <- ggplot(coc, aes(daymet_precip_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_precip_std))
+  pr3 <- ggplot(coc, aes(daymet_3day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_3day_std))
+  pr4 <- ggplot(coc, aes(daymet_7day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_7day_std))
+  pr5 <- ggplot(coc, aes(daymet_14day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_14day_std))
+  pr6 <- ggplot(coc, aes(daymet_21day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_21day_std))
+  pr7 <- ggplot(coc, aes(daymet_28daySR_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_28daySR_std))
+  pr8 <- ggplot(coc, aes(antecedant_dry_days_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$antecedant_dry_days_std))
+  # NOTE: I have left out precip & inches_rain_per_hour b/c they are missing ~68 data points
+  grid.arrange(pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, nrow=3)  #14-day & 21-day look the best -- most evenly spaced data...
+}  
+
+#relationship between COC and temporal/ location predictors
+tlp_plots <- function() {
+  pr1 <- ggplot(coc, aes(agency, result)) + geom_boxplot()
+  tlp1 <- ggplot(coc, aes(as.factor(year), result)) + geom_boxplot()  #starts in Feb, 2009, ends in April, 2013; trends could be due to months with data?
+  tlp2 <- ggplot(coc, aes(month, result)) + geom_boxplot(position=position_dodge(width=0.9))
+  a <- coc %>% count(month)
+  tlp2 <- tlp2 + annotate(geom="text", x=c(1:12), y=rep(-1.4,12), label=paste("n=", a[,2], sep=""),
+                          color="red", size=3.5, angle=90)  #note the small sample size in June-Sept
+  tlp3 <- ggplot(coc, aes(as.factor(season), result)) + geom_boxplot()
+  tlp4 <- ggplot(coc, aes(land_use, result)) + geom_boxplot()
+  tlp5 <- ggplot(coc, aes(location_id, result)) + geom_boxplot()
+  # look especially for sources of heterogeneity
+  grid.arrange(pr1, tlp5, tlp1, tlp2, tlp3, tlp4, nrow=2)
+}  
+  
+#Look at various transformations for monthly precip by location; which is most evenly spread out?
+mp_plots <- function() {
+  par(mfrow=c(2,2), mar=c(4,4,4,2))
+  plot(coc$mPrecip, coc$result)
+  plot(coc$mPrecipSR, coc$result)
+  plot(coc$mPrecipCR, coc$result)
+  plot(coc$mPrecipLog, coc$result)
+}
+
+
+
+
 
 
 #-------------------------------------#
@@ -148,24 +227,14 @@ boxplots.resids2 <- function(myModel, myE, myForm) {
 plot.preds.vs.results <- function(model.pred) {
   ylimits <- c(0.75*min(coc2$result), 1.05*max(coc2$result))
   
-  par(mfrow=c(3,3), mar=c(2,2,2,1), oma=c(0,0,0,0))
-  plot(model.pred ~ coc2$paved, col="pink", pch=19, cex=2, ylim=ylimits, xlab="", ylab="", main="paved", xaxt="n", yaxt="n", cex.main=2)
-  points(coc2$result ~ coc2$paved, col="black", pch="*")
+  par(mfrow=c(3,4), mar=c(2,2,2,1), oma=c(0,0,0,0))
   
-  plot(model.pred ~ coc2$trees, col="light green", pch=19, cex=2, ylim=ylimits, xlab="", ylab="", main="trees", xaxt="n", yaxt="n", cex.main=2)
-  points(coc2$result ~ coc2$trees, col="black", pch="*")
+  pred_cols <- rep(c("pink", "light green", "goldenrod", "orange", "yellow", "gray", "light blue"), 4)
   
-  plot(model.pred ~ coc2$grass, col="goldenrod", pch=19, cex=2, ylim=ylimits, xlab="", ylab="", main="grass", xaxt="n", yaxt="n", cex.main=2)
-  points(coc2$result ~ coc2$grass, col="black", pch="*")
-  
-  plot(model.pred ~ coc2$roofs, col="orange", pch=19, cex=2, ylim=ylimits, xlab="", ylab="", main="roofs", xaxt="n", yaxt="n", cex.main=2)
-  points(coc2$result ~ coc2$roofs, col="black", pch="*")
-  
-  plot(model.pred ~ coc2$pm25, col="yellow", pch=19, cex=2, ylim=ylimits, xlab="", ylab="", main="pm25", xaxt="n", yaxt="n", cex.main=2)
-  points(coc2$result ~ coc2$pm25, col="black", pch="*")
-  
-  plot(model.pred ~ coc2$traffic, col="gray", pch=19, cex=2, ylim=ylimits, xlab="", ylab="", main="traffic", xaxt="n", yaxt="n", cex.main=2)
-  points(coc2$result ~ coc2$traffic, col="black", pch="*")
+  for(i in 1:length(best_predictors)) {
+    plot(model.pred ~ coc2[, best_predictors[i]], col=pred_cols[i], pch=19, cex=2, ylim=ylimits, xlab="", ylab="", main=best_predictors[i], xaxt="n", yaxt="n", cex.main=2)
+    points(coc2$result ~ coc2[, best_predictors[i]], col="black", pch="*")
+  }
   
   plot(model.pred ~ coc2$rain, col="light blue", pch=19, cex=2, ylim=ylimits, xlab="", ylab="", main="rain", xaxt="n", yaxt="n", cex.main=2)
   points(coc2$result ~ coc2$rain, col="black", pch="*")
@@ -209,7 +278,8 @@ Plot.Quantile <- function(aa, bb, myModel, xEqn=0.15, yEqn=max(coc$result)*0.9) 
     geom_point(data=coc2, aes(x=coc2[,aa], y=result, fill=coc2[,bb]), size=3, shape=21, stroke=0) + 
     scale_fill_gradient2(low = "blue", mid="yellow", high = "red")+  #colors for points (fill)
     geom_text(aes(x=xEqn, y=yEqn, label=eqnText), cex=4.5, color="black")+
-    labs(color=names(IQ)[2], fill=names(IQ)[2])
+    labs(color=names(IQ)[2], fill=names(IQ)[2]) +
+    theme_gray()
 }
 
 
@@ -270,7 +340,8 @@ Plot.One.Predictor.wAgency <- function(aa, bb, myModel, xEqn=0.15, yEqn=max(coc2
     scale_fill_manual(values = c("red", "orange", "yellow", "green", "blue", "purple"))+
     geom_text(aes(x=xEqn, y=yEqn, label=eqnText), cex=4.5, color="black")+
     labs(color=bb, fill=bb) +
-    geom_abline(intercept=coef.int, slope=coef.slope, col="black", lwd=1.5)   #, aes(x = aa, y = y.hat), col="darkred", lwd = 1.5)
+    geom_abline(intercept=coef.int, slope=coef.slope, col="black", lwd=1.5) +  #, aes(x = aa, y = y.hat), col="darkred", lwd = 1.5)
+    theme_gray()
 }    
 
 
@@ -303,16 +374,16 @@ plot.single.preds <- function(theModel) {
 }
 
 
-#function to check if coefficients are in the direction they should be
-
-my.aics <- rep(0, length(ee))
-for (i in 1:length(ee)) {
-  bb <- lme(data=coc2, ee[[i]], random = r1X, method="ML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
-  my.aics[i] <- AIC(bb)
-}
-
-aa <- summary(bb)$coefficients$fixed
-aa <- aa[names(aa) %in% preds.1]
-sign(aa)
+# #function to check if coefficients are in the direction they should be
+# 
+# my.aics <- rep(0, length(ee))
+# for (i in 1:length(ee)) {
+#   bb <- lme(data=coc2, ee[[i]], random = r1X, method="ML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
+#   my.aics[i] <- AIC(bb)
+# }
+# 
+# aa <- summary(bb)$coefficients$fixed
+# aa <- aa[names(aa) %in% preds.1]
+# sign(aa)
 
 

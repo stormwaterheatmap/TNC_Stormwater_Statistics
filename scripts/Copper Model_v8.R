@@ -13,7 +13,7 @@
 
 
 # Eva Dusek Jennings
-# July 16, 2021
+# Feb 18, 2022 -- sqrt(traffic) used instead of traffic
 #----------------------------------------------
 
 rm(list = ls(all = T))
@@ -45,8 +45,8 @@ library(knitr)
 library(texreg)
 library(huxtable)
 #run script with functions specific to COC analysis
-source(here("functions", "COC analysis functions.R"))
-source(here("functions", "HighstatLibV10.R")) #Zuur library, incl panel.smooth2, VIF
+source(here("..", "functions", "COC analysis functions.R"))
+source(here("..", "functions", "HighstatLibV10.R")) #Zuur library, incl panel.smooth2, VIF
 
 
 #toggle for whether all exploratory parts of code should be run (TRUE) or just essential parts (FALSE) 
@@ -54,7 +54,7 @@ run_exploratory_code <- FALSE
 
 
 #read in stormwater data with spatial predictors-------------------------------
-s8 <- read.csv(here("processed_data", "s8data_with_spatial_predictors.csv"))
+s8 <- read.csv(here("..", "processed_data", "s8data_with_spatial_predictors.csv"))
 s8$start_date <- as.Date(s8$start_date)
 s8$conc <- s8$result
 s8$month <- as.factor(s8$month)
@@ -65,7 +65,10 @@ s8$season <- as.factor(s8$season)
 s8$land_use <- as.factor(s8$land_use)
 
 #list of landscape predictors-------------------------------
-predictors <- names(s8)[34:61]
+aa <- which(str_detect(names(s8), "daymet"))  #after the last predictor column is a series of "daymet" columns
+bb <- aa[which(aa > 34)][1] - 1  #identify the last predictor column
+predictors <- names(s8)[34:bb]  #first predictor is always column 34; get all predictors
+n.preds <- length(predictors)
 
 #select the chemical of interest
 this_param <- "Copper - Water - Total"
@@ -139,6 +142,7 @@ coc$result <- log(coc$conc)
 #-------------------------------------------------------------------------------------------#
 
 colors_agency <- c("red", "orange", "yellow", "green", "blue", "purple")
+colors_location <- colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)]
 
 if (run_exploratory_code==TRUE) {
   #Cleveland Dotplot - use to detect violations of homogeneity: We are looking for whether the spread of data values
@@ -150,19 +154,19 @@ if (run_exploratory_code==TRUE) {
   
   #pairs plots allow visualization of interactions between possible predictors.  Look for relationships between "result"
   #   and all of the predictor variables
-  pairs(coc %>% select(result, predictors[1:12]), 
+  pairs(coc %>% select(result, predictors[1:ceiling(n.preds/3)]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
-  pairs(coc %>% select(result, predictors[13:24]), 
+  pairs(coc %>% select(result, predictors[ (ceiling(n.preds/3)+1) : (ceiling(n.preds/3)*2) ]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
-  pairs(coc %>% select(result, predictors[25:35]), 
+  pairs(coc %>% select(result, predictors[ (ceiling(n.preds/3)*2+1) : n.preds]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
-
+  
   #look also at interactions between result and rainfall
   pairs(coc %>% select(result, antecedant_dry_days_std, daymet_precip_std, daymet_3day_std,
                        daymet_7day_std, daymet_14day_std, daymet_21day_std, daymet_28daySR_std), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
   #for copper, AFTER removal of PIE_HDR & PIE_COM, most important predictors are:
-  #  intURB, totRES, nodev, traffic, pm25_na, CO2_tot, CO2_com, CO2_road, devAge, roof_intURB, roof_intURB_IND
+  #  intURB, totRES, nodev, sqrt_traffic, pm25_na, CO2_tot, CO2_com, CO2_road, devAge, roof_intURB, roof_intURB_IND
   #  daymet14, 21 or 28day (all -0.2)
 }
 
@@ -170,80 +174,14 @@ if (run_exploratory_code==TRUE) {
 #  Plot COC vs various predictors: look for potential predictors to model & sources of heterogeneity  #
 #-----------------------------------------------------------------------------------------------------#
 
-#look for relationships between coc and landscape predictors
-lp1 <- my.ggplot(1)
-lp2 <- my.ggplot(2)
-lp3 <- my.ggplot(3)
-lp4 <- my.ggplot(4)
-lp5 <- my.ggplot(5)
-lp6 <- my.ggplot(6)
-lp7 <- my.ggplot(7)
-lp8 <- my.ggplot(8)
-lp9 <- my.ggplot(9)
-lp10 <- my.ggplot(10)
-lp11 <- my.ggplot(11)
-lp12 <- my.ggplot(12)
-lp13 <- my.ggplot(13)
-lp14 <- my.ggplot(14)
-lp15 <- my.ggplot(15)
-lp16 <- my.ggplot(16)
-lp17 <- my.ggplot(17)
-lp18 <- my.ggplot(18)
-lp19 <- my.ggplot(19)
-lp20 <- my.ggplot(20)
-lp21 <- my.ggplot(21)
-lp22 <- my.ggplot(22)
-lp23 <- my.ggplot(23)
-lp24 <- my.ggplot(24)
-lp25 <- my.ggplot(25)
-lp26 <- my.ggplot(26)
-lp27 <- my.ggplot(27)
-lp28 <- my.ggplot(28)
+lp_plots()
+pr_plots()
+tlp_plots()
+mp_plots()
 
-#relationship between COC and precipitation
-pr1 <- ggplot(coc, aes(agency, result)) + geom_boxplot()
-pr2 <- ggplot(coc, aes(daymet_precip_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_precip_std))
-pr3 <- ggplot(coc, aes(daymet_3day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_3day_std))
-pr4 <- ggplot(coc, aes(daymet_7day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_7day_std))
-pr5 <- ggplot(coc, aes(daymet_14day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_14day_std))
-pr6 <- ggplot(coc, aes(daymet_21day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_21day_std))
-pr7 <- ggplot(coc, aes(daymet_28daySR_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_28daySR_std))
-pr8 <- ggplot(coc, aes(antecedant_dry_days_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$antecedant_dry_days_std))
-# NOTE: I have left out precip & inches_rain_per_hour b/c they are missing ~68 data points
-
-#relationship between COC and temporal/ location predictors
-tlp1 <- ggplot(coc, aes(as.factor(year), result)) + geom_boxplot()  #starts in Feb, 2009, ends in April, 2013; trends could be due to months with data?
-tlp2 <- ggplot(coc, aes(month, result)) + geom_boxplot(position=position_dodge(width=0.9))
-a <- coc %>% count(month)
-tlp2 <- tlp2 + annotate(geom="text", x=c(1:12), y=rep(-1.4,12), label=paste("n=", a[,2], sep=""),
-                      color="red", size=3.5, angle=90)  #note the small sample size in June-Sept
-tlp3 <- ggplot(coc, aes(as.factor(season), result)) + geom_boxplot()
-tlp4 <- ggplot(coc, aes(land_use, result)) + geom_boxplot()
-tlp5 <- ggplot(coc, aes(location_id, result)) + geom_boxplot()
-  
-if(run_exploratory_code==TRUE) {
-    #Look at various transformations for monthly precip by location; which is most evenly spread out?
-    par(mfrow=c(2,2), mar=c(4,4,4,2))
-    plot(coc$mPrecip, coc$result)
-    plot(coc$mPrecipSR, coc$result)
-    plot(coc$mPrecipCR, coc$result)
-    plot(coc$mPrecipLog, coc$result)
-    #for copper, mPrecip is better than the rest!
-    
-    #look for relationships between coc's and some predictors; 
-    # look especially for sources of heterogeneity
-    grid.arrange(pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, nrow=3)  #14-day & 21-day look the best -- most evenly spaced data...
-    grid.arrange(pr1, tlp5, tlp1, tlp2, tlp3, tlp4, nrow=2)
-    #for copper, 28-day prior rainfall does not show heteroskedasticity.
-    #   agency, landuse, do show heteroskedasticity
-    
-    grid.arrange(lp1, lp2, lp3, lp4, lp5, lp6, lp7, lp8, lp9, lp10, lp11, lp12, nrow=3, ncol=4)
-    grid.arrange(lp13, lp14, lp15, lp16, lp17, lp18, lp19, lp20, lp21, lp22, lp23, lp24, nrow=3, ncol=4)
-    grid.arrange(lp26, lp27, lp28, nrow=3, ncol=4)
-}
 #best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
 best_predictors <- c("intURB", "intURB_IND", "totRES", "grass", "greenery", "impervious", "nodev",
-                     "traffic", "sqrt_popn", "pm25_na", "sqrt_CO2_tot", "sqrt_CO2_com", "sqrt_CO2_road", 
+                     "sqrt_traffic", "sqrt_popn", "pm25_na", "sqrt_CO2_tot", "sqrt_CO2_com", "sqrt_CO2_road", 
                      "sqrt_CO2_nonroad", "devAge2", "roof_intURB_IND")
 
 pred_i <- which(predictors %in% best_predictors)
@@ -253,6 +191,23 @@ pred_i <- which(predictors %in% best_predictors)
 #   },
 #   nrow=4, ncol=4)
 
+#plot of best predictors for this COC (for tech document)
+lp3 <- my.ggplot(3)
+lp4 <- my.ggplot(4)
+lp5 <- my.ggplot(5)
+lp6 <- my.ggplot(6)
+lp7 <- my.ggplot(7)
+lp10 <- my.ggplot(10)
+lp11 <- my.ggplot(11)
+lp13 <- my.ggplot(13)
+lp14 <- my.ggplot(14)
+lp16 <- my.ggplot(16)
+lp20 <- my.ggplot(20)
+lp21 <- my.ggplot(21)
+lp22 <- my.ggplot(22)
+lp23 <- my.ggplot(23)
+lp24 <- my.ggplot(24)
+lp27 <- my.ggplot(27)
 grid.arrange(lp3, lp4, lp5, lp6, lp7, lp10, lp11, lp13, lp14, lp16, lp20, lp21, 
              lp22, lp23, lp24, lp27, nrow=4, ncol=4)
 
@@ -492,19 +447,26 @@ if (run_exploratory_code==TRUE) {
   anova(M.gls1X, M.gls2X,
         M.gls4X, 
         M.gls18X, M.gls19X, M.gls20X, M.gls21X, M.gls24X)
-  #for copper: AIC and BIC are best for agency & rain (#19), or for just agency (#2)
+  #for copper: AIC is best for agency & rain (#19); BIC best for just agency (#2)
+  # go with just agency, for ease of use in Bayesian modeling
   
   #likelihood ratio tests for nested versions of the best fit models
   anova(M.gls1X, M.gls2X, M.gls19X)  ### NOTE: since we're not using dry in the model, don't include it in the variance structure!
   
   #residual plots for best fit models -- look for homogeneity of residuals
-  E.19X <- resid(object = M.gls19X, type = "normalized")
-  boxplots.resids2(M.gls19X, E.19X, "X")
+  E.2X <- resid(object = M.gls2X, type = "normalized")
+  boxplots.resids2(M.gls2X, E.2X, "X")
+  
+  par(mfrow=c(2,2), mar=c(4.5, 4.5, 4, 1), xaxt="s")
+  plot(fitted(M.gls1X), resid(object=M.gls1X, type="normalized"), main="no variance structure", xlab="fitted values", ylab="normalized residuals", col="gray", pch=16)
+  plot(fitted(M.gls2X), resid(object=M.gls2X, type="normalized"), main="variance covariate: agency", xlab="fitted values", ylab="normalized residuals", col="gray", pch=16)
+  # plot(fitted(M.gls18X), resid(object=M.gls18X, type="normalized"), main="residual covariates: 1|agency + varExp(rain)", xlab="fitted values", ylab="normalized residuals", xaxt="n", yaxt="n", col="gray", pch=16)
+  # plot(fitted(M.gls19X), resid(object=M.gls19X, type="normalized"), main="residual covariates: 1|agency + varConstPower(rain)", xlab="fitted values", ylab="normalized residuals", xaxt="n", yaxt="n", col="gray", pch=16)
+
 }
 
 #variance function for best fit models so far
-vf1X <- varComb(varIdent(form= ~1|agency), varConstPower(form= ~rain))
-#stick with variance structure that only uses variance covariates -- since not using dry in model, don't use in V.S.
+vf1X <- varIdent(form= ~1|agency)
 
 # Steps 4-6: Find the proper random effects structure; look for temporal and spatial autocorrelation
 #-----------  note: look for spatial correlation AFTER setting random effects!
@@ -606,23 +568,6 @@ if (run_exploratory_code==TRUE) {
       }
     }
   }
-  
-
-  # #identify and eliminate situations with predictors that don't go together, or are highly correlated
-  # rem1 <- which(str_detect(dd.str, "sqrt_CO2_tot")==TRUE & str_detect(dd.str, "sqrt_CO2_road")==TRUE)
-  # rem2 <- which(str_detect(dd.str, "sqrt_popn")==TRUE & str_detect(dd.str, "sqrt_CO2_res")==TRUE)
-  # rem3 <- which(str_detect(dd.str, "grass")==TRUE & str_detect(dd.str, "impervious")==TRUE)
-  # rem4 <- which(str_detect(dd.str, "paved")==TRUE & str_detect(dd.str, "impervious")==TRUE)
-  # rem5 <- which(str_detect(dd.str, "nodev")==TRUE & str_detect(dd.str, "devAge")==TRUE)
-  # rem6 <- which(str_detect(dd.str, "sqrt_nodev")==TRUE & str_detect(dd.str, "devAge")==TRUE)
-  # rem7 <- which(str_detect(dd.str, "sqrt_CO2_tot")==TRUE & str_detect(dd.str, "sqrt_CO2_com")==TRUE)
-  # rem8 <- which(str_detect(dd.str, "grass")==TRUE & str_detect(dd.str, "greenery")==TRUE)
-  # rem9 <- which(str_detect(dd.str, "greenery")==TRUE & str_detect(dd.str, "impervious")==TRUE)
-  # rem10 <- which(str_detect(dd.str, "greenery")==TRUE & str_detect(dd.str, "totRES")==TRUE)
-  # rem11 <- which(str_detect(dd.str, "intURB")==TRUE & str_detect(dd.str, "sqrt_intURB")==TRUE)
-  # rem.all <- unique(c(rem1, rem2, rem3, rem4, rem5, rem6, rem7, rem8, rem9, rem10))  #keep only non-repetitive instances of indexes that should be removed
-  # 
-  # dd <- dd[-rem.all, ]  #remove rows with predictors that don't go together!
 
   #generate an exhaustive set of formulas with one, two and three predictors, including and excluding rain
   ee.1 <- list(NULL)  #list of formulas based on the sets of predictors in "dd"; including rain
@@ -719,23 +664,23 @@ if (run_exploratory_code==TRUE) {
   my.aics.m4 <- my.aics[order(my.aics)]
   my.aics.m4[1:10]  #what are the top 10 AIC's?
 
-  save(my.formulas.m4, my.aics.m4, file=(here("scripts", "formulas_and_aics", "total_copper_m4.RData")))
+  save(my.formulas.m4, my.aics.m4, file=(here("..", "scripts", "formulas_and_aics", "total_copper_m4.RData")))
 }
 
 if (run_exploratory_code==FALSE) {
-  load(file=here("scripts", "formulas_and_aics", "total_copper_m4.RData"))
+  load(file=here("..", "scripts", "formulas_and_aics", "total_copper_m4.RData"))
 }
 
-#identify which (ranked) formulas have "rain" in them
-aa <- grep("rain", my.formulas.m4)  #ordered list (by AIC value) of all formulae that include rain
-my.aics.m4[aa]
-my.formulas.m4[aa]
-
-#identify which (ranked) formulas have 2 or less predictors
-bb <- as.character(my.formulas.m4[aa])
-formulas.m4.two <- my.formulas.m4[aa][which(lengths(gregexpr("\\W+", bb))< 4)]
-aics.m4.two <- my.aics.m4[aa][which(lengths(gregexpr("\\W+", bb))< 4)]
-FA.two <- cbind(as.character(formulas.m4.two), round(aics.m4.two, 1))
+# #identify which (ranked) formulas have "rain" in them
+# aa <- grep("rain", my.formulas.m4)  #ordered list (by AIC value) of all formulae that include rain
+# my.aics.m4[aa]
+# my.formulas.m4[aa]
+# 
+# #identify which (ranked) formulas have 2 or less predictors
+# bb <- as.character(my.formulas.m4[aa])
+# formulas.m4.two <- my.formulas.m4[aa][which(lengths(gregexpr("\\W+", bb))< 4)]
+# aics.m4.two <- my.aics.m4[aa][which(lengths(gregexpr("\\W+", bb))< 4)]
+# FA.two <- cbind(as.character(formulas.m4.two), round(aics.m4.two, 1))
 
 
 
@@ -746,7 +691,7 @@ FA.two <- cbind(as.character(formulas.m4.two), round(aics.m4.two, 1))
 #list of quantiles for all landscape predictors
 qList <- list(
   totRES=quantile(coc2$totRES, probs=c(0,.25,.50,.75,1)),
-  traffic=quantile(coc2$traffic, probs=c(0,.25,.50,.75,1)),
+  sqrt_traffic=quantile(coc2$sqrt_traffic, probs=c(0,.25,.50,.75,1)),
   pm25_na=quantile(coc2$pm25_na, probs=c(0,.25,.50,.75,1)),
   devAge2=quantile(coc2$devAge2, probs=c(0,.25,.50,.75,1)),
   rain=quantile(coc2$rain, probs=c(0,.25,.50,.75,1))
@@ -793,10 +738,15 @@ E3 <- residuals(object=Model3, type="normalized")
 
 #------ Model 4: up to 3 predictors + precip/ season components ---------#
 
+### when sqrt_traffic replaces traffic predictor, Form4b (sqrt_traffic, pm25, devAge2) has an AIC of 787 
+#     (compared to 752 for model with sqrt_traffic + totRES). It is the 22nd best model by AIC.  If 
+#     pm25:rain interaction is added, it becomes the 12th best model with AIC=781.  Fits to data are good.
+
+
 #run through the top formulas when only best predictors are on the table;
 #  keep only formulas that make sense
-myForm <- my.formulas.m4[[7]]
-myForm <- update(Form4b, .~. +rain:pm25_na)
+myForm <- my.formulas.m4[[22]]
+#myForm <- update(Form4b, .~. +rain:pm25_na)
 
 #these lines of code assess fit of this particular model in terms of COC vs. individual predictors, and predictor correlation
 myModel <- lme(data=coc2, myForm, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
@@ -807,9 +757,12 @@ check.cor(myModel)
 boxplots.resids2(myModel, residuals(myModel, type="normalized"), "X")
 
 #formulas that are worth considering (single plots of predictors make sense)
-Form4a <- formula(result ~ rain + summer + totRES + traffic) #AIC=743.4; model #3; first two had a 3rd predictor only slightly significant
-Form4b <- formula(result ~ rain + summer + traffic + devAge2 + pm25_na)  #AIC=758.0; model #7
-Form4c <- formula(result ~ rain + summer + traffic + devAge2 + sqrt_CO2_road)  #AIC=768.8; model #15
+Form4a <- formula(result ~ rain + summer + totRES + sqrt_traffic) #AIC=743.4; model #3; first two had a 3rd predictor only slightly significant
+Form4b <- formula(result ~ rain + summer + sqrt_traffic + devAge2 + pm25_na)  #AIC=758.0; model #7
+#Form4c <- formula(result ~ rain + summer + traffic + devAge2 + sqrt_CO2_road)  #AIC=768.8; model #15
+
+#NOTE: when traffic is changed to sqrt_traffic, Form4a is model #2 (AIC=756.3); Form4b is model #22 (AIC=787.1)
+#      Adding pm25_na:rain interaction changes Form4b to AIC=781.8 (model is now be in 12th place)
 
 #####  Best fit Model4  ####
 
@@ -819,24 +772,25 @@ Model4a <- Model4
 E4a <- residuals(object = Model4a, type = "normalized")
 
 #try adding interactions and see if they are significant
-M4.sub1 <- update(Model4, . ~ . + rain:traffic) #not significant (p=0.4437)
+M4.sub1 <- update(Model4, . ~ . + rain:sqrt_traffic) #not significant (p=0.5979)
 anova(Model4, M4.sub1)
-M4.sub2 <- update(Model4, . ~ . + rain:totRES)  #not significant (p=0.4697)
+M4.sub2 <- update(Model4, . ~ . + rain:totRES)  #not significant (p=0.3988)
 anova(Model4, M4.sub2)
-M4.sub3 <- update(Model4, . ~ . + traffic:totRES)  #highly significant (p<0.0001)
+M4.sub3 <- update(Model4, . ~ . + sqrt_traffic:totRES)  #highly significant (p<0.0001)
 anova(Model4, M4.sub3)
 
 #Plot formula 4 interaction
-Plot.Quantile("totRES", "traffic", M4.sub3, yEqn=5)
+Plot.Quantile("totRES", "sqrt_traffic", M4.sub3, yEqn=5)
 #This relationship seems plausible, both on basis of data theoretically.  It also makes a big difference to AIC
 #  places that have the most traffic have a more dramatic reduction in copper as residential percentage land use increases
 #  places that have little traffic are less affected by whether the properties are zoned as residential or not
-
-Form4a.int <- update(Form4, .~. + totRES:traffic)
-M4a.int <- update(Model4, .~. + totRES:traffic)
-E4a.int <- residuals(object = M4a.int, type = "normalized")
-plot.single.preds(M4a.int)
-boxplots.resids2(M4a.int, E4a.int, "X")
+# NOTE: when traffic is changed to sqrt_traffic, the data spread is not convincing enough to have this interaction!
+# 
+# Form4a.int <- update(Form4, .~. + totRES:traffic)
+# M4a.int <- update(Model4, .~. + totRES:traffic)
+# E4a.int <- residuals(object = M4a.int, type = "normalized")
+# plot.single.preds(M4a.int)
+# boxplots.resids2(M4a.int, E4a.int, "X")
 
 
 #####  Alternate Model4  ####
@@ -847,18 +801,18 @@ Model4b <- Model4
 E4b <- residuals(object = Model4b, type = "normalized")
 
 #try adding interactions and see if they are significant
-M4.sub1 <- update(Model4, . ~ . + rain:traffic) #not significant (p=0.1576)
+M4.sub1 <- update(Model4, . ~ . + rain:sqrt_traffic) #not significant (p=0.3403)
 anova(Model4, M4.sub1)
-M4.sub2 <- update(Model4, . ~ . + rain:devAge2)  #not significant (p=0.7504)
+M4.sub2 <- update(Model4, . ~ . + rain:devAge2)  #not significant (p=0.8906)
 anova(Model4, M4.sub2)
-M4.sub3 <- update(Model4, . ~ . + rain:pm25_na)  #highly significant (p=0.0021)
+M4.sub3 <- update(Model4, . ~ . + rain:pm25_na)  #highly significant (p=0.007)
 anova(Model4, M4.sub3)
 
-M4.sub4 <- update(Model4, . ~ . + traffic:devAge2) #highly significant (p<0.0001)
+M4.sub4 <- update(Model4, . ~ . + sqrt_traffic:devAge2) #highly significant (p<0.0001)
 anova(Model4, M4.sub4)
-M4.sub5 <- update(Model4, . ~ . + pm25_na:devAge2)  #highly significant (p=0.0002)
+M4.sub5 <- update(Model4, . ~ . + pm25_na:devAge2)  #highly significant (p<0.0001)
 anova(Model4, M4.sub5)
-M4.sub6 <- update(Model4, . ~ . + traffic:pm25_na)  #highly significant (p<0.0001)
+M4.sub6 <- update(Model4, . ~ . + sqrt_traffic:pm25_na)  #highly significant (p<0.0001)
 anova(Model4, M4.sub6)
 
 
@@ -868,7 +822,7 @@ Plot.Quantile("rain", "pm25_na", M4.sub3, yEqn=5)
 #  increasing amounts of rain flush the pm25 out of the air, so you get a steeper decline in copper
 #  into stormwater than in watersheds where there is little pollution.
 
-Plot.Quantile("traffic", "devAge2",  M4.sub4, yEqn=5)  
+Plot.Quantile("sqrt_traffic", "devAge2",  M4.sub4, yEqn=5)  
 #not buying it!  too little low devAge data
 
 Plot.Quantile("devAge2", "pm25_na",  M4.sub5, yEqn=5)  
@@ -876,7 +830,7 @@ Plot.Quantile("devAge2", "pm25_na",  M4.sub5, yEqn=5)
 #  air-polluted will have higher copper in stormwater.  However, the data don't compellingly
 #  appear to have two different trends based on devAge or pm25 (maybe try viewing with pm25 on x-axis?)
 
-Plot.Quantile("traffic", "pm25_na",  M4.sub6, yEqn=5)  
+Plot.Quantile("sqrt_traffic", "pm25_na",  M4.sub6, yEqn=5)  
 #not buying it!  traffic and pm25 seem too linked together, and the data don't show compelling evidence
 #  for a different slope with traffic, when pm25 is low vs high (maybe try viewing with pm25 on x-axis?)
 
@@ -890,39 +844,39 @@ boxplots.resids2(M4b.int, E4b.int, "X")
 #----------------------#
 
 
-Plot.Quantile("devAge2", "pm25_na",  M4.sub5, yEqn=5)  
-bb <- "devAge2"
-aa <- "pm25_na"
-myModel <- M4.sub5
-xEqn <- 0.15
-yEqn <- 5
-
-#create a list for quantiles of the two landscape predictors aa and bb; this is used to generate IQ
-cc <- list(unlist(qList[[aa]]), unlist(qList[[bb]]))
-names(cc) <- c(aa, bb)
-
-#generate dataframe of interaction fits for landscape predictors aa and bb
-IQ <- effect(paste(bb, "*", aa, sep=""), myModel, xlevels= cc, se=TRUE, confidence.level=0.95, typical=mean)
-IQ <- as.data.frame(IQ)
-IQ[bb] <- factor(as.numeric(unlist(IQ[bb])), levels=qList[[bb]], labels=c("0%", "25%", "50%", "75%", "100%"))
-
-#linear equation for the interaction, to be printed in the plot
-eqnText <- paste("ln(", this_param_short, ") = ", 
-                 round(myModel$coefficients[[1]]["(Intercept)"], 2), " + ",
-                 round(myModel$coefficients[[1]][aa], 2), "*", aa, " + ",
-                 round(myModel$coefficients[[1]][bb], 2), "*", bb, " + ", 
-                 round(myModel$coefficients[[1]][paste(bb,":",aa, sep="")], 2), "*", aa, "*", bb, sep="")
-
-
-ggplot() + 
-  geom_line(data=IQ, size=1.5, aes(x=IQ[,aa], y=fit, group=IQ[,bb], color=IQ[,bb]))+
-  ylab("COC")+ xlab(names(IQ)[2])+
-  ggtitle(paste("Interaction between", names(IQ)[1], "and", names(IQ)[2]))+
-  scale_color_manual(values=c("blue", "purple", "yellow", "orange", "red"))+  #colors for lines (color)
-  geom_point(data=coc2, aes(x=coc2[,aa], y=result, fill=coc2[,bb]), size=3, shape=21, stroke=0) + 
-  scale_fill_gradient2(low = "blue", mid="yellow", high = "red")+  #colors for points (fill)
-  geom_text(aes(x=xEqn, y=yEqn, label=eqnText), cex=4.5, color="black")+
-  labs(color=names(IQ)[2], fill=names(IQ)[2])
+# Plot.Quantile("devAge2", "pm25_na",  M4.sub5, yEqn=5)  
+# bb <- "devAge2"
+# aa <- "pm25_na"
+# myModel <- M4.sub5
+# xEqn <- 0.15
+# yEqn <- 5
+# 
+# #create a list for quantiles of the two landscape predictors aa and bb; this is used to generate IQ
+# cc <- list(unlist(qList[[aa]]), unlist(qList[[bb]]))
+# names(cc) <- c(aa, bb)
+# 
+# #generate dataframe of interaction fits for landscape predictors aa and bb
+# IQ <- effect(paste(bb, "*", aa, sep=""), myModel, xlevels= cc, se=TRUE, confidence.level=0.95, typical=mean)
+# IQ <- as.data.frame(IQ)
+# IQ[bb] <- factor(as.numeric(unlist(IQ[bb])), levels=qList[[bb]], labels=c("0%", "25%", "50%", "75%", "100%"))
+# 
+# #linear equation for the interaction, to be printed in the plot
+# eqnText <- paste("ln(", this_param_short, ") = ", 
+#                  round(myModel$coefficients[[1]]["(Intercept)"], 2), " + ",
+#                  round(myModel$coefficients[[1]][aa], 2), "*", aa, " + ",
+#                  round(myModel$coefficients[[1]][bb], 2), "*", bb, " + ", 
+#                  round(myModel$coefficients[[1]][paste(bb,":",aa, sep="")], 2), "*", aa, "*", bb, sep="")
+# 
+# 
+# ggplot() + 
+#   geom_line(data=IQ, size=1.5, aes(x=IQ[,aa], y=fit, group=IQ[,bb], color=IQ[,bb]))+
+#   ylab("COC")+ xlab(names(IQ)[2])+
+#   ggtitle(paste("Interaction between", names(IQ)[1], "and", names(IQ)[2]))+
+#   scale_color_manual(values=c("blue", "purple", "yellow", "orange", "red"))+  #colors for lines (color)
+#   geom_point(data=coc2, aes(x=coc2[,aa], y=result, fill=coc2[,bb]), size=3, shape=21, stroke=0) + 
+#   scale_fill_gradient2(low = "blue", mid="yellow", high = "red")+  #colors for points (fill)
+#   geom_text(aes(x=xEqn, y=yEqn, label=eqnText), cex=4.5, color="black")+
+#   labs(color=names(IQ)[2], fill=names(IQ)[2])
 
 
 
@@ -934,7 +888,7 @@ ggplot() +
 #------ Compare models and plot ---------#
 
 #compare all of the models
-AIC(Model1, Model3, Model4a, M4a.int, Model4b, M4b.int)
+AIC(Model1, Model3, Model4a, Model4b, M4b.int)
 #obtain the delta AIC value
 AIC(Model1, Model3, Model4a, M4a.int,  Model4b, M4b.int)[, 2] - AIC(Model3)
 
@@ -962,10 +916,10 @@ if (F) {
 
 #check residuals for each model, to see if they tell us anything important
 par(mfrow=c(2,2), mar=c(2,4,4,1), oma=c(0,0,0,0))
-plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 # plot(coc2$location, E4a, main="Model 4a", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
@@ -977,7 +931,7 @@ abline(h=0, col="gray")
 # plot(coc2$location, E4b, main="Model 4b", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 # axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 # abline(h=0, col="gray")
-plot(coc2$location, E4b.int, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E4b.int, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 
@@ -985,7 +939,7 @@ abline(h=0, col="gray")
 
 #------ Model 3: landuse only, with variance structure & random structure ---------#
 
-M3.final <- lme(data=coc2, result~landuse+rain, random = r1X, method="REML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
+M3.final <- lme(data=coc2, Form3, random = r1X, method="REML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 E3.final <- residuals(object=M3.final, type="normalized")
 
 #plot residuals against agency, year, month, date and other unused predictors; check if model is missing something important!
@@ -1029,6 +983,7 @@ plot(Vario2)  #do we see any different patterns in the different directions, or 
 
 #------ Model 4.int ---------#
 
+Form4.int <- formula(result ~ rain + summer + sqrt_traffic + devAge2 + pm25_na + rain:pm25_na) 
 M4int.final <- lme(data=coc2, Form4.int, random = r1X, method="REML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 E4int.final <- residuals(object=M4int.final, type="normalized")
 
@@ -1047,7 +1002,7 @@ Vario1 = variogram(E4int.final ~ 1, mydata2)
 plot(Vario1)  #if there is no spatial correlation, will see a horizontal bar of points at the top of the plot
 Vario2 <- variogram(E4int.final ~ 1, mydata2, alpha = c(0, 45, 90,135) )
 plot(Vario2)  #do we see any different patterns in the different directions, or roughly the same pattern?
-
+#I don't love the bubble plots for any of the copper model options...
 
 #-----------------#
 #  Save Formulas  #
@@ -1058,11 +1013,11 @@ Cu.coc2 <- coc2
 Cu.r1X <- r1X
 Cu.vf1X <- vf1X
 Cu.Form3 <- Form3
-Cu.Form4 <- Form4b
-Cu.Form4.int <- Form4b.int
+Cu.Form4 <- Form4.int
+#Cu.Form4.int <- Form4b.int
 Cu.rain <- rain
 
-save(Cu.coc2, Cu.r1X, Cu.vf1X, Cu.Form3, Cu.Form4, Cu.Form4.int, file=here("results", "Copper Models.RData"))
+save(Cu.coc2, Cu.r1X, Cu.vf1X, Cu.Form3, Cu.Form4, file=here("..", "results", "Copper Models.RData"))
 
 
 #-------------------------------#
@@ -1073,13 +1028,11 @@ save(Cu.coc2, Cu.r1X, Cu.vf1X, Cu.Form3, Cu.Form4, Cu.Form4.int, file=here("resu
 Cu.null <- gls(data = Cu.coc2, result ~ 1, method = "REML") 
 Cu.M3 <- lme(data = Cu.coc2, result ~ landuse + rain + summer, random = Cu.r1X, method = "REML", weights = Cu.vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 Cu.M4 <- lme(data = Cu.coc2, Cu.Form4, random = Cu.r1X, method = "REML", weights = Cu.vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
-Cu.M4.int <- lme(data = Cu.coc2, Cu.Form4.int, random = Cu.r1X, method = "REML", weights = Cu.vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 
 Cu_models <- list(
   Null_Model = Cu.null,
   Categorical_Landuse_Model = Cu.M3,
-#  Cu.M4 = Cu.M4,
-  Landscape_Predictor_Model = Cu.M4.int)
+  Landscape_Predictor_Model = Cu.M4)
 
 huxtablereg(Cu_models,
             single.row = TRUE, custom.model.names = names(Cu_models)) %>%

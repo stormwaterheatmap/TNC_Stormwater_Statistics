@@ -13,7 +13,7 @@
 
 
 # Eva Dusek Jennings
-# July 16, 2021
+# Feb 18, 2022 -- sqrt(traffic) used instead of traffic
 #----------------------------------------------
 
 rm(list = ls(all = T))
@@ -48,11 +48,11 @@ library(knitr)
 library(texreg)
 library(huxtable)
 #run script with functions specific to COC analysis
-source(here("functions", "COC analysis functions.R"))
-source(here("functions", "HighstatLibV10.R")) #Zuur library, incl panel.smooth2, VIF
+source(here("..", "functions", "COC analysis functions.R"))
+source(here("..", "functions", "HighstatLibV10.R")) #Zuur library, incl panel.smooth2, VIF
 
 #read in stormwater data with spatial predictors-------------------------------
-s8 <- read.csv(here("processed_data", "s8data_with_spatial_predictors.csv"))
+s8 <- read.csv(here("..", "processed_data", "s8data_with_spatial_predictors.csv"))
 s8$start_date <- as.Date(s8$start_date)
 s8$conc <- s8$result
 s8$month <- as.factor(s8$month)
@@ -63,7 +63,10 @@ s8$season <- as.factor(s8$season)
 s8$land_use <- as.factor(s8$land_use)
 
 #list of landscape predictors-------------------------------
-predictors <- names(s8)[34:61]
+aa <- which(str_detect(names(s8), "daymet"))  #after the last predictor column is a series of "daymet" columns
+bb <- aa[which(aa > 34)][1] - 1  #identify the last predictor column
+predictors <- names(s8)[34:bb]  #first predictor is always column 34; get all predictors
+n.preds <- length(predictors)
 
 #select the chemical of interest
 this_param <- "Total Suspended Solids - Water - Total"
@@ -118,6 +121,7 @@ coc$result <- log(coc$conc)
 #-------------------------------------------------------------------------------------------#
 
 colors_agency <- c("red", "orange", "yellow", "green", "blue", "purple")
+colors_location <- colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)]
 
 if(run_exploratory_code==TRUE) {
   #Cleveland Dotplot - use to detect violations of homogeneity: We are looking for whether the spread of data values
@@ -129,19 +133,19 @@ if(run_exploratory_code==TRUE) {
   
   #pairs plots allow visualization of interactions between possible predictors.  Look for relationships between "result"
   #   and all of the predictor variables
-  pairs(coc %>% select(result, predictors[1:12]), 
+  pairs(coc %>% dplyr::select(result, predictors[1:ceiling(n.preds/3)]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
-  pairs(coc %>% select(result, predictors[13:24]), 
+  pairs(coc %>% dplyr::select(result, predictors[ (ceiling(n.preds/3)+1) : (ceiling(n.preds/3)*2) ]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
-  pairs(coc %>% select(result, predictors[25:35]), 
+  pairs(coc %>% dplyr::select(result, predictors[ (ceiling(n.preds/3)*2+1) : n.preds]), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
   
   #look also at interactions between result and rainfall
-  pairs(coc %>% select(result, antecedant_dry_days_std, daymet_precip_std, daymet_3day_std,
+  pairs(coc %>% dplyr::select(result, antecedant_dry_days_std, daymet_precip_std, daymet_3day_std,
                        daymet_7day_std, daymet_14day_std, daymet_21day_std, daymet_28daySR_std), 
         lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
   #for TSS, important predictors are likely: 
-  #  traffic, sqrt_CO2_road, devAge
+  #  sqrt_traffic, sqrt_CO2_road, devAge
   #  daymet_precip (0.2)
 }
 
@@ -149,80 +153,30 @@ if(run_exploratory_code==TRUE) {
 #  Plot COC vs various predictors: look for potential predictors to model & sources of heterogeneity  #
 #-----------------------------------------------------------------------------------------------------#
 
-#look for relationships between coc and landscape predictors
-lp1 <- my.ggplot(1)
-lp2 <- my.ggplot(2)
-lp3 <- my.ggplot(3)
-lp4 <- my.ggplot(4)
-lp5 <- my.ggplot(5)
-lp6 <- my.ggplot(6)
-lp7 <- my.ggplot(7)
-lp8 <- my.ggplot(8)
-lp9 <- my.ggplot(9)
-lp10 <- my.ggplot(10)
-lp11 <- my.ggplot(11)
-lp12 <- my.ggplot(12)
-lp13 <- my.ggplot(13)
-lp14 <- my.ggplot(14)
-lp15 <- my.ggplot(15)
-lp16 <- my.ggplot(16)
-lp17 <- my.ggplot(17)
-lp18 <- my.ggplot(18)
-lp19 <- my.ggplot(19)
-lp20 <- my.ggplot(20)
-lp21 <- my.ggplot(21)
-lp22 <- my.ggplot(22)
-lp23 <- my.ggplot(23)
-lp24 <- my.ggplot(24)
-lp25 <- my.ggplot(25)
-lp26 <- my.ggplot(26)
-lp27 <- my.ggplot(27)
-lp28 <- my.ggplot(28)
+lp_plots()
+pr_plots()
+tlp_plots()
+mp_plots()
+#for TSS, daymet_precip shows evidence of heteroskedasticity; also has best fit  
+#   location, agency, landuse, and year also show heteroskedasticity
 
-#relationship between COC and precipitation
-pr1 <- ggplot(coc, aes(agency, result)) + geom_boxplot()
-pr2 <- ggplot(coc, aes(daymet_precip_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_precip_std))
-pr3 <- ggplot(coc, aes(daymet_3day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_3day_std))
-pr4 <- ggplot(coc, aes(daymet_7day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_7day_std))
-pr5 <- ggplot(coc, aes(daymet_14day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_14day_std))
-pr6 <- ggplot(coc, aes(daymet_21day_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_21day_std))
-pr7 <- ggplot(coc, aes(daymet_28daySR_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$daymet_28daySR_std))
-pr8 <- ggplot(coc, aes(antecedant_dry_days_std, result)) + geom_point() + geom_smooth(method = "lm") + annotation_custom(slope_grob(coc$antecedant_dry_days_std))
-# NOTE: I have left out precip & inches_rain_per_hour b/c they are missing ~68 data points
-
-#relationship between COC and temporal/ location predictors
-tlp1 <- ggplot(coc, aes(as.factor(year), result)) + geom_boxplot()  #starts in Feb, 2009, ends in April, 2013; trends could be due to months with data?
-tlp2 <- ggplot(coc, aes(month, result)) + geom_boxplot(position=position_dodge(width=0.9))
-a <- coc %>% count(month)
-tlp2 <- tlp2 + annotate(geom="text", x=c(1:12), y=rep(-1.4,12), label=paste("n=", a[,2], sep=""),
-                        color="red", size=3.5, angle=90)  #note the small sample size in June-Sept
-tlp3 <- ggplot(coc, aes(as.factor(season), result)) + geom_boxplot()
-tlp4 <- ggplot(coc, aes(land_use, result)) + geom_boxplot()
-tlp5 <- ggplot(coc, aes(location_id, result)) + geom_boxplot()
-
-if(run_exploratory_code==TRUE) {
-  #Look at various transformations for monthly precip by location; which is most evenly spread out?
-  par(mfrow=c(2,2), mar=c(4,4,4,2))
-  plot(coc$mPrecip, coc$result)
-  plot(coc$mPrecipSR, coc$result)
-  plot(coc$mPrecipCR, coc$result)
-  plot(coc$mPrecipLog, coc$result)
-  #for TSS, mPrecip is better than the rest!
-  
-  #look for relationships between coc's and some predictors; 
-  # look especially for sources of heterogeneity
-  grid.arrange(pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, nrow=3)  #14-day & 21-day look the best -- most evenly spaced data...
-  grid.arrange(pr1, tlp5, tlp1, tlp2, tlp3, tlp4, nrow=2)
-  #for TSS, daymet_precip shows evidence of heteroskedasticity; also has best fit  
-  #   location, agency, landuse, and year also show heteroskedasticity
-  
-  grid.arrange(lp1, lp2, lp3, lp4, lp5, lp6, lp7, lp8, lp9, lp10, lp11, lp12, nrow=3, ncol=4)
-  grid.arrange(lp13, lp14, lp15, lp16, lp17, lp18, lp19, lp20, lp21, lp22, lp23, lp24, nrow=3, ncol=4)
-  grid.arrange(lp26, lp27, lp28, nrow=3, ncol=4)
-}
+# #try using sqrt(traffic) rather than traffic, and see how it fits
+# my.ggplot.1 <- function(predictor) {
+#   ggplot(coc, aes(coc[,predictor], result)) + geom_point() + xlab(predictor) + 
+#     geom_smooth(method = "lm") + annotation_custom(slope_grob(coc[, predictor]))  #add a smooth slope and p-value for the slope line
+# }
+# 
+# coc$sqrt_traffic <- sqrt(coc$traffic)
+# my.ggplot.1("traffic")
+# my.ggplot.1(sqrt("traffic"))
+# 
+# sqrt(200000)
+# sqrt(20000)
+# log(200000)
+# log(20000)
 
 #best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
-best_predictors <- c("totRES", "traffic", "sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_tot", 
+best_predictors <- c("totRES", "sqrt_traffic", "sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_tot", 
                      "sqrt_CO2_com", "sqrt_CO2_road", "devAge2", "paved")
 #NOTE: paved is only added b/c it was a strong predictor for old version of predictors!
 
@@ -233,6 +187,15 @@ pred_i <- which(predictors %in% best_predictors)
 #   },
 #   nrow=4, ncol=4)
 
+lp3 <- my.ggplot(3)
+lp8 <- my.ggplot(8)
+lp13 <- my.ggplot(13)
+lp14 <- my.ggplot(14)
+lp19 <- my.ggplot(19)
+lp20 <- my.ggplot(20)
+lp21 <- my.ggplot(21)
+lp22 <- my.ggplot(22)
+lp24 <- my.ggplot(24)
 grid.arrange(lp3, lp8, lp13, lp14, lp19, lp20, lp21, lp22, lp24, nrow=4, ncol=4)
 
 bp_coefs <- bp_signs <- rep(NA, length(best_predictors))
@@ -457,6 +420,7 @@ if(run_exploratory_code==TRUE) {
   #  M.gls3X <- gls(FormX, data=coc2, method="REML", weights=varIdent(form= ~1|location))
   M.gls4X <- gls(FormX, data=coc2, method="REML", weights=varIdent(form= ~1|season))
   #  M.gls5X <- gls(FormX, data=coc2, method="REML", weights=varIdent(form= ~1|agency * season))
+  M.gls17X <- gls(FormX, data=coc2, method="REML", weights=varComb(varIdent(form= ~1|agency), varFixed(~rain)))  #agency & previous 7-day rainfall (SR-xformed), unstandardized
   M.gls18X <- gls(FormX, data=coc2, method="REML", weights=varComb(varIdent(form= ~1|agency), varExp(form= ~rain)))  #agency & previous 7-day rainfall (SR-xformed), unstandardized
   M.gls19X <- gls(FormX, data=coc2, method="REML", weights=varComb(varIdent(form= ~1|agency), varConstPower(form= ~rain)))
   M.gls20X <- gls(FormX, data=coc2, method="REML", weights=varConstPower(form= ~rain))
@@ -467,7 +431,7 @@ if(run_exploratory_code==TRUE) {
 
   anova(M.gls1X, M.gls2X,
         M.gls4X, 
-        M.gls18X, M.gls19X, M.gls20X, M.gls21X, M.gls24X)
+        M.gls17X, M.gls18X, M.gls19X, M.gls20X, M.gls21X, M.gls24X)
   #for TSS: AIC and BIC are best for agency & rain (daymetPrecip) variance covariates (#18)
   
   #likelihood ratio tests for nested versions of the best fit model
@@ -476,10 +440,16 @@ if(run_exploratory_code==TRUE) {
   #residual plots for best fit models -- look for homogeneity of residuals
   E.18X <- resid(object=M.gls18X, type="normalized")  
   boxplots.resids2(M.gls18X, E.18X, "X")
+
+  par(mfrow=c(2,2), mar=c(4.5, 4.5, 4, 1), xaxt="s")
+  plot(fitted(M.gls1X), resid(object=M.gls1X, type="normalized"), main="no variance structure", xlab="fitted values", ylab="normalized residuals", col="gray", pch=16)
+  plot(fitted(M.gls2X), resid(object=M.gls2X, type="normalized"), main="variance covariate: agency", xlab="fitted values", ylab="normalized residuals", col="gray", pch=16)
+  plot(fitted(M.gls18X), resid(object=M.gls18X, type="normalized"), main="variance covariates: agency + varExp(rain)", xlab="fitted values", ylab="normalized residuals", col="gray", pch=16)
 }
 
 #variance functions for best fit model so far
-vf1X <- varComb(varIdent(form= ~1|agency), varExp(form= ~rain))  #for TSS, rain is daymetPrecip
+vf1X <- varIdent(form= ~1|agency) 
+#vf1X <- varComb(varIdent(form= ~1|agency), varExp(form= ~rain))  #for TSS, rain is daymetPrecip
 
 
 # Steps 4-6: Find the proper random effects structure; look for temporal and spatial autocorrelation
@@ -604,8 +574,9 @@ if(run_exploratory_code==TRUE) {
   #   else ee.4[[i]] <- as.formula(paste("result~dry + rain + ", dd[i,1], "+", dd[i,2], "+", dd[i,3]))
   # }
   
-  ee <- ee.1  #c(ee.1, ee.2, ee.3, ee.4) 
+  ee <- ee.1 #c(ee.1, ee.2)  #c(ee.1, ee.2, ee.3, ee.4) 
   
+  MyEqns <- list(formulas=ee, aics=rep(0, length(ee)), do_signs_match=rep(FALSE, length(ee)))
   
   #run the lme for each formula, saving the AIC values; takes about 7 minutes to run
   ptm <- proc.time()  #time the code!
@@ -613,8 +584,29 @@ if(run_exploratory_code==TRUE) {
   for (i in 1:length(ee)) {
     bb <- lme(data=coc2, ee[[i]], random = r1X, method="ML", weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
     my.aics[i] <- AIC(bb)
+    MyEqns$aics[i] <- AIC(bb)
+    #extract landscape predictor coefficients 
+    aa <- summary(bb)$coefficients$fixed
+    aa <- aa[names(aa) %in% preds.1]
+    aa <- sign(aa)
+    aa <- aa[sort(names(aa))]
+    #extract coefficient signs for linear models of result~landscape predictors
+    cc <- bp_signs[names(bp_coefs) %in% names(aa)]
+    cc <- cc[sort(names(cc))]
+    #compare coefficient signs from this model, to those of single-predictor linear models
+    MyEqns$do_signs_match[i] <- identical(aa, cc)  #if coefficient signs match, TRUE; (default=FALSE)
+    
   }
   proc.time() - ptm  #stop the clock;  9 minutes for 386 models
+  
+  
+  xx <- which(MyEqns$do_signs_match==TRUE)
+  
+  ee.all <- ee
+  ee <- ee[xx]
+  my.aics.all <- my.aics
+  my.aics <- my.aics[xx]
+  
   
   par(mfrow=c(3,4), mar=c(1,2,2,0), oma=c(1,1,1,1))
   gg <- rep("black", length(ee))
@@ -644,7 +636,7 @@ if(run_exploratory_code==TRUE) {
   my.aics.m4 <- my.aics[order(my.aics)]
   my.aics.m4[1:10]  #what are the top 10 AIC's?
   
-  save(my.formulas.m4, my.aics.m4, file=(here("scripts", "formulas_and_aics", "TSS_m4.RData")))
+  save(my.formulas.m4, my.aics.m4, file=(here("..", "scripts", "formulas_and_aics", "TSS_m4.RData")))
 }
 
 
@@ -697,21 +689,20 @@ E3 <- residuals(object=Model3, type="normalized")
 
 #run through the top formulas when only best predictors are on the table;
 #  keep only formulas that make sense
-myForm <- my.formulas.m4[[10]]
+myForm <- my.formulas.m4[[6]]
 #myForm <- formula(result ~ rain + traffic + paved)
 
 #these lines of code assess fit of this particular model in terms of COC vs. individual predictors, and predictor correlation
 myModel <- lme(data=coc2, myForm, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 summary(myModel)
 AIC(myModel)
-check.cor(myModel)
 plot.single.preds(myModel)
+check.cor(myModel)
 boxplots.resids2(myModel, residuals(myModel, type="normalized"), "X")
 
 #formulas that are worth considering (single plots of predictors make sense)
-Form4a <- my.formulas.m4[[6]]  #AIC=1244.2
-Form4b <- formula(result ~ rain + traffic + paved) #my.formulas.m4[[9]]  #AIC=1246.0
-Form4c <- my.formulas.m4[[10]]  #AIC=1246.5
+Form4a <- my.formulas.m4[[3]]  #AIC=1253.5
+Form4b <- formula(result ~ rain + sqrt_traffic + paved) #my.formulas.m4[[9]]  #AIC=1255.9
 
 #####  Best fit Model4  ####
 
@@ -720,17 +711,17 @@ Model4 <- lme(data=coc2, Form4, method="ML", random=r1X, weights=vf1X, control =
 E4 <- residuals(object = Model4, type = "normalized")
 
 #try adding interactions and see if they are significant
-M4.sub1 <- update(Model4, . ~ . + rain:traffic) #not significant (p=0.5068)
+M4.sub1 <- update(Model4, . ~ . + rain:sqrt_traffic) #not significant (p=0.5837)
 anova(Model4, M4.sub1)
-M4.sub2 <- update(Model4, . ~ . + rain:paved)  #not significant (p=0.5582)
+M4.sub2 <- update(Model4, . ~ . + rain:paved)  #not significant (p=0.4116)
 anova(Model4, M4.sub2)
-M4.sub3 <- update(Model4, . ~ . + traffic:paved)  #not significant (p=0.9587)
+M4.sub3 <- update(Model4, . ~ . + sqrt_traffic:paved)  #not significant (p=0.905)
 anova(Model4, M4.sub3)
 
 
-Form4.alt <- Form4c
-Model4.alt <- lme(data=coc2, Form4.alt, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
-E4.alt <- residuals(object = Model4.alt, type = "normalized")
+# Form4.alt <- Form4c
+# Model4.alt <- lme(data=coc2, Form4.alt, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
+# E4.alt <- residuals(object = Model4.alt, type = "normalized")
 
 
 #------ Compare models and plot ---------#
@@ -749,9 +740,6 @@ if(run_exploratory_code==TRUE) {
   
   M4.preds <- predict(Model4)
   plot.preds.vs.results(M4.preds)
-  
-  M5.preds <- predict(Model5)
-  plot.preds.vs.results(M5.preds)
 }
 
 
@@ -761,13 +749,13 @@ if(run_exploratory_code==TRUE) {
 
 #check residuals for each model, to see if they tell us anything important
 par(mfrow=c(2,2), mar=c(2,4,4,1), oma=c(0,0,0,0))
-plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E4, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E4, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 # plot(coc2$location, E4.alt, main="Model 4, alternate", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,2,2,3,4,4,4,5,5,5,6,6,6)])
@@ -836,7 +824,7 @@ TSS.Form3 <- Form3
 TSS.Form4 <- Form4
 TSS.rain <- rain
 
-save(TSS.coc2, TSS.r1X, TSS.vf1X, TSS.Form3, TSS.Form4, rain, file=here("results", "TSS Models.RData"))
+save(TSS.coc2, TSS.r1X, TSS.vf1X, TSS.Form3, TSS.Form4, rain, file=here("..", "results", "TSS Models.RData"))
 
 
 
@@ -879,6 +867,58 @@ boxplot(coc2$result ~ coc2$location, xlab="", ylab="ln(TSS)", col=landuseCol[c(1
 
 
 
+
+#---------------------------------#
+#  Plots for Presentation to GEE  #
+#---------------------------------#
+
+par(mfrow=c(1,1))
+dotchart(coc$result, groups=coc$loc, pch=19, col=colors_agency[as.numeric(coc$agency)],
+         xlab="concentration", main=paste("Cleveland Dotplot:", this_param_short))
+
+#relationship between COC and temporal/ location predictors
+  pr1 <- ggplot(coc, aes(agency, result)) + geom_boxplot()
+  # tlp1 <- ggplot(coc, aes(as.factor(year), result)) + geom_boxplot()  #starts in Feb, 2009, ends in April, 2013; trends could be due to months with data?
+  # tlp2 <- ggplot(coc, aes(month, result)) + geom_boxplot(position=position_dodge(width=0.9))
+  # a <- coc %>% count(month)
+  # tlp2 <- tlp2 + annotate(geom="text", x=c(1:12), y=rep(-1.4,12), label=paste("n=", a[,2], sep=""),
+  #                         color="red", size=3.5, angle=90)  #note the small sample size in June-Sept
+  # tlp3 <- ggplot(coc, aes(as.factor(season), result)) + geom_boxplot()
+  # tlp4 <- ggplot(coc, aes(land_use, result)) + geom_boxplot()
+  tlp5 <- ggplot(coc, aes(loc, result)) + geom_boxplot()
+  # look especially for sources of heterogeneity
+#  grid.arrange(pr1, tlp5, tlp1, tlp2, tlp3, tlp4, nrow=2)
+  tlp5 <- ggplot(coc, aes(loc, result, fill=agency)) + geom_boxplot()
+
+  tlp5 + scale_fill_manual(values=colors_agency) + xlab("") + ylab("ln(TSS)") + labs(fill="Agency") +
+    theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), legend.key.size=unit(1, 'cm'))
+
+  tlp5.b <- ggplot(coc, aes(loc, result)) + geom_boxplot(fill=colors_location)
+  tlp5.b + xlab("") + ylab("") + 
+    theme(axis.text = element_blank(), axis.ticks = element_blank())
+  
+lp_plots()
+
+lpx13 <- ggplot(coc, aes(coc[,predictors[13]], result)) + geom_point() + xlab(predictors[13]) + 
+  geom_smooth(method = "lm") + theme(axis.text = element_blank(), axis.ticks = element_blank())
+lpx15 <- ggplot(coc, aes(coc[,predictors[15]], result)) + geom_point() + xlab(predictors[15]) + 
+  geom_smooth(method = "lm") + theme(axis.text = element_blank(), axis.ticks = element_blank()) 
+lpx17 <- ggplot(coc, aes(coc[,predictors[17]], result)) + geom_point() + xlab(predictors[17]) + 
+  geom_smooth(method = "lm") + theme(axis.text = element_blank(), axis.ticks = element_blank()) 
+lpx20 <- ggplot(coc, aes(coc[,predictors[20]], result)) + geom_point() + xlab(predictors[20]) + 
+  geom_smooth(method = "lm") + theme(axis.text = element_blank(), axis.ticks = element_blank()) 
+grid.arrange(lpx13, lpx15, lpx17, lpx20)
+
+
+tlp_plots()
+#for TSS, daymet_precip shows evidence of heteroskedasticity; also has best fit  
+#   location, agency, landuse, and year also show heteroskedasticity
+
+
+
+#best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
+best_predictors <- c("totRES", "traffic", "sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_tot", 
+                     "sqrt_CO2_com", "sqrt_CO2_road", "devAge2", "paved")
 
 
 

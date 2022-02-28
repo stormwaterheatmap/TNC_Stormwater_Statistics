@@ -5,16 +5,17 @@
 # Additionally, v4 also processes landuse percentage predictors, with landuse based on WA commerce landuses
 
 # avg_AADT = average annual daily traffic
+# Feb 17, 2022: traffic predictor changed to sqrt_traffic
 
 # Author: Eva Dusek Jennings
-# Date: July 29, 2021
+# Date: Feb 17, 2022
 #---------------------------------------------
 
 library(tidyverse)
 library(here)
 #library(magrittr)
 
-sp <- read.csv(file=here("data", "spatial_predictors_raw.csv")) %>%
+sp <- read.csv(file=here("..", "data", "spatial_predictors_raw.csv")) %>%
   dplyr::rename(location=Location_N) %>%   #rename column "Location_N" to "location"
   dplyr::filter(! (location %in% c("POSOUTFALL_60",  #remove the following sites: Port of Seattle outfall (unrepresentative of other watersheds)
                             "PIEHIRES_OUT",   #                            Pierce County High Residential (data were collected in the middle of a stream)
@@ -99,6 +100,17 @@ dotchart(sqrt(sp$pop_per_ha), main="sqrt popn", group=sp$loc)
 #transformations: sqrt(popn), sqrt(nodev); keep nodev as well...
 #2. predictors to keep: grass, greenery, paved, roofs, impervious, sqrt(nodev), nodev,
 #   trees, traffic, sqrt(popn)
+
+#look at just traffic - option of transforming it to better deal with high traffic volumes 
+#  not captured in our dataset
+op <- par(mfrow=c(2,2), mar=c(3,3,3,1))
+dotchart(sp$traffic, main="traffic", group=sp$loc)  
+dotchart(sqrt(sp$traffic), main="sqrt(traffic)", group=sp$loc)  
+dotchart(log(sp$traffic), main="log(traffic)", group=sp$loc)  
+#while the traffic data don't really require a transformation, sqrt-transformation does improve
+# the fit a bit.  log-transformation is too much.
+# since actual traffic data range much higher than our dataset, Christian requests sqrt(traffic) transformation
+
 
 op <- par(mfrow=c(2,3), mar=c(3,3,3,1))
 dotchart(sp$NO_2, main="NO_2", group=sp$loc)
@@ -192,6 +204,7 @@ sp_t <- sp %>%
                 sqrt_totRES=sqrt(totRES),
                 sqrt_nodev=sqrt(nodev),
                 sqrt_popn=sqrt(popn),
+                sqrt_traffic=sqrt(traffic),
                 sqrt_slope=sqrt(slope),
                 sqrt_CO2_res=sqrt(CO2_res),
                 sqrt_CO2_tot=sqrt(CO2_tot),
@@ -218,7 +231,7 @@ sp_t <- sp %>%
                 impervious,
                 nodev, #sqrt_nodev,
                 trees,
-                traffic,
+                sqrt_traffic, #traffic,
                 sqrt_popn,
                 no2,
                 #pm25,
@@ -308,7 +321,15 @@ sp_std <- data.frame(location=as.factor(sp_t[,c("location")]), loc=as.factor(sp_
 
 sp_final <- sp_std
 
-write.csv(sp_final, here("processed_data", "spatial_predictors_standardized.csv"), row.names=FALSE)
+write.csv(sp_final, here("..", "processed_data", "spatial_predictors_standardized.csv"), row.names=FALSE)
+
+
+#save mean and sd for standardization as a csv file
+sp_standardization_values <- data.frame(mean=sp_means[3:length(sp_means)],
+                                        sd=sp_sds[3:length(sp_sds)])
+rownames(sp_standardization_values) <- colnames(sp_t[3:ncol(sp_t)])
+
+write.csv(sp_standardization_values, here("..", "processed_data", "spatial_predictor_standardization_values.csv"), row.names=TRUE)
 
 
 #---------#
@@ -355,6 +376,7 @@ op <- par(mfrow=c(6,5), mar=c(1,1,1,1), oma=c(0,0,0,0), xaxt="n", cex.main=1.5)
 #dotchart(sqrt(sp$intURB), main="sqrt_intURB", group=sp$loc, yaxt="n")  #intensive urban
 #dotchart(sqrt(sp$no_dev), main="sqrt_nodev", group=sp$loc)  
 dotchart(sqrt(sp$pop_per_ha), main="sqrt_popn", group=sp$loc) 
+dotchart(sqrt(sp$traffic), main="sqrt_traffic", group=sp$loc) 
 dotchart(sqrt(sp$slope), main="sqrt_slope", group=sp$loc)
 dotchart(sqrt(sp$CO_emissions_residential), main="sqrt_CO2_res", group=sp$loc)
 dotchart(sqrt(sp$CO_emissions_total), main="sqrt_CO2_tot", group=sp$loc)
