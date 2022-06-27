@@ -1,4 +1,4 @@
-**Predictors reduced by watershed**
+## Predictors reduced by watershed
 
 This files contain scaled and centered predictors summarized by various watershed layers. 
 
