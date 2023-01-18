@@ -10,19 +10,52 @@
 #       include the random effects, acknowledging that we don't know the intercept.  
 
 # Author: Eva Dusek Jennings
-# Revised: Aug 24, 2022
+# Revised: Jan 18, 2023
 #------------------------------------------------------------------------------------
 
 rm(list=ls(all=T))
 
-#read watershed reductions (Puget Sound AU) csv that Christian sent on 1/5/23
-wr_psau <- read.csv("../data/PS_AU_with_predictors.csv")
-wr <- wr_psau
-
+#read watershed reductions
+wr_psau <- read.csv("../data/watershed_reductions/psau-predictors.csv")
+wr_huc12 <- read.csv("../data/watershed_reductions/huc12-predictors.csv")
+wr_nhdplus <- read.csv("../data/watershed_reductions/nhdplus-predictors.csv")
 # #read (raw) watershed reductions (PSAU version) csv from stormwaterheatmap GitHub page
 # wr_psau <- read.csv("https://raw.githubusercontent.com/stormwaterheatmap/TNC_Stormwater_Statistics/main/data/watershed_reductions/psau-predictors.csv")
-# wr <- wr_psau[-which(wr_psau$AU_ID==0),] %>%
-#   mutate(sqrt_traffic=traffic)   #### get rid of this once we sort out what "traffic" actually means!
+
+#add a column to each watershed reduction, that indicates watershed ID; each watershed reduction has a diff't column name for ID
+wr_psau$watershed_ID <- wr_psau$AU_ID
+wr_huc12$watershed_ID <- wr_huc12$system.index
+wr_nhdplus$watershed_ID <- wr_nhdplus$Watershed.Name
+
+# psau - are there any rows of redundant watersheds?  If so, remove them!
+n_occur <- data.frame(table(wr_psau$watershed_ID))    
+n_occur[n_occur$Freq > 1,]
+wr_psau[wr_psau$watershed_ID %in% n_occur$Var1[n_occur$Freq > 1],]  #no repeat occurrences in wr_psau
+nrow(wr_psau)  #check if the number of rows = number of unique rows
+length(unique(wr_psau$watershed_ID))  
+
+# huc12 - are there any rows of redundant watersheds?  If so, remove them!
+n_occur <- data.frame(table(wr_huc12$watershed_ID))   
+n_occur[n_occur$Freq > 1,]
+wr_huc12[wr_huc12$watershed_ID %in% n_occur$Var1[n_occur$Freq > 1],]  #there are 10 entries with "0.00E+00" in system.index; each has diff't predictor values
+wr_huc12 <- wr_huc12[-which(wr_huc12$watershed_ID=="0.00E+00"),]  #remove rows that have repeat watershed_ID values
+nrow(wr_huc12)  #check if the number of rows = number of unique rows
+length(unique(wr_huc12$watershed_ID))  
+
+# nhdplus - are there any rows of redundant watersheds?  If so, remove them!
+n_occur <- data.frame(table(wr_nhdplus$watershed_ID))  
+n_occur[n_occur$Freq > 1,]
+wr_nhdplus[wr_nhdplus$watershed_ID %in% n_occur$Var1[n_occur$Freq > 1],]  #there are 10 entries with "0.00E+00" in system.index; each has diff't predictor values
+nrow(wr_nhdplus)  #check if the number of rows = number of unique rows
+length(unique(wr_nhdplus$watershed_ID))  
+
+#combine watershed reductions into a list; 1=psau, 2=huc12, 3=nhdplus
+wr.list <- list("psau"=wr_psau, 
+                "huc12"=wr_huc12,
+                "nhdplus"=wr_nhdplus)
+wr.names <- names(wr.list)
+
+rm(wr_psau, wr_huc12, wr_nhdplus)
 
 #read in standardization values for spatial predictors, for unstandardizing and untransforming purposes
 std.vals <- read.csv("../processed_data/spatial_predictor_standardization_values.csv", header=TRUE)
@@ -43,27 +76,32 @@ source("Bayesian Credibility Interval Function.R")
 load(file="../results/Bayesian_Copper.RData")
 load(file="../results/Frequentist_Copper Models.RData")
 
-#summary(Cu.brm)$fixed
+#summary(Cu.brm)$fixed  #provides predictors for this COC
+
+#select which watershed to use;  1=psau; 2=huc12; 3=nhdplus
+my.wr <- 2
+wr <- wr.list[[my.wr]]
+this.wr <- wr.names[my.wr]  #which watershed reduction are we using?
 
 #predictor values for this COC, by watershed
-Cu.wr_preds <- wr[, c("AU_ID", "sqrt_traffic", "devAge2")]
+Cu.wr_preds <- wr[, c("watershed_ID", "sqrt_traffic", "devAge2")]
 names(Cu.wr_preds) <- c("location", "sqrt_traffic", "devAge2")
 
 #run the 80% credibility interval function for all watersheds
 Cu.CI <- interpCI(LCI=0.1, UCI=0.9, Cu.brm, Cu.coc2, Cu.wr_preds)
 
 # if(F) {
-#   load(file="../results/Copper_80_CI_wr_psau.Rdata")
+#   load(file="../results/CI_80_huc12_Copper.Rdata")   #make sure to adjust my.wr above to match!
 # }
-# 
-# #plot transformed & standardized median values (black) with upper/ lower 80% CI's 
-# plotBayesianCIs(Cu.CI, "Copper", c("sqrt_traffic", "devAge2"))
-# 
-# #plot raw median values (black) with upper/ lower 80% CI's
-# plotBayesianCIs.raw(Cu.CI, "Copper", c("sqrt_traffic", "devAge2"))
-# 
+
+#plot transformed & standardized median values (black) with upper/ lower 80% CI's
+plotBayesianCIs(Cu.CI, "Copper", c("sqrt_traffic", "devAge2"))
+
+#plot raw median values (black) with upper/ lower 80% CI's
+plotBayesianCIs.raw(Cu.CI, "Copper", c("sqrt_traffic", "devAge2"))
+
 #save the credibility intervals for this particular watershed reduction, using the watershed reduction acronym
-save(Cu.CI, file="../results/CI_80_PSAU_Copper.Rdata")
+save(Cu.CI, file= paste("../results/CI_80_", this.wr, "_Copper.Rdata", sep="") )
 
 rm(Cu.brm, Cu.CI)  #remove large items associated with previous calculations
 
@@ -72,61 +110,66 @@ rm(Cu.brm, Cu.CI)  #remove large items associated with previous calculations
 #  Phosphorus  #
 #--------------#
 
-# load Bayesian copper model: P.brm and phosphorus coc2 data frame
+# load Bayesian phosphorus model: P.brm and phosphorus coc2 data frame
 load(file="../results/Bayesian_Phosphorus.RData")
 load(file="../results/Frequentist_Total Phosphorus Models.RData")
 
 summary(P.brm)$fixed
 
+#select which watershed to use;  1=psau; 2=huc12; 3=nhdplus
+my.wr <- 3
+wr <- wr.list[[my.wr]]
+this.wr <- wr.names[my.wr]  #which watershed reduction are we using?
+
 #predictor values for this COC, by watershed
-P.wr_preds <- wr[, c("AU_ID", "sqrt_CO2_road")]
+P.wr_preds <- wr[, c("watershed_ID", "sqrt_CO2_road")]
 names(P.wr_preds) <- c("location", "sqrt_CO2_road")
 
 #run the 80% credibility interval function for all watersheds
 P.CI <- interpCI(LCI=0.1, UCI=0.9, P.brm, P.coc2, P.wr_preds)
 
-#plot median (black) and upper/ lower CI's (red & blue)
-par(mfrow=c(2,1))
-plot(P.CI$med ~ P.CI$sqrt_CO2_road, pch=16, col="black", ylim=c(2.5, 6.5),
-     main="Phosphorus Credibility Intervals", ylab="ln(Phosphorus)", xlab="centered sqrt_CO2_road")
-points(P.CI$upperCI ~ P.CI$sqrt_CO2_road, pch=16, col="red")
-points(P.CI$lowerCI ~ P.CI$sqrt_CO2_road, pch=16, col="blue")
+#plot transformed & standardized median values (black) with upper/ lower 80% CI's
+plotBayesianCIs(P.CI, "Phosphorus", c("sqrt_CO2_road"))
+
+#plot raw median values (black) with upper/ lower 80% CI's
+plotBayesianCIs.raw(P.CI, "Phosphorus", c("sqrt_CO2_road"))
 
 #save the credibility intervals for this particular watershed reduction, using the watershed reduction acronym
-save(P.CI, file="../results/CI_80_PSAU_Phosphorus.Rdata")
+save(P.CI, file= paste("../results/CI_80_", this.wr, "_Phosphorus.Rdata", sep="") )
 
 rm(P.brm, P.CI)   #remove large items associated with previous calculations
 
 
 #--------------#
-#  Total Zinc  #   #### NOTE: waiting on update to psau_wr (including sqrt_CO2_tot) so that Zn CI's can be run
+#  Total Zinc  #
 #--------------#
 
-# load Bayesian copper model: Zn.brm and phosphorus coc2 data frame
+# load Bayesian total Zinc model: Zn.brm and phosphorus coc2 data frame
 load(file="../results/Bayesian_TotalZinc.RData")
 load(file="../results/Frequentist_Total Zinc Models.RData")
 
 summary(totZn.brm)$fixed
 
+#select which watershed to use;  1=psau; 2=huc12; 3=nhdplus
+my.wr <- 3
+wr <- wr.list[[my.wr]]
+this.wr <- wr.names[my.wr]  #which watershed reduction are we using?
+
 #predictor values for this COC, by watershed
-totZn.wr_preds <- wr[, c("AU_ID", "sqrt_traffic", "paved")]
+totZn.wr_preds <- wr[, c("watershed_ID", "sqrt_traffic", "paved")]
 names(totZn.wr_preds) <- c("location", "sqrt_traffic", "paved")
 
 #run the 80% credibility interval function for all watersheds
 totZn.CI <- interpCI(LCI=0.1, UCI=0.9, totZn.brm, totZn.coc2, totZn.wr_preds)
 
-#plot median (black) and upper/ lower CI's (red & blue)
-par(mfrow=c(2,1))
-plot(totZn.CI$med ~ totZn.CI$sqrt_traffic, pch=16, col="black", ylim=c(1, 7))
-points(totZn.CI$upperCI ~ totZn.CI$sqrt_traffic, pch=16, col="red")
-points(totZn.CI$lowerCI ~ totZn.CI$sqrt_traffic, pch=16, col="blue")
+#plot transformed & standardized median values (black) with upper/ lower 80% CI's
+plotBayesianCIs(totZn.CI, "Total Zinc", c("sqrt_traffic", "paved"))
 
-plot(totZn.CI$med ~ totZn.CI$paved, pch=16, col="black", ylim=c(1, 8))
-points(totZn.CI$upperCI ~ totZn.CI$paved, pch=16, col="red")
-points(totZn.CI$lowerCI ~ totZn.CI$paved, pch=16, col="blue")
+#plot raw median values (black) with upper/ lower 80% CI's
+plotBayesianCIs.raw(totZn.CI, "Total Zinc", c("sqrt_traffic", "paved"))
 
 #save the credibility intervals for this particular watershed reduction, using the watershed reduction acronym
-save(totZn.CI, file="../results/CI_80_PSAU_TotalZinc.Rdata")
+save(totZn.CI, file= paste("../results/CI_80_", this.wr, "_TotalZinc.Rdata", sep="") )
 
 rm(totZn.brm, totZn.CI)   #remove large items associated with previous calculations
 
@@ -135,41 +178,39 @@ rm(totZn.brm, totZn.CI)   #remove large items associated with previous calculati
 #  Total Kjeldahl Nitrogen  #
 #---------------------------#
 
-# load Bayesian copper model: P.brm and phosphorus coc2 data frame
+# load Bayesian TKN model: TKN.brm and TKN coc2 data frame
 load(file="../results/Bayesian_TotalKjeldahlNitrogen.RData")
 load(file="../results/Frequentist_Total Kjeldahl Nitrogen Models_censtat.RData")
 
 summary(TKN.brm)$fixed
 
+#select which watershed to use;  1=psau; 2=huc12; 3=nhdplus
+my.wr <- 3
+wr <- wr.list[[my.wr]]
+this.wr <- wr.names[my.wr]  #which watershed reduction are we using?
+
 #predictor values for this COC, by watershed
-TKN.wr_preds <- wr[, c("AU_ID", "sqrt_traffic", "devAge2")]
+TKN.wr_preds <- wr[, c("watershed_ID", "sqrt_traffic", "devAge2")]
 names(TKN.wr_preds) <- c("location", "sqrt_traffic", "devAge2")
 
 #run the 80% credibility interval function for all watersheds
 TKN.CI <- interpCI(LCI=0.1, UCI=0.9, TKN.brm, TKN.coc2, TKN.wr_preds)
 
-#plot median (black) and upper/ lower CI's (red & blue)
-par(mfrow=c(2,1))
-plot(TKN.CI$med ~ TKN.CI$sqrt_traffic, pch=16, col="black", ylim=c(5, 8.1))
-points(TKN.CI$upperCI ~ TKN.CI$sqrt_traffic, pch=16, col="red")
-points(TKN.CI$lowerCI ~ TKN.CI$sqrt_traffic, pch=16, col="blue")
+#plot transformed & standardized median values (black) with upper/ lower 80% CI's
+plotBayesianCIs(TKN.CI, "Total Kjeldahl Nitrogen", c("sqrt_traffic", "devAge2"))
 
-plot(TKN.CI$med ~ TKN.CI$devAge2, pch=16, col="black", ylim=c(5, 8.1))
-points(TKN.CI$upperCI ~ TKN.CI$devAge2, pch=16, col="red")
-points(TKN.CI$lowerCI ~ TKN.CI$devAge2, pch=16, col="blue")
+#plot raw median values (black) with upper/ lower 80% CI's
+plotBayesianCIs.raw(TKN.CI, "Total Kjeldahl Nitrogen", c("sqrt_traffic", "devAge2"))
 
 #save the credibility intervals for this particular watershed reduction, using the watershed reduction acronym
-save(TKN.CI, file="../results/CI_80_PSAU_TotalKjeldahlNitrogen.Rdata")
+save(TKN.CI, file= paste("../results/CI_80_", this.wr, "_TotalKjeldahlNitrogen.Rdata", sep="") )
 
+rm(TKN.brm, TKN.CI)   #remove large items associated with previous calculations
 
 
 #--------------------------#
 #  Total Suspended Solids  #
 #--------------------------#
-
-rm(TKN.brm, TKN.CI)   #remove large items associated with previous calculations
-
-source("Bayesian Credibility Interval Function.R")
 
 # load Bayesian copper model: P.brm and phosphorus coc2 data frame
 load(file="../results/Bayesian_TSS.RData")
@@ -177,27 +218,33 @@ load(file="../results/Frequentist_TSS Models.RData")
 
 summary(TSS.brm)$fixed
 
+#select which watershed to use;  1=psau; 2=huc12; 3=nhdplus
+my.wr <- 1
+wr <- wr.list[[my.wr]]
+this.wr <- wr.names[my.wr]  #which watershed reduction are we using?
+
 #predictor values for this COC, by watershed
-TSS.wr_preds <- wr[, c("AU_ID", "sqrt_traffic", "devAge2")]
+TSS.wr_preds <- wr[, c("watershed_ID", "sqrt_traffic", "devAge2")]
 names(TSS.wr_preds) <- c("location", "sqrt_traffic", "devAge2")
 
 #run the 80% credibility interval function for all watersheds
 TSS.CI <- interpCI(LCI=0.1, UCI=0.9, TSS.brm, TSS.coc2, TSS.wr_preds)
 
-#plot median (black) and upper/ lower CI's (red & blue)
-par(mfrow=c(2,1))
-plot(TSS.CI$med ~ TSS.CI$sqrt_traffic, pch=16, col="black", ylim=c(8, 12.5),
-     main="TSS Credibility Intervals", ylab="ln(TSS)", xlab="centered sqrt_traffic")
-points(TSS.CI$upperCI ~ TSS.CI$sqrt_traffic, pch=16, col="red")
-points(TSS.CI$lowerCI ~ TSS.CI$sqrt_traffic, pch=16, col="blue")
+#plot transformed & standardized median values (black) with upper/ lower 80% CI's
+plotBayesianCIs(TSS.CI, "Total Suspended Solids", c("sqrt_traffic", "devAge2"))
 
-plot(TSS.CI$med ~ TSS.CI$devAge2, pch=16, col="black", ylim=c(8, 12.5),
-     main="", ylab="ln(TSS)", xlab="centered devAge^2")
-points(TSS.CI$upperCI ~ TSS.CI$devAge2, pch=16, col="red")
-points(TSS.CI$lowerCI ~ TSS.CI$devAge2, pch=16, col="blue")
+#plot raw median values (black) with upper/ lower 80% CI's
+plotBayesianCIs.raw(TSS.CI, "Total Suspended Solids", c("sqrt_traffic", "devAge2"))
 
 #save the credibility intervals for this particular watershed reduction, using the watershed reduction acronym
-save(TSS.CI, file="../results/CI_80_PSAU_TSS.Rdata")
+save(TSS.CI, file= paste("../results/CI_80_", this.wr, "_TSS.Rdata", sep="") )
+
+rm(TSS.brm, TSS.CI)   #remove large items associated with previous calculations
+
+
+
+
+
 
 
 
