@@ -3,5 +3,5 @@
 .RData
 .Ruserdata
 Rplot.pdf
+*.rds
 *.tif
-data/d.CI_trunc.rds

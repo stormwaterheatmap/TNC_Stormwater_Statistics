@@ -21,39 +21,69 @@ my.ggplot <- function(pred_num) {
 
 
 #relationships between coc and landscape predictors
-lp_plots <- function() {
-  lp1 <- my.ggplot(1)
-  lp2 <- my.ggplot(2)
-  lp3 <- my.ggplot(3)
-  lp4 <- my.ggplot(4)
-  lp5 <- my.ggplot(5)
-  lp6 <- my.ggplot(6)
-  lp7 <- my.ggplot(7)
-  lp8 <- my.ggplot(8)
-  lp9 <- my.ggplot(9)
-  lp10 <- my.ggplot(10)
-  lp11 <- my.ggplot(11)
-  lp12 <- my.ggplot(12)
-  lp13 <- my.ggplot(13)
-  lp14 <- my.ggplot(14)
-  lp15 <- my.ggplot(15)
-  lp16 <- my.ggplot(16)
-  lp17 <- my.ggplot(17)
-  lp18 <- my.ggplot(18)
-  lp19 <- my.ggplot(19)
-  lp20 <- my.ggplot(20)
-  lp21 <- my.ggplot(21)
-  lp22 <- my.ggplot(22)
-  lp23 <- my.ggplot(23)
-  lp24 <- my.ggplot(24)
-  lp25 <- my.ggplot(25)
-  lp26 <- my.ggplot(26)
-  lp27 <- my.ggplot(27)
-  lp28 <- my.ggplot(28)
-  grid.arrange(lp1, lp2, lp3, lp4, lp5, lp6, lp7, lp8, lp9, lp10, lp11, lp12, nrow=3, ncol=4)
-  grid.arrange(lp13, lp14, lp15, lp16, lp17, lp18, lp19, lp20, lp21, lp22, lp23, lp24, nrow=3, ncol=4)
-  grid.arrange(lp25, lp26, lp27, lp28, nrow=3, ncol=4)
+lp_plots <- function(pred_index=c(1:n.preds)) {  #default input is all predictors
+
+  #split up all predictors into groups of 12; each list below (lpA through lpD) will hold up to 12 grobs
+  lpA <- list()
+  lpB <- list()
+  lpC <- list()
+  lpD <- list()
+  for (i in 1:length(pred_index)) {
+    p <- my.ggplot(pred_index[i])
+    n <- ceiling(i/12) - 1  #for indexing within lpA through lpD
+    if (i<=12) { #first 12 plots go in lpA
+      lpA[[i]] <- p
+    } else if (i >12 & i <=24) {  #plots 13-24 go in lpB, etc.
+      lpB[[i-(n*12)]] <- p
+    } else if (i > 24 & i <=36) {
+      lpC[[i-(n*12)]] <- p
+    } else if (i > 36) {
+      lpD[[i-(n*12)]] <- p
+    }
+  }  
+
+  do.call("grid.arrange", c(lpA, nrow=3, ncol=4))
+  do.call("grid.arrange", c(lpB, nrow=3, ncol=4))
+  do.call("grid.arrange", c(lpC, nrow=3, ncol=4))
+  do.call("grid.arrange", c(lpD, nrow=3, ncol=4))
+  
+  #the following code is for just one list object; if I can figure out how to split it up into
+  #  several grid.arrange pages, this would work better.
+  # 
+  # lp <- list()
+  # for (i in 1:n.preds) {
+  #   n <- my.ggplot(i)
+  #   lp[[i]] <- n
+  # }  
+  # 
+  # n <- 12
+  # nCol <- floor(sqrt(n))
+  # do.call("grid.arrange", c(lp, ncol=nCol))
 }
+
+#relationships between coc and landscape predictors
+lp_plots2 <- function(pred_index=c(1:n.preds)) {  #default input is all predictors
+  #split up all predictors into groups of 16; each list below (lpA through lpD) will hold up to 16 grobs
+  lpA <- list()
+  lpB <- list()
+  lpC <- list()
+  for (i in 1:length(pred_index)) {
+    p <- my.ggplot(pred_index[i])
+    n <- ceiling(i/16) - 1  #for indexing within lpA through lpD
+    if (i<=16) { #first 12 plots go in lpA
+      lpA[[i]] <- p
+    } else if (i >16 & i <=32) {  #plots 17-32 go in lpB, etc.
+      lpB[[i-(n*16)]] <- p
+    } else if (i > 32 & i <=48) {
+      lpC[[i-(n*16)]] <- p
+    }
+  }  
+  
+  do.call("grid.arrange", c(lpA, nrow=4, ncol=4))
+  do.call("grid.arrange", c(lpB, nrow=4, ncol=4))
+  do.call("grid.arrange", c(lpC, nrow=4, ncol=4))
+}
+
 
 #relationship between COC and precipitation
 pr_plots <- function() {

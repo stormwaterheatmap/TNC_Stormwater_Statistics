@@ -6,12 +6,13 @@
 
 # avg_AADT = average annual daily traffic
 # Feb 17, 2022: traffic predictor changed to sqrt_traffic
+# Jan 4, 2023: add CO2_ccorr (cmv, commercial, onroad, rail, residential) & CO2_corr (cmv, onroad, rail, residential)
 
 # Author: Eva Dusek Jennings
-# Date: Feb 17, 2022
+# Date: Jan 4, 2023
 #---------------------------------------------
 
-library(tidyverse)
+#library(tidyverse)
 library(here)
 #library(magrittr)
 
@@ -143,6 +144,27 @@ dotchart(sqrt(sp$CO_emissions_onroad), main="sqrt CO2_road", group=sp$loc)
 #4. predictors to keep: sqrt(CO2_res), CO2_tot, sqrt(CO2_tot), sqrt(CO2_road), sqrt(CO2_nonroad), 
 #     sqrt(CO2_com)
 
+#try a new set of CO2_almost_total predictors
+sp$CO_ccorr <- sp$CO_emissions_cmv + sp$CO_emissions_commercial + sp$CO_emissions_onroad + sp$CO_emissions_rail +
+  sp$CO_emissions_residential
+sp$CO_corr <- sp$CO_emissions_cmv + sp$CO_emissions_onroad + sp$CO_emissions_rail + sp$CO_emissions_residential
+sp$CO_cor <- sp$CO_emissions_cmv + sp$CO_emissions_onroad + sp$CO_emissions_rail 
+par(mfrow=c(3,2))
+dotchart(sp$CO_ccorr, main="CO2_ccorr", group=sp$loc)
+dotchart(sqrt(sp$CO_ccorr), main="sqrt CO2_ccorr", group=sp$loc)
+dotchart(sp$CO_corr, main="CO2_corr", group=sp$loc)
+dotchart(sqrt(sp$CO_corr), main="sqrt CO2_corr", group=sp$loc)
+dotchart(sp$CO_cor, main="CO2_cor", group=sp$loc)
+dotchart(sqrt(sp$CO_cor), main="sqrt CO2_cor", group=sp$loc)
+#use sqrt_CO_corr, sqrt_CO_ccorr, and sqrt_CO_cor
+
+par(mfrow=c(3,4))
+dotchart(sp$CO_emissions_residential, main="CO2_res", group=sp$loc)
+dotchart(sqrt(sp$CO_emissions_residential), main="sqrt CO2_res", group=sp$loc)
+dotchart(sp$CO_emissions_total, main="CO2_tot", group=sp$loc)
+dotchart(sqrt(sp$CO_emissions_total), main="sqrt CO2_tot", group=sp$loc)
+
+
 par(mfrow=c(3,2))
 #dotchart(sp$no_dev, main="nodev", group=sp$loc)  
 dotchart(sp$dev_pre_1975, main="dev pre 1975", group=sp$loc)  
@@ -197,6 +219,9 @@ sp_t <- sp %>%
                 CO2_com=CO_emissions_commercial,
                 CO2_road=CO_emissions_onroad,
                 CO2_nonroad=CO_emissions_nonroad,
+                CO2_ccorr=CO_ccorr,
+                CO2_corr=CO_corr,
+                CO2_cor=CO_cor,
                 pm25_na=PM25_NA,
                 partSA=particulate_surface_area
                 ) %>%
@@ -211,6 +236,9 @@ sp_t <- sp %>%
                 sqrt_CO2_com=sqrt(CO2_com),
                 sqrt_CO2_road=sqrt(CO2_road),
                 sqrt_CO2_nonroad=sqrt(CO2_nonroad),
+                sqrt_CO2_ccorr=sqrt(CO2_ccorr),
+                sqrt_CO2_corr=sqrt(CO2_corr),
+                sqrt_CO2_cor=sqrt(CO2_cor),
                 devAge2=devAge^2,
                 sqrt_roof_intURB=sqrt(roof_intURB),
                 sqrt_roof_urbRES=sqrt(roof_urbRES),
@@ -244,6 +272,9 @@ sp_t <- sp %>%
                 sqrt_CO2_com,
                 sqrt_CO2_road,
                 sqrt_CO2_nonroad,
+                sqrt_CO2_ccorr,
+                sqrt_CO2_corr,
+                sqrt_CO2_cor,
                 #dev_pre_1975,
                 #dev_1975_1990,
                 #dev_1990_2000,

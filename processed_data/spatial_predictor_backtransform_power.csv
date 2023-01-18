@@ -1,0 +1,6 @@
+﻿predictor,power,rawName
+sqrt_traffic,2,Traffic (AADT)
+devAge2,0.5,Development Age
+sqrt_CO2_road,2,Onroad CO2 Emissions (tC/km2/year)
+sqrt_CO2_tot,2,Total CO2 Emissions (tC/km2/year)
+paved,1,Proportion of Paved Surfaces
