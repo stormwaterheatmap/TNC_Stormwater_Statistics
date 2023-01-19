@@ -3,5 +3,5 @@
 .RData
 .Ruserdata
 Rplot.pdf
-*.rds
+#*.rds
 *.tif
