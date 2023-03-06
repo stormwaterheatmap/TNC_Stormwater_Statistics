@@ -1,16 +1,55 @@
 ---
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 # Water Quality Statistics
 
-We developed a series of linear mixed effects models to estimate
-concentrations for constituents of concern (COCs) in Puget Sound urban
-stormwater. Spatial covariates in the models included various landscape
-predictors, rainfall, seasonal components, and in some models, percent
-land use (commercial, industrial, residential).
+In this chapter, we set out to predict pollution load in stormwater
+runoff through the use of landscape spatial predictors to describe
+chemical presence in stormwater. Currently, stormwater managers often
+rely on categorical land use designations (high vs. low density
+residential, commercial, industrial) to approximate chemical loading in
+stormwater. While this method is convenient, it has some limitations:
+categorical land use designations vary by jurisdiction, limiting
+applicability of findings between jurisdictions over a landscape.
+
+Our objectives were to:
+
+1.  Find a stronger, more data-driven method of predicting chemical
+    loading compared to the current method, which relies on categorical
+    land use designations to assign pollution loads, rather than
+    continuous, quantifiable landscape spatial predictors that can be
+    objectively measured across large landscapes spanning multiple
+    stormwater jurisdictional boundaries. 
+2.  Determine whether a landscape spatial predictor approach produces
+    stronger predictive power than either a null model or the current
+    categorical land use mode.
+
+We developed models using spatial predictors to estimate concentrations
+for constituents of concern (COCs) in Puget Sound urban stormwater.
+Spatial predictors that we drew from included various landscape
+predictors, rainfall, seasonal components, and percent land use
+(commercial, industrial, residential). These models were then compared
+with models using categorical land use classifications (high density
+residential, low density residential, commercial and industrial) to
+compare model fit and predictive ability. The best fit models are
+translated to the Stormwater Heatmap communication tool using colors to
+show predicted pollutant load based on spatial landscape predictors.
+
+We also wanted to provide stormwater managers with an understanding of
+the underlying variability in predicted pollutant concentrations
+presented on the Stormwater Heatmap. We achieved this on a
+watershed-basis by calculating Bayesian 80% confidence intervals (known
+as credibility intervals) for each watershed. This information can be
+accessed in the Stormwater Heatmap by clicking on a watershed to view a
+pop-up window indicating the 80% upper and lower credibility intervals
+for that watershed.
 
 ## Data Sources
 
@@ -77,13 +116,36 @@ substitution on linear mixed effects models generated suitable results.
 **Table 4.1** Percentage of data points that were left-censored
 (non-detect) for each chemical of concern
 
-| Chemical of Concern     | Censored Data Perc entage | Notes                                                                                                                                                                                        |
-|---------------|---------------|-------------------------------------------|
-| Total Copper            | 0%                        | 4 samples were field blanks misclassified as ND's. Censored data percentage was calculated following removal of these 4 field blanks.                                                        |
-| Total Kjeldahl Nitrogen | 9.76%                     |                                                                                                                                                                                              |
-| Total Pho sphorus       | 1.17%                     | 3 samples with high results were classified as ND's, but should have been flagged as "estimated". Censored data percentage was calculated following reclassification of these 3 data points. |
-| Total Su spended Solids | 0.83%                     |                                                                                                                                                                                              |
-| Total Zinc              | 0%                        | 4 samples were field blanks misclassified as ND's. Censored data percentage was calculated following removal of these 4 field blanks                                                         |
++-------------+-------------+---------------------------------------+
+| Chemical of | Censored    | Notes                                 |
+| Concern     | Data        |                                       |
+|             | Percentage  |                                       |
++=============+=============+=======================================+
+| Total       | 0%          | 4 samples were field blanks           |
+| Copper      |             | misclassified as ND's. Censored data  |
+|             |             | percentage was calculated following   |
+|             |             | removal of these 4 field blanks.      |
++-------------+-------------+---------------------------------------+
+| Total       | 9.76%       |                                       |
+| Kjeldahl    |             |                                       |
+| Nitrogen    |             |                                       |
++-------------+-------------+---------------------------------------+
+| Total       | 1.17%       | 3 samples with high results were      |
+| Phosphorus  |             | classified as ND's, but should have   |
+|             |             | been flagged as "estimated". Censored |
+|             |             | data percentage was calculated        |
+|             |             | following reclassification of these 3 |
+|             |             | data points.                          |
++-------------+-------------+---------------------------------------+
+| Total       | 0.83%       |                                       |
+| Suspended   |             |                                       |
+| Solids      |             |                                       |
++-------------+-------------+---------------------------------------+
+| Total Zinc  | 0%          | 4 samples were field blanks           |
+|             |             | misclassified as ND's. Censored data  |
+|             |             | percentage was calculated following   |
+|             |             | removal of these 4 field blanks       |
++-------------+-------------+---------------------------------------+
 
 ### Transformation of outfall data
 
@@ -144,37 +206,115 @@ landscape data were extracted from the following sources (Table 4.2):
 **Table 4.2**: Sources of landscape spatial predictor data used to
 develop statistical models.
 
-| **Layer**                             | **ID**            | **Source**                                                                                           |
-|-----------------|-----------------|---------------------------------------|
-| urban residential                     | urbRES            | Washington State Department of Commerce, Puget Sound Mapping Project                                 |
-| rural residential                     | ruRES             |                                                                                                      |
-| total residential (urban + rural)     | totRES            |                                                                                                      |
-| intensive urban                       | intURB            |                                                                                                      |
-| industrial                            | IND               |                                                                                                      |
-| intensive urban + industrial          | intURB_IND        |                                                                                                      |
-| impervious surfaces                   | impervious        |                                                                                                      |
-| paved surfaces                        | paved             |                                                                                                      |
-| rooftop density                       | roofs             |                                                                                                      |
-| urban residential rooftops            | roof_urbRES       | rooftop density applied to Washington State Department of Commerce, Puget Sound Mapping Project data |
-| total residential rooftops            | roof_totRES       |                                                                                                      |
-| intensive urban rooftops              | roof_intURB       |                                                                                                      |
-| intensive urban + industrial rooftops | roof\_ intURB_IND |                                                                                                      |
-| grass & low vegetation                | grass             |                                                                                                      |
-| tree cover                            | trees             |                                                                                                      |
-| total vegetative cover                | greenery          |                                                                                                      |
-| undeveloped areas                     | nodev             |                                                                                                      |
-| traffic                               | traffic           |                                                                                                      |
-| population                            | popn              |                                                                                                      |
-| particulate matter 2.5um              | pm25_na           |                                                                                                      |
-| particulate surface area              | partSA            |                                                                                                      |
-| NO2                                   | no2               |                                                                                                      |
-| carbon emissions, commercial          | CO2_com           | Vulcan Carbon Dioxide Emissions data set                                                             |
-| carbon emissions, residential         | CO2_res           |                                                                                                      |
-| carbon emissions, road                | CO2_road          |                                                                                                      |
-| carbon emissions, nonroad             | CO2_nonroad       |                                                                                                      |
-| carbon emissions, total               | CO2_tot           |                                                                                                      |
-| slope                                 | slope             |                                                                                                      |
-| age of development                    | devAge            | Calculated value based on year of development                                                        |
++--------------+--------------+-----------------------------------+
+| **Layer**    | **ID**       | **Source**                        |
++==============+==============+===================================+
+| urban        | urbRES       | Washington State Department of    |
+| residential  |              | Commerce, Puget Sound Mapping     |
+|              |              | Project                           |
++--------------+--------------+-----------------------------------+
+| rural        | ruRES        |                                   |
+| residential  |              |                                   |
++--------------+--------------+-----------------------------------+
+| total        | totRES       |                                   |
+| residential  |              |                                   |
+| (urban +     |              |                                   |
+| rural)       |              |                                   |
++--------------+--------------+-----------------------------------+
+| intensive    | intURB       |                                   |
+| urban        |              |                                   |
++--------------+--------------+-----------------------------------+
+| industrial   | IND          |                                   |
++--------------+--------------+-----------------------------------+
+| intensive    | intURB_IND   |                                   |
+| urban +      |              |                                   |
+| industrial   |              |                                   |
++--------------+--------------+-----------------------------------+
+| impervious   | impervious   |                                   |
+| surfaces     |              |                                   |
++--------------+--------------+-----------------------------------+
+| paved        | paved        |                                   |
+| surfaces     |              |                                   |
++--------------+--------------+-----------------------------------+
+| rooftop      | roofs        |                                   |
+| density      |              |                                   |
++--------------+--------------+-----------------------------------+
+| urban        | roof_urbRES  | rooftop density applied to        |
+| residential  |              | Washington State Department of    |
+| rooftops     |              | Commerce, Puget Sound Mapping     |
+|              |              | Project data                      |
++--------------+--------------+-----------------------------------+
+| total        | roof_totRES  |                                   |
+| residential  |              |                                   |
+| rooftops     |              |                                   |
++--------------+--------------+-----------------------------------+
+| intensive    | roof_intURB  |                                   |
+| urban        |              |                                   |
+| rooftops     |              |                                   |
++--------------+--------------+-----------------------------------+
+| intensive    | roof\_       |                                   |
+| urban +      | intURB_IND   |                                   |
+| industrial   |              |                                   |
+| rooftops     |              |                                   |
++--------------+--------------+-----------------------------------+
+| grass & low  | grass        |                                   |
+| vegetation   |              |                                   |
++--------------+--------------+-----------------------------------+
+| tree cover   | trees        |                                   |
++--------------+--------------+-----------------------------------+
+| total        | greenery     |                                   |
+| vegetative   |              |                                   |
+| cover        |              |                                   |
++--------------+--------------+-----------------------------------+
+| undeveloped  | nodev        |                                   |
+| areas        |              |                                   |
++--------------+--------------+-----------------------------------+
+| traffic      | traffic      |                                   |
++--------------+--------------+-----------------------------------+
+| population   | popn         |                                   |
++--------------+--------------+-----------------------------------+
+| particulate  | pm25_na      |                                   |
+| matter 2.5um |              |                                   |
++--------------+--------------+-----------------------------------+
+| particulate  | partSA       |                                   |
+| surface area |              |                                   |
++--------------+--------------+-----------------------------------+
+| NO2          | no2          |                                   |
++--------------+--------------+-----------------------------------+
+| carbon       | CO2_com      | Vulcan Carbon Dioxide Emissions   |
+| emissions,   |              | data set                          |
+| commercial   |              |                                   |
++--------------+--------------+-----------------------------------+
+| carbon       | CO2_res      |                                   |
+| emissions,   |              |                                   |
+| residential  |              |                                   |
++--------------+--------------+-----------------------------------+
+| carbon       | CO2_road     |                                   |
+| emissions,   |              |                                   |
+| road         |              |                                   |
++--------------+--------------+-----------------------------------+
+| carbon       | CO2_nonroad  |                                   |
+| emissions,   |              |                                   |
+| nonroad      |              |                                   |
++--------------+--------------+-----------------------------------+
+| carbon       | CO2_tot      |                                   |
+| emissions,   |              |                                   |
+| total        |              |                                   |
++--------------+--------------+-----------------------------------+
+| slope        | slope        |                                   |
++--------------+--------------+-----------------------------------+
+| age of       | devAge       | Calculated value, based on        |
+| development  |              | proportion developed by year      |
+|              |              | range. Values close to 0 indicate |
+|              |              | little to no development, while   |
+|              |              | values close to 4 indicate high   |
+|              |              | or old development.               |
+|              |              |                                   |
+|              |              | devAge = 4\*dev_pre_1975 +        |
+|              |              | 3\*dev_1975_1990 +                |
+|              |              | 2\*dev_1990_2000 +                |
+|              |              | 1\*dev_2000_2014                  |
++--------------+--------------+-----------------------------------+
 
 ### Pre-processing of spatial data
 
@@ -189,8 +329,8 @@ outliers (Fig. 4.3). Square-root transformation was performed on spatial
 data sets with outliers that were higher than the rest of the
 predictor's values: popn, traffic, slope, CO2_res, CO2_com, CO2_road,
 CO2_nonroad, CO2_tot. The devAge spatial predictor had a low data
-outlier; devAge values were squared to address the low outlier. Figure
-4.4 shows the spatial data following transformation.
+outlier; devAge values were squared to address the low outlier
+(devAge\^2). Figure 4.4 shows the spatial data following transformation.
 
 Prior to use in models, spatial data sets were scaled and centered using
 the mean and standard deviation from the 14 watersheds in this study.
@@ -207,7 +347,7 @@ the mean and standard deviation from the 14 watersheds in this study.
 
 Daily rainfall data were obtained from the DayMet website operated by
 NASA (<https://daymet.ornl.gov/>). Daily data were obtained for years
-2009 to 2013, and cumulative one day, three day, and seven day, 14-day,
+2009 to 2013, and cumulative one day, three day, seven day, 14-day,
 21-day and 28-day antecedent precipitation were calculated for each
 sampling date. For example, for a sampling date of March 22, cumulative
 three-day precipitation would include precipitation occurring on March
@@ -219,22 +359,27 @@ and phosphorus, while 1-day precipitation was selected for TSS.
 
 ## Model Construction and Selection
 
-We considered both a frequentist statistical framework, as well as a
-Bayesian framework for running the mixed effects models, and ended up
-utilizing a combination of the two. The frequentist framework is
-significantly faster to perform, and was used to identify the best set
-of landscape predictors as fixed effects, as well as to identify the
+The structure of the data, with multiple data points over time for each
+of the 14 watersheds, indicated that mixed effects models would be
+appropriate. We considered both a frequentist statistical framework, as
+well as a Bayesian framework for running the mixed effects models, and
+ended up utilizing a combination of the two. The frequentist framework
+is significantly faster to perform, and was used to identify the best
+set of landscape predictors as fixed effects, as well as to identify the
 best variance structure (see Steps 1-7, below).
 
-Once the best fit model was selected, we moved to a Bayesian framework
-to estimate credibility intervals around predicted values. Frequentist
-statistical methods are not able to properly estimate variability around
-random effects, so Bayesian methods were needed for this step.
+Once the best fit model was selected, we fit the same model in a
+Bayesian framework; this allowed us to estimate credibility intervals
+around predicted values. Frequentist statistical methods are not able to
+properly estimate variability around random effects, so Bayesian methods
+were needed for this step.
 
 Within a frequentist statistical framework, selection of the best model
 for each COC was performed using the methodology of Zuur al. (2009), as
 outlined in Steps 1-7 below. Statistical analyses and model fitting were
-performed in R (R Core Team, 2021).
+performed in R (R Core Team, 2021). Following the frequentist analysis,
+we moved into a Bayesian framework for Steps 8-9, which included model
+examination and credibility interval calculations.
 
 ### Step 1. Select strong potential landscape predictors
 
@@ -258,14 +403,14 @@ $$Result_{ijk} = fixed.effects_{ijk} + \epsilon_{ijk}
 $$
 
 Subscripts indicate sample (*i*), location (*j*) and agency (*k*), and
-$$\epsilon_{ijk} $$ indicates unexplained error for each sample. To
+$$\epsilon_{ijk} $$indicates unexplained error for each sample. To
 prevent using highly correlated landscape predictors together in
-statistical models, we calculated calculated the correlation coefficient
-for each coefficient pair of landscape predictors, and eliminated select
-predictors to reduce correlation. We then constructed a generalized
-least squared (gls) model in R (nlme package, Pinheiro et al., 2021)
-using the beyond-optimal set of fixed effects, and utilizing restricted
-maximum likelihood estimation (REML).
+statistical models, we calculated the correlation coefficient for each
+pair of landscape predictors, and eliminated select predictors to reduce
+correlation. We then constructed a generalized least squared (gls) model
+in R (nlme package, Pinheiro et al., 2021) using the beyond-optimal set
+of fixed effects, and utilizing restricted maximum likelihood estimation
+(REML).
 
 Throughout the model selection process, highly correlated landscape
 predictors (correlation coefficient ≥0.85) were not used together in any
@@ -286,7 +431,7 @@ information criterion (AIC) and Bayesian information criterion (BIC)
 scores.
 
 If no heteroskedasticity is present, residuals are assumed to be
-normally distributed, with mean 0 and standard deviation $$\sigma$$:
+normally distributed, with mean 0 and standard deviation $$\sigma$$
 
 $$
 \epsilon_{ijk} \sim N(0, \sigma) 
@@ -350,12 +495,12 @@ Intuitively, a random intercept for location nested within agency is
 suitable for the stormwater data. Each location was sampled multiple
 times over the 4-year data collection period, and we would expect data
 within a location to be more similar than data between two locations.
-Agencies may have differed slightly in sample collection methodologies,
-including: timing of sample collection once a storm began, selection of
-laboratory for sample analysis, and any biases in selection of
-representative watersheds. These differences could lead to variability
-in COC results by agency, and can be neatly captured in the random
-component of the model.
+Additionally, agencies may have differed slightly in sample collection
+methodologies, including: timing of sample collection once a storm
+began, selection of laboratory for sample analysis, and any biases in
+selection of representative watersheds. These differences could lead to
+variability in COC results by agency, and can be neatly captured in the
+random component of the model.
 
 ### Step 5. Check for temporal and spatial correlation
 
@@ -414,11 +559,11 @@ selected the best landscape predictor model for each COC.
 ### Step 7. Final model comparison to categorical land use models
 
 Currently, stormwater managers often rely on categorical land use
-designations to approximate COC concentrations in stormwater from
-various locations. We set out to provide better information through the
-use of landscape predictors to describe COC presence in stormwater. To
-assess the suitability of our approach, three models were ultimately
-fitted with REML and compared for each COC.
+designations to approximate COC concentrations in stormwater. We set out
+to provide better COC approximations through the use of landscape
+predictors to describe COC presence in stormwater. To assess the
+suitability of models built with landscape predictors, three models were
+ultimately fitted with REML and compared for each COC.
 
 1.  **Null Model:** COC concentration is equal to median COC
     concentration over all sampling dates and locations
@@ -433,40 +578,181 @@ fitted with REML and compared for each COC.
     predictors, precipitation (rainfall and/or antecedent dry days), and
     season (for COCs where a seasonal trend appeared in the data).
 
+We compared these three models using AIC, to determine which model had
+the best fit to data. For all COCs analyzed, the landscape predictor
+model out-performed the null model and the categorical land use model;
+thus, the landscape predictor model for each COC was pushed forward for
+Bayesian model analysis. In the case of total phosphorus, an even
+simpler model including only rainfall and seasonal components had a
+slight improvement over the landscape predictor model in the frequentist
+framework, so both models were pushed forward for Bayesian model
+analysis.
+
+The Bayesian models were expected to yield very similar parameter values
+as the frequentist models; however, Bayesian analysis also allows
+accurate confidence intervals (called credibility intervals in Bayesian
+statistics) to be estimated around predicted values. Frequentist mixed
+effects models are not capable of accurately estimating variability
+around random effects, so confidence intervals calculated using
+frequentist statistics underestimate the uncertainty around each
+prediction.
+
 ### Step 8. Bayesian model analysis
 
-The best fit frequentist model structure from Step 6 was then applied to
-a Bayesian framework using the brms package in R (Buerkner, 2017). The
-brms package provides an R interface for performing Bayesian multi-level
-(mixed effects) regression models using the programming language "Stan"
-in the background (Stan Development Team, 2022). Models were examined
-for the following elements:
+The best fit frequentist model structure from Step 7 (made up of the
+variance structure from Step 3, random effects structure from Step 4,
+and fixed effects structure [weather + landscape predictors] from Step
+6) was then applied to a Bayesian framework using the brms package in R
+(Buerkner, 2017). The brms package provides an R interface for
+performing Bayesian multi-level (mixed effects) regression models using
+the programming language "Stan" in the background (Stan Development
+Team, 2022).
 
-1.  model convergence and adequate sampling of the parameter space using
-    posterior traces,
-2.  appropriateness of the variance structure, in cases where two
-    variance structures had similar AIC values in the frequentist model
-    selection (i.e., location vs. agency as the variance covariate),
-3.  predictive accuracy using leave-one-out cross-validation (LOOCV) to
-    examine influential outliers, calculate Pareto *k* values for each
-    data point, and compare candidate models
-4.  graphical posterior predictive checking, where observed data were
-    compared to simulated data from the posterior predictive
-    distribution.
+The brms algorithm accepts a prior distribution for each parameter (we
+assumed an uninformative prior distribution for each spatial predictor:
+Normal distribution with mean = 0 and standard deviation = 10), and
+provides an output of 4000 sets of parameter estimates that collectively
+make up what is called the posterior. The parameter sets vary in their
+likelihood given the data, and the parameter set with the highest
+likelihood is used in the Stormwater Heatmap.
 
-Several models had data points with pareto K values \> 0.7, indicating
-that these points may be influential outliers that affect model fitting.
-In our case, a suitable strategy for reducing the influence of extreme
-observations with high Pareto *k* values was to utilize the Student-t
-distribution rather than the default Gaussian distribution as the
-underlying data distribution for our Bayesian model. The Student-t
-distribution has thicker tails, which can encompass some more extreme
-observations.
+Models were examined for the following elements:
+
+1.  [model convergence]{.underline} and adequate sampling of the
+    parameter space using posterior traces. These address the questions:
+    did the model look at enough parameter values? Was it able to find a
+    best fit model?
+
+2.  [appropriateness of the variance structure]{.underline}. For some
+    COCs, the difference in AIC value between models using location vs.
+    agency as a variance covariate was small. In these cases, the
+    best-fit fixed effects and random effects structures were applied to
+    models with different variance structures. The resulting models were
+    compared using the leave-one-out information criterion (LOOIC -
+    similar to AIC, where lower values indicate better model fit) to
+    identify the best variance structure.
+
+3.  [model diagnostics]{.underline} using leave-one-out cross-validation
+    (LOOCV) to calculate the Pareto *k* shape parameter. The Pareto *k*
+    shape parameter provides an assessment of reliability and
+    convergence rate of the Bayesian model estimator: a Pareto *k* value
+    is calculated for each data point, and influencial outliers that may
+    reduce the model's reliability are identified by Pareto *k* values
+    \> 0.7. When we identified models with Pareto *k* values above 0.7,
+    we fitted Bayesian models using an underlying Student-t distribution
+    rather than the default Gaussian distribution, to see if this
+    resolved the issue. The Student-t distribution has thicker tails,
+    which can encompass some more extreme observations observations.
+    Models utilizing the Student-t distribution include an extra
+    parameter, $\nu$, for describing the shape of the Student-t
+    distribution; this extra parameter was estimated by the Bayesian
+    model in cases where a model using the Student-t distribution
+    provided the best fit.
+
+4.  [graphical posterior predictive checking]{.underline}. We generated
+    density plots of observed data along with simulated values from the
+    posterior predictive distribution, to ensure that predictions fit
+    observed data. We also examined observed vs. predicted plots.
+    Graphical posterior predictive checking addresses the questions: Did
+    the model correctly approximate the posterior distribution? Knowing
+    that models are useful fiction and always fail in some way, how does
+    *our* model fail?
+
+The Bayesian model with the best variance structure and appropriate
+underlying distribution (Gaussian or Student-t) was then used to
+generate the heatmap layer, and to calculate credibility intervals.
 
 ### Step 9. Obtain Credibility Intervals from Bayesian model
 
-The best fit Bayesian model from Step 8 was then ... (DESCRIPTION IN
-PROGRESS)
+Using the Bayesian model from Step 8, we calculated 80% credibility
+intervals (80% CIs; analagous to confidence intervals in frequentist
+statistics) for all watersheds in the heatmap region. These 80% CIs can
+be accessed on the Stormwater Heatmap by clicking on a watershed for
+additional details in a pop-up window. The 80% CI can be interpreted as
+follows: there is an 80% probability that the true (unknown) COC
+concentration will lie within the interval, given the evidence provided
+by the observed data.
+
+Watersheds were first "reduced" to obtain median values over each
+watershed for relevant spatial landscape predictors (e.g.,
+*sqrt_traffic* and *devAge2* for copper). Three watershed reductions
+with different boundaries were used: Puget Sound Assessment Units
+(PSAU), the USGS watershed boundary dataset (HUC12), and the National
+Hydrography Dataset Plus (NHDPlus).
+
+Watershed 80% CIs need to account for a variety of realistic
+precipitation and summer regimes, because these factors are important
+predictors in most of the COC models. We generated a set of realistic
+precipitation and summer regimes by randomly sampling 10% of the S8 data
+(47 samples total) for combined rain and summer conditions. Forty-two of
+the samples were randomly taken from non-summer conditions, and five
+samples were randomly taken from summer conditions; this approximated
+the summer/ non-summer breakdown in S8 data, where 11% of data points
+were collected during summer.
+
+Credibility intervals for each watershed reduction were calculated using
+the fitted function (brms package; Buerkner, 2017) applied to a new
+dataset (newdata) containing all watersheds in the reduction, each
+paired with all 47 precipitation/summer conditions. The fitted function
+runs each entry in the newdata through all 4000 parameter combinations
+generated in the Bayesian model to come up with 4000\*47 estimates for
+COC concentration at each watershed. We then manually grouped estimates
+by watershed and summarized for median, upper 80% CI and lower 80% CI.
+In this way, we were able to integrate precipitation and summer
+conditions into the 80% CIs.
+
+In multi-level (mixed effects) Bayesian models such as those in this
+study, there exist several versions of credibility intervals to address
+interest in the population-level versus grouping levels (in our case,
+location), or in previously sampled locations versus new locations. For
+this study, we are interested in 80% CIs for new, unsampled locations,
+where the 80% interval corresponds to the mean COC concentration at the
+new location, assuming that the new location is sampled many times.
+
+The 80% CIs presented here account for two of the three sources of model
+uncertainty:
+
+1.  uncertainty around the population-level intercept ($\beta_0$) and
+    around the fixed effects parameters associated with spatial
+    landscape predictors $\beta_3$ and $\beta_4$; and
+
+2.  uncertainty around the variance parameters of the groups:
+    $\sigma_{agency}$ and $\sigma_{location}$.
+
+Residual (observation-level) variance, $\epsilon_{ijk}$, is not
+accounted for in 80% CIs.
+
+### Step 10. Translating Bayesian models to the Stormwater Heatmap
+
+Bayesian model equations are substantially simplified for the Stormwater
+Heatmap communication tool, which displays mean predicted COC
+concentrations. Landscape predictors that are temporal in nature (rain
+and summer) are set to their mean value of 0, and the variance structure
+and nested random effects terms are also set to their mean values of 0.
+Thus the generic COC equation: $$
+\ln(COC_{ijk}) = \beta_0 + \beta_1*rain_i + \beta_2*summer_i + \beta_3*predictor1_{ijk} + \beta_4*predictor2_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
+$$
+
+$$
+a_k \sim N(0, \sigma_{agency})
+$$
+
+$$
+a_{j|k}\sim N(0, \sigma_{location})
+$$
+
+$$
+\epsilon_{ijk} \sim N(0, \sigma_k)
+$$
+
+simplifies to:
+
+$$
+\ln(COC) = \beta_0 + \beta_3*predictor1 + \beta_4*predictor2
+$$
+
+for the Stormwater Heatmap. See the section **Translating Equations to
+the Stormwater Heatmap** at the end of this chapter for more details.
 
 ## Results
 
@@ -507,6 +793,8 @@ variance structure (top left), with agency as a variance covariate (top
 right), and with location as a variance covariate (bottom left).
 Location as the variance covariate provided the best model fit.
 
+#### Frequentist Model Summary
+
 The best model for copper is a random-intercept model, where the
 intercept of the linear model is allowed to vary by agency (*k*), and by
 location within each agency (*j*\|*k*). No signs of temporal or spatial
@@ -515,11 +803,11 @@ auto-correlation were detected in auto-correlation plots or variograms.
 Two possible models emerged to capture the fixed effects:
 
 $$
-rain + summer + sqrt\_CO_2\_road + devAge2
+ln(Cu_{ijk}) = \beta_0 + \beta_1 * rain_i + \beta_2 * summer_i + \beta_3 * sqrt\_CO_2\_road_{ijk} + \beta_4 * devAge2_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
 $$
 
 $$
-rain + summer + sqrt\_ traffic + devAge2
+ln(Cu_{ijk}) = \beta_0 + \beta_1 * rain_i + \beta_2 * summer_i + \beta_3 * sqrt\_traffic_{ijk} + \beta_4 * devAge2_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
 $$
 
 The first model's AIC score was slightly lower than that of the second
@@ -556,7 +844,13 @@ showing a slight improvement over the Categorical Landuse Model. Final
 coefficient values for all three frequentist models are shown in Figure
 4.9. The large variability in model coefficients for the Categorical
 Landuse Model (shown in blue) indicates lower predictive power, because
-confidence intervals on predictions will be large.
+confidence intervals on predictions will be large. Thus, even though the
+AIC values are similar between the Categorical Landuse and Landscape
+Predictor models, the Landscape Predictor model outperforms the
+currently used Categorical Landuse-type model in terms of generating
+prediction ranges for copper pollution. We therefore selected this
+improved method of predicting COC loading for inclusion in the
+Stormwater Heatmap's data visualizations.
 
 ![](images/Copper%20model%20parameter%20values%20plot.bmp)
 
@@ -567,43 +861,241 @@ are based on fitting with restricted maximum likelihood (REML)
 estimation, and may differ slightly from those fitted using maximum
 likelihood (ML) estimation.
 
-**Bayesian summary (plots are in development):**
+#### Bayesian Model Summary
 
-The Bayesian model for total copper follows a Student-t distribution,
+The Bayesian model for total copper follows a Student-t distribution
+with the form:
+
+$$
+\ln(Cu_{ijk}) = \beta_0 + \beta_1*rain_{i} + \beta_2*summer_{i} + \beta_3*sqrt\_traffic_{ijk} + *devAge2_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
+$$
+
 where:
 
 $$
-\ln(Cu_{ijk}) = 2.33 - 0.18*rain_{i} + 0.37*summer_{i} + 0.43*sqrt\_traffic_{ijk} + 0.46*devAge2_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
+\beta_0 = 2.33;\quad\text{  }\quad \beta_1 = -0.18;\quad\text{  }\quad \beta_2=0.37;\quad\text{  }\quad \beta_3=0.43;\quad\text{  }\quad \beta_4=0.46
 $$
-
-Rain is 21-day cumulative precipitation, standardized; and summer is a
-factor with value = 1 for July, August, September, and value = 0 for all
-other months. Both landscape predictors were first transformed then
-standardized prior to use. Subscripts indicate sample (*i*), location
-(*j*) and agency (*k*).
-
-Random effects ($a_k$ and $a_{j|k}$) follow a normal (Gaussian)
-distribution, and residual variance $\epsilon_{ijk}$ follows a Student-t
-distribution with $\nu=7.8$:
 
 $$
 a_k \sim N(0, \sigma_{agency});\quad\text{  }\quad \sigma_{agency} = 0.21
 $$
 
 $$
-a_{j|k}\sim N(0, \sigma_{agency|location}); \quad\text{  }\quad \sigma_{agency|location} = 0.45
+a_{j|k}\sim N(0, \sigma_{location}); \quad\text{  }\quad \sigma_{location} = 0.45
 $$
 
 $$
-\epsilon_{ijk} \sim t_{7.8}(0, \sigma_j); \quad\text{    }\quad ln(\sigma_j) = \eta + u_j \quad\text{    }\quad \eta=-0.91; 
-$$
-$$ 
+\epsilon_{ijk} \sim t_{7.8}(0, \sigma_j); \quad\text{    }\quad ln(\sigma_j) = \eta + u_j; \quad\text{    }\quad \sigma_j = e^{\eta} * e^{u_j}; \quad\text{    }\quad \eta=-0.91; 
+$$ $$ 
 u_j \sim N(0,\sigma_0); \quad\text{    }\quad \sigma_0=0.21
 $$
 
-The Stormwater Heatmap presents the median predicted value over time
-(i.e., median over all seasons and precipitation regimes), and use the
-equation:
+Rain is 21-day cumulative precipitation, standardized; summer is a
+factor with value = 1 for July, August, September, and value = 0 for all
+other months. Both landscape predictors (traffic and development age)
+were first transformed then standardized prior to use. Subscripts
+indicate sample (*i*), location (*j*) and agency (*k*).
+
+Random effects $a_k$ (agency-specific contribution to the intercept) and
+$a_{j|k}$ (location-specific contribution to the intercept) follow a
+normal (Gaussian) distribution, with mean equal to 0 and standard
+deviation equal to $\sigma_{agency}$ for agency-specific contribution to
+the intercept, and $\sigma_{location}$ for location-specific
+contribution to the intercept. The residual variance $\epsilon_{ijk}$
+represents remaining variation in the data that cannot be explained by
+the model variables. For the copper model, residual variance follows a
+Student-t distribution, which is defined by three parameters: shape
+($\nu=7.8$) , mean ($\mu=0$) and scale ($\sigma= \sigma_j$). By imposing
+a variance structure with location (*j*) as the variance covariate,
+scale ($\sigma_j$) becomes a function of parameters $\eta$ and $u_j$,
+where $e^{\eta}$ represents population-level variability, and $e^{u_j}$
+represents deviation of location *j* from the population-level
+variability. Finally, $u_j$ is normally distributed, with mean equal to
+0 and standard deviation equal to $\sigma_0$.
+
+Density plots for the 4000 sets of parameter estimates generated by the
+Bayesian model are provided in the left half of Figs. 4.10 and 4.11.
+Like histograms, density plots show the most likely value along the
+horizontal axis for the given parameter as the highest point in the
+curve. They also indicate how much variability exists around parameter
+estimates, shown by the shape of the curve (low and broad equals lots of
+variability; tall and narrow equals little variability). The area under
+the curve represents probability, and integrates to 1. Traces (right
+half of Figs. 4.10 and 4.11) indicate how well the parameter space was
+sampled in the four chains generated by the NUTS (no U-turn sampling -
+an extension of Hamilton Monte Carlo) sampler used when fitting brms
+models. Each chain generated 1000 sets of parameter estimates, for a
+total of 4000 sets of parameter estimates. For copper, the traces
+indicate that the sampling algorithm did not get stuck in one region of
+the parameter space, and that the parameter space was well sampled.
+
+![](images/Bayesian%20Copper_posterior%20densities%201.bmp)
+
+**Figure 4.10** Posterior densities (left) and traces (right) for
+parameters associated with fixed effects, obtained from the best-fit
+Bayesian model for total copper. In the plots, b_intercept corresponds
+to $\beta_0$, b_rain corresponds to $\beta_1$, b_summer1 corresponds to
+$\beta_2$, b_sqrt_traffic corresponds to $\beta_3$, and b_devAge2
+corresponds to $\beta_4$.
+
+![](images/Bayesian%20Copper_posterior%20densities%202.bmp)**Figure
+4.11** Posterior densities (left) and traces (right) for parameters
+associated with random effects, obtained from the best-fit Bayesian
+model for total copper. Here, b_sigma_intercept represents $\eta$ from
+the random effects equations, sd_agency\_\_Intercept represents
+$\sigma_{agency}$, sd_agency:location\_\_Intercept represents
+$\sigma_{location}$, sd_location\_\_sigma_Intercept represents
+$\sigma_0$, and nu is the Greek letter $\nu$, representing shape of the
+Student-t distribution.
+
+Fit of the Bayesian copper model to data can be visualized in predicted
+versus observed plots (Figs. 4.12 and 4.13). In these plots, the
+predicted *ln*(copper) values (vertical axis) are generated by applying
+the spatial predictors associated with each data point (location, rain,
+summer, sqrt_traffic, devAge2) to all 4000 parameter sets that make up
+the Bayesian posterior. Median predicted values, along with 95%
+quantiles, are then plotted against observed *ln*(copper) data
+(horizontal axis). Ideally, the points should form a swath along the 1:1
+diagonal dashed line. This 1:1 line shows where posterior predictions
+exactly match the observed data. For copper, the predicted vs. observed
+plots show slightly better model fit at higher copper concentrations
+(Fig. 4.12), evident because points in the upper right quadrant are
+closer to the 1:1 line than points in the lower left quadrant.
+Within-location variability in the upper right quadrant of Figure 4.12
+is lower than for the lower left quadrant. Locations with higher copper
+concentrations also have medium to high values of sqrt_traffic and high
+values of devAge2 (Fig. 4.13, top panels). This could be coincidental,
+or could be the result of high temporal variability in
+copper-contributing sources (e.g., traffic) in low-traffic locations.
+
+Summer and rain do not display a consistent effect on the Bayesian
+model's fit to observed data (Fig. 4.13, bottom panels).
+
+![](images/Bayesian%20Copper_obs%20vs%20pred%201.bmp)**Figure 4.12**
+Predicted vs. observed plot for the Bayesian copper model, with point
+color corresponding to location. Individual points show how the observed
+value for *ln*(copper) (horizontal axis) compares to the median
+predicted value from the Bayesian model (vertical axis). Thin gray
+vertical lines associated with each point provide the 95% quantiles for
+each prediction. Note that residual error is excluded from the
+predictions, resulting in narrower 95% quantiles. The diagonal dashed
+line shows the 1:1 relationship, where predicted=observed.
+
+![](images/Bayesian%20Copper_obs%20vs%20pred%202.bmp)**Figure 4.13**
+Predicted vs. observed plots for the Bayesian copper model, with colors
+showing the magnitude of one spatial predictor (sqrt_traffic, devAge2,
+rain or summer) at each data point. Individual points show how the
+observed value for *ln*(copper) compares to the median predicted value
+from the Bayesian model. Diagonal dashed lines show the 1:1
+relationship, where predicted=observed.
+
+Expected median copper concentration as a function of traffic or
+development age are presented in Figure 4.14, with S8 Data---used in
+fitting the Bayesian model---plotted as black points atop the prediction
+intervals. Expected median copper concentration as a function of traffic
+(left half of Fig. 4.14) integrates over rainfall, season, and
+development age, to produce 50%, 80% and 95% prediction interval bands.
+Similarly, expected median copper concentration as a function of
+development age (right half of Fig. 4.14) integrates over rainfall,
+season and traffic to produce prediction interval bands.
+
+Expected prediction intervals were generated for a simulated data set,
+with all combinations of the following predictor values:
+
+-   20% of rain & summer combinations were sampled from the S8 data, to
+    provide representative scenarios of rain and summer/ not summer
+    conditions;
+
+-   eight equally-spaced traffic values between minimum and maximum
+    traffic levels (following transformation and standardization) from
+    the S8 data;
+
+-   eight equally-spaced development age values between the minimum and
+    maximum development age levels (following transformation and
+    standardization) from the S8 data.
+
+Expected prediction intervals were calculated using the epred_draws
+function (tidybayes package; Kay, 2022). Landscape predictors were then
+unstandardized and back-transformed to generate Figure 4.14.
+
+Expected prediction intervals account for two of the three sources of
+model uncertainty:
+
+1.  uncertainty around the fixed effect parameters
+    $\beta_0, \beta_1, \beta_2, \beta_3$ and $\beta_4$ (see posterior
+    densities in Fig. 4.10), and
+
+2.  uncertainty around the variance parameters of the groups:
+    $\sigma_{agency}$ and $\sigma_{location}$ (see corresponding
+    posterior densities in Fig. 4.11).
+
+Residual (observation-level) variance, $\epsilon_{ijk}$, is not
+accounted for in expected prediction intervals. This allows stormwater
+managers to assess the following:
+
+-   What is the prediction range for median copper at a heretofore
+    unsampled watershed with a particular level of traffic (or
+    development age)?
+
+Looking at the prediction range for median COC value (rather than the
+prediction range for a single sample) is in line with stormwater
+management best practices, which manage for the over-annual impact on
+water bodies rather than for extreme events.
+
+![](images/Bayesian%20Copper_pred%20int%20vs%20raw%20data.bmp)**Figure
+4.14** Expected prediction intervals for total copper as a function of
+raw traffic (Annual Average Daily Traffic; left half) and development
+age (right half). Expected predictions account for two sources of model
+uncertainty: the uncertainty around the fixed coefficients, and the
+uncertainty around the variance parameters of the groups:
+$\sigma_{agency}$ and $\sigma_{location}$. Variance around individual
+observations (observation-level residual variance, $\epsilon_{ijk}$) is
+not accounted for in expected predictions. Bands of color represent
+prediction intervals for 50%, 80% and 95%, while black points represent
+S8 stormwater data that were used in fitting the Bayesian model.
+
+The Bayesian copper model has a population-level intercept
+$\beta_0=2.33$. As a random-intercept model, the location-specific
+intercept is allowed to vary by agency (*k*), and by location within
+each agency (*j*\|*k*), and sums to: $\beta_0 + a_k + a_{j|k}$. Density
+plots for the location-specific intercept parameters are shown in Figure
+4.15, along with the median and 95% credibility intervals for the
+population-level intercept. Seven of the 14 sampling locations have
+location-specific intercepts that overlap well with the population-level
+intercept: the majority of their density plots are shaded blue (see
+e.g., TAC_COM). Four additional locations have approximately half of
+their density plot overlapping with that of the population-level
+intercept (see e.g., TAC_IND). The remaining three locations have
+location-specific intercepts that are quite different from that of the
+population (see TAC_HDR, SNO_COM, SEA_IND). The amount of variability
+between location-specific intercepts is indicative of how much
+y-intercept values might vary for unsampled locations.
+
+The Stormwater Heatmap utilizes only the population-level intercept to
+provide median copper predictions at unsampled locations; Figure 4.15 is
+presented here to give the reader a visual sense for how much
+variability exists between locations, in terms of location-specific
+intercept.
+
+![](images/Bayesian%20Copper_intercepts.bmp)**Figure 4.15** Density
+plots for the 14 location-specific intercept parameters, along with the
+median (thick vertical line) and 95% credibility intervals (dashed
+vertical lines) for the population-level intercept. For each location,
+the median intercept value is indicated with a black dot, and
+credibility intervals are shown with thick (50% CI) and thin (95% CI)
+black horizontal lines. Density plots for each location are shaded blue
+for values that fall within the 95% CI for the population-level
+intercept, and gray for values that fall outside of the 95% CI for
+population-level intercept. Note that the population-level 95% CI does
+not incorporate variability around agency $\sigma_{agency}$, or around
+location within each agency $\sigma_{location}$; it is solely the 95% CI
+for the population-level intercept (i.e.: 95% of the time, the
+population-level intercept will fall between the given CI values).
+
+The Stormwater Heatmap utilizes the spatial landscape predictors
+*sqrt_traffic* and *devAge2* to calculate the median predicted copper
+concentration over all seasons and precipitation regimes. The equation
+used for the copper layer is:
 
 $$
 \ln(Cu) = 2.33 + 0.43*sqrt\_traffic + 0.46*devAge2
@@ -721,13 +1213,12 @@ a_k \sim N(0, \sigma_{agency});\quad\text{  }\quad \sigma_{agency} = 0.28
 $$
 
 $$
-a_{j|k}\sim N(0, \sigma_{agency|location}); \quad\text{  }\quad \sigma_{agency|location} = 0.38
+a_{j|k}\sim N(0, \sigma_{location}); \quad\text{  }\quad \sigma_{location} = 0.38
 $$
 
 $$
 \epsilon_{ijk} \sim N(0, \sigma_j); \quad\text{    }\quad ln(\sigma_j) = \eta + u_j \quad\text{    }\quad \eta=-0.08; 
-$$
-$$ 
+$$ $$ 
 u_j \sim N(0,\sigma_0); \quad\text{    }\quad \sigma_0=0.30
 $$
 
@@ -864,13 +1355,12 @@ a_k \sim N(0, \sigma_{agency});\quad\text{  }\quad \sigma_{agency} = 0.55
 $$
 
 $$
-a_{j|k}\sim N(0, \sigma_{agency|location}); \quad\text{  }\quad \sigma_{agency|location} = 0.51
+a_{j|k}\sim N(0, \sigma_{location}); \quad\text{  }\quad \sigma_{location} = 0.51
 $$
 
 $$
 \epsilon_{ijk} \sim t_{13.4}(0, \sigma_j); \quad\text{    }\quad ln(\sigma_j) = \eta + u_j \quad\text{    }\quad \eta=-0.64; 
-$$
-$$ 
+$$ $$ 
 u_j \sim N(0,\sigma_0); \quad\text{    }\quad \sigma_0=0.30
 $$
 
@@ -1000,34 +1490,34 @@ values based on fitting with ML.
 
 **Bayesian summary (plots are in development):**
 
-The Bayesian model for total zinc follows a Gaussian distribution,
+The Bayesian model for total zinc follows a Student-t distribution,
 where:
 
 $$
-ln(totZn_{ijk}) = 4.09 - 0.16*rain_{i} + 0.38*summer_{i} + 0.44*sqrt\_CO_2\_tot_{ijk} + 0.55*paved_{ijk} - 0.08*rain_{i}*paved_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
+ln(totZn_{ijk}) = 4.10 - 0.16*rain_{i} + 0.39*summer_{i} + 0.36*sqrt\_traffic_{ijk} + 0.69*paved_{ijk} - 0.08*rain_{i}*paved_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
 $$
 
 Rain is 14-day cumulative precipitation, standardized; and summer is a
 factor with value = 1 for July, August, September, and value = 0 for all
 other months. Landscape predictors were first transformed, if necessary
-($CO_2\_tot$ was square-root transformed), then standardized prior to
-use. Subscripts indicate sample (*i*), location (*j*) and agency (*k*).
+($traffic$ was square-root transformed), then standardized prior to use.
+Subscripts indicate sample (*i*), location (*j*) and agency (*k*).
 
-Random effects ($a_k$ and $a_{j|k}$) and residual variance
-$\epsilon_{ijk}$ follow a normal (Gaussian) distribution.
-
-$$
-a_k \sim N(0, \sigma_{agency});\quad\text{  }\quad \sigma_{agency} = 0.23
-$$
+Random effects ($a_k$ and $a_{j|k}$) follow a normal (Gaussian)
+distribution, and residual variance $\epsilon_{ijk}$ follows a Student-t
+distribution with $\nu=17.43$.
 
 $$
-a_{j|k}\sim N(0, \sigma_{agency|location}); \quad\text{  }\quad \sigma_{agency|location} = 0.47
+a_k \sim N(0, \sigma_{agency});\quad\text{  }\quad \sigma_{agency} = 0.35
 $$
 
 $$
-\epsilon_{ijk} \sim N(0, \sigma_j); \quad\text{    }\quad ln(\sigma_j) = \eta + u_j \quad\text{    }\quad \eta=-0.68; 
+a_{j|k}\sim N(0, \sigma_{location}); \quad\text{  }\quad \sigma_{location} = 0.47
 $$
-$$ 
+
+$$
+\epsilon_{ijk} \sim N(0, \sigma_j); \quad\text{    }\quad ln(\sigma_j) = \eta + u_j \quad\text{    }\quad \eta=-0.76; 
+$$ $$ 
 u_j \sim N(0,\sigma_0); \quad\text{    }\quad \sigma_0=0.35
 $$
 
@@ -1036,7 +1526,7 @@ The Stormwater Heatmap presents the median predicted value over time
 equation:
 
 $$
-\ln(totZn) = 4.09 + 0.44*sqrt\_CO_2\_tot + 0.55*paved
+\ln(totZn) = 4.10 + 0.36*sqrt\_traffic + 0.69*paved
 $$
 
 ### Total Kjeldahl Nitrogen
@@ -1051,8 +1541,8 @@ was flagged by the laboratory as estimated, with an estimated value of
 255. For the purposes of our analysis, we assume that this estimated
 sample value is correct.
 
-![](images/Total%20Kjeldahl%20Nitrogen%20sample%20values%20prior%20to%20ROS.bmp)**Figure
-4.27** Concentrations of total Kjeldahl nitrogen in samples collected by
+![](images/TKN%20sample%20values%20prior%20to%20ROS.bmp)**Figure 4.27**
+Concentrations of total Kjeldahl nitrogen in samples collected by
 location. Red dots indicate detected values, while turqoise dots
 indicate the detection limit for samples flagged as non-detect.
 
@@ -1073,22 +1563,21 @@ shows the modeled concentrations of TKN in turquoise. All statistics
 were performed using the modeled values generated by ROS, in place of
 censored data.
 
-![](images/Total%20Kjeldahl%20Nitrogen%20ROS%20modeled%20data%20points.bmp)
-
-**Figure 4.28** Actual (red) and modeled (turquoise) concentrations of
-total Kjeldahl nitrogen in samples collected by location. Modeled values
-were generated by regression on order statistics, to replace the
-detection limit on censored data.
+![](images/TKN%20ROS%20modeled%20data%20points.bmp)**Figure 4.28**
+Actual (red) and modeled (turquoise) concentrations of total Kjeldahl
+nitrogen in samples collected by location. Modeled values were generated
+by regression on order statistics, to replace the detection limit on
+censored data.
 
 Based on linear models of *ln*-transformed TKN versus individual
 predictors, the strong predictors identified for TKN include: roofs,
 nodev, traffic, sqrt_popn, sqrt_CO2_res, sqrt_CO2_tot, sqrt_CO2_road,
 devAge2, roof_inURB and roof_intURB_IND (Fig. 4.29).
 
-![](images/Total%20Kjeldahl%20Nitrogen%20strong%20predictors.bmp)**Figure
-4.29** Strong predictors for total Kjeldahl nitrogen (TKN), showing
-linear model fit (blue line) for the relationship between
-*ln*-transformed TKN concentration and each predictor in turn.
+![](images/TKN%20strong%20predictors.bmp)**Figure 4.29** Strong
+predictors for total Kjeldahl nitrogen (TKN), showing linear model fit
+(blue line) for the relationship between *ln*-transformed TKN
+concentration and each predictor in turn.
 
 The precipitation predictor used for TKN was 14-day cumulative
 precipitation. In addition, evidence of higher TKN concentrations during
@@ -1104,10 +1593,10 @@ $$
 sd(\epsilon_k)=\sigma_k
 $$
 
-![](images/Total%20Kjeldahl%20Nitrogen%20variance%20structure_censtat.bmp)**Figure
-4.30** Normalized residuals from beyond-optimal model, with no variance
+![](images/TKN%20variance%20structure_censtat.bmp)**Figure 4.30**
+Normalized residuals from beyond-optimal model, with no variance
 structure (top left), with agency as a variance covariate (top right),
-and with location as a variance covariate (bottom left). Agency as teh
+and with location as a variance covariate (bottom left). Agency as the
 variance covariate provided the best model fit.
 
 The best model for TKN is a random-intercept model, where the intercept
@@ -1131,7 +1620,7 @@ $$
 
 Each of these models captures two major contributors to total nitrogen:
 vehicles, and amount/age of development. The AIC scores for all three
-models were relatively close (836.0, 838.4, 840.9, respectively, when
+models were relatively close (796.6, 799.7, 801.4, respectively, when
 models were fitted using ML).
 
 We selected the first model, with landscape predictors *sqrt_traffic* +
@@ -1139,14 +1628,14 @@ We selected the first model, with landscape predictors *sqrt_traffic* +
 traffic (rather than emissions) were more likely to characterize the
 movement of TKN into stormwater. Also, *devAge2* was a stronger
 predictor in the first model (p-value = 0.006), compared to *nodev* in
-the third model (p-value = 0.033). Figure 4.31 shows the model fit for
+the third model (p-value = 0.032). Figure 4.31 shows the model fit for
 each individual predictor, plotted against data points. Correlation
 between the two predictors was low (correlation coefficient = 0.4).
 
-![](images/Total%20Kjeldahl%20Nitrogen%20single%20predictors.bmp)**Figure
-4.31** Single-predictor plots for total Kjeldahl nitrogen, showing fit
-of the Landscape Predictor Model to each predictor. Model fitting was
-performed using maximum likelihood (ML) estimation.
+![](images/TKN%20single%20predictors.bmp)**Figure 4.31**
+Single-predictor plots for total Kjeldahl nitrogen, showing fit of the
+Landscape Predictor Model to each predictor. Model fitting was performed
+using maximum likelihood (ML) estimation.
 
 Comparisons between the Null Model, Categorical Land Use Model, and
 Landscape Predictor Model can be visualized through residuals (Fig.
@@ -1154,28 +1643,27 @@ Landscape Predictor Model can be visualized through residuals (Fig.
 show good fit (residuals close to zero) for the Categorical Landuse
 Model and for the Landscape Predictor Model.
 
-![](images/Total%20Kjeldahl%20Nitrogen%20residuals%20from%203%20models.bmp)
-
-**Figure 4.32** Total Kjeldahl nitrogen model residuals for the Null
-Model, Categorical Land Use Model, and Landscape Predictor Model. Each
-bar represents one watershed, with colors representing agencies. Model
-fitting was performed using maximum likelihood (ML) estimation.
+![](images/TKN%20residuals%20from%203%20models.bmp)**Figure 4.32** Total
+Kjeldahl nitrogen model residuals for the Null Model, Categorical Land
+Use Model, and Landscape Predictor Model. Each bar represents one
+watershed, with colors representing agencies. Model fitting was
+performed using maximum likelihood (ML) estimation.
 
 Final frequentist model AIC values (fitted with REML) for the three
-models are: 1101.0 (Null Model), 858.8 (Categorical Landuse Model) and
-854.4 (Landscape Predictor Model), with the Landscape Predictor Model
+models are: 1083.8 (Null Model), 819.4 (Categorical Landuse Model) and
+815.5 (Landscape Predictor Model), with the Landscape Predictor Model
 showing an improvement over the Categorical Landuse Model. Final
 coefficient values for all three frequentist models are shown in Figure
 4.33. The relatively large variability in model coefficients for the
 Categorical Landuse Model (shown in blue) indicates lower predictive
 power, because confidence intervals on predictions will be large.
 
-![](images/Total%20Kjeldahl%20Nitrogen%20model%20coefficients.bmp)**Figure
-4.33** Model coefficients for the Null Model (green), Categorical Land
-Use Model (blue), and Landscape Predictor Model (red). Final coefficient
-values for linear mixed effects models are based on fitting with
-restricted maximum likelihood (REML) estimation, and may differ slightly
-from those fitted using maximum likelihood (ML) estimation.
+![](images/TKN%20model%20coefficients.bmp)**Figure 4.33** Model
+coefficients for the Null Model (green), Categorical Land Use Model
+(blue), and Landscape Predictor Model (red). Final coefficient values
+for linear mixed effects models are based on fitting with restricted
+maximum likelihood (REML) estimation, and may differ slightly from those
+fitted using maximum likelihood (ML) estimation.
 
 **Bayesian summary (plots are in development):**
 
@@ -1196,19 +1684,17 @@ standardized prior to use. Subscripts indicate sample (*i*), location
 
 Random effects ($a_k$ and $a_{j|k}$) follow a normal (Gaussian)
 distribution, and residual variance $\epsilon_{ijk}$ follows a Student-t
-distribution with $\nu=3.03$:$$
+distribution with $\nu=3.35$:$$
 a_k \sim N(0, \sigma_{agency});\quad\text{  }\quad \sigma_{agency} = 0.18
 $$
 
 $$
-a_{j|k}\sim N(0, \sigma_{agency|location}); \quad\text{  }\quad \sigma_{agency|location} = 0.22
+a_{j|k}\sim N(0, \sigma_{location}); \quad\text{  }\quad \sigma_{location} = 0.22
 $$
 
 $$
 \epsilon_{ijk} \sim t_{3.03}(0, \sigma_k); \quad\text{    }\quad ln(\sigma_k) = \eta + u_k \quad\text{    }\quad \eta=-0.80; 
-$$
-$$ 
-u_k \sim N(0,\sigma_0); \quad\text{    }\quad \sigma_0=0.57
+$$ $$ u_k \sim N(0,\sigma_0); \quad\text{    }\quad \sigma_0=0.58
 $$
 
 Predictions presented in the Stormwater Heatmap represent the median
@@ -1295,7 +1781,7 @@ Predicting mean COC concentrations allow the variance structure and
 nested random effects terms to go to their mean value of 0. Furthermore,
 rainfall and the summer predictor, where applicable, are also set to
 their mean value of 0. Thus the generic COC equation: $$
-\ln(COC_{ijk}) = \beta_0 + \beta_1*rain_i + \beta_2*summer_i + \beta_3*predictor1_{ijk} + \beta_2*predictor2_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
+\ln(COC_{ijk}) = \beta_0 + \beta_1*rain_i + \beta_2*summer_i + \beta_3*predictor1_{ijk} + \beta_4*predictor2_{ijk} + a_k + a_{j|k} + \epsilon_{ijk}
 $$
 
 $$
@@ -1303,7 +1789,7 @@ a_k \sim N(0, \sigma_{agency})
 $$
 
 $$
-a_{j|k}\sim N(0, \sigma_{agency|location})
+a_{j|k}\sim N(0, \sigma_{location})
 $$
 
 $$
@@ -1313,20 +1799,15 @@ $$
 becomes simplified to:
 
 $$
-\ln(COC) = \beta_0 + \beta_1*0 + \beta_2*0 + \beta_3*predictor1 + \beta_2*predictor2 + 0 + 0 + 0
+\ln(COC) = \beta_0 + \beta_1*0 + \beta_2*0 + \beta_3*predictor1 + \beta_4
+*predictor2 + 0 + 0 + 0
 $$
 
 and finally:
 
 $$
-\ln(COC) = \beta_0 + \beta_3*predictor1 + \beta_2*predictor2
+\ln(COC) = \beta_0 + \beta_3*predictor1 + \beta_4*predictor2
 $$
-
-In the Bayesian framework, credibility intervals (CIs) generated around
-predicted chemical concentrations integrate variability in residuals
-$\epsilon_{ijk}$ as well as in random effects $a_k$ and $a_{j|k}$. In
-addition, we added provisions to capture variability in the rain
-predictor and in the summer predictor. [DESCRIPTION IN PROCESS]
 
 ## **Citations:**
 
@@ -1346,6 +1827,10 @@ NPDES Phase 1 Stormwater Permit: Final Data Characterization 2009-2013.
 Washington State Department of Ecology, Olympia, WA. Publication No.
 15-03-001. Available online at:
 <https://fortress.wa.gov/ecy/publications/SummaryPages/1503001.html>
+
+Kay, M, 2022. tidybayes: Tidy Data and Geoms for Bayesian Models. R
+package version 3.0.2. Available online at:
+<http://mjskay.github.io/tidybayes/>
 
 Lee, Lopaka, 2020. NADA: Nondetects and Data Analysis for Environmental
 Data. R package version 1.6-1.1. Available online at:
