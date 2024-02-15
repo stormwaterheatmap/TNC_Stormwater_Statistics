@@ -177,7 +177,8 @@ mp_plots()
 # log(20000)
 
 #best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
-best_predictors <- c("totRES", "sqrt_traffic", "sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_tot", 
+best_predictors <- c("totRES", "sqrt_traffic", #"traffic",
+                     "sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_almostTotal", "sqrt_CO2_transport",
                      "sqrt_CO2_com", "sqrt_CO2_road", "devAge2")
 
 pred_i <- which(predictors %in% best_predictors)
@@ -196,7 +197,8 @@ bp_signs <- sign(bp_coefs)
 #  this second vector will be used to generate FormX
 pairs(coc[best_predictors], lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
 
-elements_to_remove <- c("sqrt_CO2_res")  #these predictors are highly correlated with others
+elements_to_remove <- c("sqrt_CO2_res", #"traffic", 
+                        "sqrt_CO2_almostTotal")  #these predictors are highly correlated with others
 best_predictors2 <- best_predictors[!(best_predictors %in% elements_to_remove)]
 
 
@@ -719,10 +721,10 @@ par(mfrow=c(2,2), mar=c(2,4,4,1), oma=c(0,0,0,0))
 plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_location)
+plot(coc2$location, E3, main="Categorical Land Use Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E4, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_location)
+plot(coc2$location, E4, main="Spatial Predictor Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 # plot(coc2$location, E4.alt, main="Model 4, alternate", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,2,2,3,4,4,4,5,5,5,6,6,6)])
@@ -805,8 +807,8 @@ TSS.M4 <- lme(data = coc2, Form4, random = r1X, method = "REML", weights = vf1X,
 
 TSS_models <- list(
   Null_Model = TSS.null,
-  Categorical_Landuse_Model = TSS.M3,
-  Landscape_Predictor_Model = TSS.M4)
+  Categorical_Land_Use_Model = TSS.M3,
+  Spatial_Predictor_Model = TSS.M4)
 
 huxtablereg(TSS_models,
             single.row = TRUE, custom.model.names = names(TSS_models)) %>%

@@ -172,9 +172,10 @@ mp_plots()
 
 
 #best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
-best_predictors <- c("urbRES", "roofs", "sqrt_traffic", "sqrt_popn", "pm25_na", "sqrt_slope", "sqrt_CO2_res", "sqrt_CO2_tot", 
-                     "sqrt_CO2_road", "devAge2")
-#NOTE: grass & paved were previously added b/c they were part of the best fit model for old version of predictors
+best_predictors <- c("urbRES", "roofs", "sqrt_traffic", "sqrt_popn", "pm25_na", "sqrt_slope", "sqrt_CO2_res", "sqrt_CO2_road", 
+                     "sqrt_CO2_almostTotal", "sqrt_CO2_transport", "devAge2")
+#NOTE: grass & paved were part of the best fit model for old version of predictors, but definitely do NOT work now!
+#      Also, lots of these predictors were pretty weak, but phosphorus was a tough one to fit to.
 
 pred_i <- which(predictors %in% best_predictors)
 lp_plots(pred_i)
@@ -191,7 +192,7 @@ bp_signs <- sign(bp_coefs)
 #  this second vector will be used to generate FormX
 pairs(coc[best_predictors], lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
 
-elements_to_remove <- c("sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_road")  #these predictors are highly correlated with others
+elements_to_remove <- c("sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_almostTotal", "sqrt_CO2_road")  #these predictors are highly correlated with others
 best_predictors2 <- best_predictors[!(best_predictors %in% elements_to_remove)]
 
 
@@ -660,7 +661,7 @@ boxplots.resids2(Model3, E3, "X")
 
 #run through the top formulas when only best predictors are on the table;
 #  keep only formulas that make sense
-myForm <- my.formulas.m4[[2]]
+myForm <- my.formulas.m4[[1]]
 #myForm <- Form4a
 
 #these lines of code assess fit of this particular model in terms of COC vs. individual predictors, and predictor correlation
@@ -679,7 +680,7 @@ AIC(myModel, myLM)
 #   with 3 or less predictors, mixed effects model is MUCH better than linear model
 
 #formulas that are worth considering (single plots of predictors make sense)
-Form4a <- formula(result ~ rain + summer + sqrt_CO2_road) #my.formulas.m4[[2]]  #AIC=813.6; lme with sqrt_CO2_road
+Form4a <- formula(result ~ rain + summer + sqrt_CO2_road) #my.formulas.m4[[1]]  #AIC=813.6; lme with sqrt_CO2_road
 Form4b <- formula(result ~ rain + summer) #AIC=814.7
 
 #####  Best fit Model4  ####
@@ -742,10 +743,10 @@ par(mfrow=c(2,2), mar=c(2,4,4,1), oma=c(0,0,0,0))
 plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E3, main="Categorical Land Use Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E4, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E4, main="Spatial Predictor Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 axis(side=1, at=c(2,5,7,9,12,15), labels=c("King", "Pierce", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 plot(coc2$location, E4.alt, main="Rain + Summer Only Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
@@ -851,8 +852,8 @@ P.M4.alt <- lme(data = coc2, Form4.alt, random = r1X, method = "REML", weights =
 
 P_models <- list(
   Null_Model = P.null,
-  Categorical_Landuse_Model = P.M3,
-  Landscape_Predictor_Model = P.M4,
+  Categorical_Land_Use_Model = P.M3,
+  Spatial_Predictor_Model = P.M4,
   Rain_Summer_Model = P.M4.alt
 )
 

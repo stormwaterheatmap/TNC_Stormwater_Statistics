@@ -85,8 +85,14 @@ fit2 <- brm(bf(result ~ summer + rain + sqrt_traffic + devAge2 + (1|agency/locat
 #  rate of the PSIS-based estimates) is below 0.7
 fit0 <- add_criterion(fit0, criterion=c("loo"))
 fit1 <- add_criterion(fit1, criterion=c("loo"))
+fit2 <- add_criterion(fit2, criterion=c("loo"))
 fit2 <- add_criterion(fit2, criterion=c("loo"), moment_match=TRUE)
 loo_compare(fit0, fit1, fit2, criterion="loo")  #top one in the output gives the best model
+loo_compare(fit0, fit1, criterion="loo")  #top one in the output gives the best model
+
+loo(fit0)  #highest looic is the best model; lowest elpd (expected log predictive density) is the best model
+loo(fit1)
+loo(fit2)
 
 # PSIS diagnostic tool - look for points (potential influential outliers) above 0.5, and especially above 0.7
 plot(loo(fit0, cores=getOption("mc.cores", 1)), main="no var struct")
@@ -712,7 +718,7 @@ resid.1t.cen <- residuals(fit1.t.cen, type="ordinary")
 fitted.1t.cen <- fitted(fit1.t.cen, scale="response")
 plot(resid.1t.cen[,1] ~ fitted.1t.cen[,1], ylab="residuals", xlab="fitted values", main="Model 1 - t-distr censored model")
 
-TKN.brm <- fit1.t.cen
+TKN.brm <- fit1.t.cen   #this is the model we are choosing -- using censored methods within the Bayesian context
 TKN.brm.ROS <- fit1.t.ros
 
 #Look at the fit based on the grouping variable. Here are scatter-plots with the observed chemical concentrations (log scale) 

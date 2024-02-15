@@ -67,7 +67,9 @@ coc <- s8[which(s8$parameter==this_param),]  #create the "coc" dataframe for thi
 #Non Detect Handing -------------------------------
 #look at censored points
 ggplot(coc)+geom_jitter(aes(x=agency,y=conc,color=nondetect_flag))+scale_y_log10()
-ggplot(coc)+geom_jitter(aes(x=loc,y=conc,color=nondetect_flag))+scale_y_log10()
+ggplot(coc)+geom_jitter(aes(x=loc,y=conc,color=nondetect_flag))+scale_y_log10() +
+  labs(x="catchment location", y="TKN") #plot new values, by location
+
 
 #which values are ND?  min/max detection limit?  where and when were these samples recorded?
 coc.nd <- coc[which(coc$nondetect_flag==TRUE),]
@@ -81,6 +83,11 @@ coc[which(coc$loc=="TAC_HDR" & coc$conc==255),]  #what is going on with this sam
 #  detection limit??  I looked it up in the raw data, and it is flagged with a "result data qualifier = U"...
 #  I think this is an "estimated" value -- lets keep this value of 255 for the censored statistics.
 coc[which(coc$loc=="TAC_HDR" & coc$conc==255), "nondetect_flag"] <- FALSE 
+
+coc[which(coc$conc==30),]
+# these two samples seem fishy -- they are both from Tacoma (TAC_COM & TAC_IND) collected on the same day (11/29/2010) as 
+# composite samples.  All other samples at these locations are much higher.  Also, the "result data qualifier" field has a "U"
+# I have kept the samples in, but we should mention our skepticism about them (or decide to remove??)
 
 #save a copy of the original concentrations
 coc$oconc <- coc$result
@@ -100,7 +107,8 @@ for (i in 1:length(unique(coc$loc))) {
   coc1 <- rbind(coc1, loc.ros)  #build the coc1 data frame, location by location
 }
 
-ggplot(coc1)+geom_jitter(aes(x=loc,y=modeled,color=nondetect_flag))+scale_y_log10() #plot new values, by location
+ggplot(coc1)+geom_jitter(aes(x=loc,y=modeled,color=nondetect_flag))+scale_y_log10()+
+  labs(x="catchment location", y="TKN") #plot new values, by location
 
 #rename
 coc <- coc1  #for ease of use down the line, change the name of coc1 to coc 
@@ -180,7 +188,8 @@ mp_plots()
 #   location, agency(!), landuse(!!), month(!!), season(!) and year do show heteroskedasticity
 
 #best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
-best_predictors <- c("roofs", "nodev", "sqrt_traffic", "sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_tot", 
+best_predictors <- c("roofs", "nodev", "sqrt_traffic", #"traffic",
+                     "sqrt_popn", "sqrt_CO2_res", "sqrt_CO2_almostTotal", 
                      "sqrt_CO2_road", "devAge2", "roof_intURB", "roof_intURB_IND")
 
 pred_i <- which(predictors %in% best_predictors)
@@ -190,7 +199,8 @@ lp_plots(pred_i)
 #  this second vector will be used to generate FormX
 pairs(coc[best_predictors], lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
 
-elements_to_remove <- c("sqrt_CO2_road", "nodev", "sqrt_nodev", "sqrt_popn", "roof_intURB_IND")  #these predictors are highly correlated with others
+elements_to_remove <- c("sqrt_CO2_road", "nodev", #"traffic", 
+                        "sqrt_nodev", "sqrt_popn", "roof_intURB_IND")  #these predictors are highly correlated with others
 best_predictors2 <- best_predictors[!(best_predictors %in% elements_to_remove)]
 
 bp_coefs <- bp_signs <- rep(NA, length(best_predictors))
@@ -785,10 +795,10 @@ par(mfrow=c(2,2), mar=c(2,4,4,1), oma=c(0,0,0,0))
 plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E3, main="Categorical Land Use Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E4a, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E4a, main="Spatial Predictor Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 # plot(coc2$location, E4b, main="Model 4b: sqrt_CO2_road + devAge2", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
@@ -881,8 +891,8 @@ TKN.M4 <- lme(data = coc2, Form4, random = r1X, method = "REML", weights = vf1X,
 
 TKN_models <- list(
   Null_Model = TKN.null,
-  Categorical_Landuse_Model = TKN.M3,
-  Landscape_Predictor_Model = TKN.M4
+  Categorical_Land_Use_Model = TKN.M3,
+  Spatial_Predictor_Model = TKN.M4
 )
 
 huxtablereg(TKN_models,

@@ -303,7 +303,7 @@ Plot.Quantile <- function(aa, bb, myModel, xEqn=0.15, yEqn=max(coc$result)*0.9) 
   ggplot() + 
     geom_line(data=IQ, size=1.5, aes(x=IQ[,aa], y=fit, group=IQ[,bb], color=IQ[,bb]))+
     ylab("COC")+ xlab(names(IQ)[1])+
-    ggtitle(paste("Interaction between", names(IQ)[1], "and", names(IQ)[2]))+
+    #ggtitle(paste("Interaction between", names(IQ)[1], "and", names(IQ)[2]))+
     scale_color_manual(values=c("blue", "purple", "yellow", "orange", "red"))+  #colors for lines (color)
     geom_point(data=coc2, aes(x=coc2[,aa], y=result, fill=coc2[,bb]), size=3, shape=21, stroke=0) + 
     scale_fill_gradient2(low = "blue", mid="yellow", high = "red")+  #colors for points (fill)

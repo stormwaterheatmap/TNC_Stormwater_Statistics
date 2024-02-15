@@ -181,12 +181,12 @@ tlp_plots()
 mp_plots()
 
 #best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
-best_predictors <- c("intURB", "intURB_IND", "totRES", "grass", "greenery", "impervious", "nodev",
-                     "sqrt_traffic", "sqrt_popn", "pm25_na", "sqrt_CO2_tot", "sqrt_CO2_com", "sqrt_CO2_road", 
+best_predictors <- c("totRES", "grass", "greenery", "impervious", "nodev", #"traffic",
+                     "sqrt_traffic", "sqrt_popn", "pm25_na", "sqrt_CO2_transport", "sqrt_CO2_almostTotal", "sqrt_CO2_com", "sqrt_CO2_road", 
                      "sqrt_CO2_nonroad", "devAge2", "roof_intURB_IND")
 
 pred_i <- which(predictors %in% best_predictors)
-lp_plots(pred_i)
+lp_plots2(pred_i)
 
 bp_coefs <- bp_signs <- rep(NA, length(best_predictors))
 names(bp_coefs) <- names(bp_signs) <- best_predictors
@@ -200,8 +200,8 @@ bp_signs <- sign(bp_coefs)
 #  this second vector will be used to generate FormX
 pairs(coc[best_predictors], lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
 
-elements_to_remove <- c("intURB", "sqrt_roof_intURB_IND", "greenery", "impervious", 
-                        "sqrt_CO2_road", "sqrt_CO2_com", "sqrt_CO2_nonroad", "devAge2")  #these predictors are highly correlated with others
+elements_to_remove <- c("roof_intURB_IND", "greenery", "impervious", #"traffic",
+                        "sqrt_CO2_road", "sqrt_CO2_com", "sqrt_CO2_nonroad", "sqrt_CO2_almostTotal", "devAge2")  #these predictors are highly correlated with others
 best_predictors2 <- best_predictors[!(best_predictors %in% elements_to_remove)]
 
 
@@ -586,9 +586,9 @@ check.cor(myModel)
 boxplots.resids2(myModel, residuals(myModel, type="normalized"), "X")
 
 #formulas that are worth considering (single plots of predictors make sense)
-Form4a <- formula(result ~ rain + summer + sqrt_CO2_road + devAge2)  #AIC=699.3; model #2
-Form4b <- formula(result ~ rain + summer + sqrt_traffic + devAge2 + pm25_na)  #AIC=700.5; model #4
-Form4c <- formula(result ~ rain + summer + sqrt_traffic + devAge2)  #AIC=700.9; model #6
+Form4a <- formula(result ~ rain + summer + sqrt_CO2_road + devAge2)  #AIC=699.3; model #3
+Form4b <- formula(result ~ rain + summer + sqrt_traffic + devAge2)  #AIC=700.9; model #7
+Form4c <- formula(result ~ rain + summer + sqrt_traffic + devAge2 + pm25_na)  #AIC=700.5; model #5
 
 #####  Best fit Model4  ####   NOTE: SELECT ALTERNATE MODEL INSTEAD; SEE NOTE BELOW.
 Model4a <- lme(data=coc2, Form4a, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
@@ -596,15 +596,15 @@ E4a <- residuals(object = Model4a, type = "normalized")
 
 #try adding interactions and see if they are significant
 M4a.sub1 <- update(Model4a, . ~ . + rain:sqrt_CO2_road) #not significant (p=0.4061)
-anova(Model4a, M4.sub1)
+anova(Model4a, M4a.sub1)
 M4a.sub2 <- update(Model4a, . ~ . + rain:devAge2)  #not significant (p=0.7118)
-anova(Model4a, M4.sub2)
+anova(Model4a, M4a.sub2)
 M4a.sub3 <- update(Model4a, . ~ . + sqrt_CO2_road:devAge2)  #not significant (p=0.2972)
-anova(Model4a, M4.sub3)
+anova(Model4a, M4a.sub3)
 
 
 #####  Alternate Model4  ####   SELECT THIS AS BEST MODEL -- COPPER IS MORE CLOSELY RELATED TO TRAFFIC THAN EMISSIONS!
-Model4b <- lme(data=coc2, Form4c, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
+Model4b <- lme(data=coc2, Form4b, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 E4b <- residuals(object = Model4b, type = "normalized")
 
 #try adding interactions and see if they are significant -- NONE significant
@@ -653,13 +653,13 @@ par(mfrow=c(2,2), mar=c(2,4,4,1), oma=c(0,0,0,0))
 plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_location)
+plot(coc2$location, E3, main="Categorical Land Use Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 # plot(coc2$location, E4a, main="Model 4a", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 # axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 # abline(h=0, col="gray")
-plot(coc2$location, E4b, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
+plot(coc2$location, E4b, main="Spatial Predictor Model", ylab="Residuals", xaxt="n", col=colors_agency[c(1,1,1,2,3,4,4,4,5,5,5,6,6,6)])
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "POT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 
@@ -735,8 +735,8 @@ Cu.M4 <- lme(data = Cu.coc2, Cu.Form4, random = Cu.r1X, method = "REML", weights
 
 Cu_models <- list(
   Null_Model = Cu.null,
-  Categorical_Landuse_Model = Cu.M3,
-  Landscape_Predictor_Model = Cu.M4)
+  Categorical_Land_Use_Model = Cu.M3,
+  Spatial_Predictor_Model = Cu.M4)
 
 huxtablereg(Cu_models,
             single.row = TRUE, custom.model.names = names(Cu_models)) %>%

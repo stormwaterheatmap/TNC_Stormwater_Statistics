@@ -31,21 +31,21 @@
 
 # # Uncomment to install the first time (only need to do this once)
 #
-# Install the rgee package from GitHub
-install.packages("devtools")
-devtools::install_github("r-spatial/rgee")
-
-#
-# rgee depends on reticulate because it has some Python dependencies (i.e. numpy and ee), run as follows to install them:
-rgee::ee_install()
-# If you are a Windows user reticulate requires miniconda/anaconda.
-# The use of rgee::ee_install() is not mandatory, you can count on with your own custom installation.
-#
-# After install rgee, you might use the function below for checking the status of rgee.
-ee_check() # Check non-R dependencies
-#if this is not working, try running the next few lines of script and coming back after libraries are updated
-
-rgee::ee_install_upgrade()
+# # Install the rgee package from GitHub
+# install.packages("devtools")
+# devtools::install_github("r-spatial/rgee")
+# 
+# #
+# # rgee depends on reticulate because it has some Python dependencies (i.e. numpy and ee), run as follows to install them:
+# rgee::ee_install()
+# # If you are a Windows user reticulate requires miniconda/anaconda.
+# # The use of rgee::ee_install() is not mandatory, you can count on with your own custom installation.
+# #
+# # After install rgee, you might use the function below for checking the status of rgee.
+# ee_check() # Check non-R dependencies
+# #if this is not working, try running the next few lines of script and coming back after libraries are updated
+# 
+# rgee::ee_install_upgrade()
 
 
 # Libraries ---------------------------------------------------------------
@@ -243,7 +243,7 @@ sa <- ee$Image("users/stormwaterheatmap/surface_area")$rename("particulate_surfa
 
 
 # Make Map for One Predictor -----------------------------------------------
-map_image <- Vulcan_railroad #landuse #Vulcan_total #v4_pm25 #landuse
+map_image <- Vulcan_rail #landuse #Vulcan_total #v4_pm25 #landuse
 map_viz <- list(min = 2, max = 7, palette = list("black", "yellow","red"), opacity = 0.5)
 Map$centerObject(eeObject = watersheds, zoom = 7)
 Map$addLayer(map_image, visParams = map_viz) +

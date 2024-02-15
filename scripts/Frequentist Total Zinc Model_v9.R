@@ -170,9 +170,9 @@ mp_plots()
 #for zinc, 14, 21 and 28-day precip don't show evidence of heteroskedasticity.  
 #   location, agency, landuse show heteroskedasticity
 
-#best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!
-best_predictors <- c("totRES", "intURB_IND", "grass", "greenery", "paved", "impervious", "trees", "sqrt_traffic",
-                     "pm25_na", "sqrt_CO2_cor", "roof_intURB_IND")
+#best predictors for this COC; make sure to only have one version (transformed or not) of each predictor!                  
+best_predictors <- c("totRES", "intURB_IND", "grass", "greenery", "paved", "impervious", "trees", "sqrt_traffic", #"traffic", 
+                     "pm25_na", "sqrt_CO2_com", "sqrt_CO2_nonroad", "sqrt_CO2_almostTotal", "sqrt_CO2_transport", "roof_intURB_IND", "roof_totRES")
 
 pred_i <- which(predictors %in% best_predictors)
 #lp_plots(pred_i)
@@ -182,7 +182,8 @@ lp_plots2(pred_i)  #this version plots up to 16 per page
 #  this second vector will be used to generate FormX
 pairs(coc[best_predictors], lower.panel=panel.smooth2, upper.panel=panel.cor, diag.panel=panel.hist)
 
-elements_to_remove <- c("greenery", "impervious", "roof_intURB_IND")  #these predictors are highly correlated with others
+elements_to_remove <- c("greenery", "impervious", "roof_intURB_IND", #"traffic",
+                        "sqrt_CO2_com", "sqrt_CO2_almostTotal")  #these predictors are highly correlated with others
 best_predictors2 <- best_predictors[!(best_predictors %in% elements_to_remove)]
 
 bp_coefs <- bp_signs <- rep(NA, length(best_predictors))
@@ -646,7 +647,7 @@ if (run_exploratory_code==FALSE) {
 
 #list of quantiles for all landscape predictors
 qList <- list(paved=quantile(coc2$paved, probs=c(0,.25,.50,.75,1)),
-              sqrt_CO2_cor=quantile(coc2$sqrt_CO2_cor, probs=c(0,.25,.50,.75,1)),
+              sqrt_CO2_almostTotal=quantile(coc2$sqrt_CO2_almostTotal, probs=c(0,.25,.50,.75,1)),
               greenery=quantile(coc2$greenery, probs=c(0, .25, .50, .75, 1)),
               sqrt_traffic=quantile(coc2$sqrt_traffic, probs=c(0,.25,.50,.75,1))
               )
@@ -683,7 +684,7 @@ AIC(Model3)
 #run through the top formulas when only best predictors are on the table;
 #  keep only formulas that make sense
 #myForm <- my.formulas.m4[[2]]
-myForm <- update(my.formulas.m4[[5]], .~. -dry)  #2, 4 & 5 are good models
+myForm <- update(my.formulas.m4[[1]], .~. -dry)  #1, 3 (near duplicate of 1), 6 & 7 are good models
 
 #these lines of code assess fit of this particular model in terms of COC vs. individual predictors, and predictor correlation
 myModel <- lme(data=coc2, myForm, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
@@ -696,17 +697,17 @@ boxplots.resids2(myModel, residuals(myModel, type="normalized"), "X")
 
 
 #note: no "dry" predictor; variance covariate = location
-Form4a <- formula(result ~ rain + summer + sqrt_CO2_cor + paved)  #my.formulas.m4[[2]]; AIC=732.4
+Form4a <- formula(result ~ rain + summer + sqrt_CO2_almostTotal + paved)  #my.formulas.m4[[1]]; AIC=731.7
 Model4a <- lme(data=coc2, Form4a, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 E4a <- residuals(object=Model4a, type="normalized")
 
 #note: no "dry" predictor; variance covariate = location
-Form4b <- formula(result ~ rain + summer + greenery)  #my.formulas.m4[[4]]; AIC=735.4
+Form4b <- formula(result ~ rain + summer + greenery)  #my.formulas.m4[[6]]; AIC=735.4
 Model4b <- lme(data=coc2, Form4b, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 E4b <- residuals(object = Model4b, type="normalized")
 
 # #note: no "dry" predictor; variance covariate = location
-Form4c <- formula(result ~ rain + summer + sqrt_traffic + paved)  #my.formulas.m4[[5]]; AIC=735.6
+Form4c <- formula(result ~ rain + summer + sqrt_traffic + paved)  #my.formulas.m4[[7]]; AIC=735.6
 Model4c <- lme(data=coc2, Form4c, method="ML", random=r1X, weights=vf1X, control = lmeControl(maxIter = 1e8, msMaxIter = 1e8))
 E4c <- residuals(object = Model4c, type="normalized")
 
@@ -717,7 +718,7 @@ Model4 <- Model4a
 E4 <- residuals(object = Model4, type="normalized")
 
 #try adding interactions and see if they are significant
-M4.sub1 <- update(Model4, . ~ . + rain:sqrt_CO2_cor) #slightly significant (p=0.0253)
+M4.sub1 <- update(Model4, . ~ . + rain:sqrt_CO2_almostTotal) #slightly significant (p=0.0272)
 anova(Model4, M4.sub1)
 M4.sub2 <- update(Model4, . ~ . + rain:paved)  #highly significant (p=0.0009)
 anova(Model4, M4.sub2)
@@ -726,7 +727,7 @@ anova(Model4, M4.sub2)
 Plot.Quantile("rain", "paved", M4.sub2, yEqn=7.5)
 myModel <- M4.sub2
 boxplots.resids2(myModel, residuals(myModel, type="normalized"), "X")
-#This relationship seems plausible, both on basis of data theoretically.  It also reduces AIC by 9-pts (to 722.7)
+#This relationship seems plausible, both on basis of data theoretically.  It also reduces AIC by 9-pts (to 722.8)
 
 Form4a.int <- update(Form4a, .~. +rain:paved)
 M4a.int <- update(Model4a, .~. +rain:paved)
@@ -746,7 +747,7 @@ anova(Model4, M4.sub2)
 Plot.Quantile("rain", "greenery", M4.sub2, yEqn=7.5)
 myModel <- M4.sub2
 boxplots.resids2(myModel, residuals(myModel, type="normalized"), "X")
-
+AIC(myModel)  #AIC = 724.4
 
 # Model 4c interactions
 Form4 <- Form4c
@@ -762,13 +763,15 @@ anova(Model4, M4.sub2)
 Plot.Quantile("rain", "paved", M4.sub2, yEqn=7.5)
 Plot.Quantile("rain", "sqrt_traffic", M4.sub1, yEqn=7.5)  #this one doesn't visually line up well
 myModel <- M4.sub2
-summary(myModel)  #note that sqrt_traffic p-value = 0.017
+summary(myModel)  #note that sqrt_traffic p-value = 0.017;   AIC=726.0
+plot.single.preds(myModel)
+check.cor(myModel)
 AIC(update(myModel, .~. -sqrt_traffic))  #removing sqrt_traffic leads to a signif worse AIC (726 vs 731.9)
 Model4c.int <- M4.sub2
 
 # we tried putting all three model options onto the stormwater heatmap, and noticed that there are some
 #  problems with models 4a and 4b.  Model 4b (greenery) was a favorite, until we observed that non-vegetated
-#  open space (mudflats, rock formations) were shown as high zinc areas. Model 4a (paved + sqrt_CO2_cor) 
+#  open space (mudflats, rock formations) were shown as high zinc areas. Model 4a (paved + sqrt_CO2_almostTotal) 
 #  wasn't as good as model 4c (paved + sqrt_traffic), because the CO2 data are a surrogate for traffic,
 #  and are not at as good of resolution as the traffic data.  The CO2 data weren't capturing the roadways
 #  as well as we would have liked, as the data grid is larger, so they look blocky/ gridded.  Since all three
@@ -808,13 +811,13 @@ par(mfrow=c(2,2), mar=c(2,4,4,1), oma=c(0,0,0,0))
 plot(coc2$location, E1, main="Null Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "PoT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
-plot(coc2$location, E3, main="Categorical Landuse Model", ylab="Residuals", xaxt="n", col=colors_location)
+plot(coc2$location, E3, main="Categorical Land Use Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "PoT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 # plot(coc2$location, E4a, main="Model 4a: traffic, paved, pm25", ylab="Residuals", xaxt="n", col=colors_location)
 # axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "PoT", "Sea", "Sno", "Tac"))
 # abline(h=0, col="gray")
-plot(coc2$location, E4c.int, main="Landscape Predictor Model", ylab="Residuals", xaxt="n", col=colors_location)
+plot(coc2$location, E4c.int, main="Spatial Predictor Model", ylab="Residuals", xaxt="n", col=colors_location)
 axis(side=1, at=c(2,3.8,5.2,7,10,13), labels=c("King", "Pie", "PoT", "Sea", "Sno", "Tac"))
 abline(h=0, col="gray")
 # plot(coc2$location, E4b, main="Model 4b: traffic, greenery, pm25", ylab="Residuals", xaxt="n", col=colors_location)
@@ -905,8 +908,8 @@ totZn.M4 <- lme(data = coc2, Form4c.int, random = r1X, method = "REML", weights 
 
 totZn_models <- list(
   Null_Model = totZn.null,
-  Categorical_Landuse_Model = totZn.M3,
-  Landscape_Predictor_Model = totZn.M4
+  Categorical_Land_Use_Model = totZn.M3,
+  Spatial_Predictor_Model = totZn.M4
 )
 
 huxtablereg(totZn_models,
