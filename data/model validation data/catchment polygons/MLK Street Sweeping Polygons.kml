@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1-7FxGli-KSgOZSNRshWGeTObX0EajKD9">
+	<name>SWHM Model Validation Polygons</name>
+	<gx:CascadingStyle kml:id="__managed_style_273D09CE6B30FAFEA64C">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2f2fd3</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>402f2fd3</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0B9740412C30FAFEA64C">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_14F0548CBA30FAFEA64C</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_273D09CE6B30FAFEA64C</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_14F0548CBA30FAFEA64C">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2f2fd3</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>402f2fd3</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1CFABA3FD230F60DB99E">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>402dc0fb</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_05FA6A0EB830F60DB99E">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>402dc0fb</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0C482220AE30F60DB99D">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_05FA6A0EB830F60DB99E</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_1CFABA3FD230F60DB99E</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="008B451F4D30AD99192C">
+		<name>MLK Street Sweep SS2</name>
+		<LookAt>
+			<longitude>-122.297053058134</longitude>
+			<latitude>47.5668981720355</latitude>
+			<altitude>41.98390802130761</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>380.4447876766426</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0C482220AE30F60DB99D</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.2971347978268,47.56721624509419,0 -122.297137528922,47.56690286990781,0 -122.2971164090464,47.56670660010648,0 -122.2970363496282,47.56638578015306,0 -122.2970179697122,47.56634031766038,0 -122.2970415392925,47.56629814331161,0 -122.297089273828,47.56626952648066,0 -122.2971336921222,47.56623181590353,0 -122.297087368776,47.56621557746089,0 -122.2970332650541,47.56620031689131,0 -122.2969938851461,47.56615742469288,0 -122.2969594070947,47.56611004513733,0 -122.2968415298718,47.5661241443572,0 -122.2967802115136,47.5661715148136,0 -122.2967932864591,47.56626763477902,0 -122.2968245625972,47.56633168526533,0 -122.2968725472538,47.56637187437064,0 -122.296903572872,47.5665239827093,0 -122.2969446486252,47.5666869484088,0 -122.2969739963288,47.56683854906032,0 -122.2970148816411,47.5669241932912,0 -122.2971347978268,47.56721624509419,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="0DA131EEC230ADC60B5A">
+		<name>MLK Street Sweep SS3</name>
+		<LookAt>
+			<longitude>-122.2966055603428</longitude>
+			<latitude>47.56591827566147</latitude>
+			<altitude>45.1576625673712</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>252.984934023043</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0C482220AE30F60DB99D</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.2965818635706,47.56614069769891,0 -122.2966305931704,47.5660496532671,0 -122.2963897515465,47.56564248759738,0 -122.2963415614278,47.56573707247389,0 -122.2965818635706,47.56614069769891,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="0099AA5D3230ADC7843C">
+		<name>MLK Street Sweep SS4</name>
+		<LookAt>
+			<longitude>-122.2963688639728</longitude>
+			<latitude>47.56553528757945</latitude>
+			<altitude>46.40415861840216</altitude>
+			<heading>1.207418269725733e-06</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>251.7384195518753</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0C482220AE30F60DB99D</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.2963412197977,47.56573712302389,0 -122.2963877652301,47.5656435975491,0 -122.2959993572287,47.56502794193612,0 -122.2959650950697,47.56516302934079,0 -122.2959438963115,47.56519068024779,0 -122.2959123579957,47.56521434168608,0 -122.2959150515161,47.56525054461105,0 -122.2959509261614,47.56527400696974,0 -122.2960067846897,47.56527292760814,0 -122.2960515054179,47.56527764973107,0 -122.2960760700536,47.56529778861777,0 -122.2963412197977,47.56573712302389,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="048BFDC54C30ADCA7921">
+		<name>MLK Street Sweep SS5</name>
+		<LookAt>
+			<longitude>-122.2914187829939</longitude>
+			<latitude>47.55724280506266</latitude>
+			<altitude>62.33681856231242</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>171.8230535961629</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0C482220AE30F60DB99D</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.2914707429278,47.55751845298633,0 -122.2910578433286,47.5568479786627,0 -122.2909069852118,47.55678545670604,0 -122.2912948418954,47.55740150579913,0 -122.2914707429278,47.55751845298633,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="05B6C8B65530FAFE0CC2">
+		<name>Coupeville_CoupevilleWharf</name>
+		<LookAt>
+			<longitude>-122.6908651592143</longitude>
+			<latitude>48.21965025265462</latitude>
+			<altitude>21.36467119218408</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30</gx:fovy>
+			<range>3506.311681244989</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0B9740412C30FAFEA64C</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.6891981549114,48.2215328508612,0 -122.6892377993132,48.22140727606315,0 -122.6898927552407,48.22150522701222,0 -122.6908273142317,48.22163695031442,0 -122.6915067357602,48.22161226085503,0 -122.6920447923565,48.22152341636287,0 -122.6928420311928,48.22131179874515,0 -122.693521630232,48.22102466888099,0 -122.6943617450351,48.22065847727099,0 -122.6952866592274,48.22016257448178,0 -122.6953559746142,48.2196405426442,0 -122.6953873665319,48.21795439936757,0 -122.6957130445667,48.21711033296252,0 -122.6957386540253,48.21677826075001,0 -122.6934000638822,48.21508064570892,0 -122.6861528236895,48.21508275467274,0 -122.6861850170707,48.22048063995465,0 -122.6879477327149,48.22047437239281,0 -122.6879391463239,48.22137927074397,0 -122.6891981549114,48.2215328508612,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="05B80FC83C30FB002943">
+		<name>Coupeville_FrontAndMain</name>
+		<LookAt>
+			<longitude>-122.6908651592143</longitude>
+			<latitude>48.21965025265462</latitude>
+			<altitude>21.36467119218408</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30</gx:fovy>
+			<range>3506.311681244989</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0B9740412C30FAFEA64C</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.6861651777404,48.22116883585584,0 -122.686166365264,48.22003651349425,0 -122.6851442828618,48.22005397043534,0 -122.6852087861266,48.22106042846644,0 -122.6861651777404,48.22116883585584,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="04B5F2BAB530FB03A04E">
+		<name>Coupeville_BoatLaunch</name>
+		<LookAt>
+			<longitude>-122.6908651592143</longitude>
+			<latitude>48.21965025265462</latitude>
+			<altitude>21.36467119218408</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30</gx:fovy>
+			<range>3506.311681244989</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0B9740412C30FAFEA64C</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.680661220272,48.22061209476165,0 -122.6807495603533,48.21783143413643,0 -122.6855844728311,48.21783712955725,0 -122.6855379228663,48.21601812051557,0 -122.6850816451815,48.21601749152894,0 -122.6850816276462,48.21510865546888,0 -122.6817184493621,48.21512443677523,0 -122.6774890377093,48.21500223596052,0 -122.6754084583644,48.2147967969659,0 -122.6744764753163,48.21437080623376,0 -122.6717768684041,48.21417139401232,0 -122.671036441927,48.21444466695414,0 -122.6719201514178,48.21562739568771,0 -122.6739300188036,48.21572140223645,0 -122.6743603920159,48.21751439701187,0 -122.6756107967062,48.21755257072111,0 -122.676545853106,48.21778474304449,0 -122.6770208249833,48.21832339605706,0 -122.6771115390188,48.21941719744293,0 -122.6776297552078,48.21959663554837,0 -122.6776705862369,48.22025391664114,0 -122.6781303415593,48.22013053053942,0 -122.6785476861908,48.22042871301728,0 -122.6795262475115,48.22041447282548,0 -122.680661220272,48.22061209476165,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="0053FF3F1B30FB094CAE">
+		<name>Coupeville_PerkinsBluff</name>
+		<LookAt>
+			<longitude>-122.6781700933605</longitude>
+			<latitude>48.22013708423104</latitude>
+			<altitude>6.517916251845843</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30</gx:fovy>
+			<range>3521.158695132472</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0B9740412C30FAFEA64C</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.6776691280832,48.22026883009691,0 -122.6776509671947,48.21960970437581,0 -122.6770727338984,48.21942753712958,0 -122.6770318541896,48.21831302187164,0 -122.6765718876371,48.21779895889406,0 -122.6755337376692,48.21753338699762,0 -122.6743280109848,48.21753492808429,0 -122.6739213948037,48.21572461899611,0 -122.6719245627383,48.21562716770273,0 -122.6711290439529,48.21463386678398,0 -122.6710120726212,48.21448755948256,0 -122.6684730662045,48.21464434292052,0 -122.6643217856765,48.21758088160092,0 -122.6643494577696,48.21799274485454,0 -122.6659069725452,48.21884052408665,0 -122.6714018494013,48.22034416729672,0 -122.6728454702487,48.22162829175944,0 -122.673535085698,48.22253303840488,0 -122.6743975767307,48.22251676538828,0 -122.6746968205099,48.22222995590512,0 -122.6747040741023,48.22088168667504,0 -122.6749289182981,48.22059177534547,0 -122.6753230619615,48.22031464760055,0 -122.6764622672173,48.22030420324418,0 -122.676499062926,48.22071971053412,0 -122.6770448301,48.22037285355727,0 -122.6776691280832,48.22026883009691,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+</Document>
+</kml>
