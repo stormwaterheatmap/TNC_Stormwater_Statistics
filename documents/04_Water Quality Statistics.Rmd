@@ -2,11 +2,11 @@
 editor_options:
   markdown:
     wrap: 72
-output:
-  html_document:
-    df_print: paged
-  pdf_document: default
-  word_document: default
+output: github_document
+  # html_document:
+  #   df_print: paged
+  # word_document: default
+  # pdf_document: default
 ---
 
 # Water Quality Statistics
@@ -747,7 +747,9 @@ include precipitation (rain) and season (summer/dry season vs. not
 summer/wet season).
 
 Detailed model-fitting results for each COC are provided in the sections
-below.
+below. Discussion of model fitting conclusions based on these results is
+provided for each COC at the end of this document, in the section titled
+"Model Fitting Conclusions."
 
 **Table 4.3** Equations used in the Stormwater Heatmap visual layers for
 over-annual mean concentrations of constituents of concern.
