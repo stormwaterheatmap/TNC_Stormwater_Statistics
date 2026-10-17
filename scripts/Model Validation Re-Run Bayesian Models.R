@@ -1,12 +1,11 @@
 # This script re-runs the best-fit Bayesian models using the S8C naming convention for Tacoma sites,
 #  where TAC_HDR = OF237B, TAC_COM = OF235, and TAC_IND = OF245.
 
-# This script uses v9 lme model results (nested random effects: agency/location) to generate 
+# This script uses v10 lme model results (v12 for zinc; nested random effects: agency/location) to generate 
 #  the Bayesian outputs.
 
 # Author: Eva Dusek Jennings
-# Revised: Mar 24, 2025
-#          Apr 28, 2025 - add greenery_bareEarth
+# Revised: Oct 9, 2026
 #---------------------------------------------------------------------------------------
 
 #options(mc.cores = 2)
@@ -28,7 +27,7 @@ library(loo)
 #  Total Copper  #
 #----------------#
 
-load(file="../results/Frequentist_Copper Models.RData")
+load(file="results/Frequentist_Copper Models.RData")
 Cu.Form4  #lme model equation
 Cu.r1X  #random effect in lme model
 Cu.vf1X  #variance structure for lme model
@@ -45,12 +44,12 @@ summary(Cu.lme)
 
 #by using the student-t distribution instead of the gaussian, we are allowing fatter tails, and the influential
 #  observation (the highest SNO-HDR value) becomes less of an outlier and its pareto_k value is not longer > 0.7
-fit2.t <- brm(bf(result ~ summer + rain + sqrt_traffic + devAge2 + (1|agency/location), 
+fit2.t <- brm(bf(formula= update(Cu.Form4, .~. + (1|agency/location)), 
                sigma ~ (1|location)),  #equivalent to varIdent(form= ~1|location)
             data=Cu.coc2,
             family=student,
             prior = c(set_prior("normal(0,10)", class="b")),   #non-informative priors on all predictors
-            cores = getOption("mc.cores", 1),
+            cores = getOption("mc.cores", 4),
             control = list(adapt_delta = 0.999, stepsize = 0.1, max_treedepth = 20)
 )
 
@@ -61,7 +60,7 @@ Cu.brm <- fit2.t  #best Bayesian model for copper, so far
 #--------------------------#
 
 
-load(file="../results/Frequentist_TSS Models.RData")
+load(file="results/Frequentist_TSS Models.RData")
 TSS.Form4
 TSS.r1X
 TSS.vf1X
@@ -77,11 +76,12 @@ TSS.lme <- lme(TSS.Form4, data=TSS.coc2, method="REML", random = TSS.r1X, weight
 summary(TSS.lme)
 
 #agency/location as nested random effect; variance structure = varIdent(form = ~1|location) -- best model from LME 
-fit2 <- brm(bf(result ~ rain + sqrt_traffic + devAge2 + (1|agency/location), 
+fit2 <- brm(bf(formula= update(TSS.Form4, .~. + (1|agency/location)), 
                sigma ~ (1|location)),  #equivalent to varIdent(form= ~1|location)
             data=TSS.coc2,
+            family=student,
             prior = c(set_prior("normal(0,10)", class="b")),   #non-informative priors on all predictors
-            cores = getOption("mc.cores", 1),
+            cores = getOption("mc.cores", 4),
             control = list(adapt_delta = 0.999, stepsize = 0.1, max_treedepth = 20)
 )
 
@@ -93,7 +93,7 @@ TSS.brm <- fit2
 #  Total Phosphorus  #
 #--------------------#
 
-load(file="../results/Frequentist_Total Phosphorus Models.RData")
+load(file="results/Frequentist_Total Phosphorus Models.RData")
 P.Form4
 P.r1X
 P.vf1X
@@ -110,12 +110,12 @@ P.lme <- lme(P.Form4, data=P.coc2, method="REML", random = P.r1X, weights=P.vf1X
 summary(P.lme)
 
 #single predictor (sqrt_CO2_road) with student-t distribution
-fit2.t <- brm(bf(result ~ rain + summer + sqrt_CO2_road + (1|agency/location), 
+fit2.t <- brm(bf(formula= update(P.Form4, .~. + (1|agency/location)), 
                sigma ~ (1|location)),  #equivalent to varIdent(form= ~1|location)
             data=P.coc2,
             family=student,
             prior = c(set_prior("normal(0,10)", class="b")),   #non-informative priors on all predictors
-            cores = getOption("mc.cores", 1),
+            cores = getOption("mc.cores", 4),
             control = list(adapt_delta = 0.999, stepsize = 0.1, max_treedepth = 20)
 )
 
@@ -127,7 +127,7 @@ P.brm <- fit2.t
 #  Total Zinc  #
 #--------------#
 
-load(file="../results/Frequentist_Total Zinc Models_notGreenBE.RData")
+load(file="results/Frequentist_Total Zinc Models.RData")
 totZn.Form4
 totZn.r1X
 totZn.vf1X
@@ -143,12 +143,12 @@ totZn.lme <- lme(totZn.Form4, data=totZn.coc2, method="REML", random = totZn.r1X
 summary(totZn.lme)
 
 #agency/location as nested random effect; variance structure = varIdent(form = ~1|location) -- student t distribution
-fit2.t <- brm(bf(result ~ rain + summer + sqrt_CO2_transport + not_greenBE + rain:not_greenBE + (1|agency/location), 
-                                  sigma ~ (1|location)),  #equivalent to varIdent(form= ~1|location)
+fit2.t <- brm(bf(formula= update(totZn.Form4, .~. + (1|agency/location)), 
+                sigma ~ (1|location)),  #equivalent to varIdent(form= ~1|location)
             data=totZn.coc2,
             family=student,
             prior = c(set_prior("normal(0,10)", class="b")),   #non-informative priors on all predictors
-            cores = getOption("mc.cores", 2),
+            cores = getOption("mc.cores", 4),
             control = list(adapt_delta = 0.999, stepsize = 0.1, max_treedepth = 20)
 )
 
@@ -159,7 +159,7 @@ totZn.brm <- fit2.t
 #  Total Kjeldahl Nitrogen  #
 #---------------------------#
 
-load(file="../results/Frequentist_Total Kjeldahl Nitrogen Models_censtat.RData")
+load(file="results/Frequentist_Total Kjeldahl Nitrogen Models_censtat.RData")
 TKN.Form4
 TKN.r1X
 TKN.vf1X
@@ -179,13 +179,16 @@ summary(TKN.lme)
 TKN.coc2 <- TKN.coc2 %>% 
   mutate(cen1 = if_else(cen==TRUE, "left", "none"))
 
+#Formula 4, but with brms censored data processing request on left side of equation
+TKN.Form4.cen <- as.formula(bquote(log(oconc) | cens(cen1) ~ .(TKN.Form4[[3]]) ))  #Form4, but starting with "log(oconc) | cens(cen1)"
+
 #agency/location as nested random effect; variance structure = varIdent(form = ~1|agency) -- student t distribution
-fit1.t.cen <- brm(bf(log(oconc) | cens(cen1) ~ rain + summer + sqrt_traffic + devAge2 + (1|agency/location), 
+fit1.t.cen <- brm(bf(update(TKN.Form4.cen, .~. + (1|agency/location)), 
                  sigma ~ (1|agency)),  #equivalent to varIdent(form= ~1|agency)
               data=TKN.coc2,
               family=student,
               prior = c(set_prior("normal(0,10)", class="b")),   #non-informative priors on all predictors
-              cores = getOption("mc.cores", 1),
+              cores = getOption("mc.cores", 4),
               control = list(adapt_delta = 0.999, stepsize = 0.1, max_treedepth = 20)
 )
 
@@ -196,14 +199,8 @@ TKN.brm <- fit1.t.cen   #this is the model we are choosing -- using censored met
 #  Save Model Validation Runs of BRMS models  #
 #---------------------------------------------#
 
-# totZn.brm.new <- totZn.brm
-# 
-# load(file="../results/Best Fit Bayesian Models Using Model Validation Location Names_Zinc_notGreenBE.RData")
-# 
-# totZn.brm <- totZn.brm.new
-
 save(Cu.brm, TSS.brm, P.brm, totZn.brm, TKN.brm, 
      Cu.coc2, TSS.coc2, P.coc2, totZn.coc2, TKN.coc2,
-     file="../results/Best Fit Bayesian Models Using Model Validation Location Names_Zinc_notGreenBE.RData")
+     file="results/Best Fit Bayesian Models Using Model Validation Location Names.RData")
 
 

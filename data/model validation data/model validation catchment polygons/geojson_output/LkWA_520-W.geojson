@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "LkWA_520-W",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "LkWA_520-W", "Description": "" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.275262091232506, 47.6434989141015, 0.0 ], [ -122.275354920741506, 47.64338522354933, 0.0 ], [ -122.272085345357496, 47.642802033540264, 0.0 ], [ -122.272026349733295, 47.642950110161401, 0.0 ], [ -122.275262091232506, 47.6434989141015, 0.0 ] ] ] } }
+]
+}

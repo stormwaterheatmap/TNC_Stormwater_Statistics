@@ -1,0 +1,38 @@
+Priority,Location,Location_Name,Project,Latitude,Longitude,Details
+1,SS2,MLK Street Sweeping-SS2,MLK Street Sweeping,47.56714377,-122.2971092,"See MLK Street Sweeping QAPP, pgs 14-16 for verbal description, pgs 18-22 for drawn boundaries of catchments "
+1,SS3,MLK Street Sweeping-SS3,MLK Street Sweeping,47.56612147,-122.2965599,"See MLK Street Sweeping QAPP, pgs 14-16 for verbal description, pgs 18-22 for drawn boundaries of catchments "
+1,SS4,MLK Street Sweeping-SS4,MLK Street Sweeping,47.56570932,-122.2963257,"See MLK Street Sweeping QAPP, pgs 14-16 for verbal description, pgs 18-22 for drawn boundaries of catchments "
+1,SS5,MLK Street Sweeping-SS5,MLK Street Sweeping,47.55750995,-122.2914465,"See MLK Street Sweeping QAPP, pgs 14-16 for verbal description, pgs 18-22 for drawn boundaries of catchments "
+1,OF230,WAR044003_S8C_OF230,Tacoma S8C,47.24961,-122.43504,"See Tacoma QAPP, Fig 3-2 (pg 111) and Fig 7-1 (pg 115) for drawn boundaries; see also Sec 7-1 (pgs 37-43) for verbal descriptions of catchment boundaries"
+1,OF235,WAR044003_S8C_OF235,Tacoma S8C,47.243327,-122.433651,"See Tacoma QAPP, Fig 3-2 (pg 111) and Fig 7-1 (pg 115) for drawn boundaries; see also Sec 7-1 (pgs 37-43) for verbal descriptions of catchment boundaries"
+1,OF237A_NEW,WAR044003_S8C_OF237A_NEW,Tacoma S8C,47.24119,-122.43193,"See Tacoma QAPP, Fig 3-2 (pg 111) and Fig 7-1 (pg 115) for drawn boundaries; see also Sec 7-1 (pgs 37-43) for verbal descriptions of catchment boundaries"
+1,OF237B_FD1,WAR044003_S8C_OF237B_FD1,Tacoma S8C,47.2408,-122.43151,"See Tacoma QAPP, Fig 3-2 (pg 111) and Fig 7-1 (pg 115) for drawn boundaries; see also Sec 7-1 (pgs 37-43) for verbal descriptions of catchment boundaries"
+1,OF243_FD23,WAR044003_S8C_OF243_FD23,Tacoma S8C,47.2437,-122.43032,"See Tacoma QAPP, Fig 3-2 (pg 111) and Fig 7-1 (pg 115) for drawn boundaries; see also Sec 7-1 (pgs 37-43) for verbal descriptions of catchment boundaries"
+1,OF245_MH390,WAR044003_S8C_OF245_MH390,Tacoma S8C,47.245614,-122.430726,"See Tacoma QAPP, Fig 3-2 (pg 111) and Fig 7-1 (pg 115) for drawn boundaries; see also Sec 7-1 (pgs 37-43) for verbal descriptions of catchment boundaries"
+1,OF254,WAR044003_S8C_OF254,Tacoma S8C,47.25064,-122.42537,"See Tacoma QAPP, Fig 3-2 (pg 111) and Fig 7-1 (pg 115) for drawn boundaries; see also Sec 7-1 (pgs 37-43) for verbal descriptions of catchment boundaries"
+2,520-W,520 Bridge,Lake Washington,47.64316,-122.27317,"See pg 21 & 27 of Lake WA QAPP; this sample constitutes drainage from the 520 bridge crossing over the lake, and is a time-composited water sample"
+2,G0500170STMWTR1,WOODLAKE ROAD 1 (NEAR AVALON CT),Garden Ed,48.77640231,-122.4062138,No QAPP; from EIM website: catch basin
+2,G0500170STMWTR2,WOODLAKE ROAD 2 (NEAR BROOKEDGE CT),Garden Ed,48.77562618,-122.4057329,No QAPP; from EIM website: catch basin
+2,I745K,OUTFALL_TO_MALLARDLK,White Center,47.51009975,-122.3512211,No QAPP; from EIM website: outflow flowing to Mallard Lake from the northwest (Stormwater BMP influent)
+2,I745N,INFLOW _STORMCELL1_N.SIDE,White Center,47.51381878,-122.3505513,No QAPP; from EIM website: inflow to storm cell 1 on north side of SW 100th by caged manhole (stormwater BMP influent)
+2,I745S,OUTLFOW/BALLFIELDS_TO_LAKE,White Center,47.50261789,-122.3440305,No QAPP; from EIM website: outflow from ballfields and high schools to Lake hicks from the South (Stormwater BMP influent)
+2,ICC1,COUPEVILLE WHARF,Coupeville,48.22144611,-122.6884578,No QAPP; from EIM website: large outfall directed north of the wharf
+2,ICC3,BOAT LAUNCH,Coupeville,48.22048417,-122.6794069,No QAPP; from EIM website: inflow to storm cell 1 on north side of SW 100th by caged manhole (stormwater BMP influent)
+2,ICC5,PERKINS BLUFF,Coupeville,48.22047972,-122.6769208,"No QAPP; from EIM website: sample taken from cut in the pipe on the bluff at Perkins, or from outfall"
+2,KIR-CW,Kirkland-Central Way Outfall,Lake Washington,47.679787,-122.193658,See pg 21 & 27 of Lake WA QAPP; this sample is time-composited water sample from an average-large size draininage
+2,Lahti-swale-in,Lahti Drive Swale Inflow,Lahti Drive,48.77470556,-122.4099833,No QAPP; from EIM website: Southwest corner of the Lahti Drive/ Britton Road instersection.  Influent pipe 2' south of manhole cover
+2,MER_S1,142nd and 264th Outfall,Lake Meridian,47.365279,-122.152142,No QAPP; from EIM website: outfall
+2,MER_S2,144th and 266th Outfall,Lake Meridian,47.364504,-122.149659,No QAPP; from EIM website: outfall
+2,MER_S3,12 Pipeline at Mobile Home Park,Lake Meridian,47.370028,-122.163529,"No QAPP; from EIM website: 12"" pipe"
+2,MER_S4,36 Pipeline at Mobile Home Park,Lake Meridian,47.370284,-122.164354,"No QAPP; from EIM website: 36"" pipe"
+2,MER_S5,Mobile Home Park Dead End,Lake Meridian,47.36984,-122.162034,No QAPP; from EIM website: outfall
+2,QUINCE STW,QUINCE ST SE STORM DRAIN,Indian Creek,47.03723,-122.88855,"See pages 6 and 16 of Indian Creek QAPP; This location corresponds to the ""Lower Indian Creek Station"", and samples should have been collected from the stormwater culvert emptying into Indian Creek near Quince Street"
+2,REN-JC,Renton-Johns Creek,Lake Washington,47.501639,-122.200278,See pg 21 & 27 of Lake WA QAPP; this sample is time-composited water sample from an average-large size draininage
+3,ICC2,FRONT AND MAIN,Coupeville,48.22117306,-122.6861606,No QAPP; from EIM website: outfall located just north of Kneed and Feed on the beach
+3,PW_IMP_HS-033,MASON_HOODSPORT_HS-033,Mason County,47.406915,-123.140094,"No QAPP; from EIM website: storm grate in middle of Fish & Wildlife parking lot, draining from North Hill"
+3,PW_IMP_NB-020,MASON_NORTH_BAY_NB-020,Mason County,47.380201,-122.830634,No QAPP; from EIM website: Storm grate above southernmost major drainage to beach in Allyn
+1,Everett_01,NB-I5_MP197.27,WSDOT 2014,48.025928,-122.176082,See FinalWY12-WY14-HighwayRunoffReport.pdf
+1,Everett_04,NB-I5_MP197.35,WSDOT 2014,48.026976,-122.176296,See FinalWY12-WY14-HighwayRunoffReport.pdf
+1,Pilchuck_01,SB-I5_MP210.71,WSDOT 2014,48.215274,-122.218967,See FinalWY12-WY14-HighwayRunoffReport.pdf
+1,Pilchuck_06,SB-I5_MP210.85,WSDOT 2014,48.217056,-122.219784,See FinalWY12-WY14-HighwayRunoffReport.pdf
+1,SR9_01,SR9_MP17.92,WSDOT 2014,48.033769,-122.110496,See FinalWY12-WY14-HighwayRunoffReport.pdf

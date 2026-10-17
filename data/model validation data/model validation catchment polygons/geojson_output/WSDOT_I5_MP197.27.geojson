@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "WSDOT_I5_MP197.27",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "WSDOT_I5_MP197.27", "Description": "" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.176192939983906, 48.025979179750038, 0.0 ], [ -122.176168406893694, 48.025857349595142, 0.0 ], [ -122.175971685239901, 48.025869145835237, 0.0 ], [ -122.175994906367706, 48.025998260641877, 0.0 ], [ -122.176192939983906, 48.025979179750038, 0.0 ] ] ] } }
+]
+}

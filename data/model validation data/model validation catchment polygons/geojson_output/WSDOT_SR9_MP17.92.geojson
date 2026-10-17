@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "WSDOT_SR9_MP17.92",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "WSDOT_SR9_MP17.92", "Description": "" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.110546471042198, 48.033679337153977, 0.0 ], [ -122.110440706822004, 48.033685037828477, 0.0 ], [ -122.110449094824403, 48.033858318216808, 0.0 ], [ -122.110551950881501, 48.033852875485351, 0.0 ], [ -122.110546471042198, 48.033679337153977, 0.0 ] ] ] } }
+]
+}

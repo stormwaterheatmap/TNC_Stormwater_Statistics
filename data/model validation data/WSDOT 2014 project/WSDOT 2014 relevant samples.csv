@@ -1,0 +1,2646 @@
+﻿Location,Sample_Name,Sample_Date,Analyte,Result,Unit,Interpreted_Qualifier,Lab_Qualifier
+Pilchuck_01,PILCHUCK 01-WY12-02-02-TOX,10/12/12,#2 Diesel,0.05,mg/L,U,U
+Pilchuck_01,PILCHUCK 01-WY12-02-02-TOX,10/12/12,Lube Oil,1.4,mg/L,,
+Pilchuck_01,PILCHUCK 01-WY12-02-02-TOX,10/12/12,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Nitrogen, Total Kjeldahl",1,mg/L,J,B
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Bis(2-Ethylhexyl) Phthalate,4.3,ug/L,J,J
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Di-N-Octyl Phthalate,0.77,ug/L,NJ,NJ
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.01,mg/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Glyphosate,25,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Anthracene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Dimethyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Benzo(k)fluoranthene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Acenaphthylene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Dibenzo(a,h)anthracene",0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Benzo(a)anthracene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Acenaphthene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Diethyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Butyl benzyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Fluorene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Di-N-Butylphthalate,0.26,ug/L,UJ,UJ
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Naphthalene,0.013,ug/L,UJ,UJ
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",3.81,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",4.55,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",26.42,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",5.42,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Chloride,1.53,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Hardness,25.6,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Total Suspended Solids,29,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Nitrite-Nitrate,0.112,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Total Phosphorus,0.0806,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Pyrene,0.052,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Benzo(ghi)perylene,0.041,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,"Indeno(1,2,3-cd)pyrene",0.012,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Benzo(b)fluoranthene,0.02,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Fluoranthene,0.033,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Chrysene,0.016,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Benzo(a)pyrene,0.011,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-01-01,6/23/12,Phenanthrene,0.019,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Nitrogen, Total Kjeldahl",1.4,mg/L,,B
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Diethyl phthalate,0.16,ug/L,J,J
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Glyphosate,25,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Di-N-Octyl Phthalate,0.2,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Anthracene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Dibenzo(a,h)anthracene",0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Acenaphthene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Butyl benzyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Fluorene,0.0098,ug/L,U,U
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Di-N-Butylphthalate,0.3,ug/L,UJ,UJ
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.2,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",11.54,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.43,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.02,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",42.14,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",65.4,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",13.82,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Chloride,2.78,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Hardness,38,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Total Suspended Solids,117,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Nitrite-Nitrate,0.411,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Total Phosphorus,0.266,mg/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Bis(2-Ethylhexyl) Phthalate,7.1,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Pyrene,0.13,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Dimethyl phthalate,0.84,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Benzo(ghi)perylene,0.12,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,"Indeno(1,2,3-cd)pyrene",0.041,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Benzo(b)fluoranthene,0.063,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Fluoranthene,0.089,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Benzo(k)fluoranthene,0.017,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Acenaphthylene,0.023,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Chrysene,0.042,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Benzo(a)pyrene,0.04,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Benzo(a)anthracene,0.021,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Phenanthrene,0.04,ug/L,,
+Pilchuck_01,PILCHUCK-01-WY11-02-01,7/20/12,Naphthalene,0.022,ug/L,J,
+Pilchuck_01,TOX-PILCHUCK-01-WY12-01-02,10/12/12,Fecal Coliforms: Membrane Filter method,80,cfu/100ml,,
+Pilchuck_01,PIL-01-VEP-A001,10/18/12,#2 Diesel,0.05,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A001,10/18/12,Lube Oil,1,mg/L,,
+Pilchuck_01,PIL-01-VEP-A001,10/18/12,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A001,10/18/12,Fecal Coliforms: Membrane Filter method,18,cfu/100ml,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Copper,3.99,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Zinc,16.8,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Copper,16,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Zinc,62.8,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Chloride,0.92,mg/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Hardness,17,mg/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Total Suspended Solids,31,mg/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Total Phosphorus,0.0687,mg/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Orthophosphate,0.0163,mg/L,J,J
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Bis(2-Ethylhexyl) Phthalate,4.1,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Di-N-Octyl Phthalate,0.75,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Anthracene,0.055,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Pyrene,0.063,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Dimethyl phthalate,0.22,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Benzo(ghi)perylene,0.043,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Indeno(1,2,3-cd)pyrene",0.011,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Benzo(b)fluoranthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Fluoranthene,0.062,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Benzo(k)fluoranthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Acenaphthylene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Chrysene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Benzo(a)pyrene,0.033,ug/L,J,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Dibenzo(a,h)anthracene",0.011,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Benzo(a)anthracene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Acenaphthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Diethyl phthalate,0.22,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Di-N-Butylphthalate,0.25,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Phenanthrene,0.041,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Butyl benzyl phthalate,0.22,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Fluorene,0.015,ug/L,J,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,Naphthalene,0.018,ug/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",4.04,mg/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",21.85,mg/L,,
+Pilchuck_01,PIL-01-VEP-A002,10/18/12,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",5.96,mg/L,,
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Copper,4.51,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Zinc,26,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Copper,11.4,ug/L,,
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Zinc,56,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Chloride,2.77,mg/L,,
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Glyphosate,25,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Hardness,17.4,mg/L,,
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Total Suspended Solids,21,mg/L,,
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Total Phosphorus,0.0562,mg/L,,
+Pilchuck_01,PIL-01-VEP-A008,11/7/12,Orthophosphate,0.0142,mg/L,,
+Pilchuck_01,PIL-01-VEP-A013,12/11/12,#2 Diesel,0.15,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A013,12/11/12,Lube Oil,8.5,mg/L,,
+Pilchuck_01,PIL-01-VEP-A013,12/11/12,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A013,12/11/12,Fecal Coliforms: Membrane Filter method,110000,cfu/100ml,,
+Pilchuck_01,PIL-01-VEP-A019,2/11/13,#2 Diesel,0.15,mg/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A019,2/11/13,Lube Oil,3.8,mg/L,J,J
+Pilchuck_01,PIL-01-VEP-A019,2/11/13,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A019,2/11/13,Fecal Coliforms: Membrane Filter method,2000,cfu/100ml,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.49,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",8.12,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.19,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",18.01,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",12.18,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Nitrogen, Total Kjeldahl",0.84,mg/L,U,JB
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Glyphosate,25,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Chloride,13.7,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Hardness,31.4,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Total Suspended Solids,50,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Nitrite-Nitrate,0.566,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Total Phosphorus,0.0886,mg/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Di-N-Octyl Phthalate,0.89,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Anthracene,0.0098,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Pyrene,0.12,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Dimethyl phthalate,0.2,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Benzo(ghi)perylene,0.021,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Indeno(1,2,3-cd)pyrene",0.018,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Benzo(b)fluoranthene,0.05,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Fluoranthene,0.073,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Benzo(k)fluoranthene,0.019,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Acenaphthylene,0.0098,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Chrysene,0.052,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Benzo(a)pyrene,0.024,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,"Dibenzo(a,h)anthracene",0.0098,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Benzo(a)anthracene,0.021,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Acenaphthene,0.0098,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Diethyl phthalate,0.2,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Di-N-Butylphthalate,0.34,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Phenanthrene,0.048,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Butyl benzyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Fluorene,0.0098,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Naphthalene,0.022,ug/L,,
+Pilchuck_01,PIL-01-VEP-A026,2/16/13,Bis(2-Ethylhexyl) Phthalate,4,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Copper,28.1,ug/L,,
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Zinc,128,ug/L,,
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Copper,9.9,ug/L,,
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Zinc,32.1,ug/L,,
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Chloride,27.6,mg/L,,
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,"Nitrogen, Total Kjeldahl",0.99,mg/L,U,JB
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Glyphosate,25,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Nitrite-Nitrate,0.351,mg/L,,
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Total Phosphorus,0.115,mg/L,,
+Pilchuck_01,PIL-01-VEP-A032,2/21/13,Orthophosphate,0.01,mg/L,U,U
+Pilchuck_01,PILCHUCK-01-A031,2/21/13,#2 Diesel,0.15,mg/L,U,U
+Pilchuck_01,PILCHUCK-01-A031,2/21/13,Lube Oil,2.4,mg/L,,
+Pilchuck_01,PILCHUCK-01-A031,2/21/13,Gasoline,0.05,mg/L,U,U
+Pilchuck_01,PILCHUCK-01-A031,2/21/13,Fecal Coliforms: Membrane Filter method,1200,cfu/100ml,,
+Pilchuck_01,PIL-01-VEP-A037,2/25/13,#2 Diesel,0.15,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A037,2/25/13,Lube Oil,1.6,mg/L,,
+Pilchuck_01,PIL-01-VEP-A037,2/25/13,Gasoline,0.05,mg/L,UJ,UH
+Pilchuck_01,PIL-01-VEP-A038,2/25/13,Chloride,19.5,mg/L,,
+Pilchuck_01,PIL-01-VEP-A038,2/25/13,Glyphosate,25,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A038,2/25/13,Hardness,46.5,mg/L,,
+Pilchuck_01,PIL-01-VEP-A038,2/25/13,Total Suspended Solids,32,mg/L,,
+Pilchuck_01,PIL-01-VEP-A038,2/25/13,Total Phosphorus,0.0659,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.7,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",12.3,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.56,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",30.69,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",16.14,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Nitrogen, Total Kjeldahl",1.1,mg/L,J,B
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Copper,6.3,ug/L,,J
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Zinc,15.6,ug/L,,J
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Copper,30.7,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Zinc,130,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Hardness,29.7,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Total Suspended Solids,66,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Nitrite-Nitrate,0.089,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Total Phosphorus,0.104,mg/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Orthophosphate,0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Bis(2-Ethylhexyl) Phthalate,3.8,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Di-N-Octyl Phthalate,0.61,ug/L,J,NJ
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Anthracene,0.015,ug/L,,NJ
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Pyrene,0.2,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Dimethyl phthalate,0.2,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Benzo(ghi)perylene,0.091,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Indeno(1,2,3-cd)pyrene",0.031,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Benzo(b)fluoranthene,0.051,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Fluoranthene,0.17,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Benzo(k)fluoranthene,0.037,ug/L,,NJ
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Acenaphthylene,0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Chrysene,0.068,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Benzo(a)pyrene,0.033,ug/L,,NJ
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,"Dibenzo(a,h)anthracene",0.011,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Benzo(a)anthracene,0.047,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Acenaphthene,0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Diethyl phthalate,0.2,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Di-N-Butylphthalate,0.24,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Phenanthrene,0.078,ug/L,,
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Butyl benzyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Fluorene,0.012,ug/L,,J
+Pilchuck_01,PIL-01-VEP-A050,2/28/13,Naphthalene,0.014,ug/L,,
+Pilchuck_01,PIL-01-VEP-A056,3/2/13,Chloride,5.39,mg/L,,
+Pilchuck_01,PIL-01-VEP-A056,3/2/13,"Nitrogen, Total Kjeldahl",0.57,mg/L,J,J
+Pilchuck_01,PIL-01-VEP-A056,3/2/13,Glyphosate,25,ug/L,,U
+Pilchuck_01,PIL-01-VEP-A056,3/2/13,Hardness,22.8,mg/L,,
+Pilchuck_01,PIL-01-VEP-A056,3/2/13,Total Suspended Solids,77,mg/L,,
+Pilchuck_01,PIL-01-VEP-A056,3/2/13,Nitrite-Nitrate,0.078,mg/L,,
+Pilchuck_01,PIL-01-VEP-A056,3/2/13,Total Phosphorus,0.0947,mg/L,,
+Pilchuck_01,PIL-01-A067,3/6/13,#2 Diesel,0.15,mg/L,UJ,UJ
+Pilchuck_01,PIL-01-A067,3/6/13,Lube Oil,3.9,mg/L,J,J
+Pilchuck_01,PIL-01-A067,3/6/13,Gasoline,0.05,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",1,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",8.21,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",6.68,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",36.06,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",10.12,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Nitrogen, Total Kjeldahl",0.66,mg/L,J,J
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Glyphosate,25,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Copper,6.75,ug/L,,J
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Zinc,16.2,ug/L,,J
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Copper,22.3,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Zinc,87.9,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Chloride,7.09,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Hardness,36,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Total Suspended Solids,53,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Nitrite-Nitrate,0.115,mg/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Orthophosphate,0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Bis(2-Ethylhexyl) Phthalate,3.9,ug/L,,J
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Di-N-Octyl Phthalate,0.62,ug/L,,NJ
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Anthracene,0.0078,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Pyrene,0.099,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Dimethyl phthalate,0.2,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Benzo(ghi)perylene,0.06,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Indeno(1,2,3-cd)pyrene",0.016,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Benzo(b)fluoranthene,0.027,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Fluoranthene,0.065,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Benzo(k)fluoranthene,0.02,ug/L,,NJ
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Acenaphthylene,0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Chrysene,0.047,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Benzo(a)pyrene,0.021,ug/L,,NJ
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Benzo(a)anthracene,0.015,ug/L,,NJ
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Acenaphthene,0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Diethyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Di-N-Butylphthalate,0.31,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Phenanthrene,0.033,ug/L,,
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Butyl benzyl phthalate,0.24,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Fluorene,0.01,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-VEP-A074,3/20/13,Naphthalene,0.013,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Nitrogen, Total Kjeldahl",0.78,mg/L,J,J
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Glyphosate,25,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.6,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",15.19,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",7.34,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",24.29,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",15.35,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Chloride,4.66,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Hardness,31.3,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Total Suspended Solids,54,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Nitrite-Nitrate,0.144,mg/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Total Phosphorus,0.132,mg/L,J,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Bis(2-Ethylhexyl) Phthalate,4.6,ug/L,,J
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Di-N-Octyl Phthalate,0.84,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Anthracene,0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Pyrene,0.12,ug/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Dimethyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Benzo(ghi)perylene,0.084,ug/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Indeno(1,2,3-cd)pyrene",0.024,ug/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Benzo(b)fluoranthene,0.036,ug/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Fluoranthene,0.081,ug/L,J,J
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Benzo(k)fluoranthene,0.024,ug/L,,NJ
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Acenaphthylene,0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Chrysene,0.06,ug/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Benzo(a)pyrene,0.026,ug/L,J,NJ
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Benzo(a)anthracene,0.023,ug/L,J,NJ
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Acenaphthene,0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Diethyl phthalate,0.2,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Di-N-Butylphthalate,0.5,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Phenanthrene,0.047,ug/L,,
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Butyl benzyl phthalate,0.39,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Fluorene,0.01,ug/L,U,U
+Pilchuck_01,PIL-01-VEP-A080,4/12/13,Naphthalene,0.02,ug/L,,
+Pilchuck_01,PIL-01-NG-140107,1/7/14,#2 Diesel,0.15,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140129,1/29/14,#2 Diesel,0.15,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140218,2/18/14,#2 Diesel,0.15,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140303,3/3/14,#2 Diesel,0.15,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140319,3/19/14,#2 Diesel,0.15,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140408,4/8/14,#2 Diesel,0.16,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140417,4/17/14,#2 Diesel,0.16,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Acenaphthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Acenaphthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Acenaphthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Acenaphthene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Acenaphthene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Acenaphthene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Acenaphthylene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Acenaphthylene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Acenaphthylene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Acenaphthylene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Acenaphthylene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Acenaphthylene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Anthracene,0.1,ug/L,,J
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Anthracene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Anthracene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Anthracene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Anthracene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Anthracene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Benz[a]anthracene,0.077,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Benz[a]anthracene,0.021,ug/L,NJ,NJ
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Benz[a]anthracene,0.1,ug/L,J,J
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Benzo(a)anthracene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Benzo(a)anthracene,0.1,ug/l,,URX
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Benzo(a)anthracene,0.1,ug/l,,NUX
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Benzo(a)pyrene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Benzo(a)pyrene,0.041,ug/L,NJ,NJ
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Benzo(a)pyrene,0.038,ug/L,NJ,NJ
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Benzo(a)pyrene,0.1,ug/l,,UN
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Benzo(a)pyrene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Benzo(a)pyrene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Benzo(b)fluoranthene,0.011,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Benzo(b)fluoranthene,0.083,ug/L,J,J
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Benzo(b)fluoranthene,0.054,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Benzo(b)fluoranthene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Benzo(b)fluoranthene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Benzo(b)fluoranthene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Benzo(ghi)perylene,0.066,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Benzo(ghi)perylene,0.12,ug/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Benzo(ghi)perylene,0.1,ug/L,,J
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Benzo(ghi)perylene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Benzo(ghi)perylene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Benzo(ghi)perylene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Benzo(k)fluoranthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Benzo(k)fluoranthene,0.053,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Benzo(k)fluoranthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Benzo(k)fluoranthene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Benzo(k)fluoranthene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Benzo(k)fluoranthene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Bis(2-Ethylhexyl) Phthalate,4.2,ug/L,,J
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Bis(2-Ethylhexyl) Phthalate,3.1,ug/L,J,J
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Bis(2-Ethylhexyl) Phthalate,4.9,ug/L,,J
+Pilchuck_01,PIL-01-NC-140613,6/13/14,bis(2-Ethylhexyl)phthalat,1.15,ug/l,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,bis(2-Ethylhexyl)phthalat,3.93,ug/l,,RB
+Pilchuck_01,PIL-01-NC-140813,8/13/14,bis(2-Ethylhexyl)phthalat,4.06,ug/l,,N
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Butyl benzyl phthalate,0.22,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Butyl benzyl phthalate,0.53,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Butyl benzyl phthalate,0.21,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Butylbenzylphthalate,1,ug/l,,UN
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Butylbenzylphthalate,1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Butylbenzylphthalate,1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Cadmium,3.26,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Calcium,12,mg/l,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Calcium,11,mg/l,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Calcium,11,mg/l,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Calcium,10,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Chloride,17.4,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Chloride,19.2,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Chloride,5.58,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Chloride,4.68,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Chloride,2.16,mg/l,,D
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Chloride,2.51,mg/l,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Chloride,1.4,mg/l,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Chloride,1.82,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Chrysene,0.054,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Chrysene,0.045,ug/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Chrysene,0.056,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Chrysene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Chrysene,0.1,ug/l,,URX
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Chrysene,0.1,ug/l,,NUX
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Copper,26.4,ug/L,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Copper,4.66,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Copper,5.91,ug/L,J,J
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Copper,24.2,ug/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Copper,17.8,ug/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Copper,5.97,ug/L,,J
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Copper,36.1,ug/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Copper,20.8,ug/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Copper,22.4,ug/L,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Dibenzo(a,h)anthracene",0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Dibenzo(a,h)anthracene",0.083,ug/L,NJ,NJ
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Dibenzo(a,h)anthracene",0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Dibenzo(ah)anthracene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Dibenzo(ah)anthracene, ,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Dibenzo(ah)anthracene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NG-140508,5/8/14,Diesel,880,ug/l,,Z
+Pilchuck_01,PIL-01-NG-140529,5/29/14,Diesel,1100,ug/l,,
+Pilchuck_01,PIL-01-NG-140613,6/13/14,Diesel,800,ug/l,,
+Pilchuck_01,PIL-01-NG-140627,6/27/14,Diesel,2800,ug/l,,DH
+Pilchuck_01,PIL-01-NG-140723,7/23/14,Diesel,830,ug/l,,
+Pilchuck_01,PIL-01-NG-140924,9/24/14,Diesel,880,ug/l,,DH
+Pilchuck_01,PIL-01-NG-140924,9/24/14,Diesel,880,ug/l,,DH
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Diethyl phthalate,0.11,ug/L,NJ,NJ
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Diethyl phthalate,0.21,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Diethyl phthalate,0.21,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Diethylphthalate,1,ug/l,,UN
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Diethylphthalate,1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Diethylphthalate,1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Dimethyl phthalate,0.46,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Dimethyl phthalate,0.4,ug/L,J,J
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Dimethyl phthalate,0.44,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Dimethylphthalate,1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Dimethylphthalate,1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Dimethylphthalate,1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Di-N-Butylphthalate,0.38,ug/L,,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Di-N-Butylphthalate,0.21,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Di-N-Butylphthalate,0.54,ug/L,,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Di-n-butylphthalate,1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Di-n-butylphthalate,1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Di-n-butylphthalate,1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Di-N-Octyl Phthalate,0.73,ug/L,,J
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Di-N-Octyl Phthalate,0.64,ug/L,NJ,NJ
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Di-N-Octyl Phthalate,0.21,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Di-n-octylphthalate,1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Di-n-octylphthalate,1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Di-n-octylphthalate,1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Dissolved Cadmium,0.087,ug/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Dissolved Copper,9.26,ug/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Dissolved Copper,7.19,ug/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Dissolved Copper,6.84,ug/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Dissolved Lead,0.665,ug/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Dissolved Zinc,22.1,ug/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Dissolved Zinc,15.2,ug/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Dissolved Zinc,19.6,ug/L,,
+Pilchuck_01,PIL-01-NG-140319,3/19/14,Fecal Coliform,2700,CFU/100mL,J,
+Pilchuck_01,PIL-01-NG-140408,4/8/14,Fecal Coliform,4100,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140417,4/17/14,Fecal Coliform,1900,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140508,5/8/14,Fecal Coliform,200,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140529,5/29/14,Fecal Coliform,8300,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140613,6/13/14,Fecal Coliform,600,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140627,6/27/14,Fecal Coliform,140000,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140723,7/23/14,Fecal Coliform,3400,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140924,9/24/14,Fecal Coliform,4900,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140924,9/24/14,Fecal Coliform,4900,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140107,1/7/14,Fecal Coliforms,190,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140129,1/29/14,Fecal Coliforms,2000,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140218,2/18/14,Fecal Coliforms,400,CFU/100mL,,
+Pilchuck_01,PIL-01-NG-140303,3/3/14,Fecal Coliforms,1800,CFU/100mL,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Fluoranthene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Fluoranthene,0.064,ug/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Fluoranthene,0.1,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Fluoranthene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Fluoranthene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Fluoranthene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Fluorene,0.011,ug/L,U,UJ
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Fluorene,0.011,ug/L,UJ,UJ
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Fluorene,0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Fluorene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Fluorene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Fluorene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NG-140107,1/7/14,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140129,1/29/14,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140218,2/18/14,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140303,3/3/14,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140319,3/19/14,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140408,4/8/14,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140417,4/17/14,Gasoline,0.07,mg/L,U,U
+Pilchuck_01,PIL-01-NG-140508,5/8/14,Gasoline in Water,100,ug/l,,"U,R"
+Pilchuck_01,PIL-01-NG-140529,5/29/14,Gasoline in Water,100,ug/l,,U
+Pilchuck_01,PIL-01-NG-140613,6/13/14,Gasoline in Water,100,ug/l,,U
+Pilchuck_01,PIL-01-NG-140627,6/27/14,Gasoline in Water,452,ug/l,,Z
+Pilchuck_01,PIL-01-NG-140723,7/23/14,Gasoline in Water,100,ug/l,,U
+Pilchuck_01,PIL-01-NG-140924,9/24/14,Gasoline in Water,250,ug/l,,U
+Pilchuck_01,PIL-01-NG-140924,9/24/14,Gasoline in Water,250,ug/l,,U
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Glyphosate,,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Glyphosate,,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Glyphosate,10,ug/L,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Glyphosate,10,ug/L,,U
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Glyphosate,10,ug/L,,U
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Glyphosate,10,ug/L,,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Hardness (CaCO3),39,mg/l,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Hardness (CaCO3),37,mg/l,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Hardness (CaCO3),34,mg/l,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Hardness (CaCO3),32,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Hardness as CaCO3,30.4,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Hardness as CaCO3,36.6,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Hardness as CaCO3,24.1,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Hardness as CaCO3,24.6,mg/L,,
+Pilchuck_01,PIL-01-NG-140508,5/8/14,Heavy Oil,2900,ug/l,,"D,F"
+Pilchuck_01,PIL-01-NG-140529,5/29/14,Heavy Oil,3000,ug/l,,
+Pilchuck_01,PIL-01-NG-140613,6/13/14,Heavy Oil,3300,ug/l,,
+Pilchuck_01,PIL-01-NG-140627,6/27/14,Heavy Oil,6400,ug/l,,DF
+Pilchuck_01,PIL-01-NG-140723,7/23/14,Heavy Oil,1600,ug/l,,
+Pilchuck_01,PIL-01-NG-140924,9/24/14,Heavy Oil,3800,ug/l,,DF
+Pilchuck_01,PIL-01-NG-140924,9/24/14,Heavy Oil,3800,ug/l,,DF
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Indeno(1,2,3-cd)pyrene",0.011,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Indeno(1,2,3-cd)pyrene",0.081,ug/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Indeno(1,2,3-cd)pyrene",0.04,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Indeno(123-cd)pyrene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Indeno(123-cd)pyrene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Indeno(123-cd)pyrene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Lead,35.4,ug/L,,
+Pilchuck_01,PIL-01-NG-140107,1/7/14,Lube Oil,3.2,mg/L,,
+Pilchuck_01,PIL-01-NG-140129,1/29/14,Lube Oil,4,mg/L,,
+Pilchuck_01,PIL-01-NG-140218,2/18/14,Lube Oil,8.6,mg/L,,
+Pilchuck_01,PIL-01-NG-140303,3/3/14,Lube Oil,3.7,mg/L,,
+Pilchuck_01,PIL-01-NG-140319,3/19/14,Lube Oil,2,mg/L,,
+Pilchuck_01,PIL-01-NG-140408,4/8/14,Lube Oil,6.6,mg/L,,
+Pilchuck_01,PIL-01-NG-140417,4/17/14,Lube Oil,4.7,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Magnesium,2.1,mg/l,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Magnesium,2.3,mg/l,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Magnesium,1.5,mg/l,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Magnesium,1.6,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Naphthalene,0.021,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Naphthalene,0.019,ug/L,U,U
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Naphthalene,0.021,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Nitrate + Nitrite,0.21,mg/l,,N
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Nitrate + Nitrite,0.042,mg/l,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Nitrate + Nitrite,0.37,mg/l,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Nitrate + Nitrite,0.15,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Nitrate-Nitrite as N,0.206,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Nitrate-Nitrite as N,0.363,mg/L,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"NITROGEN, KJELDAHL, TOTAL",1.1,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"NITROGEN, KJELDAHL, TOTAL",0.93,mg/L,J,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Ortho-Phosphate,0.01,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Ortho-Phosphate,0.01,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Ortho-Phosphate,0.0125,mg/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Ortho-Phosphate,0.022,mg/l,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Ortho-Phosphate,0.027,mg/l,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Ortho-Phosphate,0.013,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.31,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",4.31,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.35,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",10.48,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",,mg/L,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.87,mg/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.28,mg/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",2.15,mg/L,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",7.59,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",6.76,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",6.23,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",2.97,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",4.39,mg/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",13.53,mg/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",17.02,mg/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",15.6,mg/L,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.92,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",2.65,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.91,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.01,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.21,mg/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.58,mg/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",2.13,mg/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",3.66,mg/L,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Pilchuck_01,PIL-01-NC-140813,8/13/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Pilchuck_01,PIL-01-NC-140902,9/3/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Pilchuck_01,PIL-01-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.48,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.03,mg/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Pilchuck_01,PIL-01-NC-140813,8/13/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Pilchuck_01,PIL-01-NC-140902,9/3/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",29.47,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",45.33,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",47.7,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",28.01,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",71.06,mg/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",65.76,mg/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",56.54,mg/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",67.91,mg/L,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",9.21,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",9.34,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",6.6,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",2.2,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",5.16,mg/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",10.3,mg/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",11.89,mg/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",12.81,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,pH,6.42,unit,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,pH,6.71,unit,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,pH,6.62,unit,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,pH,7.04,unit,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Phenanthrene,0.077,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Phenanthrene,0.062,ug/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Phenanthrene,0.047,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Phenanthrene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Phenanthrene,0.1,ug/l,,UR
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Phenanthrene,0.1,ug/l,,NU
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Pyrene,0.2,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Pyrene,0.14,ug/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Pyrene,0.13,ug/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Pyrene,0.1,ug/l,,U
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Pyrene,0.1,ug/l,,URX
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Pyrene,0.1,ug/l,,NUX
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Total Nitrogen (TKN),1.66,mg/l,,D
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Total Nitrogen (TKN),5.6,mg/l,,X
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Total Nitrogen (TKN),1.96,mg/l,,D
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Total Nitrogen (TKN),1.66,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Total Phosphorus,0.0987,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Total Phosphorus,0.112,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Total Phosphorus,0.09,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Total Phosphorus,0.0751,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Total Phosphorus,0.173,mg/l,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Total Phosphorus,0.154,mg/l,,N
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Total Phosphorus,0.133,mg/l,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Total Phosphorus,0.158,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Total Suspended Solids,62,mg/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Total Suspended Solids,54,mg/L,,
+Pilchuck_01,PIL-01-NC-140319,3/19/14,Total Suspended Solids,57,mg/L,,
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Total Suspended Solids,34,mg/L,,
+Pilchuck_01,PIL-01-NC-140613,6/13/14,Total Suspended Solids,80,mg/l,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Total Suspended Solids,89,mg/l,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Total Suspended Solids,90,mg/l,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Total Suspended Solids,90,mg/l,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Zinc,125,ug/L,,
+Pilchuck_01,PIL-01-NC-140107,1/8/14,Zinc,20.8,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Zinc,118,ug/L,,
+Pilchuck_01,PIL-01-NC-140129,1/29/14,Zinc,21.4,ug/L,J,J
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Zinc,14.9,ug/L,,J
+Pilchuck_01,PIL-01-NC-140408,4/9/14,Zinc,66.8,ug/L,,
+Pilchuck_01,PIL-01-NC-140723,7/23/14,Zinc,116,ug/L,,
+Pilchuck_01,PIL-01-NC-140813,8/13/14,Zinc,81,ug/L,,
+Pilchuck_01,PIL-01-NC-140902,9/3/14,Zinc,98.8,ug/L,,
+Pilchuck_01,PIL-O1-NG-140902,9/2/14,Gasoline in Water,100,ug/l,,U
+Pilchuck_01,PIL-O1-NG-140902,9/2/14,Diesel,2700,ug/l,,DH
+Pilchuck_01,PIL-O1-NG-140902,9/2/14,Heavy Oil,6800,ug/l,,DF
+Pilchuck_01,PIL-O1-NG-140902,9/2/14,Fecal Coliform,22000,CFU/100mL,,
+Pilchuck_06,PILCHUCK 06-WY12-02-02-TOX,10/12/12,#2 Diesel,0.05,mg/L,U,U
+Pilchuck_06,PILCHUCK 06-WY12-02-02-TOX,10/12/12,Lube Oil,3.8,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,"Nitrogen, Total Kjeldahl",1.4,mg/L,,B
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale <1 (>500 um)",3.49,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",6.14,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",7.57,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.02,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",34.95,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",61.66,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",8.49,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,Hardness,35.2,mg/L,,
+Pilchuck_06,PILCHUCK-06-WY11-01-01,7/20/12,Total Suspended Solids,106,mg/L,,
+Pilchuck_06,TOX-PILCHUCK 06-WY12-02-02,10/12/12,Gasoline,0.07,mg/L,U,U
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Copper,18,ug/L,,
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Lead,0.429,ug/L,,
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Cadmium,0.09,ug/L,,
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Zinc,23.3,ug/L,J,
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Lead,10.6,ug/L,,
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Cadmium,0.36,ug/L,,
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Copper,35.7,ug/L,,
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Zinc,129,ug/L,,
+Pilchuck_06,TOX-PILCHUCK-06-WY11-01-01,9/10/12,Chloride,8.52,mg/L,,
+Pilchuck_06,TOX-PILCHUCK-06-WY12-01-02,10/12/12,Fecal Coliforms: Membrane Filter method,2700,cfu/100ml,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,"Particle/Grain Size, Phi Scale <1 (>500 um)",9,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",9.46,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",10.8,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.02,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",41.74,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",65.48,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",5.76,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,Copper,5.29,ug/L,J,J
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,Zinc,18.7,ug/L,J,J
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,Copper,17.2,ug/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,Zinc,86,ug/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,Hardness,23.8,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,Total Suspended Solids,77,mg/L,J,J
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,Total Phosphorus,0.304,mg/L,,
+Pilchuck_06,PIL-06-MEP-A007,11/7/12,Orthophosphate,0.0242,mg/L,,
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",41.33,mg/L,,
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",13.65,mg/L,,
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",15.39,mg/L,,
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",71.11,mg/L,,
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",17.96,mg/L,,
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,"Nitrogen, Total Kjeldahl",1.3,mg/L,J,B
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,Hardness,38.4,mg/L,,
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,Total Suspended Solids,125,mg/L,,J
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,Nitrite-Nitrate,0.518,mg/L,,
+Pilchuck_06,PIL-06-MEP-A010,2/16/13,Total Phosphorus,0.185,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",16.32,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",5.26,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",50.86,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",19.62,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Copper,24.7,ug/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Zinc,96.5,ug/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Copper,8.3,ug/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Zinc,24.9,ug/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,"Nitrogen, Total Kjeldahl",1.1,mg/L,J,B
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Hardness,55.6,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Total Suspended Solids,47,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Nitrite-Nitrate,0.373,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Total Phosphorus,0.108,mg/L,,
+Pilchuck_06,PIL-06-MEP-A013,2/22/13,Orthophosphate,0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",21.38,mg/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",8.78,mg/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Copper,15.7,ug/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Zinc,53.9,ug/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Copper,6.78,ug/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Zinc,16.6,ug/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,"Nitrogen, Total Kjeldahl",0.87,mg/L,UJ,JB
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Hardness,48.3,mg/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Total Suspended Solids,24,mg/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Nitrite-Nitrate,0.11,mg/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Total Phosphorus,0.0849,mg/L,,
+Pilchuck_06,PIL-06-MEP-A016,2/25/13,Orthophosphate,0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.99,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",12.29,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.1,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",31.73,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",17.06,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Copper,29.2,ug/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Zinc,138,ug/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Copper,6.37,ug/L,,J
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Zinc,17,ug/L,,J
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,"Nitrogen, Total Kjeldahl",1,mg/L,U,JB
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Hardness,31.9,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Total Suspended Solids,67,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Nitrite-Nitrate,0.094,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Total Phosphorus,0.0949,mg/L,,
+Pilchuck_06,PIL-06-MEP-A019,2/28/13,Orthophosphate,0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A022,3/12/13,"Nitrogen, Total Kjeldahl",0.91,mg/L,J,J
+Pilchuck_06,PIL-06-MEP-A022,3/12/13,Hardness,32.8,mg/L,,
+Pilchuck_06,PIL-06-MEP-A022,3/12/13,Total Suspended Solids,46,mg/L,,
+Pilchuck_06,PIL-06-MEP-A022,3/12/13,Nitrite-Nitrate,0.12,mg/L,,
+Pilchuck_06,PIL-06-MEP-A022,3/12/13,Total Phosphorus,0.116,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",5.49,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",8.51,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",10.68,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",40.15,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",11.33,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,"Nitrogen, Total Kjeldahl",0.56,mg/L,J,J
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,Hardness,33.8,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,Total Suspended Solids,49,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,Nitrite-Nitrate,0.092,mg/L,,
+Pilchuck_06,PIL-06-MEP-A025,3/20/13,Total Phosphorus,0.101,mg/L,,
+Pilchuck_06,PIL-06-MEP-A028,4/4/13,"Nitrogen, Total Kjeldahl",2.7,mg/L,,B
+Pilchuck_06,PIL-06-MEP-A028,4/4/13,Hardness,45.3,mg/L,,
+Pilchuck_06,PIL-06-MEP-A028,4/4/13,Total Suspended Solids,53,mg/L,,
+Pilchuck_06,PIL-06-MEP-A028,4/4/13,Nitrite-Nitrate,0.345,mg/L,,
+Pilchuck_06,PIL-06-MEP-A028,4/4/13,Total Phosphorus,0.222,mg/L,,
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",4.56,mg/L,,
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",40.27,mg/L,,
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",9.88,mg/L,,
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",0.01,mg/L,U,U
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",19.2,mg/L,,
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,"Nitrogen, Total Kjeldahl",0.88,mg/L,J,J
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,Hardness,30.5,mg/L,,
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,Total Suspended Solids,52,mg/L,,
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,Nitrite-Nitrate,0.16,mg/L,,
+Pilchuck_06,PIL-06-MEP-A031,4/12/13,Total Phosphorus,0.11,mg/L,J,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Acenaphthene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Acenaphthene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Acenaphthene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Acenaphthylene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Acenaphthylene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Acenaphthylene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Anthracene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Anthracene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Anthracene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Benz[a]anthracene,0.022,ug/L,,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Benz[a]anthracene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Benzo(a)anthracene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Benzo(a)pyrene,0.027,ug/L,NJ,NJ
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Benzo(a)pyrene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Benzo(a)pyrene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Benzo(b)fluoranthene,0.026,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Benzo(b)fluoranthene,0.025,ug/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Benzo(b)fluoranthene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Benzo(ghi)perylene,0.061,ug/L,,J
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Benzo(ghi)perylene,0.05,ug/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Benzo(ghi)perylene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Benzo(k)fluoranthene,0.017,ug/L,NJ,NJ
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Benzo(k)fluoranthene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Benzo(k)fluoranthene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Bis(2-Ethylhexyl) Phthalate,3.3,ug/L,,J
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Bis(2-Ethylhexyl) Phthalate,1.9,ug/L,,J
+Pilchuck_06,PIL-06-NC-140523,5/23/14,bis(2-Ethylhexyl)phthalat,2.31,ug/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Butyl benzyl phthalate,0.21,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Butyl benzyl phthalate,0.2,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Butylbenzylphthalate,1,ug/l,,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Calcium,11,mg/l,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,Calcium,11,mg/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Chloride,9.5,mg/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Chloride,3.47,mg/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Chrysene,0.03,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Chrysene,0.027,ug/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Chrysene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Copper,7.87,ug/L,,J
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Copper,21.8,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Copper,21.8,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Copper,8.42,ug/L,,J
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Copper,5.34,ug/L,J,J
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Copper,23.5,ug/L,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Dibenzo(ah)anthracene,0.1,ug/l,,U
+Pilchuck_06,PIL-06-NG-140523,5/23/14,Diesel,1000,ug/l,,
+Pilchuck_06,PIL-06-NG-140924,9/24/14,Diesel,690,ug/l,,DH
+Pilchuck_06,PIL-06-NG-140924,9/24/14,Diesel,690,ug/l,,DH
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Diethyl phthalate,0.21,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Diethyl phthalate,0.2,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Diethylphthalate,1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Dimethyl phthalate,0.21,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Dimethyl phthalate,0.2,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Dimethylphthalate,1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Di-N-Butylphthalate,0.21,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Di-N-Butylphthalate,0.24,ug/L,,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Di-n-butylphthalate,1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Di-N-Octyl Phthalate,0.21,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Di-N-Octyl Phthalate,0.2,ug/L,U,UJ
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Di-n-octylphthalate,1,ug/l,,U
+Pilchuck_06,PIL-06-NG-140523,5/23/14,Fecal Coliform,3400,CFU/100mL,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Fluoranthene,0.057,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Fluoranthene,0.031,ug/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Fluoranthene,0.1,ug/l,,U
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Fluorene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Fluorene,0.01,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Fluorene,0.1,ug/l,,U
+Pilchuck_06,PIL-06-NG-140523,5/23/14,Gasoline in Water,100,ug/l,,U
+Pilchuck_06,PIL-06-NG-140924,9/24/14,Gasoline in Water,250,ug/l,,U
+Pilchuck_06,PIL-06-NG-140924,9/24/14,Gasoline in Water,250,ug/l,,U
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,Glyphosate,,ug/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Glyphosate,57.6,ug/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Hardness (CaCO3),34,mg/l,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,Hardness (CaCO3),33,mg/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Hardness as CaCO3,33.5,mg/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Hardness as CaCO3,26.1,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Hardness as CaCO3,40.1,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,Hardness as CaCO3,31.5,mg/L,,
+Pilchuck_06,PIL-06-NG-140523,5/23/14,Heavy Oil,4200,ug/l,,
+Pilchuck_06,PIL-06-NG-140924,9/24/14,Heavy Oil,4800,ug/l,,DF
+Pilchuck_06,PIL-06-NG-140924,9/24/14,Heavy Oil,4800,ug/l,,DF
+Pilchuck_06,PIL-06HNC-140314,3/14/14,"Indeno(1,2,3-cd)pyrene",0.019,ug/L,NJ,NJ
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Indeno(1,2,3-cd)pyrene",0.014,ug/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Indeno(123-cd)pyrene,0.1,ug/l,,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Magnesium,1.7,mg/l,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,Magnesium,1.4,mg/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Naphthalene,0.026,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Naphthalene,0.012,ug/L,,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Naphthalene,0.1,ug/l,,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Nitrate + Nitrite,0.4,mg/l,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,Nitrate + Nitrite,0.22,mg/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Nitrate-Nitrite as N,0.112,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Nitrate-Nitrite as N,0.363,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,Nitrate-Nitrite as N,0.344,mg/L,,
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,"NITROGEN, KJELDAHL, TOTAL",0.77,mg/L,,B
+Pilchuck_06,PIL-06-NC-140129,1/29/14,"NITROGEN, KJELDAHL, TOTAL",0.86,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,"NITROGEN, KJELDAHL, TOTAL",0.43,mg/L,J,B
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Ortho-Phosphate,0.0157,mg/L,J,J
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Ortho-Phosphate,0.01,mg/L,U,U
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Ortho-Phosphate,0.01,mg/L,U,U
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",4.74,mg/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.22,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.41,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",2.38,mg/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.03,mg/L,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.46,mg/L,,
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",4.45,mg/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",4.72,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",8.28,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",7.2,mg/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",5.39,mg/L,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",42.91,mg/L,,
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.23,mg/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.22,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",5.65,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.91,mg/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.41,mg/L,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.04,mg/L,,
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Pilchuck_06,PIL-06-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Pilchuck_06,PIL-06-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Pilchuck_06,PIL-06-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.11,mg/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Pilchuck_06,PIL-06-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Pilchuck_06,PIL-06-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",2.45,mg/L,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",31.78,mg/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",31.81,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",41.27,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",49.86,mg/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",53.43,mg/L,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",,mg/L,,U
+Pilchuck_06,PIL-06H-NC-140314,3/14/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",2.34,mg/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",3.49,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",8.74,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",7.2,mg/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",2.45,mg/L,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",18.48,mg/L,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,pH,6.96,unit,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Phenanthrene,0.025,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Phenanthrene,0.018,ug/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Phenanthrene,0.1,ug/l,,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,pH-Water,6.51,unit,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Pyrene,0.067,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Pyrene,0.057,ug/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Pyrene,0.1,ug/l,,U
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Total Nitrogen (TKN),2.59,mg/l,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,Total Nitrogen (TKN),1.95,mg/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Total Phosphorus,0.102,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Total Phosphorus,0.0979,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,Total Phosphorus,0.103,mg/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Total Phosphorus,0.244,mg/l,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,Total Phosphorus,0.111,mg/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Total Suspended Solids,33,mg/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Total Suspended Solids,56,mg/L,,
+Pilchuck_06,PIL-06-NC-140319,3/19/14,Total Suspended Solids,67,mg/L,,
+Pilchuck_06,PIL-06-NC-140523,5/23/14,Total Suspended Solids,60,mg/l,,
+Pilchuck_06,PIL-06-NC-140613,6/13/14,Total Suspended Solids,40,mg/l,,
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Zinc,22.2,ug/L,,J
+Pilchuck_06,PIL-06HNC-140314,3/14/14,Zinc,78.4,ug/L,J,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Zinc,70.7,ug/L,,
+Pilchuck_06,PIL-06H-NC-140422,4/22/14,Zinc,18.5,ug/L,,J
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Zinc,113,ug/L,,
+Pilchuck_06,PIL-06-NC-140129,1/29/14,Zinc,18.2,ug/L,J,J
+Everett_01,TOX-EVERETT-01-WY12-02-02,10/12/12,#2 Diesel,0.1,mg/L,U,U
+Everett_01,TOX-EVERETT-01-WY12-02-02,10/12/12,Lube Oil,2,mg/L,,
+Everett_01,TOX-EVERETT-01-WY12-02-02,10/12/12,Gasoline,0.07,mg/L,U,U
+Everett_01,TOX-EVERETT-01-WY12-02-02,10/12/12,Fecal Coliforms: Membrane Filter method,9300,cfu/100ml,,
+Everett_01,EV-01-VEP-A002,11/7/12,"Nitrogen, Total Kjeldahl",0.91,mg/L,U,JB
+Everett_01,EV-01-VEP-A002,11/7/12,Glyphosate,25,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Copper,6.05,ug/L,J,J
+Everett_01,EV-01-VEP-A002,11/7/12,Zinc,27.7,ug/L,J,J
+Everett_01,EV-01-VEP-A002,11/7/12,Copper,21.7,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Zinc,64.5,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Chloride,3.51,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Hardness,11.5,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Total Suspended Solids,29,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Nitrite-Nitrate,0.335,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Total Phosphorus,0.0423,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Orthophosphate,0.01,mg/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Bis(2-Ethylhexyl) Phthalate,0.2,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Di-N-Octyl Phthalate,0.2,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Anthracene,0.0099,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Pyrene,0.069,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Dimethyl phthalate,0.2,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Benzo(ghi)perylene,0.061,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,"Indeno(1,2,3-cd)pyrene",0.041,ug/L,J,J
+Everett_01,EV-01-VEP-A002,11/7/12,Benzo(b)fluoranthene,0.04,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Fluoranthene,0.04,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Benzo(k)fluoranthene,0.015,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Acenaphthylene,0.0099,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Chrysene,0.033,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Benzo(a)pyrene,0.025,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,"Dibenzo(a,h)anthracene",0.0099,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Benzo(a)anthracene,0.014,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Acenaphthene,0.0099,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Diethyl phthalate,0.2,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Di-N-Butylphthalate,0.2,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Phenanthrene,0.024,ug/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,Butyl benzyl phthalate,0.2,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Fluorene,0.0099,ug/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,Naphthalene,0.016,ug/L,J,
+Everett_01,EV-01-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.11,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",17.11,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.22,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Everett_01,EV-01-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",4.94,mg/L,,
+Everett_01,EV-01-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",8.27,mg/L,,
+Everett_01,EV-01-VEP-A007,12/11/12,#2 Diesel,0.15,mg/L,U,U
+Everett_01,EV-01-VEP-A007,12/11/12,Lube Oil,12,mg/L,,
+Everett_01,EV-01-VEP-A007,12/11/12,Gasoline,0.07,mg/L,U,U
+Everett_01,EV-01-VEP-A007,12/11/12,Fecal Coliforms: Membrane Filter method,800,cfu/100ml,,
+Everett_01,EVERETT-01-A013,2/11/13,#2 Diesel,0.15,mg/L,UJ,UJ
+Everett_01,EVERETT-01-A013,2/11/13,Lube Oil,21,mg/L,J,J
+Everett_01,EVERETT-01-A013,2/11/13,Gasoline,0.07,mg/L,U,U
+Everett_01,EVERETT-01-A013,2/11/13,Fecal Coliforms: Membrane Filter method,4400,cfu/100ml,,
+Everett_01,EV-01-VEP-A019,2/22/13,#2 Diesel,0.15,mg/L,U,U
+Everett_01,EV-01-VEP-A019,2/22/13,Lube Oil,4.2,mg/L,,
+Everett_01,EV-01-VEP-A019,2/22/13,Gasoline,0.05,mg/L,U,U
+Everett_01,EV-01-VEP-A014,3/2/13,Total Suspended Solids,132,mg/L,,
+Everett_01,EV-01-A031,3/6/13,#2 Diesel,0.15,mg/L,UJ,UJ
+Everett_01,EV-01-A031,3/6/13,Lube Oil,4.6,mg/L,J,J
+Everett_01,EV-01-A031,3/6/13,Gasoline,0.05,mg/L,U,U
+Everett_01,EV-01-VEP-A026,3/20/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",9.82,mg/L,,
+Everett_01,EV-01-VEP-A026,3/20/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",10.76,mg/L,,
+Everett_01,EV-01-VEP-A026,3/20/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",8.25,mg/L,,
+Everett_01,EV-01-VEP-A026,3/20/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_01,EV-01-VEP-A026,3/20/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Everett_01,EV-01-VEP-A026,3/20/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",57.94,mg/L,,
+Everett_01,EV-01-VEP-A026,3/20/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",12.3,mg/L,,
+Everett_01,EV-01-VEP-A026,3/20/13,Chloride,5.84,mg/L,,
+Everett_01,EV-01-VEP-A026,3/20/13,"Nitrogen, Total Kjeldahl",0.85,mg/L,J,J
+Everett_01,EV-01-VEP-A026,3/20/13,Hardness,16.5,mg/L,,
+Everett_01,EV-01-VEP-A026,3/20/13,Nitrite-Nitrate,0.224,mg/L,,
+Everett_01,EV-01-VEP-A026,3/20/13,Total Phosphorus,0.121,mg/L,,
+Everett_01,EV-01-VEP-A032,4/12/13,Bis(2-Ethylhexyl) Phthalate,6.5,ug/L,,J
+Everett_01,EV-01-VEP-A032,4/12/13,Di-N-Octyl Phthalate,1.3,ug/L,J,NJ
+Everett_01,EV-01-VEP-A032,4/12/13,Anthracene,0.01,ug/L,U,U
+Everett_01,EV-01-VEP-A032,4/12/13,Pyrene,0.16,ug/L,,
+Everett_01,EV-01-VEP-A032,4/12/13,Dimethyl phthalate,0.2,ug/L,U,U
+Everett_01,EV-01-VEP-A032,4/12/13,Benzo(ghi)perylene,0.082,ug/L,,
+Everett_01,EV-01-VEP-A032,4/12/13,"Indeno(1,2,3-cd)pyrene",0.024,ug/L,,
+Everett_01,EV-01-VEP-A032,4/12/13,Benzo(b)fluoranthene,0.035,ug/L,,
+Everett_01,EV-01-VEP-A032,4/12/13,Fluoranthene,0.11,ug/L,J,J
+Everett_01,EV-01-VEP-A032,4/12/13,Benzo(k)fluoranthene,0.029,ug/L,,
+Everett_01,EV-01-VEP-A032,4/12/13,Acenaphthylene,0.01,ug/L,U,U
+Everett_01,EV-01-VEP-A032,4/12/13,Chrysene,0.075,ug/L,,
+Everett_01,EV-01-VEP-A032,4/12/13,Benzo(a)pyrene,0.027,ug/L,J,NJ
+Everett_01,EV-01-VEP-A032,4/12/13,"Dibenzo(a,h)anthracene",0.011,ug/L,U,U
+Everett_01,EV-01-VEP-A032,4/12/13,Benzo(a)anthracene,0.029,ug/L,J,NJ
+Everett_01,EV-01-VEP-A032,4/12/13,Acenaphthene,0.01,ug/L,U,U
+Everett_01,EV-01-VEP-A032,4/12/13,Diethyl phthalate,0.33,ug/L,J,NJ
+Everett_01,EV-01-VEP-A032,4/12/13,Di-N-Butylphthalate,0.62,ug/L,U,U
+Everett_01,EV-01-VEP-A032,4/12/13,Phenanthrene,0.064,ug/L,,
+Everett_01,EV-01-VEP-A032,4/12/13,Butyl benzyl phthalate,0.39,ug/L,U,U
+Everett_01,EV-01-VEP-A032,4/12/13,Fluorene,0.01,ug/L,U,U
+Everett_01,EV-01-VEP-A032,4/12/13,Naphthalene,0.021,ug/L,,
+Everett_01,EV-01-VEP-A038,5/12/13,Copper,28.4,ug/L,,J
+Everett_01,EV-01-VEP-A038,5/12/13,Zinc,73.2,ug/L,,J
+Everett_01,EV-01-VEP-A038,5/12/13,Zinc,89.3,ug/L,,
+Everett_01,EV-01-VEP-A038,5/12/13,Copper,37.4,ug/L,,
+Everett_01,EV-01-VEP-A038,5/12/13,"Nitrogen, Total Kjeldahl",3.8,mg/L,J,
+Everett_01,EV-01-VEP-A038,5/12/13,Glyphosate,25,ug/L,U,U
+Everett_01,EV-01-VEP-A038,5/12/13,Total Suspended Solids,38,mg/L,,
+Everett_01,EV-01-VEP-A038,5/12/13,Nitrite-Nitrate,0.513,mg/L,,
+Everett_01,EV-01-VEP-A038,5/12/13,Orthophosphate,1.12,mg/L,,
+Everett_01,EV-01-VEP-A049,5/21/13,#2 Diesel,0.15,mg/L,UJ,U
+Everett_01,EV-01-VEP-A049,5/21/13,Lube Oil,7.3,mg/L,J,
+Everett_01,EV-01-VEP-A049,5/21/13,Gasoline,0.07,mg/L,U,U
+Everett_01,EV-01-VEP-A049,5/21/13,Fecal Coliforms: Membrane Filter method,3400,cfu/100ml,,
+Everett_01,EV-01-VEP-A050,5/21/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",15.96,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",29.86,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",13.62,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_01,EV-01-VEP-A050,5/21/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Everett_01,EV-01-VEP-A050,5/21/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",8.11,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",24.89,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,"Nitrogen, Total Kjeldahl",1.2,mg/L,J,
+Everett_01,EV-01-VEP-A050,5/21/13,Glyphosate,25,ug/L,U,U
+Everett_01,EV-01-VEP-A050,5/21/13,Copper,12.5,ug/L,,J
+Everett_01,EV-01-VEP-A050,5/21/13,Zinc,40.5,ug/L,,J
+Everett_01,EV-01-VEP-A050,5/21/13,Copper,40.1,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Zinc,131,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Chloride,3.51,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Hardness,18.3,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Total Suspended Solids,67,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Nitrite-Nitrate,0.74,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Orthophosphate,0.0189,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Total Phosphorus,0.157,mg/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Bis(2-Ethylhexyl) Phthalate,5.4,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Di-N-Octyl Phthalate,0.79,ug/L,,NJ
+Everett_01,EV-01-VEP-A050,5/21/13,Anthracene,0.022,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Pyrene,0.14,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Dimethyl phthalate,0.21,ug/L,U,U
+Everett_01,EV-01-VEP-A050,5/21/13,Benzo(ghi)perylene,0.055,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,"Indeno(1,2,3-cd)pyrene",0.03,ug/L,,J
+Everett_01,EV-01-VEP-A050,5/21/13,Benzo(b)fluoranthene,0.04,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Fluoranthene,0.088,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Benzo(k)fluoranthene,0.026,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Acenaphthylene,0.01,ug/L,U,U
+Everett_01,EV-01-VEP-A050,5/21/13,Chrysene,0.071,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Benzo(a)pyrene,0.032,ug/L,,NJ
+Everett_01,EV-01-VEP-A050,5/21/13,"Dibenzo(a,h)anthracene",0.016,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Benzo(a)anthracene,0.026,ug/L,J,NJ
+Everett_01,EV-01-VEP-A050,5/21/13,Acenaphthene,0.037,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Diethyl phthalate,0.21,ug/L,U,U
+Everett_01,EV-01-VEP-A050,5/21/13,Di-N-Butylphthalate,0.45,ug/L,U,U
+Everett_01,EV-01-VEP-A050,5/21/13,Phenanthrene,0.11,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Butyl benzyl phthalate,0.37,ug/L,,
+Everett_01,EV-01-VEP-A050,5/21/13,Fluorene,0.036,ug/L,,J
+Everett_01,EV-01-VEP-A050,5/21/13,Naphthalene,0.018,ug/L,,
+Everett_01,EVE-01-NG-131118,11/18/13,#2 Diesel,0.15,mg/L,U,UJ
+Everett_01,EVE-01-NG-140107,1/7/14,#2 Diesel,0.15,mg/L,U,U
+Everett_01,EVE-01-NG-140130,1/30/14,#2 Diesel,0.15,mg/L,U,U
+Everett_01,EVE-01-NG-140218,2/18/14,#2 Diesel,0.16,mg/L,U,U
+Everett_01,EVE-01-NG-140303,3/3/14,#2 Diesel,1.1,mg/L,,
+Everett_01,EVE-01-NG-140319,3/19/14,#2 Diesel,0.15,mg/L,U,U
+Everett_01,EVE-01-NG-140408,4/8/14,#2 Diesel,0.15,mg/L,U,U
+Everett_01,EVE-01-NG-140417,4/17/14,#2 Diesel,0.16,mg/L,U,U
+Everett_01,EVE-01-NC-140628,6/28/14,Acenaphthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Acenaphthene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Acenaphthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Acenaphthylene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Acenaphthylene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Acenaphthylene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Anthracene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Anthracene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Anthracene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Benzo(a)anthracene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Benzo(a)anthracene,0.1,ug/l,URX,
+Everett_01,EVE-01-NC-140924,9/24/14,Benzo(a)anthracene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Benzo(a)pyrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Benzo(a)pyrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Benzo(a)pyrene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Benzo(a)pyrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Benzo(b)fluoranthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Benzo(b)fluoranthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Benzo(b)fluoranthene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Benzo(b)fluoranthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Benzo(ghi)perylene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Benzo(ghi)perylene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Benzo(ghi)perylene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Benzo(ghi)perylene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Benzo(k)fluoranthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Benzo(k)fluoranthene,0.1,ug/l,UX,
+Everett_01,EVE-01-NC-140723,7/23/14,Benzo(k)fluoranthene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Benzo(k)fluoranthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,bis(2-Ethylhexyl)phthalat,2.56,ug/l,,
+Everett_01,EVE-01-NC-140723,7/23/14,bis(2-Ethylhexyl)phthalat,9.46,ug/l,RB,
+Everett_01,EVE-01-NC-140924,9/24/14,bis(2-Ethylhexyl)phthalat,8.08,ug/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Butylbenzylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Butylbenzylphthalate,1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Butylbenzylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140924,9/24/14,Cadmium,0.148,ug/L,,
+Everett_01,EVE-01-NC-140613,6/13/14,Calcium,6.1,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Calcium,18,mg/l,,
+Everett_01,EVE-01-NC-140723,7/23/14,Calcium,5.9,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Calcium,4,mg/l,,
+Everett_01,EVE-01-NC-140613,6/13/14,Chloride,3.25,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Chloride,16.6,mg/l,,
+Everett_01,EVE-01-NC-140723,7/23/14,Chloride,1.82,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Chloride,1.34,mg/l,,
+Everett_01,EVE-01-NC-140613,6/13/14,Chrysene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Chrysene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Chrysene,0.1,ug/l,URX,
+Everett_01,EVE-01-NC-140924,9/24/14,Chrysene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Copper,50.9,ug/L,D,
+Everett_01,EVE-01-NC-140723,7/23/14,Copper,51.8,ug/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,Copper,24.3,ug/L,,
+Everett_01,EVE-01-NC-140613,6/13/14,Dibenzo(ah)anthracene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Dibenzo(ah)anthracene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Dibenzo(ah)anthracene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Dibenzo(ah)anthracene,0.1,ug/l,U,
+Everett_01,EVE-01-NG-140508,5/8/14,Diesel,3400,ug/l,"D,Z",
+Everett_01,EVE-01-NG-140523,5/23/14,Diesel,1600,ug/l,,
+Everett_01,EVE-01-NG-140613,6/13/14,Diesel,1100,ug/l,,
+Everett_01,EVE-01-NG-140628,6/28/14,Diesel,2100,ug/l,DH,
+Everett_01,EVE-01-NG-140723,7/23/14,Diesel,2100,ug/l,,
+Everett_01,EVE-01-NG-140924,9/24/14,Diesel,870,ug/l,DH,
+Everett_01,EVE-01-NC-140628,6/28/14,Diethylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Diethylphthalate,1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Diethylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Dimethylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Dimethylphthalate,1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Dimethylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Di-n-butylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Di-n-butylphthalate,1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Di-n-butylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Di-n-octylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Di-n-octylphthalate,1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Di-n-octylphthalate,1,ug/l,U,
+Everett_01,EVE-01-NC-140924,9/24/14,Dissolved Cadmium,0.08,ug/L,,
+Everett_01,EVE-01-NC-140628,6/28/14,Dissolved Copper,38.9,ug/L,D,
+Everett_01,EVE-01-NC-140723,7/23/14,Dissolved Copper,17.4,ug/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,Dissolved Copper,10.2,ug/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,Dissolved Lead,0.232,ug/L,,
+Everett_01,EVE-01-NC-140628,6/28/14,Dissolved Zinc,82.5,ug/L,D,
+Everett_01,EVE-01-NC-140723,7/23/14,Dissolved Zinc,36.5,ug/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,Dissolved Zinc,35,ug/L,,
+Everett_01,EVE-01-NG-140319,3/19/14,Fecal Coliform,3800,CFU/100mL,,J
+Everett_01,EVE-01-NG-140408,4/8/14,Fecal Coliform,2600,CFU/100mL,,
+Everett_01,EVE-01-NG-140417,4/17/14,Fecal Coliform,2200,CFU/100mL,,
+Everett_01,EVE-01-NG-140508,5/8/14,Fecal Coliform,2300,CFU/100mL,,
+Everett_01,EVE-01-NG-140523,5/23/14,Fecal Coliform,15000,CFU/100mL,,
+Everett_01,EVE-01-NG-140613,6/13/14,Fecal Coliform,1100,CFU/100mL,,
+Everett_01,EVE-01-NG-140723,7/23/14,Fecal Coliform,5800,CFU/100mL,,
+Everett_01,EVE-01-NG-140924,9/24/14,Fecal Coliform,4800,CFU/100mL,,
+Everett_01,EVE-01-NG-131118,11/18/13,Fecal Coliforms,240,CFU/100mL,,
+Everett_01,EVE-01-NG-140107,1/7/14,Fecal Coliforms,5900,CFU/100mL,,
+Everett_01,EVE-01-NG-140130,1/30/14,Fecal Coliforms,6700,CFU/100mL,,
+Everett_01,EVE-01-NG-140218,2/18/14,Fecal Coliforms,1000,CFU/100mL,,
+Everett_01,EVE-01-NG-140303,3/3/14,Fecal Coliforms,270,CFU/100mL,,
+Everett_01,EVE-01-NC-140613,6/13/14,Fluoranthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Fluoranthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Fluoranthene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Fluoranthene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Fluorene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Fluorene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Fluorene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Fluorene,0.1,ug/l,U,
+Everett_01,EVE-01-NG-131118,11/18/13,Gasoline,0.07,mg/L,U,U
+Everett_01,EVE-01-NG-140107,1/7/14,Gasoline,0.07,mg/L,U,U
+Everett_01,EVE-01-NG-140130,1/30/14,Gasoline,0.07,mg/L,U,U
+Everett_01,EVE-01-NG-140218,2/18/14,Gasoline,0.07,mg/L,U,U
+Everett_01,EVE-01-NG-140303,3/3/14,Gasoline,0.07,mg/L,U,U
+Everett_01,EVE-01-NG-140319,3/19/14,Gasoline,0.07,mg/L,U,U
+Everett_01,EVE-01-NG-140408,4/8/14,Gasoline,0.07,mg/L,U,U
+Everett_01,EVE-01-NG-140417,4/17/14,Gasoline,0.07,mg/L,U,U
+Everett_01,EVE-01-NG-140508,5/8/14,Gasoline in Water,100,ug/l,"U,R",
+Everett_01,EVE-01-NG-140523,5/23/14,Gasoline in Water,100,ug/l,U,
+Everett_01,EVE-01-NG-140613,6/13/14,Gasoline in Water,100,ug/l,U,
+Everett_01,EVE-01-NG-140628,6/28/14,Gasoline in Water,360,ug/l,Z,
+Everett_01,EVE-01-NG-140723,7/23/14,Gasoline in Water,100,ug/l,U,
+Everett_01,EVE-01-NG-140924,9/24/14,Gasoline in Water,250,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Glyphosate,10,ug/L,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Glyphosate,10,ug/L,U,
+Everett_01,EVE-01-NC-140924,9/24/14,Glyphosate,10,ug/L,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Hardness (CaCO3),19,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Hardness (CaCO3),56,mg/l,,
+Everett_01,EVE-01-NC-140723,7/23/14,Hardness (CaCO3),19,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Hardness (CaCO3),12,mg/l,,
+Everett_01,EVE-01-NG-140508,5/8/14,Heavy Oil,6700,ug/l,"D,F",
+Everett_01,EVE-01-NG-140523,5/23/14,Heavy Oil,6200,ug/l,,
+Everett_01,EVE-01-NG-140613,6/13/14,Heavy Oil,2900,ug/l,,
+Everett_01,EVE-01-NG-140628,6/28/14,Heavy Oil,5000,ug/l,DF,
+Everett_01,EVE-01-NG-140723,7/23/14,Heavy Oil,5400,ug/l,,
+Everett_01,EVE-01-NG-140924,9/24/14,Heavy Oil,5700,ug/l,DF,
+Everett_01,EVE-01-NC-140613,6/13/14,Indeno(123-cd)pyrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Indeno(123-cd)pyrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Indeno(123-cd)pyrene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Indeno(123-cd)pyrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140924,9/24/14,Lead,3.05,ug/L,,
+Everett_01,EVE-01-NG-131118,11/18/13,Lube Oil,1.1,mg/L,J,J
+Everett_01,EVE-01-NG-140107,1/7/14,Lube Oil,9.2,mg/L,,
+Everett_01,EVE-01-NG-140130,1/30/14,Lube Oil,6.1,mg/L,,
+Everett_01,EVE-01-NG-140218,2/18/14,Lube Oil,8.2,mg/L,,
+Everett_01,EVE-01-NG-140303,3/3/14,Lube Oil,1.7,mg/L,,
+Everett_01,EVE-01-NG-140319,3/19/14,Lube Oil,9,mg/L,,
+Everett_01,EVE-01-NG-140408,4/8/14,Lube Oil,4,mg/L,,
+Everett_01,EVE-01-NG-140417,4/17/14,Lube Oil,6.7,mg/L,,
+Everett_01,EVE-01-NC-140613,6/13/14,Magnesium,0.89,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Magnesium,2.7,mg/l,,
+Everett_01,EVE-01-NC-140723,7/23/14,Magnesium,1.1,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Magnesium,0.57,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Naphthalene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Nitrate + Nitrite,0.51,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Nitrate + Nitrite,1.3,mg/l,RX,
+Everett_01,EVE-01-NC-140723,7/23/14,Nitrate + Nitrite,0.21,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Nitrate + Nitrite,2.9,mg/l,,
+Everett_01,EVE-01-NC-140723,7/23/14,Ortho-Phosphate,0.012,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Ortho-Phosphate,0.027,mg/l,,
+Everett_01,EVE-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",7.55,mg/L,,
+Everett_01,EVE-01-NC-140628,6/28/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",14.33,mg/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",5.99,mg/L,,
+Everett_01,EVE-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",24.45,mg/L,,
+Everett_01,EVE-01-NC-140628,6/28/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",4.69,mg/L,,
+Everett_01,EVE-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",37.85,mg/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",21.88,mg/L,,
+Everett_01,EVE-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",2.31,mg/L,,
+Everett_01,EVE-01-NC-140628,6/28/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.7,mg/L,,
+Everett_01,EVE-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",3.26,mg/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.04,mg/L,,
+Everett_01,EVE-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140628,6/28/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140628,6/28/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140628,6/28/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",16.73,mg/L,,
+Everett_01,EVE-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",2.48,mg/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",,mg/L,U,
+Everett_01,EVE-01-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",12.54,mg/L,,
+Everett_01,EVE-01-NC-140628,6/28/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",10.94,mg/L,,
+Everett_01,EVE-01-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",15.6,mg/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",8.01,mg/L,,
+Everett_01,EVE-01-NC-140613,6/13/14,pH,6.21,unit,,
+Everett_01,EVE-01-NC-140628,6/28/14,pH,6.28,unit,,
+Everett_01,EVE-01-NC-140723,7/23/14,pH,6.27,unit,,
+Everett_01,EVE-01-NC-140924,9/24/14,pH,4.13,unit,,
+Everett_01,EVE-01-NC-140613,6/13/14,Phenanthrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140628,6/28/14,Phenanthrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Phenanthrene,0.1,ug/l,UR,
+Everett_01,EVE-01-NC-140924,9/24/14,Phenanthrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Pyrene,0.11,ug/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Pyrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140723,7/23/14,Pyrene,0.1,ug/l,URX,
+Everett_01,EVE-01-NC-140924,9/24/14,Pyrene,0.1,ug/l,U,
+Everett_01,EVE-01-NC-140613,6/13/14,Total Nitrogen (TKN),2.71,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Total Nitrogen (TKN),3.93,mg/l,D,
+Everett_01,EVE-01-NC-140723,7/23/14,Total Nitrogen (TKN),8.41,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Total Nitrogen (TKN),2.17,mg/l,D,
+Everett_01,EVE-01-NC-140613,6/13/14,Total Phosphorus,0.098,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Total Phosphorus,0.258,mg/l,N,
+Everett_01,EVE-01-NC-140723,7/23/14,Total Phosphorus,0.052,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Total Phosphorus,0.092,mg/l,,
+Everett_01,EVE-01-NC-140613,6/13/14,Total Suspended Solids,38,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Total Suspended Solids,27,mg/l,,
+Everett_01,EVE-01-NC-140723,7/23/14,Total Suspended Solids,71,mg/l,,
+Everett_01,EVE-01-NC-140924,9/24/14,Total Suspended Solids,26,mg/l,,
+Everett_01,EVE-01-NC-140628,6/28/14,Zinc,92.9,ug/L,D,
+Everett_01,EVE-01-NC-140723,7/23/14,Zinc,133,ug/L,,
+Everett_01,EVE-01-NC-140924,9/24/14,Zinc,66.9,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Nitrogen, Total Kjeldahl",2,mg/L,,B
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Glyphosate,25,ug/L,U,U
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Anthracene,0.0099,ug/L,U,U
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Dimethyl phthalate,0.2,ug/L,U,U
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Acenaphthylene,0.0099,ug/L,U,U
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Acenaphthene,0.0099,ug/L,U,U
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Fluorene,0.0099,ug/L,U,U
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Di-N-Butylphthalate,0.47,ug/L,UJ,UJ
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale <1 (>500 um)",64.27,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",5.64,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",8.07,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",47.95,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",58.02,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",4.22,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Chloride,2.82,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Hardness,21.5,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Total Suspended Solids,109,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Nitrite-Nitrate,0.983,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Total Phosphorus,0.268,mg/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Bis(2-Ethylhexyl) Phthalate,13,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Di-N-Octyl Phthalate,1.5,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Pyrene,0.26,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Benzo(ghi)perylene,0.12,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Indeno(1,2,3-cd)pyrene",0.047,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Benzo(b)fluoranthene,0.099,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Fluoranthene,0.16,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Benzo(k)fluoranthene,0.026,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Chrysene,0.081,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Benzo(a)pyrene,0.047,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,"Dibenzo(a,h)anthracene",0.013,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Benzo(a)anthracene,0.041,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Diethyl phthalate,0.27,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Phenanthrene,0.083,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Butyl benzyl phthalate,0.31,ug/L,,
+Everett_04,EVERETT-04-WY11-01-01,7/20/12,Naphthalene,0.028,ug/L,J,
+Everett_04,TOX-EVERETT-04-WY12-02-02,10/12/12,#2 Diesel,0.05,mg/L,U,U
+Everett_04,TOX-EVERETT-04-WY12-02-02,10/12/12,Lube Oil,2.1,mg/L,,
+Everett_04,TOX-EVERETT-04-WY12-02-02,10/12/12,Gasoline,0.07,mg/L,U,U
+Everett_04,TOX-EVERETT-04-WY12-02-02,10/12/12,Fecal Coliforms: Membrane Filter method,40000,cfu/100ml,,
+Everett_04,EV-04-MEP-A002,11/7/12,"Nitrogen, Total Kjeldahl",1.1,mg/L,,B
+Everett_04,EV-04-MEP-A002,11/7/12,Glyphosate,25,ug/L,U,U
+Everett_04,EV-04-MEP-A007,12/11/12,Fecal Coliforms: Membrane Filter method,400,cfu/100ml,,
+Everett_04,EV-04-VEP-A002,11/7/12,Copper,5.93,ug/L,J,J
+Everett_04,EV-04-VEP-A002,11/7/12,Zinc,73.5,ug/L,J,J
+Everett_04,EV-04-VEP-A002,11/7/12,Copper,19.6,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Zinc,109,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Chloride,3.91,mg/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Hardness,13.5,mg/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Total Suspended Solids,51,mg/L,J,J
+Everett_04,EV-04-VEP-A002,11/7/12,Nitrite-Nitrate,0.373,mg/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Total Phosphorus,0.0817,mg/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Orthophosphate,0.01,mg/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Bis(2-Ethylhexyl) Phthalate,0.2,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Di-N-Octyl Phthalate,0.2,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Anthracene,0.01,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Pyrene,0.094,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Dimethyl phthalate,0.2,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Benzo(ghi)perylene,0.092,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,"Indeno(1,2,3-cd)pyrene",0.066,ug/L,J,J
+Everett_04,EV-04-VEP-A002,11/7/12,Benzo(b)fluoranthene,0.053,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Fluoranthene,0.056,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Benzo(k)fluoranthene,0.019,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Acenaphthylene,0.01,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Chrysene,0.047,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Benzo(a)pyrene,0.028,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,"Dibenzo(a,h)anthracene",0.028,ug/L,UJ,UJ
+Everett_04,EV-04-VEP-A002,11/7/12,Benzo(a)anthracene,0.01,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Acenaphthene,0.01,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Diethyl phthalate,0.2,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Di-N-Butylphthalate,0.2,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Phenanthrene,0.029,ug/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,Butyl benzyl phthalate,0.2,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Fluorene,0.01,ug/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,Naphthalene,0.014,ug/L,UJ,UJ
+Everett_04,EV-04-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.96,mg/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",4,mg/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",2.82,mg/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Everett_04,EV-04-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",30.07,mg/L,,
+Everett_04,EV-04-VEP-A002,11/7/12,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",4.78,mg/L,,
+Everett_04,EV-04-VEP-A007,12/11/12,#2 Diesel,0.15,mg/L,U,U
+Everett_04,EV-04-VEP-A007,12/11/12,Lube Oil,6.4,mg/L,,
+Everett_04,EV-04-VEP-A007,12/11/12,Gasoline,0.07,mg/L,U,U
+Everett_04,EV-04-MEP-A014,2/17/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.6,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",12.45,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.69,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A014,2/17/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A014,2/17/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",42.59,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",16.91,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,"Nitrogen, Total Kjeldahl",1.5,mg/L,J,B
+Everett_04,EV-04-MEP-A014,2/17/13,Glyphosate,25,ug/L,U,U
+Everett_04,EV-04-MEP-A014,2/17/13,Chloride,25.9,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Hardness,29.2,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Total Suspended Solids,74,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Nitrite-Nitrate,0.739,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Total Phosphorus,0.129,mg/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Di-N-Octyl Phthalate,1.7,ug/L,J,J
+Everett_04,EV-04-MEP-A014,2/17/13,Anthracene,0.018,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Pyrene,0.23,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Dimethyl phthalate,0.11,ug/L,J,J
+Everett_04,EV-04-MEP-A014,2/17/13,Benzo(ghi)perylene,0.029,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,"Indeno(1,2,3-cd)pyrene",0.025,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Benzo(b)fluoranthene,0.097,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Fluoranthene,0.14,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Benzo(k)fluoranthene,0.029,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Acenaphthylene,0.01,ug/L,U,U
+Everett_04,EV-04-MEP-A014,2/17/13,Chrysene,0.1,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Benzo(a)pyrene,0.046,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Everett_04,EV-04-MEP-A014,2/17/13,Benzo(a)anthracene,0.047,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Acenaphthene,0.01,ug/L,U,U
+Everett_04,EV-04-MEP-A014,2/17/13,Diethyl phthalate,0.42,ug/L,,J
+Everett_04,EV-04-MEP-A014,2/17/13,Di-N-Butylphthalate,0.46,ug/L,UJ,UJ
+Everett_04,EV-04-MEP-A014,2/17/13,Phenanthrene,0.078,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Butyl benzyl phthalate,0.36,ug/L,UJ,UJ
+Everett_04,EV-04-MEP-A014,2/17/13,Fluorene,0.013,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Naphthalene,0.034,ug/L,,
+Everett_04,EV-04-MEP-A014,2/17/13,Bis(2-Ethylhexyl) Phthalate,6.9,ug/L,J,J
+Everett_04,EVERETT-04-A019,2/22/13,#2 Diesel,0.15,mg/L,U,U
+Everett_04,EVERETT-04-A019,2/22/13,Lube Oil,5.6,mg/L,,
+Everett_04,EVERETT-04-A019,2/22/13,Gasoline,0.05,mg/L,U,U
+Everett_04,EV-04-MEP-A032,3/2/13,Chloride,10.1,mg/L,,
+Everett_04,EV-04-MEP-A032,3/2/13,"Nitrogen, Total Kjeldahl",1.1,mg/L,,
+Everett_04,EV-04-MEP-A032,3/2/13,Glyphosate,25,ug/L,U,U
+Everett_04,EV-04-MEP-A032,3/2/13,Hardness,17.3,mg/L,,
+Everett_04,EV-04-MEP-A032,3/2/13,Total Suspended Solids,100,mg/L,,
+Everett_04,EV-04-MEP-A032,3/2/13,Nitrite-Nitrate,0.246,mg/L,,
+Everett_04,EV-04-MEP-A032,3/2/13,Total Phosphorus,0.107,mg/L,,
+Everett_04,EV-04-A037,3/6/13,#2 Diesel,0.15,mg/L,UJ,UJ
+Everett_04,EV-04-A037,3/6/13,Lube Oil,6.9,mg/L,J,J
+Everett_04,EV-04-A037,3/6/13,Gasoline,0.05,mg/L,U,U
+Everett_04,EV-04-MEP-A026,3/20/13,Glyphosate,25,ug/L,U,U
+Everett_04,EV-04-MEP-A026,3/20/13,Hardness,14.1,mg/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Total Suspended Solids,88,mg/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Nitrite-Nitrate,0.198,mg/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Total Phosphorus,0.13,mg/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Bis(2-Ethylhexyl) Phthalate,6.8,ug/L,,J
+Everett_04,EV-04-MEP-A026,3/20/13,Di-N-Octyl Phthalate,0.73,ug/L,,NJ
+Everett_04,EV-04-MEP-A026,3/20/13,Anthracene,0.011,ug/L,J,NJ
+Everett_04,EV-04-MEP-A026,3/20/13,Pyrene,0.22,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Dimethyl phthalate,0.21,ug/L,UJ,UJ
+Everett_04,EV-04-MEP-A026,3/20/13,Benzo(ghi)perylene,0.11,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,"Indeno(1,2,3-cd)pyrene",0.043,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Benzo(b)fluoranthene,0.078,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Fluoranthene,0.15,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Benzo(k)fluoranthene,0.049,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Acenaphthylene,0.011,ug/L,U,U
+Everett_04,EV-04-MEP-A026,3/20/13,Chrysene,0.12,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Benzo(a)pyrene,0.045,ug/L,,NJ
+Everett_04,EV-04-MEP-A026,3/20/13,"Dibenzo(a,h)anthracene",0.016,ug/L,U,U
+Everett_04,EV-04-MEP-A026,3/20/13,Benzo(a)anthracene,0.042,ug/L,,NJ
+Everett_04,EV-04-MEP-A026,3/20/13,Acenaphthene,0.011,ug/L,U,U
+Everett_04,EV-04-MEP-A026,3/20/13,Diethyl phthalate,0.51,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Di-N-Butylphthalate,0.41,ug/L,U,U
+Everett_04,EV-04-MEP-A026,3/20/13,Phenanthrene,0.067,ug/L,,
+Everett_04,EV-04-MEP-A026,3/20/13,Butyl benzyl phthalate,0.31,ug/L,UJ,UJ
+Everett_04,EV-04-MEP-A026,3/20/13,Fluorene,0.011,ug/L,U,U
+Everett_04,EV-04-MEP-A026,3/20/13,Naphthalene,0.016,ug/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",9.04,mg/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",17.83,mg/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",8.74,mg/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A050,4/12/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A050,4/12/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",18.71,mg/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",22.11,mg/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,"Nitrogen, Total Kjeldahl",0.46,mg/L,J,J
+Everett_04,EV-04-MEP-A050,4/12/13,Hardness,17.6,mg/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,Total Suspended Solids,72,mg/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,Nitrite-Nitrate,0.455,mg/L,,
+Everett_04,EV-04-MEP-A050,4/12/13,Total Phosphorus,0.138,mg/L,J,
+Everett_04,EV-04-MEP-A044,4/19/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",11.17,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",5.66,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",8.55,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A044,4/19/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A044,4/19/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",41.01,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",0.12,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Glyphosate,18,ug/L,J,J
+Everett_04,EV-04-MEP-A044,4/19/13,Chloride,6.39,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Hardness,18.2,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Total Suspended Solids,46,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Nitrite-Nitrate,0.531,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Total Phosphorus,0.0928,mg/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Bis(2-Ethylhexyl) Phthalate,7.1,ug/L,,J
+Everett_04,EV-04-MEP-A044,4/19/13,Di-N-Octyl Phthalate,1.1,ug/L,J,NJ
+Everett_04,EV-04-MEP-A044,4/19/13,Anthracene,0.01,ug/L,U,U
+Everett_04,EV-04-MEP-A044,4/19/13,Pyrene,0.12,ug/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Dimethyl phthalate,0.21,ug/L,UJ,UJ
+Everett_04,EV-04-MEP-A044,4/19/13,Benzo(ghi)perylene,0.053,ug/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,"Indeno(1,2,3-cd)pyrene",0.016,ug/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Benzo(b)fluoranthene,0.035,ug/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Fluoranthene,0.075,ug/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Benzo(k)fluoranthene,0.024,ug/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Acenaphthylene,0.01,ug/L,U,U
+Everett_04,EV-04-MEP-A044,4/19/13,Chrysene,0.064,ug/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Benzo(a)pyrene,0.025,ug/L,,NJ
+Everett_04,EV-04-MEP-A044,4/19/13,"Dibenzo(a,h)anthracene",0.0089,ug/L,J,J
+Everett_04,EV-04-MEP-A044,4/19/13,Benzo(a)anthracene,0.021,ug/L,,NJ
+Everett_04,EV-04-MEP-A044,4/19/13,Acenaphthene,0.01,ug/L,U,U
+Everett_04,EV-04-MEP-A044,4/19/13,Diethyl phthalate,0.46,ug/L,,J
+Everett_04,EV-04-MEP-A044,4/19/13,Di-N-Butylphthalate,0.44,ug/L,U,U
+Everett_04,EV-04-MEP-A044,4/19/13,Phenanthrene,0.041,ug/L,,
+Everett_04,EV-04-MEP-A044,4/19/13,Butyl benzyl phthalate,0.32,ug/L,UJ,UJ
+Everett_04,EV-04-MEP-A044,4/19/13,Fluorene,0.01,ug/L,U,U
+Everett_04,EV-04-MEP-A044,4/19/13,Naphthalene,0.014,ug/L,,
+Everett_04,EV-04-MEP-A055,5/21/13,#2 Diesel,0.15,mg/L,UJ,U
+Everett_04,EV-04-MEP-A055,5/21/13,Lube Oil,3.2,mg/L,J,
+Everett_04,EV-04-MEP-A055,5/21/13,Gasoline,0.07,mg/L,U,U
+Everett_04,EV-04-MEP-A055,5/21/13,Fecal Coliforms: Membrane Filter method,2600,cfu/100ml,,
+Everett_04,EV-04-MEP-A056,5/21/13,"Particle/Grain Size, Phi Scale <1 (>500 um)",12.76,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",32.66,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",10.98,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A056,5/21/13,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A056,5/21/13,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",0.01,mg/L,U,U
+Everett_04,EV-04-MEP-A056,5/21/13,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",21.86,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,"Nitrogen, Total Kjeldahl",1.5,mg/L,J,
+Everett_04,EV-04-MEP-A056,5/21/13,Glyphosate,25,ug/L,U,U
+Everett_04,EV-04-MEP-A056,5/21/13,Zinc,74.2,ug/L,,J
+Everett_04,EV-04-MEP-A056,5/21/13,Copper,13.8,ug/L,,J
+Everett_04,EV-04-MEP-A056,5/21/13,Copper,34.6,ug/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,Zinc,157,ug/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,Chloride,3.69,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,Hardness,16.8,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,Total Suspended Solids,55,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,Nitrite-Nitrate,0.676,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,Orthophosphate,0.0183,mg/L,,
+Everett_04,EV-04-MEP-A056,5/21/13,Total Phosphorus,0.142,mg/L,,
+Everett_04,EVE-04-NG-131118,11/18/13,#2 Diesel,0.15,mg/L,UJ,U
+Everett_04,EVE-04-NG-140107,1/7/14,#2 Diesel,0.15,mg/L,U,U
+Everett_04,EVE-04-NG-140130,1/30/14,#2 Diesel,0.15,mg/L,U,U
+Everett_04,EVE-04-NG-140218,2/18/14,#2 Diesel,0.15,mg/L,UJ,UJ
+Everett_04,EVE-04-NG-140303,3/3/14,#2 Diesel,2.3,mg/L,,
+Everett_04,EVE-04-NG-140319,3/19/14,#2 Diesel,0.15,mg/L,U,U
+Everett_04,EVE-04-NG-140408,4/8/14,#2 Diesel,0.16,mg/L,U,U
+Everett_04,EVE-04-NG-140417,4/17/14,#2 Diesel,0.16,mg/L,U,U
+Everett_04,EVE-04-NC-140107,1/8/14,Acenaphthene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,Acenaphthene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,Acenaphthene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140422,4/22/14,Acenaphthene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,Acenaphthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Acenaphthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Acenaphthene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Acenaphthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Acenaphthylene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,Acenaphthylene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,Acenaphthylene,0.053,ug/L,,NJ
+Everett_04,EVE-04-NC-140422,4/22/14,Acenaphthylene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,Acenaphthylene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Acenaphthylene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Acenaphthylene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Acenaphthylene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Anthracene,0.19,ug/L,,J
+Everett_04,EVE-04-NC-140317,3/16/14,Anthracene,0.016,ug/L,NJ,NJ
+Everett_04,EVE-04-NC-140408,4/9/14,Anthracene,0.015,ug/L,,NJ
+Everett_04,EVE-04-NC-140422,4/22/14,Anthracene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,Anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Anthracene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Benz[a]anthracene,0.16,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Benz[a]anthracene,0.033,ug/L,,U
+Everett_04,EVE-04-NC-140408,4/9/14,Benz[a]anthracene,0.024,ug/L,,NJ
+Everett_04,EVE-04-NC-140422,4/22/14,Benz[a]anthracene,0.019,ug/L,NJ,NJ
+Everett_04,EVE-04-NC-140508,5/9/14,Benzo(a)anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Benzo(a)anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Benzo(a)anthracene,0.1,ug/l,,URX
+Everett_04,EVE-04-NC-140924,9/24/14,Benzo(a)anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Benzo(a)pyrene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,Benzo(a)pyrene,0.032,ug/L,NJ,NJ
+Everett_04,EVE-04-NC-140408,4/9/14,Benzo(a)pyrene,0.029,ug/L,,NJ
+Everett_04,EVE-04-NC-140422,4/22/14,Benzo(a)pyrene,0.021,ug/L,NJ,NJ
+Everett_04,EVE-04-NC-140508,5/9/14,Benzo(a)pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Benzo(a)pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Benzo(a)pyrene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Benzo(a)pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Benzo(b)fluoranthene,0.01,ug/L,UJ,UJ
+Everett_04,EVE-04-NC-140317,3/16/14,Benzo(b)fluoranthene,0.041,ug/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Benzo(b)fluoranthene,0.055,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Benzo(b)fluoranthene,0.034,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Benzo(b)fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Benzo(b)fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Benzo(b)fluoranthene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Benzo(b)fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Benzo(ghi)perylene,0.13,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Benzo(ghi)perylene,0.077,ug/L,,J
+Everett_04,EVE-04-NC-140408,4/9/14,Benzo(ghi)perylene,0.098,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Benzo(ghi)perylene,0.062,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Benzo(ghi)perylene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Benzo(ghi)perylene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Benzo(ghi)perylene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Benzo(ghi)perylene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Benzo(k)fluoranthene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,Benzo(k)fluoranthene,0.025,ug/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Benzo(k)fluoranthene,0.02,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Benzo(k)fluoranthene,0.017,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Benzo(k)fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Benzo(k)fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Benzo(k)fluoranthene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Benzo(k)fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Bis(2-Ethylhexyl) Phthalate,7.6,ug/L,,J
+Everett_04,EVE-04-NC-140317,3/16/14,Bis(2-Ethylhexyl) Phthalate,4.5,ug/L,,J
+Everett_04,EVE-04-NC-140408,4/9/14,Bis(2-Ethylhexyl) Phthalate,7.1,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Bis(2-Ethylhexyl) Phthalate,3.2,ug/L,,J
+Everett_04,EVE-04-NC-140508,5/9/14,bis(2-Ethylhexyl)phthalat,9.74,ug/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,bis(2-Ethylhexyl)phthalat,1.63,ug/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,bis(2-Ethylhexyl)phthalat,11.8,ug/l,,RB
+Everett_04,EVE-04-NC-140924,9/24/14,bis(2-Ethylhexyl)phthalat,3.75,ug/l,,
+Everett_04,EVE-04-NC-140107,1/8/14,Butyl benzyl phthalate,0.34,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Butyl benzyl phthalate,0.21,ug/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,Butyl benzyl phthalate,0.29,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Butyl benzyl phthalate,0.21,ug/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,Butylbenzylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Butylbenzylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Butylbenzylphthalate,1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Butylbenzylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Cadmium,0.195,ug/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,Cadmium,0.51,ug/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,Cadmium,0.205,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Calcium,5.3,mg/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,Calcium,4.8,mg/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,Calcium,4.7,mg/l,,
+Everett_04,EVE-04-NC-140924,9/24/14,Calcium,4,mg/l,,
+Everett_04,EVE-04-NC-140107,1/8/14,Chloride,32.8,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Chloride,47.5,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Chloride,2.58,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Chloride,8.31,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Chloride,4.28,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Chloride,3.61,mg/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,Chloride,2.76,mg/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,Chloride,2.4,mg/l,,
+Everett_04,EVE-04-NC-140924,9/24/14,Chloride,2.26,mg/l,,
+Everett_04,EVE-04-NC-140107,1/8/14,Chrysene,0.12,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Chrysene,0.047,ug/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Chrysene,0.072,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Chrysene,0.044,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Chrysene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Chrysene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Chrysene,0.1,ug/l,,URX
+Everett_04,EVE-04-NC-140924,9/24/14,Chrysene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Copper,13,ug/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,Copper,47.4,ug/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Copper,31.6,ug/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Copper,11,ug/L,J,J
+Everett_04,EVE-04-NC-140317,3/16/14,Copper,20.7,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Copper,5.48,ug/L,,J
+Everett_04,EVE-04-NC-140408,4/9/14,Copper,61,ug/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Copper,37.5,ug/L,,J
+Everett_04,EVE-04-NC-140422,4/22/14,Copper,8.19,ug/L,,J
+Everett_04,EVE-04-NC-140422,4/22/14,Copper,21.8,ug/L,,
+Everett_04,EVE-04-NC-140723,7/23/14,Copper,49.5,ug/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,Copper,27.5,ug/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140422,4/22/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,Dibenzo(ah)anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Dibenzo(ah)anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Dibenzo(ah)anthracene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Dibenzo(ah)anthracene,0.1,ug/l,,U
+Everett_04,EVE-04-NG-140508,5/8/14,Diesel,3200,ug/l,,"D,Z"
+Everett_04,EVE-04-NG-140523,5/23/14,Diesel,1300,ug/l,,
+Everett_04,EVE-04-NG-140613,6/13/14,Diesel,1500,ug/l,,
+Everett_04,EVE-04-NG-140628,6/28/14,Diesel,1800,ug/l,,DH
+Everett_04,EVE-04-NG-140723,7/23/14,Diesel,1700,ug/l,,
+Everett_04,EVE-04-NG-140924,9/24/14,Diesel,530,ug/l,,H
+Everett_04,EVE-04-NC-140107,1/8/14,Diethyl phthalate,0.37,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Diethyl phthalate,0.21,ug/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,Diethyl phthalate,0.21,ug/L,U,U
+Everett_04,EVE-04-NC-140422,4/22/14,Diethyl phthalate,0.38,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Diethylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Diethylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Diethylphthalate,1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Diethylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Dimethyl phthalate,0.068,ug/L,J,J
+Everett_04,EVE-04-NC-140317,3/16/14,Dimethyl phthalate,0.21,ug/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,Dimethyl phthalate,0.21,ug/L,U,U
+Everett_04,EVE-04-NC-140422,4/22/14,Dimethyl phthalate,0.21,ug/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,Dimethylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Dimethylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Dimethylphthalate,1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Dimethylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Di-N-Butylphthalate,0.48,ug/L,,U
+Everett_04,EVE-04-NC-140317,3/16/14,Di-N-Butylphthalate,0.54,ug/L,,U
+Everett_04,EVE-04-NC-140408,4/9/14,Di-N-Butylphthalate,0.46,ug/L,,U
+Everett_04,EVE-04-NC-140422,4/22/14,Di-N-Butylphthalate,0.42,ug/L,,U
+Everett_04,EVE-04-NC-140508,5/9/14,Di-n-butylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Di-n-butylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Di-n-butylphthalate,1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Di-n-butylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Di-N-Octyl Phthalate,1.2,ug/L,,J
+Everett_04,EVE-04-NC-140317,3/16/14,Di-N-Octyl Phthalate,1.2,ug/L,NJ,NJ
+Everett_04,EVE-04-NC-140408,4/9/14,Di-N-Octyl Phthalate,1.2,ug/L,,NJ
+Everett_04,EVE-04-NC-140422,4/22/14,Di-N-Octyl Phthalate,0.21,ug/L,U,UJ
+Everett_04,EVE-04-NC-140508,5/9/14,Di-n-octylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Di-n-octylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Di-n-octylphthalate,1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Di-n-octylphthalate,1,ug/l,,U
+Everett_04,EVE-04-NC-140924,9/24/14,Dissolved Cadmium,0.093,ug/L,,
+Everett_04,EVE-04-NC-140723,7/23/14,Dissolved Copper,18.3,ug/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,Dissolved Copper,10.2,ug/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,Dissolved Lead,0.156,ug/L,,
+Everett_04,EVE-04-NC-140723,7/23/14,Dissolved Zinc,87.6,ug/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,Dissolved Zinc,94.9,ug/L,,
+Everett_04,EVE-04-NG-140319,3/19/14,Fecal Coliform,4100,CFU/100mL,J,
+Everett_04,EVE-04-NG-140408,4/8/14,Fecal Coliform,2000,CFU/100mL,,
+Everett_04,EVE-04-NG-140417,4/17/14,Fecal Coliform,1800,CFU/100mL,,
+Everett_04,EVE-04-NG-140508,5/8/14,Fecal Coliform,1000,CFU/100mL,,
+Everett_04,EVE-04-NG-140523,5/23/14,Fecal Coliform,13000,CFU/100mL,,
+Everett_04,EVE-04-NG-140613,6/13/14,Fecal Coliform,100,CFU/100mL,,
+Everett_04,EVE-04-NG-140723,7/23/14,Fecal Coliform,6400,CFU/100mL,,
+Everett_04,EVE-04-NG-140924,9/24/14,Fecal Coliform,16000,CFU/100mL,,
+Everett_04,EVE-04-NG-131118,11/18/13,Fecal Coliforms,140,CFU/100mL,,
+Everett_04,EVE-04-NG-140107,1/7/14,Fecal Coliforms,6000,CFU/100mL,,
+Everett_04,EVE-04-NG-140130,1/30/14,Fecal Coliforms,11000,CFU/100mL,,
+Everett_04,EVE-04-NG-140218,2/18/14,Fecal Coliforms,680,CFU/100mL,,
+Everett_04,EVE-04-NG-140303,3/3/14,Fecal Coliforms,4700,CFU/100mL,,
+Everett_04,EVE-04-NC-140107,1/8/14,Fluoranthene,0.25,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Fluoranthene,0.093,ug/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Fluoranthene,0.1,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Fluoranthene,0.063,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Fluoranthene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Fluoranthene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Fluorene,0.01,ug/L,U,UJ
+Everett_04,EVE-04-NC-140317,3/16/14,Fluorene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,Fluorene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140422,4/22/14,Fluorene,0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,Fluorene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Fluorene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Fluorene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Fluorene,0.1,ug/l,,U
+Everett_04,EVE-04-NG-131118,11/18/13,Gasoline,0.07,mg/L,U,U
+Everett_04,EVE-04-NG-140107,1/7/14,Gasoline,0.07,mg/L,U,U
+Everett_04,EVE-04-NG-140130,1/30/14,Gasoline,0.07,mg/L,U,U
+Everett_04,EVE-04-NG-140218,2/18/14,Gasoline,0.07,mg/L,U,U
+Everett_04,EVE-04-NG-140303,3/3/14,Gasoline,0.07,mg/L,U,U
+Everett_04,EVE-04-NG-140319,3/19/14,Gasoline,0.07,mg/L,U,U
+Everett_04,EVE-04-NG-140408,4/8/14,Gasoline,0.07,mg/L,U,U
+Everett_04,EVE-04-NG-140417,4/17/14,Gasoline,0.07,mg/L,U,U
+Everett_04,EVE-04-NG-140508,5/8/14,Gasoline in Water,100,ug/l,,"U,R"
+Everett_04,EVE-04-NG-140523,5/23/14,Gasoline in Water,100,ug/l,,U
+Everett_04,EVE-04-NG-140613,6/13/14,Gasoline in Water,100,ug/l,,U
+Everett_04,EVE-04-NG-140628,6/28/14,Gasoline in Water,499,ug/l,,Z
+Everett_04,EVE-04-NG-140723,7/23/14,Gasoline in Water,100,ug/l,,U
+Everett_04,EVE-04-NG-140924,9/24/14,Gasoline in Water,250,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Glyphosate,,ug/L,U,U
+Everett_04,EVE-04-NC-140129,1/29/14,Glyphosate,,ug/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,Glyphosate,,ug/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,Glyphosate,,ug/L,U,U
+Everett_04,EVE-04-NC-140422,4/22/14,Glyphosate,8.1,ug/L,J,J
+Everett_04,EVE-04-NC-140508,5/9/14,Glyphosate,10,ug/L,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Glyphosate,10,ug/L,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Glyphosate,10,ug/L,,U
+Everett_04,EVE-04-NC-140924,9/24/14,Glyphosate,10,ug/L,,U
+Everett_04,EVE-04-NC-140508,5/9/14,Hardness (CaCO3),17,mg/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,Hardness (CaCO3),15,mg/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,Hardness (CaCO3),16,mg/l,,
+Everett_04,EVE-04-NC-140924,9/24/14,Hardness (CaCO3),13,mg/l,,
+Everett_04,EVE-04-NC-140107,1/8/14,Hardness as CaCO3,39.5,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Hardness as CaCO3,50.2,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Hardness as CaCO3,8.67,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Hardness as CaCO3,20.8,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Hardness as CaCO3,12.4,mg/L,,
+Everett_04,EVE-04-NG-140508,5/8/14,Heavy Oil,6800,ug/l,,"D,F"
+Everett_04,EVE-04-NG-140523,5/23/14,Heavy Oil,5500,ug/l,,
+Everett_04,EVE-04-NG-140613,6/13/14,Heavy Oil,4300,ug/l,,
+Everett_04,EVE-04-NG-140628,6/28/14,Heavy Oil,3500,ug/l,,DF
+Everett_04,EVE-04-NG-140723,7/23/14,Heavy Oil,4500,ug/l,,
+Everett_04,EVE-04-NG-140924,9/24/14,Heavy Oil,1100,ug/l,,F
+Everett_04,EVE-04-NC-140107,1/8/14,"Indeno(1,2,3-cd)pyrene",0.01,ug/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,"Indeno(1,2,3-cd)pyrene",0.033,ug/L,,U
+Everett_04,EVE-04-NC-140408,4/9/14,"Indeno(1,2,3-cd)pyrene",0.03,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,"Indeno(1,2,3-cd)pyrene",0.019,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Indeno(123-cd)pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Indeno(123-cd)pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Indeno(123-cd)pyrene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Indeno(123-cd)pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Lead,7.36,ug/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,Lead,0.23,ug/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,Lead,4.17,ug/L,,
+Everett_04,EVE-04-NG-131118,11/18/13,Lube Oil,3,mg/L,J,J
+Everett_04,EVE-04-NG-140107,1/7/14,Lube Oil,10,mg/L,,
+Everett_04,EVE-04-NG-140130,1/30/14,Lube Oil,6.3,mg/L,,
+Everett_04,EVE-04-NG-140218,2/18/14,Lube Oil,7,mg/L,J,J
+Everett_04,EVE-04-NG-140303,3/3/14,Lube Oil,3.9,mg/L,,
+Everett_04,EVE-04-NG-140319,3/19/14,Lube Oil,10,mg/L,,
+Everett_04,EVE-04-NG-140408,4/8/14,Lube Oil,3.3,mg/L,,
+Everett_04,EVE-04-NG-140417,4/17/14,Lube Oil,8.2,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Magnesium,0.87,mg/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,Magnesium,0.77,mg/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,Magnesium,0.96,mg/l,,
+Everett_04,EVE-04-NC-140924,9/24/14,Magnesium,0.65,mg/l,,
+Everett_04,EVE-04-NC-140107,1/8/14,Naphthalene,0.026,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Naphthalene,0.015,ug/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Naphthalene,0.015,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Naphthalene,0.014,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Naphthalene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140924,9/24/14,Naphthalene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140508,5/9/14,Nitrate + Nitrite,0.35,mg/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,Nitrate + Nitrite,0.33,mg/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,Nitrate + Nitrite,0.15,mg/l,,
+Everett_04,EVE-04-NC-140924,9/24/14,Nitrate + Nitrite,0.89,mg/l,,
+Everett_04,EVE-04-NC-140107,1/8/14,Nitrate-Nitrite as N,0.39,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Nitrate-Nitrite as N,0.202,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Nitrate-Nitrite as N,0.149,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Nitrate-Nitrite as N,0.572,mg/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,"NITROGEN, KJELDAHL, TOTAL",1.4,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,"NITROGEN, KJELDAHL, TOTAL",1.5,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,"NITROGEN, KJELDAHL, TOTAL",0.77,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,"NITROGEN, KJELDAHL, TOTAL",1.3,mg/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,Ortho-Phosphate,0.01,mg/L,U,U
+Everett_04,EVE-04-NC-140129,1/29/14,Ortho-Phosphate,0.01,mg/L,UJ,UJ
+Everett_04,EVE-04-NC-140317,3/16/14,Ortho-Phosphate,0.01,mg/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,Ortho-Phosphate,0.018,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Ortho-Phosphate,0.01,mg/L,U,U
+Everett_04,EVE-04-NC-140723,7/23/14,Ortho-Phosphate,0.016,mg/l,,
+Everett_04,EVE-04-NC-140924,9/24/14,Ortho-Phosphate,0.005,mg/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.57,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",3.57,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.01,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.66,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",4.1,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",0.65,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",3.74,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",3.74,mg/L,,
+Everett_04,EVE-04-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",3.35,mg/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",2.81,mg/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",11.86,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",6.67,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",5.18,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",8.1,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",5.2,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",3.25,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",21.63,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",21.63,mg/L,,
+Everett_04,EVE-04-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",36.89,mg/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",36.05,mg/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.46,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",3.13,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.67,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.11,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.11,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.87,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.46,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.46,mg/L,,
+Everett_04,EVE-04-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.68,mg/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",1.28,mg/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140317,3/16/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",0.2,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+Everett_04,EVE-04-NC-140508,5/9/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",64.73,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",59.22,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",32.59,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",60.67,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",28.99,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",48.97,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",7.9,mg/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",,mg/L,,U
+Everett_04,EVE-04-NC-140107,1/8/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",15.36,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",8.64,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",3.67,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",3.38,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",2.38,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",3.66,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",18.28,mg/L,,
+Everett_04,EVE-04-NC-140613,6/13/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",18.28,mg/L,,
+Everett_04,EVE-04-NC-140723,7/23/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",17.35,mg/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",9.47,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,pH,6.44,unit,,
+Everett_04,EVE-04-NC-140613,6/13/14,pH,6.06,unit,,
+Everett_04,EVE-04-NC-140723,7/23/14,pH,6.16,unit,,
+Everett_04,EVE-04-NC-140924,9/24/14,pH,6.21,unit,,
+Everett_04,EVE-04-NC-140107,1/8/14,Phenanthrene,0.15,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Phenanthrene,0.043,ug/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Phenanthrene,0.057,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Phenanthrene,0.038,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Phenanthrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Phenanthrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Phenanthrene,0.1,ug/l,,UR
+Everett_04,EVE-04-NC-140924,9/24/14,Phenanthrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140107,1/8/14,Pyrene,0.38,ug/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Pyrene,0.1,ug/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Pyrene,0.16,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Pyrene,0.083,ug/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140613,6/13/14,Pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140723,7/23/14,Pyrene,0.1,ug/l,,URX
+Everett_04,EVE-04-NC-140924,9/24/14,Pyrene,0.1,ug/l,,U
+Everett_04,EVE-04-NC-140508,5/9/14,Total Nitrogen (TKN),4.29,mg/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,Total Nitrogen (TKN),2.95,mg/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,Total Nitrogen (TKN),11.2,mg/l,,X
+Everett_04,EVE-04-NC-140924,9/24/14,Total Nitrogen (TKN),1.38,mg/l,,D
+Everett_04,EVE-04-NC-140107,1/8/14,Total Phosphorus,0.129,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Total Phosphorus,0.0932,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Total Phosphorus,0.0533,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Total Phosphorus,0.237,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Total Phosphorus,0.0671,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Total Phosphorus,0.078,mg/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,Total Phosphorus,0.114,mg/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,Total Phosphorus,0.122,mg/l,,N
+Everett_04,EVE-04-NC-140924,9/24/14,Total Phosphorus,0.098,mg/l,,
+Everett_04,EVE-04-NC-140107,1/8/14,Total Suspended Solids,89,mg/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Total Suspended Solids,70,mg/L,,
+Everett_04,EVE-04-NC-140317,3/16/14,Total Suspended Solids,43,mg/L,,
+Everett_04,EVE-04-NC-140408,4/9/14,Total Suspended Solids,55,mg/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Total Suspended Solids,36,mg/L,,
+Everett_04,EVE-04-NC-140508,5/9/14,Total Suspended Solids,52,mg/l,,
+Everett_04,EVE-04-NC-140613,6/13/14,Total Suspended Solids,38,mg/l,,
+Everett_04,EVE-04-NC-140723,7/23/14,Total Suspended Solids,62,mg/l,,
+Everett_04,EVE-04-NC-140924,9/24/14,Total Suspended Solids,43,mg/l,,
+Everett_04,EVE-04-NC-140107,1/8/14,Zinc,83.3,ug/L,,
+Everett_04,EVE-04-NC-140107,1/8/14,Zinc,224,ug/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Zinc,184,ug/L,,
+Everett_04,EVE-04-NC-140129,1/29/14,Zinc,85.6,ug/L,J,J
+Everett_04,EVE-04-NC-140317,3/16/14,Zinc,84.3,ug/L,J,
+Everett_04,EVE-04-NC-140317,3/16/14,Zinc,40.6,ug/L,,J
+Everett_04,EVE-04-NC-140408,4/9/14,Zinc,91.4,ug/L,,J
+Everett_04,EVE-04-NC-140408,4/9/14,Zinc,191,ug/L,,
+Everett_04,EVE-04-NC-140422,4/22/14,Zinc,64.5,ug/L,,J
+Everett_04,EVE-04-NC-140422,4/22/14,Zinc,121,ug/L,,
+Everett_04,EVE-04-NC-140723,7/23/14,Zinc,181,ug/L,,
+Everett_04,EVE-04-NC-140924,9/24/14,Zinc,148,ug/L,,
+SR9_01,SR09 01-WY12-01 TOX,10/12/12,#2 Diesel,0.05,mg/L,U,U
+SR9_01,SR09 01-WY12-01 TOX,10/12/12,Lube Oil,12,mg/L,,
+SR9_01,SR09 01-WY12-01 TOX,10/12/12,Gasoline,0.07,mg/L,U,U
+SR9_01,SR09-01-WY11-01-01,5/21/12,Total Suspended Solids,288,mg/L,J,J
+SR9_01,SR09-01-WY11-01-01,5/21/12,"Nitrogen, Total Kjeldahl",33,mg/L,,
+SR9_01,SR09-01-WY11-01-01,5/21/12,Nitrite-Nitrate,0.241,mg/L,,
+SR9_01,SR09-01-WY11-01-01,5/21/12,Total Phosphorus,11.1,mg/L,,
+SR9_01,SR9-01-A001,10/18/12,#2 Diesel,0.05,mg/L,U,U
+SR9_01,SR9-01-A001,10/18/12,Lube Oil,0.66,mg/L,,
+SR9_01,SR9-01-A001,10/18/12,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-A001,10/18/12,Fecal Coliforms: Membrane Filter method,12,cfu/100ml,,
+SR9_01,SR9-01-A002,10/18/12,Lead,6.25,ug/L,,
+SR9_01,SR9-01-A002,10/18/12,Cadmium,0.13,ug/L,,
+SR9_01,SR9-01-A002,10/18/12,Copper,18,ug/L,,
+SR9_01,SR9-01-A002,10/18/12,Zinc,70.8,ug/L,,
+SR9_01,SR9-01-A002,10/18/12,Chloride,0.46,mg/L,,
+SR9_01,SR9-01-A002,10/18/12,Total Suspended Solids,88,mg/L,J,J
+SR9_01,SR9-01-A008,11/7/12,"Nitrogen, Total Kjeldahl",0.9,mg/L,U,JB
+SR9_01,SR9-01-A008,11/7/12,Glyphosate,25,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Cadmium,0.02,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Copper,1.4,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Zinc,22.1,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Lead,0.097,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Lead,7.24,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Cadmium,0.14,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Copper,20.2,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Zinc,79.5,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Chloride,1.71,mg/L,,
+SR9_01,SR9-01-A008,11/7/12,Hardness,6.72,mg/L,,
+SR9_01,SR9-01-A008,11/7/12,Total Suspended Solids,161,mg/L,J,J
+SR9_01,SR9-01-A008,11/7/12,Nitrite-Nitrate,0.175,mg/L,,
+SR9_01,SR9-01-A008,11/7/12,Total Phosphorus,0.0936,mg/L,,
+SR9_01,SR9-01-A008,11/7/12,Orthophosphate,0.01,mg/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Bis(2-Ethylhexyl) Phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Di-N-Octyl Phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Anthracene,0.01,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Pyrene,0.11,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Dimethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Benzo(ghi)perylene,0.097,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,"Indeno(1,2,3-cd)pyrene",0.051,ug/L,J,J
+SR9_01,SR9-01-A008,11/7/12,Benzo(b)fluoranthene,0.057,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Fluoranthene,0.057,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Benzo(k)fluoranthene,0.018,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Chrysene,0.037,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Benzo(a)pyrene,0.031,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Benzo(a)anthracene,0.01,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Diethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Di-N-Butylphthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Phenanthrene,0.03,ug/L,,
+SR9_01,SR9-01-A008,11/7/12,Butyl benzyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Fluorene,0.01,ug/L,U,U
+SR9_01,SR9-01-A008,11/7/12,Naphthalene,0.017,ug/L,J,
+SR9_01,SR9-01-A013,12/11/12,#2 Diesel,0.15,mg/L,U,U
+SR9_01,SR9-01-A013,12/11/12,Lube Oil,3.5,mg/L,,
+SR9_01,SR9-01-A013,12/11/12,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-A013,12/11/12,Fecal Coliforms: Membrane Filter method,200,cfu/100ml,,
+SR9_01,SR9-01-A019,2/21/13,#2 Diesel,0.15,mg/L,U,U
+SR9_01,SR9-01-A019,2/21/13,Lube Oil,6.6,mg/L,,
+SR9_01,SR9-01-A019,2/21/13,Gasoline,0.05,mg/L,U,U
+SR9_01,SR9-01-A019,2/21/13,Fecal Coliforms: Membrane Filter method,2400,cfu/100ml,,
+SR9_01,SR9-01-A026,3/2/13,Total Suspended Solids,117,mg/L,,J
+SR9_01,SR09-A037,3/6/13,#2 Diesel,0.15,mg/L,UJ,UJ
+SR9_01,SR09-A037,3/6/13,Lube Oil,3.9,mg/L,J,J
+SR9_01,SR09-A037,3/6/13,Gasoline,0.014,mg/L,J,JB
+SR9_01,SR9-01-A032,3/20/13,"Nitrogen, Total Kjeldahl",0.66,mg/L,J,J
+SR9_01,SR9-01-A032,3/20/13,Glyphosate,25,ug/L,U,U
+SR9_01,SR9-01-A032,3/20/13,Chloride,3.5,mg/L,,
+SR9_01,SR9-01-A032,3/20/13,Hardness,9.38,mg/L,,
+SR9_01,SR9-01-A032,3/20/13,Total Suspended Solids,121,mg/L,,J
+SR9_01,SR9-01-A032,3/20/13,Nitrite-Nitrate,0.111,mg/L,,
+SR9_01,SR9-01-A032,3/20/13,Total Phosphorus,0.137,mg/L,,
+SR9_01,SR9-01-A032,3/20/13,Bis(2-Ethylhexyl) Phthalate,3.5,ug/L,,J
+SR9_01,SR9-01-A032,3/20/13,Di-N-Octyl Phthalate,0.47,ug/L,,NJ
+SR9_01,SR9-01-A032,3/20/13,Anthracene,0.0082,ug/L,J,J
+SR9_01,SR9-01-A032,3/20/13,Pyrene,0.18,ug/L,,
+SR9_01,SR9-01-A032,3/20/13,Dimethyl phthalate,0.2,ug/L,UJ,UJ
+SR9_01,SR9-01-A032,3/20/13,Benzo(ghi)perylene,0.11,ug/L,,
+SR9_01,SR9-01-A032,3/20/13,"Indeno(1,2,3-cd)pyrene",0.029,ug/L,,
+SR9_01,SR9-01-A032,3/20/13,Benzo(b)fluoranthene,0.047,ug/L,,
+SR9_01,SR9-01-A032,3/20/13,Fluoranthene,0.11,ug/L,,
+SR9_01,SR9-01-A032,3/20/13,Benzo(k)fluoranthene,0.03,ug/L,,
+SR9_01,SR9-01-A032,3/20/13,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-A032,3/20/13,Chrysene,0.098,ug/L,,
+SR9_01,SR9-01-A032,3/20/13,Benzo(a)pyrene,0.032,ug/L,,NJ
+SR9_01,SR9-01-A032,3/20/13,"Dibenzo(a,h)anthracene",0.012,ug/L,U,U
+SR9_01,SR9-01-A032,3/20/13,Benzo(a)anthracene,0.025,ug/L,,NJ
+SR9_01,SR9-01-A032,3/20/13,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-A032,3/20/13,Diethyl phthalate,0.23,ug/L,J,NJ
+SR9_01,SR9-01-A032,3/20/13,Di-N-Butylphthalate,0.3,ug/L,U,U
+SR9_01,SR9-01-A032,3/20/13,Phenanthrene,0.057,ug/L,,
+SR9_01,SR9-01-A032,3/20/13,Butyl benzyl phthalate,0.25,ug/L,UJ,UJ
+SR9_01,SR9-01-A032,3/20/13,Fluorene,0.01,ug/L,UJ,UJ
+SR9_01,SR9-01-A032,3/20/13,Naphthalene,0.018,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,"Nitrogen, Total Kjeldahl",1.6,mg/L,,B
+SR9_01,SR9-01-A044,4/5/13,Glyphosate,25,ug/L,U,U
+SR9_01,SR9-01-A044,4/5/13,Chloride,64.3,mg/L,,
+SR9_01,SR9-01-A044,4/5/13,Hardness,89.4,mg/L,,
+SR9_01,SR9-01-A044,4/5/13,Total Suspended Solids,85,mg/L,,
+SR9_01,SR9-01-A044,4/5/13,Nitrite-Nitrate,0.228,mg/L,,
+SR9_01,SR9-01-A044,4/5/13,Total Phosphorus,0.141,mg/L,,
+SR9_01,SR9-01-A044,4/5/13,Bis(2-Ethylhexyl) Phthalate,4.7,ug/L,,J
+SR9_01,SR9-01-A044,4/5/13,Di-N-Octyl Phthalate,0.62,ug/L,UJ,UJ
+SR9_01,SR9-01-A044,4/5/13,Anthracene,0.011,ug/L,U,U
+SR9_01,SR9-01-A044,4/5/13,Pyrene,0.16,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,Dimethyl phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-A044,4/5/13,Benzo(ghi)perylene,0.093,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,"Indeno(1,2,3-cd)pyrene",0.023,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,Benzo(b)fluoranthene,0.041,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,Fluoranthene,0.096,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,Benzo(k)fluoranthene,0.026,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,Acenaphthylene,0.011,ug/L,U,U
+SR9_01,SR9-01-A044,4/5/13,Chrysene,0.097,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,Benzo(a)pyrene,0.031,ug/L,,NJ
+SR9_01,SR9-01-A044,4/5/13,"Dibenzo(a,h)anthracene",0.012,ug/L,,NJ
+SR9_01,SR9-01-A044,4/5/13,Benzo(a)anthracene,0.023,ug/L,J,NJ
+SR9_01,SR9-01-A044,4/5/13,Acenaphthene,0.011,ug/L,U,U
+SR9_01,SR9-01-A044,4/5/13,Diethyl phthalate,1.1,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,Di-N-Butylphthalate,0.34,ug/L,U,U
+SR9_01,SR9-01-A044,4/5/13,Phenanthrene,0.058,ug/L,,
+SR9_01,SR9-01-A044,4/5/13,Butyl benzyl phthalate,0.27,ug/L,UJ,UJ
+SR9_01,SR9-01-A044,4/5/13,Fluorene,0.011,ug/L,U,U
+SR9_01,SR9-01-A044,4/5/13,Naphthalene,0.025,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,"Nitrogen, Total Kjeldahl",1.2,mg/L,,
+SR9_01,SR9-01-A050,4/12/13,Glyphosate,25,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Chloride,6.98,mg/L,,
+SR9_01,SR9-01-A050,4/12/13,Hardness,16.7,mg/L,,
+SR9_01,SR9-01-A050,4/12/13,Total Suspended Solids,46,mg/L,,
+SR9_01,SR9-01-A050,4/12/13,Nitrite-Nitrate,0.27,mg/L,,
+SR9_01,SR9-01-A050,4/12/13,Total Phosphorus,0.1,mg/L,J,
+SR9_01,SR9-01-A050,4/12/13,Benzo(k)fluoranthene,0.03,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Chrysene,0.087,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,Benzo(a)pyrene,0.031,ug/L,J,NJ
+SR9_01,SR9-01-A050,4/12/13,"Dibenzo(a,h)anthracene",0.012,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Benzo(a)anthracene,0.028,ug/L,J,NJ
+SR9_01,SR9-01-A050,4/12/13,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Diethyl phthalate,0.27,ug/L,J,
+SR9_01,SR9-01-A050,4/12/13,Di-N-Butylphthalate,0.38,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Phenanthrene,0.062,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,Butyl benzyl phthalate,0.28,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Fluorene,0.01,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Naphthalene,0.031,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,Bis(2-Ethylhexyl) Phthalate,3.8,ug/L,,J
+SR9_01,SR9-01-A050,4/12/13,Di-N-Octyl Phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Anthracene,0.014,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,Pyrene,0.18,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,Dimethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-A050,4/12/13,Benzo(ghi)perylene,0.1,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,"Indeno(1,2,3-cd)pyrene",0.026,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,Benzo(b)fluoranthene,0.038,ug/L,,
+SR9_01,SR9-01-A050,4/12/13,Fluoranthene,0.12,ug/L,J,J
+SR9_01,SR9-01-A056,4/19/13,"Nitrogen, Total Kjeldahl",0.89,mg/L,J,J
+SR9_01,SR9-01-A056,4/19/13,Glyphosate,58,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,Chloride,2.99,mg/L,,
+SR9_01,SR9-01-A056,4/19/13,Hardness,7.79,mg/L,,
+SR9_01,SR9-01-A056,4/19/13,Total Suspended Solids,37,mg/L,,
+SR9_01,SR9-01-A056,4/19/13,Nitrite-Nitrate,0.212,mg/L,,
+SR9_01,SR9-01-A056,4/19/13,Total Phosphorus,0.0647,mg/L,,
+SR9_01,SR9-01-A056,4/19/13,Bis(2-Ethylhexyl) Phthalate,3,ug/L,,J
+SR9_01,SR9-01-A056,4/19/13,Di-N-Octyl Phthalate,0.51,ug/L,UJ,UJ
+SR9_01,SR9-01-A056,4/19/13,Anthracene,0.01,ug/L,U,U
+SR9_01,SR9-01-A056,4/19/13,Pyrene,0.12,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,Dimethyl phthalate,0.2,ug/L,UJ,UJ
+SR9_01,SR9-01-A056,4/19/13,Benzo(ghi)perylene,0.064,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,"Indeno(1,2,3-cd)pyrene",0.017,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,Benzo(b)fluoranthene,0.032,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,Fluoranthene,0.066,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,Benzo(k)fluoranthene,0.018,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-A056,4/19/13,Chrysene,0.061,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,Benzo(a)pyrene,0.024,ug/L,,NJ
+SR9_01,SR9-01-A056,4/19/13,"Dibenzo(a,h)anthracene",0.0091,ug/L,J,J
+SR9_01,SR9-01-A056,4/19/13,Benzo(a)anthracene,0.021,ug/L,,NJ
+SR9_01,SR9-01-A056,4/19/13,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-A056,4/19/13,Diethyl phthalate,0.25,ug/L,J,NJ
+SR9_01,SR9-01-A056,4/19/13,Di-N-Butylphthalate,0.26,ug/L,U,U
+SR9_01,SR9-01-A056,4/19/13,Phenanthrene,0.034,ug/L,,
+SR9_01,SR9-01-A056,4/19/13,Butyl benzyl phthalate,0.22,ug/L,UJ,UJ
+SR9_01,SR9-01-A056,4/19/13,Fluorene,0.01,ug/L,UJ,UJ
+SR9_01,SR9-01-A056,4/19/13,Naphthalene,0.015,ug/L,,
+SR9_01,SR9-01-A061,5/21/13,#2 Diesel,0.15,mg/L,UJ,U
+SR9_01,SR9-01-A061,5/21/13,Lube Oil,3.8,mg/L,J,
+SR9_01,SR9-01-A061,5/21/13,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-A061,5/21/13,Fecal Coliforms: Membrane Filter method,2900,cfu/100ml,,
+SR9_01,SR9-01-NG-131118,11/18/13,#2 Diesel,0.15,mg/L,UJ,U
+SR9_01,SR9-01-NG-140107,1/7/14,#2 Diesel,0.15,mg/L,U,U
+SR9_01,SR9-01-NG-140218,2/18/14,#2 Diesel,0.15,mg/L,U,U
+SR9_01,SR9-01-NG-140303,3/3/14,#2 Diesel,0.15,mg/L,U,U
+SR9_01,SR9-01-NG-140319,3/19/14,#2 Diesel,0.16,mg/L,U,U
+SR9_01,SR9-01-NG-140408,4/8/14,#2 Diesel,0.16,mg/L,U,U
+SR9_01,SR9-01-NG-140417,4/17/14,#2 Diesel,0.15,mg/L,U,U
+SR9_01,SR9-01-NC-140129,1/29/14,Acenaphthene,0.012,ug/L,U,U
+SR9_01,SR9-01-NC-140317,3/17/14,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Acenaphthene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Acenaphthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Acenaphthene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Acenaphthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Acenaphthene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Acenaphthene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Acenaphthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Acenaphthylene,0.012,ug/L,U,U
+SR9_01,SR9-01-NC-140317,3/17/14,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Acenaphthylene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Acenaphthylene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Acenaphthylene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Acenaphthylene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Acenaphthylene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Acenaphthylene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Acenaphthylene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Anthracene,0.012,ug/L,U,U
+SR9_01,SR9-01-NC-140317,3/17/14,Anthracene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Anthracene,0.02,ug/L,NJ,NJ
+SR9_01,SR9-01-NC-140408,4/8/14,Anthracene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,Anthracene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Anthracene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Anthracene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Anthracene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Anthracene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Benz[a]anthracene,0.085,ug/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Benz[a]anthracene,0.023,ug/L,,U
+SR9_01,SR9-01-NC-140319,3/19/14,Benz[a]anthracene,0.044,ug/L,,U
+SR9_01,SR9-01-NC-140408,4/8/14,Benz[a]anthracene,0.013,ug/L,,NJ
+SR9_01,SR9-01-NC-140422,4/22/14,Benz[a]anthracene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Benz[a]anthracene,0.0088,ug/L,NJ,NJ
+SR9_01,SR9-01-NC-140508,5/8/14,Benzo(a)anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Benzo(a)anthracene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Benzo(a)anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Benzo(a)anthracene,0.1,ug/l,,URX
+SR9_01,SR9-01-NC-140813,8/13/14,Benzo(a)anthracene,0.1,ug/l,,NUX
+SR9_01,SR9-01-NC-140924,9/24/14,Benzo(a)anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Benzo(a)pyrene,0.054,ug/L,NJ,NJ
+SR9_01,SR9-01-NC-140317,3/17/14,Benzo(a)pyrene,0.027,ug/L,NJ,NJ
+SR9_01,SR9-01-NC-140319,3/19/14,Benzo(a)pyrene,0.043,ug/L,NJ,NJ
+SR9_01,SR9-01-NC-140408,4/8/14,Benzo(a)pyrene,0.017,ug/L,,NJ
+SR9_01,SR9-01-NC-140422,4/22/14,Benzo(a)pyrene,0.02,ug/L,NJ,NJ
+SR9_01,SR9-01-NC-140423,4/23/14,Benzo(a)pyrene,0.012,ug/L,NJ,NJ
+SR9_01,SR9-01-NC-140508,5/8/14,Benzo(a)pyrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Benzo(a)pyrene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Benzo(a)pyrene,0.1,ug/l,Benzo(a)pyrene was below the acceptable level in the Blank Spike.  The Blank Spike Duplicate was within the acceptable level.  Benzo(a)pyrene was not detected in either sample.,UN
+SR9_01,SR9-01-NC-140723,7/23/14,Benzo(a)pyrene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Benzo(a)pyrene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Benzo(a)pyrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Benzo(b)fluoranthene,0.1,ug/L,J,J
+SR9_01,SR9-01-NC-140317,3/17/14,Benzo(b)fluoranthene,0.032,ug/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Benzo(b)fluoranthene,0.068,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Benzo(b)fluoranthene,0.023,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Benzo(b)fluoranthene,0.027,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Benzo(b)fluoranthene,0.015,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Benzo(b)fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Benzo(b)fluoranthene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Benzo(b)fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Benzo(b)fluoranthene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Benzo(b)fluoranthene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Benzo(b)fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Benzo(ghi)perylene,0.16,ug/L,J,J
+SR9_01,SR9-01-NC-140317,3/17/14,Benzo(ghi)perylene,0.066,ug/L,,J
+SR9_01,SR9-01-NC-140319,3/19/14,Benzo(ghi)perylene,0.13,ug/L,,J
+SR9_01,SR9-01-NC-140408,4/8/14,Benzo(ghi)perylene,0.049,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Benzo(ghi)perylene,0.064,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Benzo(ghi)perylene,0.036,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Benzo(ghi)perylene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Benzo(ghi)perylene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Benzo(ghi)perylene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Benzo(ghi)perylene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Benzo(ghi)perylene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Benzo(ghi)perylene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Benzo(k)fluoranthene,0.059,ug/L,UJ,UJ
+SR9_01,SR9-01-NC-140317,3/17/14,Benzo(k)fluoranthene,0.018,ug/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Benzo(k)fluoranthene,0.028,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Benzo(k)fluoranthene,0.0086,ug/L,J,J
+SR9_01,SR9-01-NC-140422,4/22/14,Benzo(k)fluoranthene,0.011,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Benzo(k)fluoranthene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Benzo(k)fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Benzo(k)fluoranthene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Benzo(k)fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Benzo(k)fluoranthene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Benzo(k)fluoranthene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Benzo(k)fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Bis(2-Ethylhexyl) Phthalate,2.2,ug/L,J,J
+SR9_01,SR9-01-NC-140317,3/17/14,Bis(2-Ethylhexyl) Phthalate,2.5,ug/L,,U
+SR9_01,SR9-01-NC-140319,3/19/14,Bis(2-Ethylhexyl) Phthalate,3.7,ug/L,,J
+SR9_01,SR9-01-NC-140408,4/8/14,Bis(2-Ethylhexyl) Phthalate,2.1,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Bis(2-Ethylhexyl) Phthalate,1.7,ug/L,U,UJ
+SR9_01,SR9-01-NC-140423,4/23/14,Bis(2-Ethylhexyl) Phthalate,1.1,ug/L,U,UJ
+SR9_01,SR9-01-NC-140508,5/8/14,bis(2-Ethylhexyl)phthalat,3.64,ug/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,bis(2-Ethylhexyl)phthalat,2.6,ug/l,,R
+SR9_01,SR9-01-NC-140613,6/13/14,bis(2-Ethylhexyl)phthalat,1.26,ug/l,,
+SR9_01,SR9-01-NC-140723,7/23/14,bis(2-Ethylhexyl)phthalat,4,ug/l,,RXB
+SR9_01,SR9-01-NC-140813,8/13/14,bis(2-Ethylhexyl)phthalat,3.77,ug/l,,N
+SR9_01,SR9-01-NC-140924,9/24/14,bis(2-Ethylhexyl)phthalat,3.59,ug/l,,
+SR9_01,SR9-01-NC-140129,1/29/14,Butyl benzyl phthalate,0.59,ug/L,U,U
+SR9_01,SR9-01-NC-140317,3/17/14,Butyl benzyl phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Butyl benzyl phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Butyl benzyl phthalate,0.22,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Butyl benzyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Butyl benzyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Butylbenzylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Butylbenzylphthalate,1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Butylbenzylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Butylbenzylphthalate,1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Butylbenzylphthalate,1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Butylbenzylphthalate,1,ug/l,,U
+SR9_01,SR09-NC-140107,1/7/14,Cadmium,0.1,ug/L,U,U
+SR9_01,SR09-NC-140107,1/7/14,Cadmium,0.146,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Cadmium,0.1,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Cadmium,0.1,ug/L,U,UJ
+SR9_01,SR9-01-NC-140723,7/23/14,Cadmium,0.09,ug/L,,
+SR9_01,SR9-01-NC-140813,8/13/14,Cadmium,0.081,ug/L,,
+SR9_01,SR9-01-NC-140924,9/24/14,Cadmium,0.064,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Calcium,1.9,mg/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,Calcium,3.4,mg/l,,
+SR9_01,SR9-01-NC-140613,6/13/14,Calcium,1.7,mg/l,,
+SR9_01,SR9-01-NC-140723,7/23/14,Calcium,1.8,mg/l,,
+SR9_01,SR9-01-NC-140813,8/13/14,Calcium,1.9,mg/l,,
+SR9_01,SR9-01-NC-140924,9/24/14,Calcium,1.8,mg/l,,
+SR9_01,SR09-NC-140107,1/7/14,Chloride,5.54,mg/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Chloride,4,mg/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Chloride,5.03,mg/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Chloride,1.77,mg/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Chloride,1.74,mg/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Chloride,3.07,mg/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Chloride,1.78,mg/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,Chloride,3.12,mg/l,,D
+SR9_01,SR9-01-NC-140613,6/13/14,Chloride,0.84,mg/l,,
+SR9_01,SR9-01-NC-140723,7/23/14,Chloride,0.77,mg/l,,
+SR9_01,SR9-01-NC-140813,8/13/14,Chloride,0.78,mg/l,,
+SR9_01,SR9-01-NC-140924,9/24/14,Chloride,0.73,mg/l,,
+SR9_01,SR9-01-NC-140129,1/29/14,Chrysene,0.069,ug/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Chrysene,0.038,ug/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Chrysene,0.089,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Chrysene,0.033,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Chrysene,0.043,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Chrysene,0.023,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Chrysene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Chrysene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Chrysene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Chrysene,0.1,ug/l,,URX
+SR9_01,SR9-01-NC-140813,8/13/14,Chrysene,0.1,ug/l,,NUX
+SR9_01,SR9-01-NC-140924,9/24/14,Chrysene,0.1,ug/l,,U
+SR9_01,SR09-NC-140107,1/7/14,Copper,3.47,ug/L,,
+SR9_01,SR09-NC-140107,1/7/14,Copper,26.1,ug/L,,
+SR9_01,SR9-01-NC-140129,1/29/14,Copper,3.5,ug/L,J,J
+SR9_01,SR9-01-NC-140129,1/29/14,Copper,16.6,ug/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Copper,2.37,ug/L,,J
+SR9_01,SR9-01-NC-140317,3/17/14,Copper,9.43,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Copper,4.73,ug/L,,J
+SR9_01,SR9-01-NC-140408,4/8/14,Copper,14,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Copper,5.82,ug/L,,J
+SR9_01,SR9-01-NC-140422,4/22/14,Copper,10.9,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Copper,15.2,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Copper,7.23,ug/L,,J
+SR9_01,SR9-01-NC-140723,7/23/14,Copper,18.5,ug/L,,
+SR9_01,SR9-01-NC-140813,8/13/14,Copper,17,ug/L,,
+SR9_01,SR9-01-NC-140924,9/24/14,Copper,14.2,ug/L,,
+SR9_01,SR9-01-NC-140129,1/29/14,"Dibenzo(a,h)anthracene",0.059,ug/L,U,U
+SR9_01,SR9-01-NC-140317,3/17/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,"Dibenzo(a,h)anthracene",0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Dibenzo(ah)anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Dibenzo(ah)anthracene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Dibenzo(ah)anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Dibenzo(ah)anthracene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Dibenzo(ah)anthracene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Dibenzo(ah)anthracene,0.1,ug/l,,U
+SR9_01,SR9-01-NG-140508,5/8/14,Diesel,720,ug/l,,Z
+SR9_01,SR9-01-NG140523,5/23/14,Diesel,1500,ug/l,,"D,F"
+SR9_01,SR9-01-NG-140528,5/28/14,Diesel,1000,ug/l,,
+SR9_01,SR9-01-NG-140613,6/13/14,Diesel,1200,ug/l,,
+SR9_01,SR9-01-NG-140628,6/28/14,Diesel,1200,ug/l,,DH
+SR9_01,SR9-01-NG-140723,7/23/14,Diesel,760,ug/l,,
+SR9_01,SR9-01-NG-140918,9/18/14,Diesel,1600,ug/l,,
+SR9_01,SR9-01-NC-140129,1/29/14,Diethyl phthalate,0.24,ug/L,UJ,UJ
+SR9_01,SR9-01-NC-140317,3/17/14,Diethyl phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Diethyl phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Diethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,Diethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Diethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Diethylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Diethylphthalate,1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Diethylphthalate,1,ug/l,Diethylphthalate was below the acceptable level in the Blank Spike.  The Blank Spike Duplicate value was within the limits.  The RPD was also above the acceptable limit.  Diethylphthalate was not detected in either sample.,UN
+SR9_01,SR9-01-NC-140723,7/23/14,Diethylphthalate,1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Diethylphthalate,1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Diethylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Dimethyl phthalate,0.24,ug/L,UJ,UJ
+SR9_01,SR9-01-NC-140317,3/17/14,Dimethyl phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Dimethyl phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Dimethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,Dimethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Dimethyl phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Dimethylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Dimethylphthalate,1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Dimethylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Dimethylphthalate,1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Dimethylphthalate,1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Dimethylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Di-N-Butylphthalate,0.24,ug/L,U,U
+SR9_01,SR9-01-NC-140317,3/17/14,Di-N-Butylphthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Di-N-Butylphthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Di-N-Butylphthalate,0.31,ug/L,,U
+SR9_01,SR9-01-NC-140422,4/22/14,Di-N-Butylphthalate,0.35,ug/L,,U
+SR9_01,SR9-01-NC-140423,4/23/14,Di-N-Butylphthalate,0.29,ug/L,,U
+SR9_01,SR9-01-NC-140508,5/8/14,Di-n-butylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Di-n-butylphthalate,1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Di-n-butylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Di-n-butylphthalate,1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Di-n-butylphthalate,1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Di-n-butylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Di-N-Octyl Phthalate,0.59,ug/L,UJ,UJ
+SR9_01,SR9-01-NC-140317,3/17/14,Di-N-Octyl Phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Di-N-Octyl Phthalate,0.21,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Di-N-Octyl Phthalate,0.2,ug/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,Di-N-Octyl Phthalate,0.2,ug/L,U,UJ
+SR9_01,SR9-01-NC-140423,4/23/14,Di-N-Octyl Phthalate,0.2,ug/L,U,UJ
+SR9_01,SR9-01-NC-140508,5/8/14,Di-n-octylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Di-n-octylphthalate,1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Di-n-octylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Di-n-octylphthalate,1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Di-n-octylphthalate,1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Di-n-octylphthalate,1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Dissolved Cadmium,0.039,ug/L,,
+SR9_01,SR9-01-NC-140813,8/13/14,Dissolved Cadmium,0.043,ug/L,,
+SR9_01,SR9-01-NC-140924,9/24/14,Dissolved Cadmium,0.041,ug/L,,
+SR9_01,SR9-01-NC-140723,7/23/14,Dissolved Copper,7.02,ug/L,,
+SR9_01,SR9-01-NC-140813,8/13/14,Dissolved Copper,7.62,ug/L,,
+SR9_01,SR9-01-NC-140924,9/24/14,Dissolved Copper,5.49,ug/L,,
+SR9_01,SR9-01-NC-140723,7/23/14,Dissolved Lead,0.085,ug/L,,
+SR9_01,SR9-01-NC-140813,8/13/14,Dissolved Lead,0.136,ug/L,,
+SR9_01,SR9-01-NC-140924,9/24/14,Dissolved Lead,0.119,ug/L,,
+SR9_01,SR9-01-NC-140723,7/23/14,Dissolved Zinc,26.1,ug/L,,
+SR9_01,SR9-01-NC-140813,8/13/14,Dissolved Zinc,34,ug/L,,
+SR9_01,SR9-01-NC-140924,9/24/14,Dissolved Zinc,26.3,ug/L,,
+SR9_01,SR9-01-DG-140523,5/23/14,Fecal Coliform,110000,CFU/100mL,,
+SR9_01,SR9-01-NG-140319,3/19/14,Fecal Coliform,400,CFU/100mL,J,
+SR9_01,SR9-01-NG-140408,4/8/14,Fecal Coliform,1400,CFU/100mL,,
+SR9_01,SR9-01-NG-140417,4/17/14,Fecal Coliform,200,CFU/100mL,,
+SR9_01,SR9-01-NG-140508,5/8/14,Fecal Coliform,1300,CFU/100mL,,
+SR9_01,SR9-01-NG-140523,5/23/14,Fecal Coliform,170000,CFU/100mL,,
+SR9_01,SR9-01-NG-140528,5/28/14,Fecal Coliform,1300,CFU/100mL,,
+SR9_01,SR9-01-NG-140613,6/13/14,Fecal Coliform,600,CFU/100mL,,
+SR9_01,SR9-01-NG-140723,7/23/14,Fecal Coliform,730,CFU/100mL,,
+SR9_01,SR9-01-NG-140918,9/18/14,Fecal Coliform,5300,CFU/100mL,,
+SR9_01,SR9-01-NG-131118,11/18/13,Fecal Coliforms,360,CFU/100mL,,
+SR9_01,SR9-01-NG-140107,1/7/14,Fecal Coliforms,50,CFU/100mL,,
+SR9_01,SR9-01-NG-140218,2/18/14,Fecal Coliforms,460,CFU/100mL,,
+SR9_01,SR9-01-NG-140303,3/3/14,Fecal Coliforms,120,CFU/100mL,,
+SR9_01,SR9-01-NC-140129,1/29/14,Fluoranthene,0.092,ug/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Fluoranthene,0.071,ug/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Fluoranthene,0.13,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Fluoranthene,0.045,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Fluoranthene,0.052,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Fluoranthene,0.031,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Fluoranthene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Fluoranthene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Fluoranthene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Fluoranthene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Fluorene,0.012,ug/L,UJ,UJ
+SR9_01,SR9-01-NC-140317,3/17/14,Fluorene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Fluorene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Fluorene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,Fluorene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Fluorene,0.01,ug/L,U,U
+SR9_01,SR9-01-NC-140508,5/8/14,Fluorene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Fluorene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Fluorene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Fluorene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Fluorene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Fluorene,0.1,ug/l,,U
+SR9_01,SR9-01-NG-131118,11/18/13,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-NG-140107,1/7/14,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-NG-140218,2/18/14,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-NG-140303,3/3/14,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-NG-140319,3/19/14,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-NG-140408,4/8/14,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-NG-140417,4/17/14,Gasoline,0.07,mg/L,U,U
+SR9_01,SR9-01-NG-140508,5/8/14,Gasoline in Water,100,ug/l,,"U,R"
+SR9_01,SR9-01-NG140523,5/23/14,Gasoline in Water,100,ug/l,,U
+SR9_01,SR9-01-NG-140528,5/28/14,Gasoline in Water,100,ug/l,,U
+SR9_01,SR9-01-NG-140613,6/13/14,Gasoline in Water,100,ug/l,,U
+SR9_01,SR9-01-NG-140628,6/28/14,Gasoline in Water,456,ug/l,,Z
+SR9_01,SR9-01-NG-140723,7/23/14,Gasoline in Water,100,ug/l,,U
+SR9_01,SR9-01-NG-140918,9/18/14,Gasoline in Water,250,ug/l,,U
+SR9_01,SR9-01-NC-140107,1/7/14,Glyphosate,,ug/L,U,U
+SR9_01,SR9-01-NC-140129,1/29/14,Glyphosate,,ug/L,U,U
+SR9_01,SR9-01-NC-140317,3/17/14,Glyphosate,,ug/L,U,U
+SR9_01,SR9-01-NC-140319,3/19/14,Glyphosate,,ug/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Glyphosate,18,ug/L,J,J
+SR9_01,SR9-01-NC-140508,5/8/14,Glyphosate,10,ug/L,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Glyphosate,10,ug/L,,U
+SR9_01,SR9-01-NC-140613,6/13/14,Glyphosate,10,ug/L,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Glyphosate,10,ug/L,,U
+SR9_01,SR9-01-NC-140813,8/13/14,Glyphosate,10,ug/L,,U
+SR9_01,SR9-01-NC-140924,9/24/14,Glyphosate,10,ug/L,,U
+SR9_01,SR9-01-NC-140508,5/8/14,Hardness (CaCO3),6.8,mg/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,Hardness (CaCO3),11,mg/l,,
+SR9_01,SR9-01-NC-140613,6/13/14,Hardness (CaCO3),5.7,mg/l,,
+SR9_01,SR9-01-NC-140723,7/23/14,Hardness (CaCO3),6.7,mg/l,,
+SR9_01,SR9-01-NC-140813,8/13/14,Hardness (CaCO3),6.9,mg/l,,
+SR9_01,SR9-01-NC-140924,9/24/14,Hardness (CaCO3),5.9,mg/l,,
+SR9_01,SR09-NC-140107,1/7/14,Hardness as CaCO3,11.4,mg/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Hardness as CaCO3,6.19,mg/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Hardness as CaCO3,9.82,mg/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Hardness as CaCO3,5.31,mg/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Hardness as CaCO3,3.99,mg/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Hardness as CaCO3,9.43,mg/L,,
+SR9_01,SR9-01-NG-140508,5/8/14,Heavy Oil,1400,ug/l,,F
+SR9_01,SR9-01-NG140523,5/23/14,Heavy Oil,4300,ug/l,,"D,F"
+SR9_01,SR9-01-NG-140528,5/28/14,Heavy Oil,3200,ug/l,,
+SR9_01,SR9-01-NG-140613,6/13/14,Heavy Oil,2500,ug/l,,
+SR9_01,SR9-01-NG-140628,6/28/14,Heavy Oil,2700,ug/l,,DF
+SR9_01,SR9-01-NG-140723,7/23/14,Heavy Oil,1600,ug/l,,
+SR9_01,SR9-01-NG-140918,9/18/14,Heavy Oil,5200,ug/l,,
+SR9_01,SR9-01-NC-140129,1/29/14,"Indeno(1,2,3-cd)pyrene",0.094,ug/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,"Indeno(1,2,3-cd)pyrene",0.026,ug/L,,U
+SR9_01,SR9-01-NC-140319,3/19/14,"Indeno(1,2,3-cd)pyrene",0.041,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,"Indeno(1,2,3-cd)pyrene",0.014,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,"Indeno(1,2,3-cd)pyrene",0.017,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,"Indeno(1,2,3-cd)pyrene",0.011,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Indeno(123-cd)pyrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Indeno(123-cd)pyrene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Indeno(123-cd)pyrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Indeno(123-cd)pyrene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Indeno(123-cd)pyrene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Indeno(123-cd)pyrene,0.1,ug/l,,U
+SR9_01,SR09-NC-140107,1/7/14,Lead,7.64,ug/L,,
+SR9_01,SR09-NC-140107,1/7/14,Lead,0.12,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Lead,2.5,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Lead,0.13,ug/L,,J
+SR9_01,SR9-01-NC-140723,7/23/14,Lead,3.98,ug/L,,
+SR9_01,SR9-01-NC-140813,8/13/14,Lead,3.19,ug/L,,
+SR9_01,SR9-01-NC-140924,9/24/14,Lead,1.92,ug/L,,
+SR9_01,SR9-01-NG-131118,11/18/13,Lube Oil,5,mg/L,J,J
+SR9_01,SR9-01-NG-140107,1/7/14,Lube Oil,2.5,mg/L,,
+SR9_01,SR9-01-NG-140218,2/18/14,Lube Oil,6.2,mg/L,,
+SR9_01,SR9-01-NG-140303,3/3/14,Lube Oil,4.9,mg/L,,
+SR9_01,SR9-01-NG-140319,3/19/14,Lube Oil,3.6,mg/L,,
+SR9_01,SR9-01-NG-140408,4/8/14,Lube Oil,5.8,mg/L,,
+SR9_01,SR9-01-NG-140417,4/17/14,Lube Oil,3.1,mg/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Magnesium,0.49,mg/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,Magnesium,0.65,mg/l,,
+SR9_01,SR9-01-NC-140613,6/13/14,Magnesium,0.35,mg/l,,
+SR9_01,SR9-01-NC-140723,7/23/14,Magnesium,0.53,mg/l,,
+SR9_01,SR9-01-NC-140813,8/13/14,Magnesium,0.53,mg/l,,
+SR9_01,SR9-01-NC-140924,9/24/14,Magnesium,0.33,mg/l,,
+SR9_01,SR9-01-NC-140129,1/29/14,Naphthalene,0.026,ug/L,U,U
+SR9_01,SR9-01-NC-140317,3/17/14,Naphthalene,0.02,ug/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Naphthalene,0.024,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Naphthalene,0.019,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Naphthalene,0.017,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Naphthalene,0.019,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Naphthalene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Naphthalene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140924,9/24/14,Naphthalene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140508,5/8/14,Nitrate + Nitrite,0.14,mg/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,Nitrate + Nitrite,0.43,mg/l,,
+SR9_01,SR9-01-NC-140613,6/13/14,Nitrate + Nitrite,0.16,mg/l,"One of the matrix spikes associated with this data package for NOx was below the acceptable level.  All other QA/QC was within limits, therefore it is attributed to matrix interference.",N
+SR9_01,SR9-01-NC-140723,7/23/14,Nitrate + Nitrite,0.061,mg/l,,
+SR9_01,SR9-01-NC-140813,8/13/14,Nitrate + Nitrite,0.36,mg/l,,
+SR9_01,SR9-01-NC-140924,9/24/14,Nitrate + Nitrite,0.34,mg/l,,
+SR9_01,SR9-01-NC-140317,3/17/14,Nitrate-Nitrite as N,0.109,mg/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Nitrate-Nitrite as N,0.369,mg/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Nitrate-Nitrite as N,0.167,mg/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Nitrate-Nitrite as N,0.261,mg/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,"NITROGEN, KJELDAHL, TOTAL",1,mg/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,"NITROGEN, KJELDAHL, TOTAL",0.61,mg/L,J,B
+SR9_01,SR9-01-NC-140422,4/22/14,"NITROGEN, KJELDAHL, TOTAL",0.73,mg/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,"NITROGEN, KJELDAHL, TOTAL",1.2,mg/L,J,
+SR9_01,SR09-NC-140107,1/7/14,Ortho-Phosphate,0.01,mg/L,U,U
+SR9_01,SR9-01-NC-140129,1/29/14,Ortho-Phosphate,0.0119,mg/L,J,J
+SR9_01,SR9-01-NC-140317,3/17/14,Ortho-Phosphate,0.01,mg/L,U,U
+SR9_01,SR9-01-NC-140408,4/8/14,Ortho-Phosphate,0.01,mg/L,U,U
+SR9_01,SR9-01-NC-140422,4/22/14,Ortho-Phosphate,0.01,mg/L,U,U
+SR9_01,SR9-01-NC-140423,4/23/14,Ortho-Phosphate,0.01,mg/L,U,U
+SR9_01,SR9-01-NC-140723,7/23/14,Ortho-Phosphate,0.005,mg/l,,U
+SR9_01,SR9-01-NC-140813,8/13/14,Ortho-Phosphate,0.018,mg/l,,
+SR9_01,SR9-01-NC-140924,9/24/14,Ortho-Phosphate,0.018,mg/l,,
+SR9_01,SR9-01-NC-140107,1/7/14,"Particle/Grain Size, Phi Scale <1 (>500 um)",1.01,mg/L,,
+SR9_01,SR9-01-NC-140107,1/7/14,"Particle/Grain Size, Phi Scale >10 (<1.0 um)",9.07,mg/L,,
+SR9_01,SR9-01-NC-140107,1/7/14,"Particle/Grain Size, Phi Scale 1-2 (250-500 um)",0.9,mg/L,,
+SR9_01,SR9-01-NC-140107,1/7/14,"Particle/Grain Size, Phi Scale 2 to 3 (125-250 um)",,mg/L,U,U
+SR9_01,SR9-01-NC-140107,1/7/14,"Particle/Grain Size, Phi Scale 3 to 4 (62.5-125 um)",,mg/L,U,U
+SR9_01,SR9-01-NC-140107,1/7/14,"Particle/Grain Size, Phi Scale 4-8 (3.9-62.5 um)",58.8,mg/L,,
+SR9_01,SR9-01-NC-140107,1/7/14,"Particle/Grain Size, Phi Scale 8-10 (1.0-3.9 um)",13.12,mg/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,pH,6.53,unit,,
+SR9_01,SR9-01-NC-140523,5/23/14,pH,6.17,unit,,
+SR9_01,SR9-01-NC-140613,6/13/14,pH,6.08,unit,,
+SR9_01,SR9-01-NC-140723,7/23/14,pH,6.16,unit,,
+SR9_01,SR9-01-NC-140813,8/13/14,pH,5.89,unit,,
+SR9_01,SR9-01-NC-140924,9/24/14,pH,6.8,unit,,
+SR9_01,SR9-01-NC-140129,1/29/14,Phenanthrene,0.1,ug/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Phenanthrene,0.04,ug/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Phenanthrene,0.083,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Phenanthrene,0.036,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Phenanthrene,0.044,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Phenanthrene,0.027,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Phenanthrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Phenanthrene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Phenanthrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Phenanthrene,0.1,ug/l,,UR
+SR9_01,SR9-01-NC-140813,8/13/14,Phenanthrene,0.1,ug/l,,NU
+SR9_01,SR9-01-NC-140924,9/24/14,Phenanthrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140129,1/29/14,Pyrene,0.2,ug/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Pyrene,0.09,ug/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Pyrene,0.23,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Pyrene,0.087,ug/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Pyrene,0.09,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Pyrene,0.047,ug/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Pyrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140523,5/23/14,Pyrene,0.1,ug/l,,"U,R"
+SR9_01,SR9-01-NC-140613,6/13/14,Pyrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140723,7/23/14,Pyrene,0.1,ug/l,,URX
+SR9_01,SR9-01-NC-140813,8/13/14,Pyrene,0.1,ug/l,,NUX
+SR9_01,SR9-01-NC-140924,9/24/14,Pyrene,0.1,ug/l,,U
+SR9_01,SR9-01-NC-140508,5/8/14,Total Nitrogen (TKN),2.33,mg/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,Total Nitrogen (TKN),3.06,mg/l,,D
+SR9_01,SR9-01-NC-140613,6/13/14,Total Nitrogen (TKN),2.51,mg/l,"The result is from a dilution.  One of the matrix spikes associated with this data package for TKN was above the acceptable level.  All other QA/QC was within limits, therefore it is attributed to matrix interference.",DN
+SR9_01,SR9-01-NC-140723,7/23/14,Total Nitrogen (TKN),5.6,mg/l,,X
+SR9_01,SR9-01-NC-140813,8/13/14,Total Nitrogen (TKN),2.34,mg/l,,D
+SR9_01,SR9-01-NC-140924,9/24/14,Total Nitrogen (TKN),1.43,mg/l,,D
+SR9_01,SR09-NC-140107,1/7/14,Total Phosphorus,0.114,mg/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Total Phosphorus,0.0496,mg/L,,
+SR9_01,SR9-01-NC-140319,3/19/14,Total Phosphorus,0.104,mg/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Total Phosphorus,0.0536,mg/L,,
+SR9_01,SR9-01-NC-140422,4/22/14,Total Phosphorus,0.0335,mg/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Total Phosphorus,0.0581,mg/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Total Phosphorus,0.076,mg/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,Total Phosphorus,0.101,mg/l,,
+SR9_01,SR9-01-NC-140613,6/13/14,Total Phosphorus,0.071,mg/l,,
+SR9_01,SR9-01-NC-140723,7/23/14,Total Phosphorus,0.076,mg/l,,N
+SR9_01,SR9-01-NC-140813,8/13/14,Total Phosphorus,0.089,mg/l,,
+SR9_01,SR9-01-NC-140924,9/24/14,Total Phosphorus,0.068,mg/l,,
+SR9_01,SR09-NC-140107,1/7/14,Total Suspended Solids,88,mg/L,,
+SR9_01,SR9-01-NC-140317,3/17/14,Total Suspended Solids,40,mg/L,,J
+SR9_01,SR9-01-NC-140319,3/19/14,Total Suspended Solids,72,mg/L,,J
+SR9_01,SR9-01-NC-140422,4/22/14,Total Suspended Solids,21,mg/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Total Suspended Solids,30,mg/L,,
+SR9_01,SR9-01-NC-140508,5/8/14,Total Suspended Solids,44,mg/l,,
+SR9_01,SR9-01-NC-140523,5/23/14,Total Suspended Solids,33,mg/l,,
+SR9_01,SR9-01-NC-140613,6/13/14,Total Suspended Solids,21,mg/l,,
+SR9_01,SR9-01-NC-140723,7/23/14,Total Suspended Solids,44,mg/l,,
+SR9_01,SR9-01-NC-140813,8/13/14,Total Suspended Solids,43,mg/l,,
+SR9_01,SR9-01-NC-140924,9/24/14,Total Suspended Solids,16,mg/l,,
+SR9_01,SR09-NC-140107,1/7/14,Zinc,26.2,ug/L,,
+SR9_01,SR09-NC-140107,1/7/14,Zinc,133,ug/L,,
+SR9_01,SR9-01-NC-140129,1/29/14,Zinc,93.6,ug/L,,
+SR9_01,SR9-01-NC-140129,1/29/14,Zinc,26.3,ug/L,J,J
+SR9_01,SR9-01-NC-140317,3/17/14,Zinc,17.1,ug/L,,J
+SR9_01,SR9-01-NC-140317,3/17/14,Zinc,43.4,ug/L,J,
+SR9_01,SR9-01-NC-140408,4/8/14,Zinc,58.1,ug/L,,
+SR9_01,SR9-01-NC-140408,4/8/14,Zinc,23,ug/L,,J
+SR9_01,SR9-01-NC-140422,4/22/14,Zinc,20.3,ug/L,,J
+SR9_01,SR9-01-NC-140422,4/22/14,Zinc,37.3,ug/L,,
+SR9_01,SR9-01-NC-140423,4/23/14,Zinc,20.1,ug/L,,J
+SR9_01,SR9-01-NC-140423,4/23/14,Zinc,57.4,ug/L,,
+SR9_01,SR9-01-NC-140723,7/23/14,Zinc,48,ug/L,,
+SR9_01,SR9-01-NC-140813,8/13/14,Zinc,60.6,ug/L,,
+SR9_01,SR9-01-NC-140924,9/24/14,Zinc,51,ug/L,,

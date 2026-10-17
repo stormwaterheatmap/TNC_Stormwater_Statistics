@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Untitled</name>
+	<gx:CascadingStyle kml:id="__managed_style_20F00F776C30AD9988F4">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>402dc0fb</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_187D6B987230AD9988F4">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>402dc0fb</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_055FADA9B530AD9988F4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_187D6B987230AD9988F4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_20F00F776C30AD9988F4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="008B451F4D30AD99192C">
+		<name>MLK Street Sweep SS2</name>
+		<LookAt>
+			<longitude>-122.297053058134</longitude>
+			<latitude>47.5668981720355</latitude>
+			<altitude>41.98390802130761</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>380.4447876766426</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_055FADA9B530AD9988F4</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.2971347978268,47.56721624509419,0 -122.297137528922,47.56690286990781,0 -122.2971164090464,47.56670660010648,0 -122.2970363496282,47.56638578015306,0 -122.2970179697122,47.56634031766038,0 -122.2970415392925,47.56629814331161,0 -122.297089273828,47.56626952648066,0 -122.2971336921222,47.56623181590353,0 -122.297087368776,47.56621557746089,0 -122.2970332650541,47.56620031689131,0 -122.2969938851461,47.56615742469288,0 -122.2969594070947,47.56611004513733,0 -122.2968415298718,47.5661241443572,0 -122.2967802115136,47.5661715148136,0 -122.2967932864591,47.56626763477902,0 -122.2968245625972,47.56633168526533,0 -122.2968725472538,47.56637187437064,0 -122.296903572872,47.5665239827093,0 -122.2969446486252,47.5666869484088,0 -122.2969739963288,47.56683854906032,0 -122.2970148816411,47.5669241932912,0 -122.2971347978268,47.56721624509419,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="0DA131EEC230ADC60B5A">
+		<name>MLK Street Sweep SS3</name>
+		<LookAt>
+			<longitude>-122.2966055603428</longitude>
+			<latitude>47.56591827566147</latitude>
+			<altitude>45.1576625673712</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>252.984934023043</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_055FADA9B530AD9988F4</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.2965818635706,47.56614069769891,0 -122.2966305931704,47.5660496532671,0 -122.2963897515465,47.56564248759738,0 -122.2963415614278,47.56573707247389,0 -122.2965818635706,47.56614069769891,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="0099AA5D3230ADC7843C">
+		<name>MLK Street Sweep SS4</name>
+		<LookAt>
+			<longitude>-122.2963688639728</longitude>
+			<latitude>47.56553528757945</latitude>
+			<altitude>46.40415861840216</altitude>
+			<heading>1.207418269725733e-06</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>251.7384195518753</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_055FADA9B530AD9988F4</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.2963412197977,47.56573712302389,0 -122.2963877652301,47.5656435975491,0 -122.2959993572287,47.56502794193612,0 -122.2959650950697,47.56516302934079,0 -122.2959438963115,47.56519068024779,0 -122.2959123579957,47.56521434168608,0 -122.2959150515161,47.56525054461105,0 -122.2959509261614,47.56527400696974,0 -122.2960067846897,47.56527292760814,0 -122.2960515054179,47.56527764973107,0 -122.2960760700536,47.56529778861777,0 -122.2963412197977,47.56573712302389,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="048BFDC54C30ADCA7921">
+		<name>MLK Street Sweep SS5</name>
+		<LookAt>
+			<longitude>-122.2914187829939</longitude>
+			<latitude>47.55724280506266</latitude>
+			<altitude>62.33681856231242</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>171.8230535961629</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_055FADA9B530AD9988F4</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-122.2914707429278,47.55751845298633,0 -122.2910578433286,47.5568479786627,0 -122.2909069852118,47.55678545670604,0 -122.2912948418954,47.55740150579913,0 -122.2914707429278,47.55751845298633,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+</Document>
+</kml>

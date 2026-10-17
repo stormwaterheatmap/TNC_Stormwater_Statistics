@@ -13,11 +13,10 @@ library(ggpubr) #for ggarrange
 library(daymetr)  #for adding precip to the model validation dataset
 library(lubridate)  #for yday, month and year functions
 
-
 #run scripts that prepare data and contain functions required for this project
-source("Model Validation_EIM Data.R")  #run script that preps EIM data
-source("Model Validation_Other Data.R")  #run script that preps other data (including MLK street sweeping data)
-p_std <- read.csv(file="../processed_data/daymet_precip_standardization_values.csv")
+source("scripts/Model Validation_EIM Data.R")  #run script that preps EIM data
+source("scripts/Model Validation_Other Data.R")  #run script that preps other data (including MLK street sweeping data)
+p_std <- read.csv(file="processed_data/daymet_precip_standardization_values.csv")
 
 #----------------------------------#
 #  Flow or Time Composite Samples  #
@@ -223,7 +222,7 @@ mv_locs <- rbind(comp_res, grab_res) %>%
   ungroup() %>%
   distinct()
 
-write.csv(mv_locs, "../data/model validation locations.csv", row.names=FALSE)
+write.csv(mv_locs, "data/model validation locations.csv", row.names=FALSE)
 
 
 #-----------------------------------#
@@ -231,7 +230,7 @@ write.csv(mv_locs, "../data/model validation locations.csv", row.names=FALSE)
 #-----------------------------------#
 
 # Download the nearest rainfall gage from daymet
-daymet_p <- download_daymet_batch(file_location = "../data/model validation locations.csv", start = 2001,
+daymet_p <- download_daymet_batch(file_location = "data/model validation locations.csv", start = 2001,
                                   end = 2022, simplify = T)  #note that first collection day is 2001-03-25, and last day is 2022-05-12
 
 # rename columns
@@ -248,6 +247,33 @@ p <- daymet_p %>%
 p$daymet_14day <- zoo::rollsum(p$daymet_precip, 14, fill=0, align="right")
 p$daymet_21day <- zoo::rollsum(p$daymet_precip, 21, fill=0, align="right")
 
+#the first few days of each sampling year don't correspond to 2022 or 2001; nor do the last few days of the year.  We can be confident using
+#  the loop below, which has different locations with adjacent rows.  Going backwards through the object p results in going from the beginning
+#  of 2001 at one location, to the end of 2022 at the previous location.  This won't be a problem b/c of when samples were collected, and the
+#  general prevalence of rain in Washington in Dec and Jan.
+comp_res[which(comp_res$yday<4),]
+grab_res[which(grab_res$yday<4),]
+comp_res[which(comp_res$yday>360),]
+grab_res[which(grab_res$yday>360),]
+
+#calculate Antecedant Dry Days
+p$ADD <- NA
+#Work backward through all rows of p. Since first date was 2/25, no need to separate out by location, as there was definitely rain between Jan 1, 2009 and Feb 25, 2009
+for (i in nrow(p):2) {
+  j <- 1
+  while(p$daymet_precip[i-j]==0) {
+    j <- j+1
+  }
+  p$ADD[i] <- j-1
+}
+## there is an error that is thrown here, for the first 3 rows of the time series (last 3 rows that went through the for-loop).  
+#    It corresponds to MLK location SS3, which was NOT sampled in the first 3 days of January, 2001.  Hence the error is irrelevant
+p$ADD[which(is.na(p$ADD))] <- 0  #work-around for the error.  It has no relevance b/c first samples were collected 
+
+#in the S8 data, ADD is log+1 transformed, then standardized.  Do the log+1 transform here.
+p$antecedant_dry_days <- log(p$ADD + 1)
+
+
 #join comp_res and grab_res with precip data
 comp_res_p <- left_join(comp_res, p, join_by(Location, year, yday) ) %>%
   mutate(month=month(Date),
@@ -257,7 +283,10 @@ comp_res_p <- left_join(comp_res, p, join_by(Location, year, yday) ) %>%
   select(! c(latitude, longitude)) %>%
   mutate(daymet_precip_std = (daymet_precip - p_std$mean[which(p_std$dur=="daymet_precip")])/p_std$sd[which(p_std$dur=="daymet_precip")],
          daymet_14day_std = (daymet_14day - p_std$mean[which(p_std$dur=="daymet_14day")])/p_std$sd[which(p_std$dur=="daymet_14day")],
-         daymet_21day_std = (daymet_21day - p_std$mean[which(p_std$dur=="daymet_21day")])/p_std$sd[which(p_std$dur=="daymet_21day")])
+         daymet_21day_std = (daymet_21day - p_std$mean[which(p_std$dur=="daymet_21day")])/p_std$sd[which(p_std$dur=="daymet_21day")],
+         antecedant_dry_days_std = (antecedant_dry_days - p_std$mean[which(p_std$dur=="antecedant_dry_days")])/p_std$sd[which(p_std$dur=="antecedant_dry_days")]
+  )
+
 
 grab_res_p <- left_join(grab_res, p, join_by(Location, year, yday) ) %>%
   mutate(month=month(Date),
@@ -267,7 +296,9 @@ grab_res_p <- left_join(grab_res, p, join_by(Location, year, yday) ) %>%
   select(! c(latitude, longitude)) %>%
   mutate(daymet_precip_std = (daymet_precip - p_std$mean[which(p_std$dur=="daymet_precip")])/p_std$sd[which(p_std$dur=="daymet_precip")],
          daymet_14day_std = (daymet_14day - p_std$mean[which(p_std$dur=="daymet_14day")])/p_std$sd[which(p_std$dur=="daymet_14day")],
-         daymet_21day_std = (daymet_21day - p_std$mean[which(p_std$dur=="daymet_21day")])/p_std$sd[which(p_std$dur=="daymet_21day")])
+         daymet_21day_std = (daymet_21day - p_std$mean[which(p_std$dur=="daymet_21day")])/p_std$sd[which(p_std$dur=="daymet_21day")],
+         antecedant_dry_days_std = (antecedant_dry_days - p_std$mean[which(p_std$dur=="antecedant_dry_days")])/p_std$sd[which(p_std$dur=="antecedant_dry_days")]
+  )
 
 comp_res <- comp_res_p
 grab_res <- grab_res_p
@@ -294,7 +325,7 @@ grab_res_3 <- grab_res %>%
 #  Save Results as RData File  #
 #------------------------------#
 
-save(comp_res, grab_res, grab_res_4plus, grab_res_3, file="../data/model_validation_prepped_data.RData")
+save(comp_res, grab_res, grab_res_4plus, grab_res_3, file="data/model_validation_prepped_data.RData")
 
 rm(daymet_p, p)  #remove large objects!
 

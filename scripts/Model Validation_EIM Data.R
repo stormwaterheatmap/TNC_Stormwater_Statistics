@@ -16,7 +16,7 @@ parameters_EIM <- c("Zinc", "Copper", "Total Phosphorus", "Phosphorus", "Total N
 #  Town of Coupeville G0900060  #   Copper, Zinc
 #-------------------------------#
 
-coupeville_results <- read.csv(here("..", "data", "model validation data", "Coupeville G0900060", "EIMDiscreteResults_2024Feb13_594.csv"))
+coupeville_results <- read.csv(here("data", "model validation data", "Coupeville G0900060", "EIMDiscreteResults_2024Feb13_594.csv"))
 # coupeville_loc <-  read.csv(here("..", "data", "model validation data", "Coupeville G0900060", "EIMLocationDetails_2024Feb13_5.csv"))
 # 
 # head(coupeville_loc)
@@ -44,7 +44,7 @@ coupe_res %>% count(Result_Parameter_Name, Location_Name)
 #  Tacoma S8C 2013-18 WAR044003_S8C  #  Copper, Zinc, Total Phosphorus, TSS, Total Nitrogen, mixed forms as N, Nitrate + Nitrite as N, (TKN = TN - Nitrite+Nitrate)
 #------------------------------------#
 
-tacoma_s8c_results <- read.csv(here("..", "data", "model validation data", "Tacoma S8C 2013_18 WAR044003_S8C", "EIMDiscreteResults_2024Feb13_21867.csv"))
+tacoma_s8c_results <- read.csv(here("data", "model validation data", "Tacoma S8C 2013_18 WAR044003_S8C", "EIMDiscreteResults_2024Feb13_21867.csv"))
 
 unique(tacoma_s8c_results$Result_Parameter_Name)
 
@@ -237,7 +237,7 @@ tac_tkn_calc <- tac_res %>%
 #  Lake WA PFAS Survey SWON0003  #  TSS  ---  all of these samples are time-weighted (similar enough to flow-weighted), so we can use them all!
 #--------------------------------#
 
-lake_WA_results <- read.csv(here("..", "data", "model validation data", "Lake Washington PFAS Survey SWON0003", "EIMDiscreteResults_2024Feb26_11651.csv"))
+lake_WA_results <- read.csv(here("data", "model validation data", "Lake Washington PFAS Survey SWON0003", "EIMDiscreteResults_2024Feb26_11651.csv"))
 
 unique(lake_WA_results$Result_Parameter_Name)
 unique(lake_WA_results$Location_ID)
@@ -312,7 +312,7 @@ lkwa_res <- lkwa_res %>%
 #  Lahti Drive G1100234  #  TSS, Phosphorus
 #------------------------#
 
-lahti_drive_results <- read.csv(here("..", "data", "model validation data", "Lahti Drive G1100234", "EIMDiscreteResults_2024Feb26_111.csv"))
+lahti_drive_results <- read.csv(here("data", "model validation data", "Lahti Drive G1100234", "EIMDiscreteResults_2024Feb26_111.csv"))
 
 unique(lahti_drive_results$Result_Parameter_Name)
 unique(lahti_drive_results$Location_ID)
@@ -367,7 +367,7 @@ lahti_res %>% count(Result_Parameter_Name, Location_Name)
 #  Watershed Friendly Gardening Ed Program G0500170  #  TSS, Total Phosphorus
 #----------------------------------------------------#
 
-garden_ed_results <- read.csv(here("..", "data", "model validation data", "Watershed Friendly Gardening Ed Prog G0500170", "EIMDiscreteResults_2024Feb13_570.csv"))
+garden_ed_results <- read.csv(here("data", "model validation data", "Watershed Friendly Gardening Ed Prog G0500170", "EIMDiscreteResults_2024Feb13_570.csv"))
 
 unique(garden_ed_results$Result_Parameter_Name)
 unique(garden_ed_results$Location_Name)
@@ -419,7 +419,7 @@ ge_res %>% count(Result_Parameter_Name, Location_Name)
 #  Mason County G0800631  #  Copper, TSS, Zinc
 #-------------------------#
 
-mason_county_results <- read.csv(here("..", "data", "model validation data", "Mason County G0800631", "EIMDiscreteResults_2024Feb13_3189.csv"))
+mason_county_results <- read.csv(here("data", "model validation data", "Mason County G0800631", "EIMDiscreteResults_2024Feb13_3189.csv"))
 
 unique(mason_county_results$Result_Parameter_Name)
 unique(mason_county_results$Location_Name)

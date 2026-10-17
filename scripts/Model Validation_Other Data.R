@@ -17,8 +17,8 @@ library(ggplot2)
 #-------------------#   #https://www.usgs.gov/software/hrdb-highway-runoff-database-software-page
                         #NOTE: some locations are duplicate data with WSDOT 2014 dataset, but the dates here are wrong.  Use WSDOT data instead
 
-highway_dataset_results <- read.csv(here("..", "data", "model validation data", "Highway Dataset", "tblQWHighwayDataSet.csv"))
-hwy_data_storm_events <- read.csv(here("..", "data", "model validation data", "Highway Dataset", "tblStormEvent.csv"))
+highway_dataset_results <- read.csv(here("data", "model validation data", "Highway Dataset", "tblQWHighwayDataSet.csv"))
+hwy_data_storm_events <- read.csv(here("data", "model validation data", "Highway Dataset", "tblStormEvent.csv"))
 
 highway_dataset_results <- left_join(x=highway_dataset_results, 
                                      y=hwy_data_storm_events[, c("StormEvent_ID", "dtmEventDate")], 
@@ -61,7 +61,7 @@ hwy_res %>% count(Analyte, Location)
 hwy_res_locs <- hwy_res %>%
   select(Location, Description, HwyMP, BMP, Latitude, Longitude) %>%
   unique()
-write.csv(hwy_res_locs, "../data/model validation data/Highway Dataset/hwy_dataset_locs.csv")
+write.csv(hwy_res_locs, "data/model validation data/Highway Dataset/hwy_dataset_locs.csv")
 
 #what units are used for each analyte?  Do we need to convert any units to ug/L?
 unique(hwy_res$Lab_Unit)
@@ -127,7 +127,7 @@ hwy_res <- hwy_res %>%
 #  MLK Street Sweeping Study  #   
 #-----------------------------#   
 
-mlk_sweeping_results <- read.csv(here("..", "data", "model validation data", "MLK Street Sweeping Study", "StreetSweepWQEffectiveness2014-16_PESonly_0.5xND_4JAN2017.csv"))
+mlk_sweeping_results <- read.csv(here("data", "model validation data", "MLK Street Sweeping Study", "StreetSweepWQEffectiveness2014-16_PESonly_0.5xND_4JAN2017.csv"))
 
 names(mlk_sweeping_results)
 
@@ -181,8 +181,8 @@ mlk_res[which(mlk_res$Detect_Flag=="N"),]
 #  WSDOT 2014 Highway Study  #   NOTE: these locations are also in the HWY DB, but the HWY DB dates are wrong.  Use these instead
 #----------------------------#   
 
-wsdot14_results <- read.csv(here("..", "data", "model validation data", "WSDOT 2014 Project", "WSDOT 2014 relevant samples.csv"))
-wsdot14_gps <- read.csv(here("..", "data", "model validation data", "WSDOT 2014 Project", "WSDOT 2014 GPS locations.csv"))
+wsdot14_results <- read.csv(here("data", "model validation data", "WSDOT 2014 Project", "WSDOT 2014 relevant samples.csv"))
+wsdot14_gps <- read.csv(here("data", "model validation data", "WSDOT 2014 Project", "WSDOT 2014 GPS locations.csv"))
 
 names(wsdot14_results)
 
@@ -279,7 +279,7 @@ ws14_sum <- ws14_res %>%
 #  Ship Canal Test Facility (I-5 Bridge)  #   
 #-----------------------------------------#   
 
-i5br_results <- read.csv(here("..", "data", "model validation data", "Ship Canal Test Facility", "sctf_wq_data.csv"))
+i5br_results <- read.csv(here("data", "model validation data", "Ship Canal Test Facility", "sctf_wq_data.csv"))
 
 names(i5br_results)
 
